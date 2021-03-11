@@ -48,4 +48,4 @@ Umjesto ovih uputa jasno popišite sve tehnologije, alate i opremu koju ćete ko
 * Visual Paradigm Community - online alat za izrade vizualnih dijagrama rada na projektu, rada aplikacije i prikaz međuovisnosti razina u aplikaciji
 * Draw.io - online alat za izradu shematskih prikaza djelovanja i funkcionalnih razina aplikacije
 * OpenProject - računalna programska podrška grafičkog prikaza rasporeda projekta u kojem je ilustriran početni i krajnji datum nepromjenjinjivih i sažetih elemenata projekta
-* MySQL Workbench - 
+* MySQL Workbench - vizualni alat koji pomaže pri modeliranju podataka unutar neke baze podataka i SQL razvoju. Osim toga, nudi izvrstan prikaz ERA modela koji ćemo koristiti u dokumentaciji.
