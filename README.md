@@ -32,20 +32,20 @@ Umjesto ovih uputa opišite zahtjeve za funkcionalnošću programskog proizvoda.
 Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | -------------------
 F01 | Login i registracija | Za pristup dnevniku potrebnba je autentikacija korisnika pomoću login funkcionalnosti. Korisnik ostvaruje pristup računalnom sustavu prepoznavanjem i autentifikacijom. Korisničke vjerodajnice obično su oblika korisničkog imena i odgovarajuće lozinke.  | ČlanTima
-F02 | Upravljanje zalihama | Informacijski sustav skladišta |Ravnoteža između plasmana financijskih sredstava u zalihe te povećanja ili zadržavanja zadovoljstva korisnika i krajnjih kupaca. | ČlanTima
-F03 | Narudžbenica | Narudžba proizvoda | Službena ponuda koju je kupac izdao prodavaču, navodeći vrste, količine i dogovorene cijene proizvoda  | ČlanTima
-F04 | Prodaja i izdavanje računa |  | ...
-F05 | Mogućnost recenziranja (?) |  | ...
-F06 | Evidentiranje i obračunavanje poslovanja | .... | ...
-F07 | Restful web api servis | .... | ...
-F08 | Kreiranje naprednih PDF izvješća | .... | ...
-F09 | Korištenje vizualnih prikaza podataka | .... | ...
+F02 | Upravljanje zalihama | Ravnoteža između plasmana financijskih sredstava u zalihe te povećanja ili zadržavanja zadovoljstva korisnika i krajnjih kupaca. | ČlanTima
+F03 | Narudžbenica | Službena ponuda koju je kupac izdao prodavaču, navodeći vrste, količine i dogovorene cijene proizvoda  | ČlanTima
+F04 | Prodaja i izdavanje računa | Dokument kojim se potvrđuje kupnja proizvoda poslovne jedinice | ČlanTima
+F05 | Mogućnost recenziranja (?) | Korisnik postavlja ocjenu zadovoljstva i kritički zauzima stav prema nekom proizvodu | ČlanTima
+F06 | Evidentiranje i obračunavanje poslovanja | Iskazuje se u financijskim izvještaja interni obračuna poslovanja u obliku prihoda i rashoda | ČlanTima
+F07 | Restful web api servis | .... | Martin Sabljak
+F08 | Kreiranje naprednih PDF izvješća | Detaljni prikaz računa kupca s nazivom, količinom i ukupnom cijenom kupljenih proizvoda informatičke opreme | ČlanTima
+F09 | Korištenje vizualnih prikaza podataka | Slikoviti prikaz internog poslovanja trgovine odnosno prihoda i rashoda u obliku grafikona stupca i pite | ČlanTima
 
 ## Tehnologije i oprema
 Umjesto ovih uputa jasno popišite sve tehnologije, alate i opremu koju ćete koristiti pri implementaciji vašeg rješenja. Ne zaboravite planirati korištenje tehnologija u aktivnostima kao što su projektni menadžment ili priprema dokumentacije. Tehnologije koje ćete koristiti bi trebale biti javno dostupne, a ako ih ne budemo obrađivali na vježbama u vašoj dokumentaciji ćete morati navesti način preuzimanja, instaliranja i korištenja onih tehnologija koje su neopbodne kako bi se vaš programski proizvod preveo i pokrenuo. Pazite da svi alati koje ćete koristiti moraju imati odgovarajuću licencu.
 
-* Visual Studio
-* Visual Paradigm Community
-* Draw.io
-* OpenProject
-* MySQL Workbench
+* Visual Studio - računalna programska podrška za izradu zadatka aplikacije
+* Visual Paradigm Community - online alat za izrade vizualnih dijagrama rada na projektu, rada aplikacije i prikaz međuovisnosti razina u aplikaciji
+* Draw.io - online alat za izradu shematskih prikaza djelovanja i funkcionalnih razina aplikacije
+* OpenProject - računalna programska podrška grafičkog prikaza rasporeda projekta u kojem je ilustriran početni i krajnji datum nepromjenjinjivih i sažetih elemenata projekta
+* MySQL Workbench - 
