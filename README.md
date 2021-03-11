@@ -24,6 +24,7 @@ Dino Šokec | dsokec@foi.hr | 0016123631 | dsokec3110 | B
 ## Opis domene
 Umjesto ovih uputa opišite domenu ili problem koji pokrivate vašim  projektom. Domena može biti proizvoljna, ali obratite pozornost da sukladno ishodima učenja, domena omogući primjenu zahtijevanih koncepata kako je to navedeno u sljedećem poglavlju. Priložite odgovarajuće skice gdje je to prikladno.
 
+Aplikacija Itronic predstavlja sustav upravljanja zalihama u skladištu trgovine informatičke opreme sa svrhom da olakša upravljanje proizvoda i ubrza proces rješavanja zahtjeva kupaca i donošenja pravovremenih odluka. Aplikacija Itronic ujedno je veza između kupca i prodavača. Programska podrška Itronic sastoji se od.... Sastavnice aplikacije Itronic su .... (dijelovi u WinForm)... 
 U aplikaciji "ITronic" baziramo se na evidentiranje i upravljanje skladišnim zalihama trgovine informatičke opreme. Osim toga, veliki naglasak stavljamo i na implementaciju sustava prodaje unutar iste aplikacije.
 
 ## Specifikacija projekta
