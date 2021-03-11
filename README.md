@@ -17,7 +17,7 @@ Nakon vaše prijave bit će vam dodijeljen mentor s kojim ćete tijekom semestra
 
 Ime i prezime | E-mail adresa (FOI) | JMBAG | Github korisničko ime
 ------------  | ------------------- | ----- | ---------------------
-Ime i prezime | mojaadresa@foi.hr | 000000000 | githubuser
+Domagoj Grundler | dgrundler@foi.hr | 0016122975 | dgrundler
 Ime i prezime | mojaadresa@foi.hr | 000000000 | githubuser
 Ime i prezime | mojaadresa@foi.hr | 000000000 | githubuser
 Ime i prezime | mojaadresa@foi.hr | 000000000 | githubuser
