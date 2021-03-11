@@ -35,9 +35,9 @@ F01 | Login i registracija | Za pristup dnevniku potrebnba je autentikacija kori
 F02 | Upravljanje zalihama | Ravnoteža između plasmana financijskih sredstava u zalihe te povećanja ili zadržavanja zadovoljstva korisnika i krajnjih kupaca. | ČlanTima
 F03 | Narudžbenica | Službena ponuda koju je kupac izdao prodavaču, navodeći vrste, količine i dogovorene cijene proizvoda  | ČlanTima
 F04 | Prodaja i izdavanje računa | Dokument kojim se potvrđuje kupnja proizvoda poslovne jedinice | ČlanTima
-F05 | Mogućnost recenziranja (?) | Korisnik postavlja ocjenu zadovoljstva i kritički zauzima stav prema nekom proizvodu | ČlanTima
+F05 | Recenziranje | Korisnik postavlja ocjenu zadovoljstva i kritički zauzima stav prema nekom proizvodu | ČlanTima
 F06 | Evidentiranje i obračunavanje poslovanja | Iskazuje se u financijskim izvještaja interni obračuna poslovanja u obliku prihoda i rashoda | ČlanTima
-F07 | Implementacija restful web api servisa | .... | Martin Sabljak
+F07 | Implementacija restful web api servisa | Način komunikacije aplikacije preko Web zahtjeva za prikaz podataka prema metodi CRUD| Martin Sabljak
 F08 | Kreiranje naprednih PDF izvješća | Detaljni prikaz računa kupca s nazivom, količinom i ukupnom cijenom kupljenih proizvoda informatičke opreme | ČlanTima
 F09 | Korištenje vizualnih prikaza podataka | Slikoviti prikaz internog poslovanja trgovine odnosno prihoda i rashoda u obliku grafikona stupca i pite | ČlanTima
 
