@@ -14,12 +14,12 @@ Nakon vaše prijave bit će vam dodijeljen mentor s kojim ćete tijekom semestra
 
 ## Projektni tim
 
-Ime i prezime | E-mail adresa (FOI) | JMBAG | Github korisničko ime
-------------  | ------------------- | ----- | ---------------------
-Domagoj Grundler | dgrundler@foi.hr | 0016122975 | dgrundler97
-Ivan Janjić | ijanjic20@foi.hr | 0016030483 | ivek77
-Martin Sabljak | msabljak@foi.hr | 0016123465 | msabljak
-Dino Šokec | dsokec@foi.hr | 0016123631 | dsokec3110
+Ime i prezime | E-mail adresa (FOI) | JMBAG | Github korisničko ime | Model praćenja
+------------  | ------------------- | ----- | --------------------- | --------------
+Domagoj Grundler | dgrundler@foi.hr | 0016122975 | dgrundler97 | A
+Ivan Janjić | ijanjic20@foi.hr | 0016030483 | ivek77 | B
+Martin Sabljak | msabljak@foi.hr | 0016123465 | msabljak | B
+Dino Šokec | dsokec@foi.hr | 0016123631 | dsokec3110 | B
 
 ## Opis domene
 Umjesto ovih uputa opišite domenu ili problem koji pokrivate vašim  projektom. Domena može biti proizvoljna, ali obratite pozornost da sukladno ishodima učenja, domena omogući primjenu zahtijevanih koncepata kako je to navedeno u sljedećem poglavlju. Priložite odgovarajuće skice gdje je to prikladno.
