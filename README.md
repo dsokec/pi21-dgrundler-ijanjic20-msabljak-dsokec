@@ -16,7 +16,7 @@ Nakon vaše prijave bit će vam dodijeljen mentor s kojim ćete tijekom semestra
 
 Ime i prezime | E-mail adresa (FOI) | JMBAG | Github korisničko ime
 ------------  | ------------------- | ----- | ---------------------
-Domagoj Grundler | dgrundler@foi.hr | 0016122975 | dgrundler
+Domagoj Grundler | dgrundler@foi.hr | 0016122975 | dgrundler97
 Ivan Janjić | ijanjic20@foi.hr | 0016030483 | ivek77
 Martin Sabljak | msabljak@foi.hr | 0016123465 | msabljak
 Dino Šokec | dsokec@foi.hr | 0016123631 | dsokec3110
