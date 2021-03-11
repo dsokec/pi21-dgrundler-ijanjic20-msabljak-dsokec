@@ -12,6 +12,7 @@ Nakon vaše prijave bit će vam dodijeljen mentor s kojim ćete tijekom semestra
 
 # Naziv projekta
 (u redak iznad navedite kratki proizvoljni naziv projekta prikladan akademskoj zajednici, a ovaj tekst obrišite)
+
 "ITronic" - trgovina informatičke opreme
 
 ## Projektni tim
