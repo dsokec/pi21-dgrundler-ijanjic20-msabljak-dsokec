@@ -49,6 +49,6 @@ Umjesto ovih uputa jasno popišite sve tehnologije, alate i opremu koju ćete ko
 
 * Visual Studio
 * Visual Paradigm Community
-* Draw io
+* Draw.io
 * OpenProject
 * MySQL Workbench
