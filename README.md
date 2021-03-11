@@ -40,6 +40,7 @@ F06 | Evidentiranje i obračunavanje poslovanja | Iskazuje se u financijskim izv
 F07 | Implementacija restful web api servisa | Način komunikacije aplikacije preko Web zahtjeva za prikaz podataka prema metodi CRUD| Martin Sabljak
 F08 | Kreiranje naprednih PDF izvješća | Detaljni prikaz računa kupca s nazivom, količinom i ukupnom cijenom kupljenih proizvoda informatičke opreme | ČlanTima
 F09 | Korištenje vizualnih prikaza podataka | Slikoviti prikaz internog poslovanja trgovine odnosno prihoda i rashoda u obliku grafikona stupca i pite | ČlanTima
+F10 | Implementacija korisničke podrške | Pritiskom tipke F1 tijekom rada na bilo kojoj od formi otvara se chm dokument koji sadrži pomoćne informacije vezane uz formu | ČlanTima
 
 ## Tehnologije i oprema
 Umjesto ovih uputa jasno popišite sve tehnologije, alate i opremu koju ćete koristiti pri implementaciji vašeg rješenja. Ne zaboravite planirati korištenje tehnologija u aktivnostima kao što su projektni menadžment ili priprema dokumentacije. Tehnologije koje ćete koristiti bi trebale biti javno dostupne, a ako ih ne budemo obrađivali na vježbama u vašoj dokumentaciji ćete morati navesti način preuzimanja, instaliranja i korištenja onih tehnologija koje su neopbodne kako bi se vaš programski proizvod preveo i pokrenuo. Pazite da svi alati koje ćete koristiti moraju imati odgovarajuću licencu.
