@@ -29,7 +29,6 @@ F09 | Korištenje vizualnih prikaza podataka | Slikoviti prikaz internog poslova
 F10 | Implementacija korisničke podrške | Pritiskom tipke F1 tijekom rada na bilo kojoj od formi otvara se chm dokument koji sadrži pomoćne informacije vezane uz formu | ČlanTima
 
 ## Tehnologije i oprema
-Umjesto ovih uputa jasno popišite sve tehnologije, alate i opremu koju ćete koristiti pri implementaciji vašeg rješenja. Ne zaboravite planirati korištenje tehnologija u aktivnostima kao što su projektni menadžment ili priprema dokumentacije. Tehnologije koje ćete koristiti bi trebale biti javno dostupne, a ako ih ne budemo obrađivali na vježbama u vašoj dokumentaciji ćete morati navesti način preuzimanja, instaliranja i korištenja onih tehnologija koje su neopbodne kako bi se vaš programski proizvod preveo i pokrenuo. Pazite da svi alati koje ćete koristiti moraju imati odgovarajuću licencu.
 
 * Visual Studio - računalna programska podrška za izradu zadatka aplikacije
 * Visual Paradigm Community - online alat za izrade vizualnih dijagrama rada na projektu, rada aplikacije i prikaz međuovisnosti razina u aplikaciji
