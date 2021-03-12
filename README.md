@@ -18,8 +18,8 @@ U aplikaciji "ITronic" baziramo se na evidentiranje i upravljanje skladišnim za
 Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | -------------------
 F01 | Login i registracija | Za pristup dnevniku potrebna je autentikacija korisnika pomoću login funkcionalnosti. Korisnik ostvaruje pristup računalnom sustavu prepoznavanjem i autentifikacijom. Korisničke vjerodajnice obično su oblika korisničkog imena i odgovarajuće lozinke.  | ČlanTima
-F02 | Upravljanje zalihama | Ravnoteža između plasmana financijskih sredstava u zalihe te povećanja ili zadržavanja zadovoljstva korisnika i krajnjih kupaca. | ČlanTima
-F03 | Narudžbenica | Službena ponuda koju je kupac izdao prodavaču, navodeći vrste, količine i dogovorene cijene proizvoda  | ČlanTima
+F02 | Upravljanje zalihama | Ravnoteža između plasmana financijskih sredstava u zalihe te povećanja ili zadržavanja zadovoljstva korisnika i krajnjih kupaca. | Domagoj Grundler
+F03 | Narudžbenica | Službena ponuda koju je kupac izdao prodavaču, navodeći vrste, količine i dogovorene cijene proizvoda  | Domagoj Grundler
 F04 | Prodaja i izdavanje računa | Dokument kojim se potvrđuje kupnja proizvoda poslovne jedinice | ČlanTima
 F05 | Recenziranje | Korisnik postavlja ocjenu zadovoljstva i kritički zauzima stav prema nekom proizvodu | ČlanTima
 F06 | Evidentiranje i obračunavanje poslovanja | Iskazuje se u financijskim izvještaja interni obračuna poslovanja u obliku prihoda i rashoda | ČlanTima
