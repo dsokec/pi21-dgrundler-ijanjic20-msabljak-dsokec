@@ -1,4 +1,4 @@
-# Trgovina informatičke opreme Itronic
+# Trgovina informatičke opreme "Itronic"
 
 ## Projektni tim
 
@@ -17,7 +17,7 @@ U aplikaciji "ITronic" baziramo se na evidentiranje i upravljanje skladišnim za
 ## Specifikacija projekta
 Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | -------------------
-F01 | Login i registracija | Za pristup dnevniku potrebnba je autentikacija korisnika pomoću login funkcionalnosti. Korisnik ostvaruje pristup računalnom sustavu prepoznavanjem i autentifikacijom. Korisničke vjerodajnice obično su oblika korisničkog imena i odgovarajuće lozinke.  | ČlanTima
+F01 | Login i registracija | Za pristup dnevniku potrebna je autentikacija korisnika pomoću login funkcionalnosti. Korisnik ostvaruje pristup računalnom sustavu prepoznavanjem i autentifikacijom. Korisničke vjerodajnice obično su oblika korisničkog imena i odgovarajuće lozinke.  | ČlanTima
 F02 | Upravljanje zalihama | Ravnoteža između plasmana financijskih sredstava u zalihe te povećanja ili zadržavanja zadovoljstva korisnika i krajnjih kupaca. | ČlanTima
 F03 | Narudžbenica | Službena ponuda koju je kupac izdao prodavaču, navodeći vrste, količine i dogovorene cijene proizvoda  | ČlanTima
 F04 | Prodaja i izdavanje računa | Dokument kojim se potvrđuje kupnja proizvoda poslovne jedinice | ČlanTima
