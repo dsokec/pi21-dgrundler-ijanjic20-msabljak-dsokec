@@ -11,8 +11,7 @@ Dino Šokec | dsokec@foi.hr | 0016123631 | dsokec3110 | B
 
 ## Opis domene
 
-Aplikacija Itronic predstavlja sustav upravljanja zalihama u skladištu trgovine informatičke opreme sa svrhom da olakša upravljanje proizvoda i ubrza proces rješavanja zahtjeva kupaca i donošenja pravovremenih odluka. Aplikacija Itronic ujedno je veza između kupca i prodavača. Programska podrška Itronic sastoji se od.... Sastavnice aplikacije Itronic su .... (dijelovi u WinForm)... 
-U aplikaciji "ITronic" baziramo se na evidentiranje i upravljanje skladišnim zalihama trgovine informatičke opreme. Osim toga, veliki naglasak stavljamo i na implementaciju sustava prodaje unutar iste aplikacije.
+Aplikacija Itronic predstavlja sustav upravljanja zalihama u skladištu trgovine informatičke opreme sa svrhom da olakša upravljanje proizvoda i ubrza proces rješavanja zahtjeva kupaca i donošenja pravovremenih odluka. Aplikacija Itronic ujedno je veza između kupca i prodavača koja je evidentirana u centraliziranoj bazi podataka. Veliki naglasak stavljamo i na implementaciju sustava prodaje unutar iste aplikacije. 
 
 ## Specifikacija projekta
 Oznaka | Naziv | Kratki opis | Odgovorni član tima
@@ -35,3 +34,4 @@ F10 | Implementacija korisničke podrške | Pritiskom tipke F1 tijekom rada na b
 * Draw.io - online alat za izradu shematskih prikaza djelovanja i funkcionalnih razina aplikacije
 * OpenProject - računalna programska podrška grafičkog prikaza rasporeda projekta u kojem je ilustriran početni i krajnji datum nepromjenjinjivih i sažetih elemenata projekta
 * MySQL Workbench - vizualni alat koji pomaže pri modeliranju podataka unutar neke baze podataka i SQL razvoju. Osim toga, nudi izvrstan prikaz ERA modela koji ćemo koristiti u dokumentaciji.
+* Četiri računala bazirana na operacijskom sustavu Windows
