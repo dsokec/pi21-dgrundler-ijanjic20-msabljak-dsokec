@@ -16,7 +16,7 @@ Aplikacija Itronic predstavlja sustav upravljanja zalihama u skladištu trgovine
 ## Specifikacija projekta
 Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | -------------------
-F01 | Login i registracija | Za pristup dnevniku potrebna je autentikacija korisnika pomoću login funkcionalnosti. Korisnik ostvaruje pristup računalnom sustavu prepoznavanjem i autentifikacijom. Korisničke vjerodajnice obično su oblika korisničkog imena i odgovarajuće lozinke.  | Ivan Janjić
+F01 | Prijava i administracija | Forma za prijavu u sustav i administraciju prava ovisno o ulozi korisnika. Prijava se ostavruje unosom korisničkog imena i odgovarajuće lozinke.   | Ivan Janjić
 F02 | Upravljanje zalihama | Ravnoteža između plasmana financijskih sredstava u zalihe te povećanja ili zadržavanja zadovoljstva korisnika i krajnjih kupaca. | Domagoj Grundler
 F03 | Narudžbenica | Službena ponuda koju je kupac izdao prodavaču, navodeći vrste, količine i dogovorene cijene proizvoda  | Domagoj Grundler
 F04 | Prodaja i izdavanje računa | Dokument kojim se potvrđuje kupnja proizvoda poslovne jedinice | Martin Sabljak
