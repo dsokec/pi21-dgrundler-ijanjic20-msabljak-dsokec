@@ -22,9 +22,8 @@ F03 | Naručivanje robe | Službena ponuda koju je kupac izdao prodavaču, navod
 F04 | Prodaja i izdavanje računa | Dokument kojim se potvrđuje kupnja proizvoda poslovne jedinice | Martin Sabljak
 F05 | Recenziranje | Korisnik postavlja ocjenu zadovoljstva i kritički zauzima stav prema nekom proizvodu | Dino Šokec
 F06 | Evidentiranje i obračunavanje poslovanja | Iskazuje se u financijskim izvještajima interni obračuna poslovanja u obliku prihoda i rashoda | Dino Šokec
-F07 | Kreiranje naprednih PDF izvješća | Detaljni prikaz računa kupca s nazivom, količinom i ukupnom cijenom kupljenih proizvoda informatičke opreme | Ivan Janjić
-F08 | Korištenje vizualnih prikaza podataka | Slikoviti prikaz internog poslovanja trgovine odnosno prihoda i rashoda u obliku grafikona stupca i pite | Martin Sabljak
-F09 | Implementacija korisničke podrške | Pritiskom tipke F1 tijekom rada na bilo kojoj od formi otvara se chm dokument koji sadrži pomoćne informacije vezane uz formu | Dino Šokec
+F07 | Kreiranje naprednih PDF izvješća | Detaljna izvješća unutar kojih su sadržane informacije potrebne za efikasno vođenje trgovine. Informacije će biti prikazane i u vizualnom obliku, tamo gdje je to moguće. | Ivan Janjić
+F08 | Zaprimanje reklamacija | Pritiskom tipke F1 tijekom rada na bilo kojoj od formi otvara se chm dokument koji sadrži pomoćne informacije vezane uz formu | Dino Šokec
 
 ## Tehnologije i oprema
 
