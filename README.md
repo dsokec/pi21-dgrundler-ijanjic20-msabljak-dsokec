@@ -18,14 +18,13 @@ Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | -------------------
 F01 | Prijava i administracija | Forma za prijavu u sustav i administraciju prava ovisno o ulozi korisnika. Prijava se ostavruje unosom korisničkog imena i odgovarajuće lozinke.   | Ivan Janjić
 F02 | Upravljanje zalihama | Ravnoteža između plasmana financijskih sredstava u zalihe te povećanja ili zadržavanja zadovoljstva korisnika i krajnjih kupaca. | Domagoj Grundler
-F03 | Narudžbenica | Službena ponuda koju je kupac izdao prodavaču, navodeći vrste, količine i dogovorene cijene proizvoda  | Domagoj Grundler
+F03 | Naručivanje robe | Službena ponuda koju je kupac izdao prodavaču, navodeći vrste, količine i dogovorene cijene proizvoda. Kao rezultat djelovanja ove funkcionalnosti dobiva se narudžbenica. | Domagoj Grundler
 F04 | Prodaja i izdavanje računa | Dokument kojim se potvrđuje kupnja proizvoda poslovne jedinice | Martin Sabljak
 F05 | Recenziranje | Korisnik postavlja ocjenu zadovoljstva i kritički zauzima stav prema nekom proizvodu | Dino Šokec
 F06 | Evidentiranje i obračunavanje poslovanja | Iskazuje se u financijskim izvještajima interni obračuna poslovanja u obliku prihoda i rashoda | Dino Šokec
-F07 | Implementacija restful web api servisa | Način komunikacije aplikacije preko Web zahtjeva za prikaz podataka prema metodi CRUD| Martin Sabljak
-F08 | Kreiranje naprednih PDF izvješća | Detaljni prikaz računa kupca s nazivom, količinom i ukupnom cijenom kupljenih proizvoda informatičke opreme | Ivan Janjić
-F09 | Korištenje vizualnih prikaza podataka | Slikoviti prikaz internog poslovanja trgovine odnosno prihoda i rashoda u obliku grafikona stupca i pite | Martin Sabljak
-F10 | Implementacija korisničke podrške | Pritiskom tipke F1 tijekom rada na bilo kojoj od formi otvara se chm dokument koji sadrži pomoćne informacije vezane uz formu | Dino Šokec
+F07 | Kreiranje naprednih PDF izvješća | Detaljni prikaz računa kupca s nazivom, količinom i ukupnom cijenom kupljenih proizvoda informatičke opreme | Ivan Janjić
+F08 | Korištenje vizualnih prikaza podataka | Slikoviti prikaz internog poslovanja trgovine odnosno prihoda i rashoda u obliku grafikona stupca i pite | Martin Sabljak
+F09 | Implementacija korisničke podrške | Pritiskom tipke F1 tijekom rada na bilo kojoj od formi otvara se chm dokument koji sadrži pomoćne informacije vezane uz formu | Dino Šokec
 
 ## Tehnologije i oprema
 
