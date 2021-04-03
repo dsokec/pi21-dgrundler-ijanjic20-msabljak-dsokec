@@ -16,14 +16,18 @@ Aplikacija Itronic predstavlja sustav upravljanja zalihama u skladištu trgovine
 ## Specifikacija projekta
 Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | -------------------
-F01 | Prijava i administracija | Forma za prijavu u sustav i administraciju prava ovisno o ulozi korisnika. Prijava se ostavruje unosom korisničkog imena i odgovarajuće lozinke.   | Ivan Janjić
-F02 | Upravljanje zalihama | Ravnoteža između plasmana financijskih sredstava u zalihe te povećanja ili zadržavanja zadovoljstva korisnika i krajnjih kupaca. | Domagoj Grundler
-F03 | Naručivanje robe | Službena ponuda koju je kupac izdao prodavaču, navodeći vrste, količine i dogovorene cijene proizvoda. Kao rezultat djelovanja ove funkcionalnosti dobiva se narudžbenica. | Domagoj Grundler
-F04 | Prodaja i izdavanje računa | Dokument kojim se potvrđuje kupnja proizvoda poslovne jedinice | Martin Sabljak
-F05 | Recenziranje | Korisnik postavlja ocjenu zadovoljstva i kritički zauzima stav prema nekom proizvodu | Dino Šokec
-F06 | Evidentiranje i obračunavanje poslovanja | Iskazuje se u financijskim izvještajima interni obračuna poslovanja u obliku prihoda i rashoda | Dino Šokec
-F07 | Kreiranje naprednih PDF izvješća | Detaljna izvješća unutar kojih su sadržane informacije potrebne za efikasno vođenje trgovine. Informacije će biti prikazane i u vizualnom obliku, tamo gdje je to moguće. | Ivan Janjić
-F08 | Zaprimanje reklamacija | Sustav pomoću kojeg će kupci moći pokrenuti postupak reklamacije, u slučaju da je to potrebno. | Dino Šokec
+F01 | Prijava, registracija i administracija korisnika | Forma za prijavu u sustav i administraciju prava ovisno o ulozi korisnika. Prijava se ostavruje unosom korisničkog imena i odgovarajuće lozinke. | Ivan Janjić
+F02 | Upravljanje zalihama na skladištu | Ravnoteža između plasmana financijskih sredstava u zalihe te povećanja ili zadržavanja zadovoljstva korisnika i krajnjih kupaca. | Domagoj Grundler
+F03 | Kupovina proizvoda u trgovini | Službena ponuda koju je kupac izdao prodavaču, navodeći vrste, količine i dogovorene cijene proizvoda. Kao rezultat djelovanja ove funkcionalnosti dobiva se narudžbenica. | Domagoj Grundler
+F04 | Prodaja proizvoda i izdavanje računa | Dokument kojim se potvrđuje kupnja proizvoda poslovne jedinice | Martin Sabljak
+F05 | Recenziranje informatičkih proizvoda | Korisnik postavlja ocjenu zadovoljstva i kritički zauzima stav prema nekom proizvodu | Dino Šokec
+F06 | Evidentiranje i obračunavanje poslovanja informatičke trgovine | Iskazuje se u financijskim izvještajima interni obračuna poslovanja u obliku prihoda i rashoda | Dino Šokec
+F07 | Kreiranje naprednih PDF izvješća informatičke trgovine | Detaljna izvješća unutar kojih su sadržane informacije potrebne za efikasno vođenje trgovine. Informacije će biti prikazane i u vizualnom obliku, tamo gdje je to moguće. | Ivan Janjić
+F08 | Zaprimanje reklamacija od strane kupca | U slučaju da je potrebno, sustav pomoću kojeg će kupci moći pokrenuti postupak reklamacije. | Dino Šokec
+F09 | Katalog informatičkih proizvoda trgovine | Pregled dostupnih informatičkih proizvoda kupcu na raspolaganje. Kupac može odabrati određeni broj proizvoda iz ponude ili kupiti jedan proizvod. | Martin Sabljak
+F10 | Nabava informatičke robe | Informatički proizvodi nabavljuju se od dobavljača prema sklopljenom ugovoru i ažurira se stanje skladišta prema nabavljenoj robi u trgovini. | Domagoj Grundler
+F11 | Servis informatičkih proizvoda | Izvršava se popravak i zamjena neispravnog informatičkog proizvoda uz predočeno jamstvo kupca. Popravak i zamjena provode se u roku od dva tjedna. | Martin Sabljak
+F12 | Usporedba i pregled lista želja proizvoda | Kupac uspoređuje dva ili više proizvoda zbog što bolje odluke u kupovini jednog ili više proizvoda. Kupac pregledavajući informatičke proizvode u trgovini može sastaviti popis željenih proizvoda za buduću kupovinu u trgovini. | Ivan Janjić
 
 ## Tehnologije i oprema
 
