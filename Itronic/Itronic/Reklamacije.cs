@@ -10,6 +10,7 @@ namespace Itronic
         int ID;
         string poruka;
 
+        // ovo je reklamacija
         public Reklamacije() { }
 
         void Poruka() { }
