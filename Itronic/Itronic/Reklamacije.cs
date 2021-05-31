@@ -6,14 +6,23 @@ namespace Itronic
 {
     class Reklamacije
     {
-        string ime, prezime;
-        int ID;
-        string poruka;
+        public string Ime { get; set; }
+        public int ID { get; private set; }
+        public string Opis { get; private set; }
+        public string MailAdresa { get; set; }
+        public string ArtiklProizvoda { get; private set; }
 
         // ovo je reklamacija
-        public Reklamacije() { }
+        public Reklamacije(string ime, string opis, string mailAdresa) {
+            this.Ime = ime;
+            this.Opis = opis;
+            this.MailAdresa = mailAdresa;
+        }
 
-        void Poruka() { }
+        public void UnesiReklamaciju(string opis, string artiklProizvoda)
+        {
+
+        }
 
     }
 }
