@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ItronicModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="Feedbacks">
+      <EntityTypeMapping TypeName="ItronicModel.Feedback">
+        <MappingFragment StoreEntitySet="Feedback">
+          <ScalarProperty Name="IDPovratnaInformacija" ColumnName="IDPovratnaInformacija" />
+          <ScalarProperty Name="IDKorisnik" ColumnName="IDKorisnik" />
+          <ScalarProperty Name="IDReklamacija" ColumnName="IDReklamacija" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Odgovor" ColumnName="Odgovor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Financijes">
+      <EntityTypeMapping TypeName="ItronicModel.Financije">
+        <MappingFragment StoreEntitySet="Financije">
+          <ScalarProperty Name="IDFinancije" ColumnName="IDFinancije" />
+          <ScalarProperty Name="IDRacun" ColumnName="IDRacun" />
+          <ScalarProperty Name="IDPrimka" ColumnName="IDPrimka" />
+          <ScalarProperty Name="Prihodi" ColumnName="Prihodi" />
+          <ScalarProperty Name="Rashodi" ColumnName="Rashodi" />
+          <ScalarProperty Name="Datum" ColumnName="Datum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kategorijas">
+      <EntityTypeMapping TypeName="ItronicModel.Kategorija">
+        <MappingFragment StoreEntitySet="Kategorija">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Korisniks">
+      <EntityTypeMapping TypeName="ItronicModel.Korisnik">
+        <MappingFragment StoreEntitySet="Korisnik">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Tip" ColumnName="Tip" />
+          <ScalarProperty Name="Ime" ColumnName="Ime" />
+          <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+          <ScalarProperty Name="KorisnickoIme" ColumnName="KorisnickoIme" />
+          <ScalarProperty Name="Lozinka" ColumnName="Lozinka" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kupacs">
+      <EntityTypeMapping TypeName="ItronicModel.Kupac">
+        <MappingFragment StoreEntitySet="Kupac">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Ime" ColumnName="Ime" />
+          <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+          <ScalarProperty Name="BrojMobitela" ColumnName="BrojMobitela" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+          <ScalarProperty Name="Grad" ColumnName="Grad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Primkas">
+      <EntityTypeMapping TypeName="ItronicModel.Primka">
+        <MappingFragment StoreEntitySet="Primka">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Datum" ColumnName="Datum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proizvods">
+      <EntityTypeMapping TypeName="ItronicModel.Proizvod">
+        <MappingFragment StoreEntitySet="Proizvod">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="KategorijaID" ColumnName="KategorijaID" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="ProdajnaCijena" ColumnName="ProdajnaCijena" />
+          <ScalarProperty Name="KupovnaCIjena" ColumnName="KupovnaCIjena" />
+          <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Racuns">
+      <EntityTypeMapping TypeName="ItronicModel.Racun">
+        <MappingFragment StoreEntitySet="Racun">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="KupacID" ColumnName="KupacID" />
+          <ScalarProperty Name="Datum" ColumnName="Datum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Recenzijas">
+      <EntityTypeMapping TypeName="ItronicModel.Recenzija">
+        <MappingFragment StoreEntitySet="Recenzija">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="KorisnikID" ColumnName="KorisnikID" />
+          <ScalarProperty Name="ProizvodID" ColumnName="ProizvodID" />
+          <ScalarProperty Name="Ocjena" ColumnName="Ocjena" />
+          <ScalarProperty Name="Komentar" ColumnName="Komentar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reklamacijas">
+      <EntityTypeMapping TypeName="ItronicModel.Reklamacija">
+        <MappingFragment StoreEntitySet="Reklamacija">
+          <ScalarProperty Name="IDReklamacija" ColumnName="IDReklamacija" />
+          <ScalarProperty Name="IDProizvod" ColumnName="IDProizvod" />
+          <ScalarProperty Name="IDKorisnik" ColumnName="IDKorisnik" />
+          <ScalarProperty Name="IDRacun" ColumnName="IDRacun" />
+          <ScalarProperty Name="Ime" ColumnName="Ime" />
+          <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StavkaPrimkes">
+      <EntityTypeMapping TypeName="ItronicModel.StavkaPrimke">
+        <MappingFragment StoreEntitySet="StavkaPrimke">
+          <ScalarProperty Name="PrimkaID" ColumnName="PrimkaID" />
+          <ScalarProperty Name="ProizvodID" ColumnName="ProizvodID" />
+          <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StavkaRacunas">
+      <EntityTypeMapping TypeName="ItronicModel.StavkaRacuna">
+        <MappingFragment StoreEntitySet="StavkaRacuna">
+          <ScalarProperty Name="RacunID" ColumnName="RacunID" />
+          <ScalarProperty Name="ProizvodID" ColumnName="ProizvodID" />
+          <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipKorisnikas">
+      <EntityTypeMapping TypeName="ItronicModel.TipKorisnika">
+        <MappingFragment StoreEntitySet="TipKorisnika">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
