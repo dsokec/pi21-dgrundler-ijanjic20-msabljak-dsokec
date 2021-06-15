@@ -8,12 +8,16 @@ namespace ItronicStore
 {
     public class UpravljanjeReklamacijama
     {
+        //public static List<Reklamacija> DohvatiSveReklamacije(Feedback povratnaInformacija)
         public static List<Reklamacija> DohvatiSveReklamacije()
         {
             List<Reklamacija> SveReklamacije = null;
             using (var db = new entities())
             {
+                
                 var dohvacenaReklamacija = from n in db.Reklamacija
+                                               //where n.IDKorisnik == korisnik.ID
+                                           // where n.IDReklamacija == povratnaInformacija.IDReklamacija
                                            select n;
                 SveReklamacije = dohvacenaReklamacija.ToList();
             }
@@ -189,6 +193,65 @@ namespace ItronicStore
             odabranaReklamacija = DohvatiSveReklamacije().Find(k => k.Email.Contains(korisnik.Email));
             if (odabranaReklamacija != null) return true;
             else return false;
+        }
+
+        public static int DohvatiZadnjuVrijednostIDja()
+        {
+            int zadnjiBroj;
+            using(var db = new entities())
+            {
+                zadnjiBroj = int.Parse(db.Reklamacija
+                            .OrderByDescending(p => p.IDReklamacija)
+                            .Select(r => r.IDReklamacija)
+                            .First().ToString());
+            }
+            /*
+            Reklamacija izabranaReklamacija = null;
+            izabranaReklamacija = DohvatiSveReklamacije().FindLast(k => k.IDReklamacija));
+            */
+            return zadnjiBroj;
+        }
+
+        public static List<Racun> DohvatiIDjeveProizvoda()
+        {
+            //List<Racun> SviIDRacuna = null;
+            
+            using (var db = new entities())
+            {
+                /*
+                var brojevi = db.Racun
+                    //.Where(x => x.ID > 0)
+                    .Select(u => u.ID);
+                SviIDRacuna = brojevi.ToList();
+                */
+
+                /*
+                var brojevi = from x in db.Racun
+                              select x;
+                return brojevi.ToList();
+                */
+                var brojevi = from x in db.Racun
+                              select x.ID;
+                return (List<Racun>)brojevi;
+            }
+            
+            //return SviIDRacuna;
+            /*
+            List<int> brojevi = null;
+            using(var db = new entities())
+            {
+                for (int i = 0; i < db.Racun.Count(); i++)
+                {
+                    brojevi[i] = int.Parse(db.Reklamacija
+                            //.OrderByDescending(p => p.IDReklamacija)
+                            .Select(r => r.IDReklamacija)
+                            .ToString());
+
+                }
+                return brojevi.ToList();
+            }
+            */
+
         }
     }
 }

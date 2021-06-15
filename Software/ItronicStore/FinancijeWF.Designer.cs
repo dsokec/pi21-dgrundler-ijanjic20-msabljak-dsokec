@@ -41,6 +41,10 @@ namespace ItronicStore
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,85 +52,84 @@ namespace ItronicStore
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(282, 40);
+            this.label1.Location = new System.Drawing.Point(232, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 32);
+            this.label1.Size = new System.Drawing.Size(124, 32);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Recenzija";
+            this.label1.Text = "Obračun";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(91, 409);
+            this.label2.Location = new System.Drawing.Point(70, 350);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 25);
+            this.label2.Size = new System.Drawing.Size(83, 25);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Komentar";
+            this.label2.Text = "Rashodi";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(91, 350);
+            this.label3.Location = new System.Drawing.Point(81, 291);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 25);
+            this.label3.Size = new System.Drawing.Size(72, 25);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Ocjena";
+            this.label3.Text = "Prihodi";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(65, 291);
+            this.label4.Location = new System.Drawing.Point(57, 232);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(118, 25);
+            this.label4.Size = new System.Drawing.Size(96, 25);
             this.label4.TabIndex = 3;
-            this.label4.Text = "ID_Proizvod";
+            this.label4.Text = "ID Primka";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(65, 232);
+            this.label5.Location = new System.Drawing.Point(61, 174);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(112, 25);
+            this.label5.Size = new System.Drawing.Size(92, 25);
             this.label5.TabIndex = 4;
-            this.label5.Text = "ID_Korisnik";
+            this.label5.Text = "ID Račun";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(210, 235);
+            this.textBox1.Location = new System.Drawing.Point(160, 174);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(280, 26);
             this.textBox1.TabIndex = 5;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(210, 294);
+            this.textBox2.Location = new System.Drawing.Point(160, 233);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(280, 26);
             this.textBox2.TabIndex = 6;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(210, 353);
+            this.textBox3.Location = new System.Drawing.Point(160, 292);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(280, 26);
             this.textBox3.TabIndex = 7;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(210, 412);
-            this.textBox4.Multiline = true;
+            this.textBox4.Location = new System.Drawing.Point(160, 351);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(280, 97);
+            this.textBox4.Size = new System.Drawing.Size(280, 26);
             this.textBox4.TabIndex = 8;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(566, 40);
+            this.dataGridView1.Location = new System.Drawing.Point(469, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
@@ -135,7 +138,7 @@ namespace ItronicStore
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(210, 176);
+            this.textBox5.Location = new System.Drawing.Point(160, 115);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(280, 26);
             this.textBox5.TabIndex = 11;
@@ -144,17 +147,57 @@ namespace ItronicStore
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(146, 173);
+            this.label6.Location = new System.Drawing.Point(41, 114);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(31, 25);
+            this.label6.Size = new System.Drawing.Size(112, 25);
             this.label6.TabIndex = 10;
-            this.label6.Text = "ID";
+            this.label6.Text = "ID Obračun";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(160, 410);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 38);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Spremi";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(258, 410);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 38);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Uredi";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(365, 410);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 38);
+            this.button3.TabIndex = 14;
+            this.button3.Text = "Obrisi";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(874, 441);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(99, 38);
+            this.button4.TabIndex = 15;
+            this.button4.Text = "Odustani";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // FinancijeWF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1082, 553);
+            this.ClientSize = new System.Drawing.Size(996, 498);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dataGridView1);
@@ -168,7 +211,7 @@ namespace ItronicStore
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FinancijeWF";
-            this.Text = "FinancijeWF";
+            this.Text = "Obračun";
             this.Load += new System.EventHandler(this.FinancijeWF_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -190,5 +233,9 @@ namespace ItronicStore
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }
