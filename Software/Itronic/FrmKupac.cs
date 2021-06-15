@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Itronic
 {
-    public partial class Form1 : Form
+    public partial class FrmKupac : Form
     {
-        public Form1()
+        public FrmKupac()
         {
             InitializeComponent();
         }
