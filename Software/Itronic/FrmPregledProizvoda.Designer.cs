@@ -147,6 +147,7 @@ namespace Itronic
             this.Name = "FrmPregledProizvoda";
             this.Text = "Pregled proizvoda";
             this.Load += new System.EventHandler(this.FrmPregledProizvoda_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FrmPregledProizvoda_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKatalog)).EndInit();
             this.ResumeLayout(false);
 
