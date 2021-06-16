@@ -33,7 +33,7 @@ namespace Itronic
             this.rtxtOpis = new System.Windows.Forms.RichTextBox();
             this.txtNaziv = new System.Windows.Forms.TextBox();
             this.txtKupovnaCijena = new System.Windows.Forms.TextBox();
-            this.txtPocetnaCijena = new System.Windows.Forms.TextBox();
+            this.txtProdajnaCijena = new System.Windows.Forms.TextBox();
             this.lblKategorija = new System.Windows.Forms.Label();
             this.lblNaziv = new System.Windows.Forms.Label();
             this.lblProdajnaCijena = new System.Windows.Forms.Label();
@@ -68,17 +68,17 @@ namespace Itronic
             // 
             // txtKupovnaCijena
             // 
-            this.txtKupovnaCijena.Location = new System.Drawing.Point(32, 137);
+            this.txtKupovnaCijena.Location = new System.Drawing.Point(226, 139);
             this.txtKupovnaCijena.Name = "txtKupovnaCijena";
             this.txtKupovnaCijena.Size = new System.Drawing.Size(100, 22);
             this.txtKupovnaCijena.TabIndex = 3;
             // 
-            // txtPocetnaCijena
+            // txtProdajnaCijena
             // 
-            this.txtPocetnaCijena.Location = new System.Drawing.Point(226, 137);
-            this.txtPocetnaCijena.Name = "txtPocetnaCijena";
-            this.txtPocetnaCijena.Size = new System.Drawing.Size(100, 22);
-            this.txtPocetnaCijena.TabIndex = 4;
+            this.txtProdajnaCijena.Location = new System.Drawing.Point(32, 139);
+            this.txtProdajnaCijena.Name = "txtProdajnaCijena";
+            this.txtProdajnaCijena.Size = new System.Drawing.Size(100, 22);
+            this.txtProdajnaCijena.TabIndex = 4;
             // 
             // lblKategorija
             // 
@@ -143,6 +143,7 @@ namespace Itronic
             this.btnDodaj.TabIndex = 10;
             this.btnDodaj.Text = "Dodaj";
             this.btnDodaj.UseVisualStyleBackColor = true;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
             // btnOdustani
             // 
@@ -152,6 +153,7 @@ namespace Itronic
             this.btnOdustani.TabIndex = 11;
             this.btnOdustani.Text = "Odustani";
             this.btnOdustani.UseVisualStyleBackColor = true;
+            this.btnOdustani.Click += new System.EventHandler(this.btnOdustani_Click);
             // 
             // FrmDodajProizvod
             // 
@@ -166,13 +168,14 @@ namespace Itronic
             this.Controls.Add(this.lblProdajnaCijena);
             this.Controls.Add(this.lblNaziv);
             this.Controls.Add(this.lblKategorija);
-            this.Controls.Add(this.txtPocetnaCijena);
+            this.Controls.Add(this.txtProdajnaCijena);
             this.Controls.Add(this.txtKupovnaCijena);
             this.Controls.Add(this.txtNaziv);
             this.Controls.Add(this.rtxtOpis);
             this.Controls.Add(this.cmbKategorija);
             this.Name = "FrmDodajProizvod";
             this.Text = "Dodavanje proizvoda";
+            this.Load += new System.EventHandler(this.FrmDodajProizvod_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,7 +187,7 @@ namespace Itronic
         private System.Windows.Forms.RichTextBox rtxtOpis;
         private System.Windows.Forms.TextBox txtNaziv;
         private System.Windows.Forms.TextBox txtKupovnaCijena;
-        private System.Windows.Forms.TextBox txtPocetnaCijena;
+        private System.Windows.Forms.TextBox txtProdajnaCijena;
         private System.Windows.Forms.Label lblKategorija;
         private System.Windows.Forms.Label lblNaziv;
         private System.Windows.Forms.Label lblProdajnaCijena;
