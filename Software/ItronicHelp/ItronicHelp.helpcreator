@@ -1,0 +1,179 @@
+<xml>
+  <info>
+    <version>DA-HelpCreator;1</version>
+  </info>
+  <content>
+    <generalsettings>
+      <projecturl>
+      </projecturl>
+      <autoexport>False</autoexport>
+      <OptimizeFileNames>True</OptimizeFileNames>
+      <sitemap>False</sitemap>
+      <imagesitemap>False</imagesitemap>
+      <StandardEditorType>Html</StandardEditorType>
+      <AutoSave>False</AutoSave>
+    </generalsettings>
+    <design>
+      <TemplateName>1</TemplateName>
+      <Breadcrump>True</Breadcrump>
+      <Menubar>False</Menubar>
+      <placeholders>
+        <placeholder id="title">
+          <name>Title</name>
+          <description>Title of the web site - used for the title tag and top bar.</description>
+          <content>Your Title</content>
+        </placeholder>
+        <placeholder id="author">
+          <name>Author meta tag</name>
+          <description>Will be outputted in the meta tag "author" of the website.</description>
+          <content>Author</content>
+        </placeholder>
+        <placeholder id="description">
+          <name>Description meta tag</name>
+          <description>Will be outputted in the meta tag "author" of the website.</description>
+          <content>
+          </content>
+        </placeholder>
+        <placeholder id="footer">
+          <name>Footer</name>
+          <description>Footer is shown at the end of the web page. Not available for all templates.</description>
+          <content>
+          </content>
+        </placeholder>
+      </placeholders>
+    </design>
+    <ftpsettings Id="8b7244eb-9692-43fe-986b-e2de1a6bbc01">
+      <profilname>
+      </profilname>
+      <servername>
+      </servername>
+      <username>
+      </username>
+      <password>
+      </password>
+      <hidePasswort>False</hidePasswort>
+      <autoDelete>False</autoDelete>
+      <synchronize>False</synchronize>
+      <openWebsite>False</openWebsite>
+      <ssltlsencryption>False</ssltlsencryption>
+      <sFTP>False</sFTP>
+      <directories>
+      </directories>
+      <numthreads>1</numthreads>
+    </ftpsettings>
+    <metatagsettings>
+      <title>
+      </title>
+      <author>
+      </author>
+      <description>
+      </description>
+      <keywords>
+      </keywords>
+      <robotsnoindex>False</robotsnoindex>
+      <robotsnofollow>False</robotsnofollow>
+      <isdate>False</isdate>
+      <istime>False</istime>
+      <date>1/1/0001 12:00:00 AM</date>
+      <time>1/1/0001 12:00:00 AM</time>
+      <istelephone>False</istelephone>
+      <recognizetelephone>False</recognizetelephone>
+      <isdateexpires>False</isdateexpires>
+      <istimeexpires>False</istimeexpires>
+      <dateexpires>1/1/0001 12:00:00 AM</dateexpires>
+      <timeexpires>1/1/0001 12:00:00 AM</timeexpires>
+      <secondsexpires>-1</secondsexpires>
+      <cachecontrol>0</cachecontrol>
+      <ispragmacachecontrol>False</ispragmacachecontrol>
+    </metatagsettings>
+    <DADocument>
+      <borderleft>25</borderleft>
+      <borderright>20</borderright>
+      <bordertop>20</bordertop>
+      <borderbottom>20</borderbottom>
+      <pagesize>5</pagesize>
+      <pageorientation>0</pageorientation>
+      <DocInfo>
+        <title>
+        </title>
+        <author>
+        </author>
+        <creator>
+        </creator>
+        <subject>
+        </subject>
+        <keywords>
+        </keywords>
+      </DocInfo>
+      <header>
+        <textleft>
+        </textleft>
+        <textmiddle>
+        </textmiddle>
+        <textright>
+        </textright>
+      </header>
+      <footer>
+        <textleft>
+        </textleft>
+        <textmiddle>
+        </textmiddle>
+        <textright>
+        </textright>
+      </footer>
+      <LeftBoderOptions>
+        <text>
+        </text>
+        <printpunchermark>False</printpunchermark>
+        <foldmarks>0</foldmarks>
+      </LeftBoderOptions>
+    </DADocument>
+    <helpExplorerData>
+      <Title>Help Explorer</Title>
+      <ShowToolbar>True</ShowToolbar>
+      <StartMaximized>False</StartMaximized>
+      <WindowCenter>True</WindowCenter>
+      <WindowLeft>200</WindowLeft>
+      <WindowHeight>800</WindowHeight>
+      <WindowTop>300</WindowTop>
+      <WindowWidth>1024</WindowWidth>
+      <ExportDir>
+      </ExportDir>
+      <title>Help Explorer</title>
+    </helpExplorerData>
+    <CHMExport>
+      <Title>Help</Title>
+      <Language>46</Language>
+      <ExportFileName>help.chm</ExportFileName>
+      <ThemeName>
+      </ThemeName>
+      <WindowWidth>1024</WindowWidth>
+      <WindowHeight>800</WindowHeight>
+      <WindowLeft>200</WindowLeft>
+      <WindowTop>300</WindowTop>
+      <AddFullTextSearch>False</AddFullTextSearch>
+      <ButtonHideShow>False</ButtonHideShow>
+      <ButtonBack>True</ButtonBack>
+      <ButtonForward>True</ButtonForward>
+      <ButtonStop>False</ButtonStop>
+      <ButtonRefresh>False</ButtonRefresh>
+      <ButtonHome>True</ButtonHome>
+      <ButtonOptions>False</ButtonOptions>
+      <ButtonPrint>False</ButtonPrint>
+      <AddRoot>True</AddRoot>
+      <ThemeName>
+      </ThemeName>
+    </CHMExport>
+    <treeContent>
+      <DirectoryNode Path="" Expanded="True" Id="c167ae1f-6545-4201-8a45-e7d7e1a02149">
+        <DirectoryNode Path="Pregled proizvoda" Expanded="False" Id="34aa3116-9d47-48d0-bb64-bd884cffa5f9" />
+        <DirectoryNode Path="Dodaj proizvod" Expanded="False" Id="885cced2-302a-4141-93c7-ef88c1d196d4" />
+        <DirectoryNode Path="Ažuriraj proizvod" Expanded="False" Id="af01ebf2-9c4b-4399-b4f1-5c5d7faecf8d" />
+        <DirectoryNode Path="Otvori trgovinu" Expanded="False" Id="5faabe10-4cfa-4264-a042-e59dc6cc604a" />
+        <DirectoryNode Path="Nabavi robu" Expanded="False" Id="09d8776a-9ffe-4762-af5f-cbd14c7b8241" />
+      </DirectoryNode>
+    </treeContent>
+    <exportPath>
+    </exportPath>
+  </content>
+</xml>
