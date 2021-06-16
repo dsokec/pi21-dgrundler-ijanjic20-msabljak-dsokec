@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ItronicClassLibrary;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,11 @@ namespace Itronic
 {
     public partial class FrmAzurirajProizvod : Form
     {
-        public FrmAzurirajProizvod()
+        private Proizvod odabraniProizvod;
+        public FrmAzurirajProizvod(Proizvod proizvod)
         {
             InitializeComponent();
+            odabraniProizvod = proizvod;
         }
     }
 }

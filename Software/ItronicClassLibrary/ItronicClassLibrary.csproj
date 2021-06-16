@@ -74,6 +74,7 @@
     <Compile Include="Kategorija.cs">
       <DependentUpon>ItronicModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="KategorijaExt.cs" />
     <Compile Include="Korisnik.cs">
       <DependentUpon>ItronicModel.tt</DependentUpon>
     </Compile>
