@@ -51,12 +51,26 @@ namespace Itronic
             Kategorija odabranaKategorija = cmbKategorija.SelectedItem as Kategorija;
             dgvKatalog.DataSource = null;
             dgvKatalog.DataSource = Repository.DohvatiProizvodePoKategoriji(odabranaKategorija);
+            dgvKatalog.Columns["Kategorija"].Visible = false;
+            dgvKatalog.Columns["Recenzijas"].Visible = false;
+            dgvKatalog.Columns["Reklamacijas"].Visible = false;
+            dgvKatalog.Columns["StavkaPrimkes"].Visible = false;
+            dgvKatalog.Columns["StavkaRacunas"].Visible = false;
+            dgvKatalog.Columns["ID"].Visible = false;
+            dgvKatalog.Columns["KategorijaID"].Visible = false;
         }
 
         private void btnMakniFiltriranje_Click(object sender, EventArgs e)
         {
             dgvKatalog.DataSource = null;
             dgvKatalog.DataSource = Repository.DohvatiSveProizvode();
+            dgvKatalog.Columns["Kategorija"].Visible = false;
+            dgvKatalog.Columns["Recenzijas"].Visible = false;
+            dgvKatalog.Columns["Reklamacijas"].Visible = false;
+            dgvKatalog.Columns["StavkaPrimkes"].Visible = false;
+            dgvKatalog.Columns["StavkaRacunas"].Visible = false;
+            dgvKatalog.Columns["ID"].Visible = false;
+            dgvKatalog.Columns["KategorijaID"].Visible = false;
         }
 
         private void btnDodajProizvod_Click(object sender, EventArgs e)

@@ -159,11 +159,27 @@ namespace Itronic
         {
             Kategorija kategorija = cbKategorija.SelectedItem as Kategorija;
             dgvKatalog.DataSource = Repository.DohvatiProizvodePoKategoriji(kategorija);
+            dgvKatalog.Columns["Kategorija"].Visible = false;
+            dgvKatalog.Columns["Recenzijas"].Visible = false;
+            dgvKatalog.Columns["Reklamacijas"].Visible = false;
+            dgvKatalog.Columns["StavkaPrimkes"].Visible = false;
+            dgvKatalog.Columns["StavkaRacunas"].Visible = false;
+            dgvKatalog.Columns["ID"].Visible = false;
+            dgvKatalog.Columns["KategorijaID"].Visible = false;
+            dgvKatalog.Columns["KupovnaCijena"].Visible = false;
         }
 
         private void btnMakniFiltriranje_Click(object sender, EventArgs e)
         {
             dgvKatalog.DataSource = Repository.DohvatiSveProizvode();
+            dgvKatalog.Columns["Kategorija"].Visible = false;
+            dgvKatalog.Columns["Recenzijas"].Visible = false;
+            dgvKatalog.Columns["Reklamacijas"].Visible = false;
+            dgvKatalog.Columns["StavkaPrimkes"].Visible = false;
+            dgvKatalog.Columns["StavkaRacunas"].Visible = false;
+            dgvKatalog.Columns["ID"].Visible = false;
+            dgvKatalog.Columns["KategorijaID"].Visible = false;
+            dgvKatalog.Columns["KupovnaCijena"].Visible = false;
         }
 
         private void btnOdustani_Click(object sender, EventArgs e)
