@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace Itronic
 {
+    /// <summary>
+    /// Autor: Domagoj Grundler
+    /// </summary>
     public partial class FrmPregledProizvoda : Form
     {
         public FrmPregledProizvoda()
@@ -87,13 +90,14 @@ namespace Itronic
             try
             {
                 odabraniProizvod = VratiProizvod();
-                Repository.ObrisiProizvod(odabraniProizvod);
             }
             catch (NullReferenceException)
             {
                 MessageBox.Show("Niste odabrali proizvod!");
                 return;
             }
+            Repository.ObrisiProizvod(odabraniProizvod);
+            PrikaziProizvode();
         }
 
         private void btnTrgovina_Click(object sender, EventArgs e)

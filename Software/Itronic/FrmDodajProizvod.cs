@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace Itronic
 {
+    /// <summary>
+    /// Autor: Domagoj Grundler
+    /// </summary>
     public partial class FrmDodajProizvod : Form
     {
         public FrmDodajProizvod()
