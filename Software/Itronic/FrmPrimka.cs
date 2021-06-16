@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -166,6 +168,30 @@ namespace Itronic
         private void dgvKatalog_SelectionChanged(object sender, EventArgs e)
         {
             odabraniProizvod = dgvKatalog.CurrentRow.DataBoundItem as Proizvod;
+        }
+
+        /// <summary>
+        /// Kod preuzet sa: https://helpcreator.net/en/index.php/2019/01/01/context-sensitive-help-in-c-and-chm-files/
+        /// </summary>
+        /// <param name="id"></param>
+        private void OpenHelp(int id = -1)
+        {
+            String help = Path.Combine(new Uri(Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase)).LocalPath, "help.chm");
+            if (id == -1)
+            {
+                //open help with default settings (do not jump to topic)
+                System.Diagnostics.Process.Start(help);
+            }
+            else
+            {
+                //jump to topic
+                Help.ShowHelp(this, help, HelpNavigator.TopicId, id.ToString());
+            }
+        }
+
+        private void FrmPrimka_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            OpenHelp(1050);
         }
     }
 }

@@ -157,7 +157,7 @@ namespace Itronic
 
         private void FrmPregledProizvoda_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
-            OpenHelp();
+            OpenHelp(1010);
         }
     }
 }

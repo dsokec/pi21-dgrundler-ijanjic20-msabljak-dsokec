@@ -176,6 +176,7 @@ namespace Itronic
             this.Name = "FrmAzurirajProizvod";
             this.Text = "Ažuriranje proizvoda";
             this.Load += new System.EventHandler(this.FrmAzurirajProizvod_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FrmAzurirajProizvod_HelpRequested);
             this.ResumeLayout(false);
             this.PerformLayout();
 

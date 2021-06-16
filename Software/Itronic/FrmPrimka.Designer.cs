@@ -198,6 +198,7 @@ namespace Itronic
             this.Name = "FrmPrimka";
             this.Text = "Naručivanje zaliha";
             this.Load += new System.EventHandler(this.FrmPrimka_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FrmPrimka_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrimka)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKatalog)).EndInit();
             this.ResumeLayout(false);

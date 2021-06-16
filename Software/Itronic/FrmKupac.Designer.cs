@@ -183,6 +183,7 @@ namespace Itronic
             this.Controls.Add(this.lblIme);
             this.Name = "FrmKupac";
             this.Text = "Podaci kupca";
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FrmKupac_HelpRequested);
             this.ResumeLayout(false);
             this.PerformLayout();
 
