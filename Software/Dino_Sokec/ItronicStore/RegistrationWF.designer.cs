@@ -136,6 +136,7 @@ namespace Projekt2022
             this.Name = "RegistrationWF";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registracija";
+            this.Load += new System.EventHandler(this.RegistrationWF_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

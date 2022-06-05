@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ItronicStore;
 
 namespace Projekt2022
 {
@@ -91,6 +92,11 @@ namespace Projekt2022
         private void btnPrijaviSe_Click(object sender, EventArgs e)
         {
             Povratak_U_LoginFormu();
+        }
+
+        private void RegistrationWF_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
