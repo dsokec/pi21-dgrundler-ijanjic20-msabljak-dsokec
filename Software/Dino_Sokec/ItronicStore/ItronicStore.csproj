@@ -85,12 +85,24 @@
     <Compile Include="NoviZapisWF.Designer.cs">
       <DependentUpon>NoviZapisWF.cs</DependentUpon>
     </Compile>
+    <Compile Include="PocetnaFormaWF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PocetnaFormaWF.designer.cs">
+      <DependentUpon>PocetnaFormaWF.cs</DependentUpon>
+    </Compile>
     <Compile Include="RacunID.cs" />
     <Compile Include="RecenzijaWF.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RecenzijaWF.Designer.cs">
       <DependentUpon>RecenzijaWF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrationWF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrationWF.designer.cs">
+      <DependentUpon>RegistrationWF.cs</DependentUpon>
     </Compile>
     <Compile Include="ReklamacijaWF.cs">
       <SubType>Form</SubType>
@@ -178,6 +190,9 @@
     </Compile>
     <EmbeddedResource Include="RecenzijaWF.resx">
       <DependentUpon>RecenzijaWF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistrationWF.resx">
+      <DependentUpon>RegistrationWF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReklamacijaWF.resx">
       <DependentUpon>ReklamacijaWF.cs</DependentUpon>
