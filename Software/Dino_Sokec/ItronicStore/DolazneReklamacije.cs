@@ -7,16 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using 
 
 namespace ItronicStore
 {
-    public partial class FeedbackWF : Form
+    public partial class DolazneReklamacije : Form
     {
-        public FeedbackWF()
+        public DolazneReklamacije()
         {
             InitializeComponent();
-            
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

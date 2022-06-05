@@ -1,7 +1,7 @@
 ﻿
 namespace ItronicStore
 {
-    partial class FeedbackWF
+    partial class PovratnaInformacija
     {
         /// <summary>
         /// Required designer variable.
@@ -183,6 +183,7 @@ namespace ItronicStore
             // 
             // button1
             // 
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button1.Location = new System.Drawing.Point(160, 437);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 38);
@@ -190,7 +191,7 @@ namespace ItronicStore
             this.button1.Text = "Spremi";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // FeedbackWF
+            // PovratnaInformacija
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -211,8 +212,10 @@ namespace ItronicStore
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "FeedbackWF";
-            this.Text = "FeedbackWF";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "PovratnaInformacija";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Povratna informacija";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

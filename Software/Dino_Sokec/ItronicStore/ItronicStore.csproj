@@ -55,14 +55,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DolazneReklamacije.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DolazneReklamacije.Designer.cs">
+      <DependentUpon>DolazneReklamacije.cs</DependentUpon>
+    </Compile>
     <Compile Include="Feedback.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="FeedbackWF.cs">
+    <Compile Include="PovratnaInformacija.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FeedbackWF.Designer.cs">
-      <DependentUpon>FeedbackWF.cs</DependentUpon>
+    <Compile Include="PovratnaInformacija.Designer.cs">
+      <DependentUpon>PovratnaInformacija.cs</DependentUpon>
     </Compile>
     <Compile Include="Financije.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -162,8 +168,11 @@
     <Compile Include="TipKorisnika.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FeedbackWF.resx">
-      <DependentUpon>FeedbackWF.cs</DependentUpon>
+    <EmbeddedResource Include="DolazneReklamacije.resx">
+      <DependentUpon>DolazneReklamacije.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PovratnaInformacija.resx">
+      <DependentUpon>PovratnaInformacija.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FinancijeWF.resx">
       <DependentUpon>FinancijeWF.cs</DependentUpon>
