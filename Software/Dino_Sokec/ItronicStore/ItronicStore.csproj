@@ -91,7 +91,6 @@
     <Compile Include="PocetnaFormaWF.designer.cs">
       <DependentUpon>PocetnaFormaWF.cs</DependentUpon>
     </Compile>
-    <Compile Include="RacunID.cs" />
     <Compile Include="RecenzijaWF.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,10 +162,6 @@
     <Compile Include="TipKorisnika.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="UpravljanjeFinancijama.cs" />
-    <Compile Include="UpravljanjePovratnimInformacijama.cs" />
-    <Compile Include="UpravljanjeRecenzijama.cs" />
-    <Compile Include="UpravljanjeReklamacijama.cs" />
     <EmbeddedResource Include="FeedbackWF.resx">
       <DependentUpon>FeedbackWF.cs</DependentUpon>
     </EmbeddedResource>
@@ -232,6 +227,15 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary\ClassLibrary.csproj">
+      <Project>{3026e3ee-d412-49c4-8972-eb2b9f238844}</Project>
+      <Name>ClassLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

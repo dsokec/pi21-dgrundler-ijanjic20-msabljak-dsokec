@@ -15,6 +15,7 @@ namespace ItronicStore
         public FeedbackWF()
         {
             InitializeComponent();
+            
         }
     }
 }
