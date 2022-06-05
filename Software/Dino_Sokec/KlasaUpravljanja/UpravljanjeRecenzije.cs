@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace ItronicStore
+namespace KlasaUpravljanja
 {
-    public class UpravljanjeRecenzijama
+    class UpravljanjeRecenzije
     {
         public static List<Recenzija> DohvatiSveRecenzije()
         {

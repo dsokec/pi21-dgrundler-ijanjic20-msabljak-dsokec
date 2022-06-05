@@ -232,9 +232,9 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary\ClassLibrary.csproj">
-      <Project>{3026e3ee-d412-49c4-8972-eb2b9f238844}</Project>
-      <Name>ClassLibrary</Name>
+    <ProjectReference Include="..\KlasaUpravljanja\KlasaUpravljanja.csproj">
+      <Project>{45b451c3-3631-4a66-8fe9-7d553c4e345b}</Project>
+      <Name>KlasaUpravljanja</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

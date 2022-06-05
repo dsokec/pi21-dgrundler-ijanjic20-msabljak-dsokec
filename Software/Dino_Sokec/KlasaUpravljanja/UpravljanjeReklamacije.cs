@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace ItronicStore
+namespace KlasaUpravljanja
 {
-    public class UpravljanjeReklamacijama
+    class UpravljanjeReklamacije
     {
         //public static List<Reklamacija> DohvatiSveReklamacije(Feedback povratnaInformacija)
         public static List<Reklamacija> DohvatiSveReklamacije()
@@ -14,10 +12,10 @@ namespace ItronicStore
             List<Reklamacija> SveReklamacije = null;
             using (var db = new entities())
             {
-                
+
                 var dohvacenaReklamacija = from n in db.Reklamacija
                                                //where n.IDKorisnik == korisnik.ID
-                                           // where n.IDReklamacija == povratnaInformacija.IDReklamacija
+                                               // where n.IDReklamacija == povratnaInformacija.IDReklamacija
                                            select n;
                 SveReklamacije = dohvacenaReklamacija.ToList();
             }
@@ -198,7 +196,7 @@ namespace ItronicStore
         public static int DohvatiZadnjuVrijednostIDja()
         {
             int zadnjiBroj;
-            using(var db = new entities())
+            using (var db = new entities())
             {
                 zadnjiBroj = int.Parse(db.Reklamacija
                             .OrderByDescending(p => p.IDReklamacija)
@@ -215,7 +213,7 @@ namespace ItronicStore
         public static List<Racun> DohvatiIDjeveProizvoda()
         {
             //List<Racun> SviIDRacuna = null;
-            
+
             using (var db = new entities())
             {
                 /*
@@ -234,7 +232,7 @@ namespace ItronicStore
                               select x.ID;
                 return (List<Racun>)brojevi;
             }
-            
+
             //return SviIDRacuna;
             /*
             List<int> brojevi = null;

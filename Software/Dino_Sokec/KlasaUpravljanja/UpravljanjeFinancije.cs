@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ItronicStore
+namespace KlasaUpravljanja
 {
-    public class UpravljanjeFinancijama
+    public class UpravljanjeFinancije
     {
         public static List<Financije> DohvatiFinancije()
         {

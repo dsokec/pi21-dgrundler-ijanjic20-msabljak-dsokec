@@ -3,6 +3,7 @@ using System;
 using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
+using KlasaUpravljanja;
 
 namespace Projekt2022
 {
