@@ -73,6 +73,12 @@
     <Compile Include="FinancijeWF.Designer.cs">
       <DependentUpon>FinancijeWF.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginWF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginWF.designer.cs">
+      <DependentUpon>LoginWF.cs</DependentUpon>
+    </Compile>
     <Compile Include="NoviZapisWF.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FinancijeWF.resx">
       <DependentUpon>FinancijeWF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginWF.resx">
+      <DependentUpon>LoginWF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NoviZapisWF.resx">
       <DependentUpon>NoviZapisWF.cs</DependentUpon>
