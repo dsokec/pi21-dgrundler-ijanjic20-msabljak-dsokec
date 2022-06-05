@@ -1,7 +1,7 @@
 ﻿
 namespace ItronicStore
 {
-    partial class RecenzijaWF
+    partial class KorisnickaRecenzija
     {
         /// <summary>
         /// Required designer variable.

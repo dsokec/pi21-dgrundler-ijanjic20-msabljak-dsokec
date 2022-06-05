@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace ItronicStore
 {
-    public partial class FinancijeWF : Form
+    public partial class GrafickiPrikaz : Form
     {
-        public FinancijeWF()
+        public GrafickiPrikaz()
         {
             InitializeComponent();
         }

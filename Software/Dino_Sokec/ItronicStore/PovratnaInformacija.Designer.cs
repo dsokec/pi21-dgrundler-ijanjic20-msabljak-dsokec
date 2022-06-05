@@ -29,15 +29,9 @@ namespace ItronicStore
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,25 +39,14 @@ namespace ItronicStore
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(160, 89);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(280, 26);
-            this.textBox5.TabIndex = 23;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(122, 90);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(31, 25);
-            this.label6.TabIndex = 22;
-            this.label6.Text = "ID";
             // 
             // dataGridView1
             // 
@@ -89,40 +72,6 @@ namespace ItronicStore
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(280, 26);
             this.textBox3.TabIndex = 19;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(160, 207);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(280, 26);
-            this.textBox2.TabIndex = 18;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(160, 148);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(280, 26);
-            this.textBox1.TabIndex = 17;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(41, 149);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(112, 25);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "ID_Korisnik";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 208);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(147, 25);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "ID_Reklamacija";
             // 
             // label3
             // 
@@ -191,6 +140,57 @@ namespace ItronicStore
             this.button1.Text = "Spremi";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(6, 208);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(147, 25);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "ID_Reklamacija";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(41, 149);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(112, 25);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "ID_Korisnik";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(160, 148);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(280, 26);
+            this.textBox1.TabIndex = 17;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(160, 207);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(280, 26);
+            this.textBox2.TabIndex = 18;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(122, 90);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(31, 25);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "ID";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(160, 89);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(280, 26);
+            this.textBox5.TabIndex = 23;
+            // 
             // PovratnaInformacija
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -223,16 +223,9 @@ namespace ItronicStore
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -240,5 +233,11 @@ namespace ItronicStore
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox5;
     }
 }

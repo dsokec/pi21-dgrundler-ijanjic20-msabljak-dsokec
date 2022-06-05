@@ -11,9 +11,9 @@ using ItronicStore;
 
 namespace ItronicStore
 {
-    public partial class RecenzijaWF : Form
+    public partial class KorisnickaRecenzija : Form
     {
-        public RecenzijaWF()
+        public KorisnickaRecenzija()
         {
             InitializeComponent();
         }
