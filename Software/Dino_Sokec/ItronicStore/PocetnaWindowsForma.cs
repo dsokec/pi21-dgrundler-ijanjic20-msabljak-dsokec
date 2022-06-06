@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Projekt2022
+namespace ItronicStore
 {
     public partial class PocetnaFormaWF : Form
     {
@@ -16,5 +16,6 @@ namespace Projekt2022
         {
             InitializeComponent();
         }
+
     }
 }

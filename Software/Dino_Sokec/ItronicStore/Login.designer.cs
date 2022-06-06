@@ -40,19 +40,21 @@ namespace Projekt2022
             this.btnRegistrirajSe = new System.Windows.Forms.Button();
             this.btnIzlaz = new System.Windows.Forms.Button();
             this.chkPrikaziLozinku = new System.Windows.Forms.CheckBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // txtKorisnickoIme
             // 
-            this.txtKorisnickoIme.Location = new System.Drawing.Point(140, 152);
+            this.txtKorisnickoIme.Location = new System.Drawing.Point(457, 167);
             this.txtKorisnickoIme.Name = "txtKorisnickoIme";
             this.txtKorisnickoIme.Size = new System.Drawing.Size(183, 26);
             this.txtKorisnickoIme.TabIndex = 0;
             // 
             // txtLozinka
             // 
-            this.txtLozinka.Location = new System.Drawing.Point(140, 204);
+            this.txtLozinka.Location = new System.Drawing.Point(457, 219);
             this.txtLozinka.Name = "txtLozinka";
             this.txtLozinka.Size = new System.Drawing.Size(183, 26);
             this.txtLozinka.TabIndex = 1;
@@ -60,7 +62,7 @@ namespace Projekt2022
             // 
             // btnPrijaviSe
             // 
-            this.btnPrijaviSe.Location = new System.Drawing.Point(70, 296);
+            this.btnPrijaviSe.Location = new System.Drawing.Point(387, 311);
             this.btnPrijaviSe.Name = "btnPrijaviSe";
             this.btnPrijaviSe.Size = new System.Drawing.Size(96, 32);
             this.btnPrijaviSe.TabIndex = 2;
@@ -70,7 +72,7 @@ namespace Projekt2022
             // 
             // btnNastaviKaoGost
             // 
-            this.btnNastaviKaoGost.Location = new System.Drawing.Point(157, 363);
+            this.btnNastaviKaoGost.Location = new System.Drawing.Point(474, 378);
             this.btnNastaviKaoGost.Name = "btnNastaviKaoGost";
             this.btnNastaviKaoGost.Size = new System.Drawing.Size(146, 35);
             this.btnNastaviKaoGost.TabIndex = 4;
@@ -80,7 +82,7 @@ namespace Projekt2022
             // lblKorisnickoIme
             // 
             this.lblKorisnickoIme.AutoSize = true;
-            this.lblKorisnickoIme.Location = new System.Drawing.Point(20, 155);
+            this.lblKorisnickoIme.Location = new System.Drawing.Point(337, 170);
             this.lblKorisnickoIme.Name = "lblKorisnickoIme";
             this.lblKorisnickoIme.Size = new System.Drawing.Size(114, 20);
             this.lblKorisnickoIme.TabIndex = 2;
@@ -89,7 +91,7 @@ namespace Projekt2022
             // lblLozinka
             // 
             this.lblLozinka.AutoSize = true;
-            this.lblLozinka.Location = new System.Drawing.Point(66, 204);
+            this.lblLozinka.Location = new System.Drawing.Point(383, 219);
             this.lblLozinka.Name = "lblLozinka";
             this.lblLozinka.Size = new System.Drawing.Size(68, 20);
             this.lblLozinka.TabIndex = 2;
@@ -98,15 +100,16 @@ namespace Projekt2022
             // lblNaslov
             // 
             this.lblNaslov.AutoSize = true;
-            this.lblNaslov.Location = new System.Drawing.Point(176, 101);
+            this.lblNaslov.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNaslov.Location = new System.Drawing.Point(469, 115);
             this.lblNaslov.Name = "lblNaslov";
-            this.lblNaslov.Size = new System.Drawing.Size(113, 20);
+            this.lblNaslov.Size = new System.Drawing.Size(170, 26);
             this.lblNaslov.TabIndex = 2;
             this.lblNaslov.Text = "Itronic trgovina";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(180, 22);
+            this.pictureBox1.Location = new System.Drawing.Point(497, 37);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 50);
             this.pictureBox1.TabIndex = 3;
@@ -114,7 +117,7 @@ namespace Projekt2022
             // 
             // btnRegistrirajSe
             // 
-            this.btnRegistrirajSe.Location = new System.Drawing.Point(277, 296);
+            this.btnRegistrirajSe.Location = new System.Drawing.Point(594, 311);
             this.btnRegistrirajSe.Name = "btnRegistrirajSe";
             this.btnRegistrirajSe.Size = new System.Drawing.Size(115, 32);
             this.btnRegistrirajSe.TabIndex = 3;
@@ -124,7 +127,7 @@ namespace Projekt2022
             // 
             // btnIzlaz
             // 
-            this.btnIzlaz.Location = new System.Drawing.Point(397, 418);
+            this.btnIzlaz.Location = new System.Drawing.Point(714, 433);
             this.btnIzlaz.Name = "btnIzlaz";
             this.btnIzlaz.Size = new System.Drawing.Size(66, 40);
             this.btnIzlaz.TabIndex = 5;
@@ -135,7 +138,7 @@ namespace Projekt2022
             // chkPrikaziLozinku
             // 
             this.chkPrikaziLozinku.AutoSize = true;
-            this.chkPrikaziLozinku.Location = new System.Drawing.Point(330, 205);
+            this.chkPrikaziLozinku.Location = new System.Drawing.Point(647, 220);
             this.chkPrikaziLozinku.Name = "chkPrikaziLozinku";
             this.chkPrikaziLozinku.Size = new System.Drawing.Size(134, 24);
             this.chkPrikaziLozinku.TabIndex = 6;
@@ -143,11 +146,21 @@ namespace Projekt2022
             this.chkPrikaziLozinku.UseVisualStyleBackColor = true;
             this.chkPrikaziLozinku.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.GreenYellow;
+            this.pictureBox2.Location = new System.Drawing.Point(1, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(330, 481);
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
+            // 
             // wfLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(493, 480);
+            this.ClientSize = new System.Drawing.Size(802, 480);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.chkPrikaziLozinku);
             this.Controls.Add(this.btnIzlaz);
             this.Controls.Add(this.btnRegistrirajSe);
@@ -166,6 +179,7 @@ namespace Projekt2022
             this.Load += new System.EventHandler(this.wfLogin_Load);
             this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.wfLogin_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,6 +198,7 @@ namespace Projekt2022
         private System.Windows.Forms.Button btnRegistrirajSe;
         private System.Windows.Forms.Button btnIzlaz;
         private System.Windows.Forms.CheckBox chkPrikaziLozinku;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

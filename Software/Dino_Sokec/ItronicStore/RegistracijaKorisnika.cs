@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ItronicStore;
 
-namespace Projekt2022
+namespace ItronicStore
 {
     public partial class RegistrationWF : Form
     {
