@@ -86,11 +86,11 @@
     <Compile Include="Login.designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="NoviZapisWF.cs">
+    <Compile Include="NovaReklamacija.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NoviZapisWF.Designer.cs">
-      <DependentUpon>NoviZapisWF.cs</DependentUpon>
+    <Compile Include="NovaReklamacija.Designer.cs">
+      <DependentUpon>NovaReklamacija.cs</DependentUpon>
     </Compile>
     <Compile Include="PocetnaFormaWF.cs">
       <SubType>Form</SubType>
@@ -104,11 +104,11 @@
     <Compile Include="KorisnickaRecenzija.Designer.cs">
       <DependentUpon>KorisnickaRecenzija.cs</DependentUpon>
     </Compile>
-    <Compile Include="RegistrationWF.cs">
+    <Compile Include="RegistracijaKorisnika.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegistrationWF.designer.cs">
-      <DependentUpon>RegistrationWF.cs</DependentUpon>
+    <Compile Include="RegistracijaKorisnika.designer.cs">
+      <DependentUpon>RegistracijaKorisnika.cs</DependentUpon>
     </Compile>
     <Compile Include="ReklamacijaWF.cs">
       <SubType>Form</SubType>
@@ -181,8 +181,8 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NoviZapisWF.resx">
-      <DependentUpon>NoviZapisWF.cs</DependentUpon>
+    <EmbeddedResource Include="NovaReklamacija.resx">
+      <DependentUpon>NovaReklamacija.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -196,8 +196,8 @@
     <EmbeddedResource Include="KorisnickaRecenzija.resx">
       <DependentUpon>KorisnickaRecenzija.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RegistrationWF.resx">
-      <DependentUpon>RegistrationWF.cs</DependentUpon>
+    <EmbeddedResource Include="RegistracijaKorisnika.resx">
+      <DependentUpon>RegistracijaKorisnika.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReklamacijaWF.resx">
       <DependentUpon>ReklamacijaWF.cs</DependentUpon>

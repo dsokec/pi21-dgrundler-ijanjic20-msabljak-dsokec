@@ -11,9 +11,9 @@ using ItronicStore;
 
 namespace ItronicStore
 {
-    public partial class NoviZapisWF : Form
+    public partial class NovaReklamacija : Form
     {
-        public NoviZapisWF()
+        public NovaReklamacija()
         {
             InitializeComponent();
         }
@@ -46,6 +46,16 @@ namespace ItronicStore
             int zadnjiID = UpravljanjeReklamacijama.DohvatiZadnjuVrijednostIDja();
             textBoxID.Text = (zadnjiID + 1).ToString();
             textBoxID.ReadOnly = true;
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

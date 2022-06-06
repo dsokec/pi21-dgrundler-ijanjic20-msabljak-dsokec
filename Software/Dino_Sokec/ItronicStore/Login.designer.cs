@@ -60,9 +60,9 @@ namespace Projekt2022
             // 
             // btnPrijaviSe
             // 
-            this.btnPrijaviSe.Location = new System.Drawing.Point(55, 276);
+            this.btnPrijaviSe.Location = new System.Drawing.Point(70, 296);
             this.btnPrijaviSe.Name = "btnPrijaviSe";
-            this.btnPrijaviSe.Size = new System.Drawing.Size(133, 52);
+            this.btnPrijaviSe.Size = new System.Drawing.Size(96, 32);
             this.btnPrijaviSe.TabIndex = 2;
             this.btnPrijaviSe.Text = "Prijavi se";
             this.btnPrijaviSe.UseVisualStyleBackColor = true;
@@ -70,9 +70,9 @@ namespace Projekt2022
             // 
             // btnNastaviKaoGost
             // 
-            this.btnNastaviKaoGost.Location = new System.Drawing.Point(157, 357);
+            this.btnNastaviKaoGost.Location = new System.Drawing.Point(157, 363);
             this.btnNastaviKaoGost.Name = "btnNastaviKaoGost";
-            this.btnNastaviKaoGost.Size = new System.Drawing.Size(154, 52);
+            this.btnNastaviKaoGost.Size = new System.Drawing.Size(146, 35);
             this.btnNastaviKaoGost.TabIndex = 4;
             this.btnNastaviKaoGost.Text = "Nastavi kao gost";
             this.btnNastaviKaoGost.UseVisualStyleBackColor = true;
@@ -114,9 +114,9 @@ namespace Projekt2022
             // 
             // btnRegistrirajSe
             // 
-            this.btnRegistrirajSe.Location = new System.Drawing.Point(277, 276);
+            this.btnRegistrirajSe.Location = new System.Drawing.Point(277, 296);
             this.btnRegistrirajSe.Name = "btnRegistrirajSe";
-            this.btnRegistrirajSe.Size = new System.Drawing.Size(137, 52);
+            this.btnRegistrirajSe.Size = new System.Drawing.Size(115, 32);
             this.btnRegistrirajSe.TabIndex = 3;
             this.btnRegistrirajSe.Text = "Registriraj se";
             this.btnRegistrirajSe.UseVisualStyleBackColor = true;
