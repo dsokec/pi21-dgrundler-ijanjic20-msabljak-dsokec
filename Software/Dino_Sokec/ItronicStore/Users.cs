@@ -12,15 +12,11 @@ namespace ItronicStore
     using System;
     using System.Collections.Generic;
     
-    public partial class Recenzija
+    public partial class Users
     {
-        public int ID { get; set; }
-        public int KorisnikID { get; set; }
-        public int ProizvodID { get; set; }
-        public int Ocjena { get; set; }
-        public string Komentar { get; set; }
-    
-        public virtual Korisnik Korisnik { get; set; }
-        public virtual Proizvod Proizvod { get; set; }
+        public int IDUser { get; set; }
+        public string Ime { get; set; }
+        public string Prezime { get; set; }
+        public string Lozinka { get; set; }
     }
 }

@@ -45,7 +45,10 @@ namespace ItronicStore
 
         private bool ProvjeriPodatkeNaServeru(string korisnik, string pass)
         {
-            throw new NotImplementedException();
+            using(var db = new connection())
+            {
+            }
+            return true;
         }
 
         private void btnRegistrirajSe_Click(object sender, EventArgs e)

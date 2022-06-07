@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Dino\source\repos\ItronicStore\ItronicStore\Model1.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Dino\source\repos\pi21-dgrundler-ijanjic20-msabljak-dsokec\Software\Dino_Sokec\ItronicStore\TrgovinaBP.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
