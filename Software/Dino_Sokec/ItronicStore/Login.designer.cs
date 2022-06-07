@@ -1,5 +1,5 @@
 ﻿
-namespace Projekt2022
+namespace ItronicStore
 {
     partial class wfLogin
     {
