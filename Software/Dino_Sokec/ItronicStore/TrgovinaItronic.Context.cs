@@ -13,10 +13,10 @@ namespace ItronicStore
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class connection : DbContext
+    public partial class Entities : DbContext
     {
-        public connection()
-            : base("name=connection")
+        public Entities()
+            : base("name=Entities")
         {
         }
     

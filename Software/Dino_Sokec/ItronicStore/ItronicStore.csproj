@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,6 +13,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,9 +36,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
@@ -106,23 +116,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TrgovinaBP.Context.cs">
+    <Compile Include="TrgovinaItronic.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TrgovinaBP.Context.tt</DependentUpon>
+      <DependentUpon>TrgovinaItronic.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="TrgovinaBP.cs">
+    <Compile Include="TrgovinaItronic.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TrgovinaBP.tt</DependentUpon>
+      <DependentUpon>TrgovinaItronic.tt</DependentUpon>
     </Compile>
-    <Compile Include="TrgovinaBP.Designer.cs">
+    <Compile Include="TrgovinaItronic.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TrgovinaBP.edmx</DependentUpon>
+      <DependentUpon>TrgovinaItronic.edmx</DependentUpon>
     </Compile>
     <Compile Include="Users.cs">
-      <DependentUpon>TrgovinaBP.tt</DependentUpon>
+      <DependentUpon>TrgovinaItronic.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="DolazneReklamacije.resx">
       <DependentUpon>DolazneReklamacije.cs</DependentUpon>
@@ -170,28 +180,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EntityDeploy Include="TrgovinaBP.edmx">
+    <EntityDeploy Include="TrgovinaItronic.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>TrgovinaBP.Designer.cs</LastGenOutput>
+      <LastGenOutput>TrgovinaItronic.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="TrgovinaBP.edmx.diagram">
-      <DependentUpon>TrgovinaBP.edmx</DependentUpon>
+    <None Include="TrgovinaItronic.edmx.diagram">
+      <DependentUpon>TrgovinaItronic.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="TrgovinaBP.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TrgovinaBP.edmx</DependentUpon>
-      <LastGenOutput>TrgovinaBP.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="TrgovinaBP.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TrgovinaBP.edmx</DependentUpon>
-      <LastGenOutput>TrgovinaBP.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -205,5 +203,25 @@
       <Name>KlasaUpravljanja</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="TrgovinaItronic.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TrgovinaItronic.edmx</DependentUpon>
+      <LastGenOutput>TrgovinaItronic.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="TrgovinaItronic.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TrgovinaItronic.edmx</DependentUpon>
+      <LastGenOutput>TrgovinaItronic.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
 </Project>
