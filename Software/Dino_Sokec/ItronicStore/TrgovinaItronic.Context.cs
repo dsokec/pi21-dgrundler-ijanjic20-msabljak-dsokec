@@ -13,10 +13,10 @@ namespace ItronicStore
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Entities : DbContext
+    public partial class Entiteti : DbContext
     {
-        public Entities()
-            : base("name=Entities")
+        public Entiteti()
+            : base("name=Entiteti")
         {
         }
     
@@ -25,6 +25,15 @@ namespace ItronicStore
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<Admin> Admin { get; set; }
+        public virtual DbSet<Dobavljac> Dobavljac { get; set; }
+        public virtual DbSet<Kategorija> Kategorija { get; set; }
+        public virtual DbSet<Korisnik> Korisnik { get; set; }
+        public virtual DbSet<Kvartal> Kvartal { get; set; }
+        public virtual DbSet<Obracun> Obracun { get; set; }
+        public virtual DbSet<Odgovor> Odgovor { get; set; }
+        public virtual DbSet<Proizvod> Proizvod { get; set; }
+        public virtual DbSet<Recenzija> Recenzija { get; set; }
+        public virtual DbSet<Reklamacija> Reklamacija { get; set; }
     }
 }

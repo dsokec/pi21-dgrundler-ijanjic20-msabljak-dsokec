@@ -5,51 +5,664 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Users">
+        <EntityType Name="Admin">
           <Key>
-            <PropertyRef Name="IDUser" />
+            <PropertyRef Name="ID" />
           </Key>
-          <Property Name="IDUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Ime" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Prezime" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Lozinka" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KorisnickoIme" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Lozinka" Type="nvarchar" MaxLength="20" Nullable="false" />
         </EntityType>
+        <EntityType Name="Dobavljac">
+          <Key>
+            <PropertyRef Name="Dobavljac" />
+          </Key>
+          <Property Name="Dobavljac" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Grad" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Kategorija">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Naziv" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Korisnik">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ime" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Prezime" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="KorisnickoIme" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="Lozinka" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Kvartal">
+          <Key>
+            <PropertyRef Name="Mjesec" />
+          </Key>
+          <Property Name="Mjesec" Type="int" Nullable="false" />
+          <Property Name="Kvartal" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Obracun">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Prihod" Type="float" Nullable="false" />
+          <Property Name="Rashod" Type="float" Nullable="false" />
+          <Property Name="Godina" Type="int" Nullable="false" />
+          <Property Name="Mjesec" Type="int" Nullable="false" />
+          <Property Name="Prodano" Type="int" Nullable="false" />
+          <Property Name="Nabavljeno" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Odgovor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDAdmin" Type="int" Nullable="false" />
+          <Property Name="IDReklamacija" Type="int" Nullable="false" />
+          <Property Name="Datum" Type="date" Nullable="false" />
+          <Property Name="Odgovor" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Podnesak">
+          <Key>
+            <PropertyRef Name="IDReklamacija" />
+            <PropertyRef Name="IDProizvod" />
+          </Key>
+          <Property Name="IDReklamacija" Type="int" Nullable="false" />
+          <Property Name="IDProizvod" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Proizvod">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDKategorija" Type="int" Nullable="false" />
+          <Property Name="Dobavljac" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Naziv" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Cijena" Type="float" Nullable="false" />
+          <Property Name="Kolicina" Type="int" Nullable="false" />
+          <Property Name="Opis" Type="text" />
+        </EntityType>
+        <EntityType Name="Recenzija">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDKorisnik" Type="int" Nullable="false" />
+          <Property Name="IDProizvod" Type="int" Nullable="false" />
+          <Property Name="Ocjena" Type="int" Nullable="false" />
+          <Property Name="Datum" Type="date" Nullable="false" />
+          <Property Name="Komentar" Type="text" />
+        </EntityType>
+        <EntityType Name="Reklamacija">
+          <Key>
+            <PropertyRef Name="IDReklamacija" />
+          </Key>
+          <Property Name="IDReklamacija" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDKorisnik" Type="int" Nullable="false" />
+          <Property Name="Datum" Type="date" Nullable="false" />
+          <Property Name="Opis" Type="nchar" MaxLength="80" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Obracun_Kvartal">
+          <End Role="Kvartal" Type="Self.Kvartal" Multiplicity="1" />
+          <End Role="Obracun" Type="Self.Obracun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kvartal">
+              <PropertyRef Name="Mjesec" />
+            </Principal>
+            <Dependent Role="Obracun">
+              <PropertyRef Name="Mjesec" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Odgovor_Admin">
+          <End Role="Admin" Type="Self.Admin" Multiplicity="1" />
+          <End Role="Odgovor" Type="Self.Odgovor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Odgovor">
+              <PropertyRef Name="IDAdmin" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Odgovor_Reklamacija">
+          <End Role="Reklamacija" Type="Self.Reklamacija" Multiplicity="1" />
+          <End Role="Odgovor" Type="Self.Odgovor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reklamacija">
+              <PropertyRef Name="IDReklamacija" />
+            </Principal>
+            <Dependent Role="Odgovor">
+              <PropertyRef Name="IDReklamacija" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Podnesak_Proizvod">
+          <End Role="Proizvod" Type="Self.Proizvod" Multiplicity="1" />
+          <End Role="Podnesak" Type="Self.Podnesak" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proizvod">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Podnesak">
+              <PropertyRef Name="IDProizvod" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Podnesak_Reklamacija">
+          <End Role="Reklamacija" Type="Self.Reklamacija" Multiplicity="1" />
+          <End Role="Podnesak" Type="Self.Podnesak" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reklamacija">
+              <PropertyRef Name="IDReklamacija" />
+            </Principal>
+            <Dependent Role="Podnesak">
+              <PropertyRef Name="IDReklamacija" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Proizvod_Dobavljac">
+          <End Role="Dobavljac" Type="Self.Dobavljac" Multiplicity="1" />
+          <End Role="Proizvod" Type="Self.Proizvod" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dobavljac">
+              <PropertyRef Name="Dobavljac" />
+            </Principal>
+            <Dependent Role="Proizvod">
+              <PropertyRef Name="Dobavljac" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Proizvod_Kategorija">
+          <End Role="Kategorija" Type="Self.Kategorija" Multiplicity="1" />
+          <End Role="Proizvod" Type="Self.Proizvod" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kategorija">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Proizvod">
+              <PropertyRef Name="IDKategorija" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Recenzija_Korisnik">
+          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1" />
+          <End Role="Recenzija" Type="Self.Recenzija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Korisnik">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Recenzija">
+              <PropertyRef Name="IDKorisnik" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Recenzija_Proizvod">
+          <End Role="Proizvod" Type="Self.Proizvod" Multiplicity="1" />
+          <End Role="Recenzija" Type="Self.Recenzija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proizvod">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Recenzija">
+              <PropertyRef Name="IDProizvod" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reklamacija_Korisnik">
+          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1" />
+          <End Role="Reklamacija" Type="Self.Reklamacija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Korisnik">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Reklamacija">
+              <PropertyRef Name="IDKorisnik" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="ModelStoreContainer">
-          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dobavljac" EntityType="Self.Dobavljac" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kategorija" EntityType="Self.Kategorija" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Korisnik" EntityType="Self.Korisnik" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kvartal" EntityType="Self.Kvartal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Obracun" EntityType="Self.Obracun" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Odgovor" EntityType="Self.Odgovor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Podnesak" EntityType="Self.Podnesak" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Proizvod" EntityType="Self.Proizvod" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Recenzija" EntityType="Self.Recenzija" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reklamacija" EntityType="Self.Reklamacija" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Obracun_Kvartal" Association="Self.FK_Obracun_Kvartal">
+            <End Role="Kvartal" EntitySet="Kvartal" />
+            <End Role="Obracun" EntitySet="Obracun" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Odgovor_Admin" Association="Self.FK_Odgovor_Admin">
+            <End Role="Admin" EntitySet="Admin" />
+            <End Role="Odgovor" EntitySet="Odgovor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Odgovor_Reklamacija" Association="Self.FK_Odgovor_Reklamacija">
+            <End Role="Reklamacija" EntitySet="Reklamacija" />
+            <End Role="Odgovor" EntitySet="Odgovor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Podnesak_Proizvod" Association="Self.FK_Podnesak_Proizvod">
+            <End Role="Proizvod" EntitySet="Proizvod" />
+            <End Role="Podnesak" EntitySet="Podnesak" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Podnesak_Reklamacija" Association="Self.FK_Podnesak_Reklamacija">
+            <End Role="Reklamacija" EntitySet="Reklamacija" />
+            <End Role="Podnesak" EntitySet="Podnesak" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Proizvod_Dobavljac" Association="Self.FK_Proizvod_Dobavljac">
+            <End Role="Dobavljac" EntitySet="Dobavljac" />
+            <End Role="Proizvod" EntitySet="Proizvod" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Proizvod_Kategorija" Association="Self.FK_Proizvod_Kategorija">
+            <End Role="Kategorija" EntitySet="Kategorija" />
+            <End Role="Proizvod" EntitySet="Proizvod" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Recenzija_Korisnik" Association="Self.FK_Recenzija_Korisnik">
+            <End Role="Korisnik" EntitySet="Korisnik" />
+            <End Role="Recenzija" EntitySet="Recenzija" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Recenzija_Proizvod" Association="Self.FK_Recenzija_Proizvod">
+            <End Role="Proizvod" EntitySet="Proizvod" />
+            <End Role="Recenzija" EntitySet="Recenzija" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reklamacija_Korisnik" Association="Self.FK_Reklamacija_Korisnik">
+            <End Role="Korisnik" EntitySet="Korisnik" />
+            <End Role="Reklamacija" EntitySet="Reklamacija" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Users">
+        <EntityType Name="Admin">
           <Key>
-            <PropertyRef Name="IDUser" />
+            <PropertyRef Name="ID" />
           </Key>
-          <Property Name="IDUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Ime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Lozinka" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KorisnickoIme" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Lozinka" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Odgovor" Relationship="Self.FK_Odgovor_Admin" FromRole="Admin" ToRole="Odgovor" />
         </EntityType>
-        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Users" EntityType="Self.Users" />
+        <EntityType Name="Dobavljac">
+          <Key>
+            <PropertyRef Name="Dobavljac1" />
+          </Key>
+          <Property Name="Dobavljac1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Grad" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Proizvod" Relationship="Self.FK_Proizvod_Dobavljac" FromRole="Dobavljac" ToRole="Proizvod" />
+        </EntityType>
+        <EntityType Name="Kategorija">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Proizvod" Relationship="Self.FK_Proizvod_Kategorija" FromRole="Kategorija" ToRole="Proizvod" />
+        </EntityType>
+        <EntityType Name="Korisnik">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ime" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Prezime" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KorisnickoIme" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Lozinka" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Recenzija" Relationship="Self.FK_Recenzija_Korisnik" FromRole="Korisnik" ToRole="Recenzija" />
+          <NavigationProperty Name="Reklamacija" Relationship="Self.FK_Reklamacija_Korisnik" FromRole="Korisnik" ToRole="Reklamacija" />
+        </EntityType>
+        <EntityType Name="Kvartal">
+          <Key>
+            <PropertyRef Name="Mjesec" />
+          </Key>
+          <Property Name="Mjesec" Type="Int32" Nullable="false" />
+          <Property Name="Kvartal1" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Obracun" Relationship="Self.FK_Obracun_Kvartal" FromRole="Kvartal" ToRole="Obracun" />
+        </EntityType>
+        <EntityType Name="Obracun">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Prihod" Type="Double" Nullable="false" />
+          <Property Name="Rashod" Type="Double" Nullable="false" />
+          <Property Name="Godina" Type="Int32" Nullable="false" />
+          <Property Name="Mjesec" Type="Int32" Nullable="false" />
+          <Property Name="Prodano" Type="Int32" Nullable="false" />
+          <Property Name="Nabavljeno" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Kvartal" Relationship="Self.FK_Obracun_Kvartal" FromRole="Obracun" ToRole="Kvartal" />
+        </EntityType>
+        <EntityType Name="Odgovor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDAdmin" Type="Int32" Nullable="false" />
+          <Property Name="IDReklamacija" Type="Int32" Nullable="false" />
+          <Property Name="Datum" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Odgovor1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Admin" Relationship="Self.FK_Odgovor_Admin" FromRole="Odgovor" ToRole="Admin" />
+          <NavigationProperty Name="Reklamacija" Relationship="Self.FK_Odgovor_Reklamacija" FromRole="Odgovor" ToRole="Reklamacija" />
+        </EntityType>
+        <EntityType Name="Proizvod">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDKategorija" Type="Int32" Nullable="false" />
+          <Property Name="Dobavljac" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Cijena" Type="Double" Nullable="false" />
+          <Property Name="Kolicina" Type="Int32" Nullable="false" />
+          <Property Name="Opis" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Dobavljac1" Relationship="Self.FK_Proizvod_Dobavljac" FromRole="Proizvod" ToRole="Dobavljac" />
+          <NavigationProperty Name="Kategorija" Relationship="Self.FK_Proizvod_Kategorija" FromRole="Proizvod" ToRole="Kategorija" />
+          <NavigationProperty Name="Recenzija" Relationship="Self.FK_Recenzija_Proizvod" FromRole="Proizvod" ToRole="Recenzija" />
+          <NavigationProperty Name="Reklamacija" Relationship="Self.Podnesak" FromRole="Proizvod" ToRole="Reklamacija" />
+        </EntityType>
+        <EntityType Name="Recenzija">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDKorisnik" Type="Int32" Nullable="false" />
+          <Property Name="IDProizvod" Type="Int32" Nullable="false" />
+          <Property Name="Ocjena" Type="Int32" Nullable="false" />
+          <Property Name="Datum" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Komentar" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Korisnik" Relationship="Self.FK_Recenzija_Korisnik" FromRole="Recenzija" ToRole="Korisnik" />
+          <NavigationProperty Name="Proizvod" Relationship="Self.FK_Recenzija_Proizvod" FromRole="Recenzija" ToRole="Proizvod" />
+        </EntityType>
+        <EntityType Name="Reklamacija">
+          <Key>
+            <PropertyRef Name="IDReklamacija" />
+          </Key>
+          <Property Name="IDReklamacija" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDKorisnik" Type="Int32" Nullable="false" />
+          <Property Name="Datum" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Opis" Type="String" MaxLength="80" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Korisnik" Relationship="Self.FK_Reklamacija_Korisnik" FromRole="Reklamacija" ToRole="Korisnik" />
+          <NavigationProperty Name="Odgovor" Relationship="Self.FK_Odgovor_Reklamacija" FromRole="Reklamacija" ToRole="Odgovor" />
+          <NavigationProperty Name="Proizvod" Relationship="Self.Podnesak" FromRole="Reklamacija" ToRole="Proizvod" />
+        </EntityType>
+        <Association Name="FK_Odgovor_Admin">
+          <End Role="Admin" Type="Self.Admin" Multiplicity="1" />
+          <End Role="Odgovor" Type="Self.Odgovor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Odgovor">
+              <PropertyRef Name="IDAdmin" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Proizvod_Dobavljac">
+          <End Role="Dobavljac" Type="Self.Dobavljac" Multiplicity="1" />
+          <End Role="Proizvod" Type="Self.Proizvod" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dobavljac">
+              <PropertyRef Name="Dobavljac1" />
+            </Principal>
+            <Dependent Role="Proizvod">
+              <PropertyRef Name="Dobavljac" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Proizvod_Kategorija">
+          <End Role="Kategorija" Type="Self.Kategorija" Multiplicity="1" />
+          <End Role="Proizvod" Type="Self.Proizvod" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kategorija">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Proizvod">
+              <PropertyRef Name="IDKategorija" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Recenzija_Korisnik">
+          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1" />
+          <End Role="Recenzija" Type="Self.Recenzija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Korisnik">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Recenzija">
+              <PropertyRef Name="IDKorisnik" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reklamacija_Korisnik">
+          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1" />
+          <End Role="Reklamacija" Type="Self.Reklamacija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Korisnik">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Reklamacija">
+              <PropertyRef Name="IDKorisnik" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Obracun_Kvartal">
+          <End Role="Kvartal" Type="Self.Kvartal" Multiplicity="1" />
+          <End Role="Obracun" Type="Self.Obracun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kvartal">
+              <PropertyRef Name="Mjesec" />
+            </Principal>
+            <Dependent Role="Obracun">
+              <PropertyRef Name="Mjesec" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Odgovor_Reklamacija">
+          <End Role="Reklamacija" Type="Self.Reklamacija" Multiplicity="1" />
+          <End Role="Odgovor" Type="Self.Odgovor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reklamacija">
+              <PropertyRef Name="IDReklamacija" />
+            </Principal>
+            <Dependent Role="Odgovor">
+              <PropertyRef Name="IDReklamacija" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Recenzija_Proizvod">
+          <End Role="Proizvod" Type="Self.Proizvod" Multiplicity="1" />
+          <End Role="Recenzija" Type="Self.Recenzija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proizvod">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Recenzija">
+              <PropertyRef Name="IDProizvod" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Podnesak">
+          <End Role="Proizvod" Type="Self.Proizvod" Multiplicity="*" />
+          <End Role="Reklamacija" Type="Self.Reklamacija" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="Entiteti" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Admin" EntityType="Self.Admin" />
+          <EntitySet Name="Dobavljac" EntityType="Self.Dobavljac" />
+          <EntitySet Name="Kategorija" EntityType="Self.Kategorija" />
+          <EntitySet Name="Korisnik" EntityType="Self.Korisnik" />
+          <EntitySet Name="Kvartal" EntityType="Self.Kvartal" />
+          <EntitySet Name="Obracun" EntityType="Self.Obracun" />
+          <EntitySet Name="Odgovor" EntityType="Self.Odgovor" />
+          <EntitySet Name="Proizvod" EntityType="Self.Proizvod" />
+          <EntitySet Name="Recenzija" EntityType="Self.Recenzija" />
+          <EntitySet Name="Reklamacija" EntityType="Self.Reklamacija" />
+          <AssociationSet Name="FK_Odgovor_Admin" Association="Self.FK_Odgovor_Admin">
+            <End Role="Admin" EntitySet="Admin" />
+            <End Role="Odgovor" EntitySet="Odgovor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Proizvod_Dobavljac" Association="Self.FK_Proizvod_Dobavljac">
+            <End Role="Dobavljac" EntitySet="Dobavljac" />
+            <End Role="Proizvod" EntitySet="Proizvod" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Proizvod_Kategorija" Association="Self.FK_Proizvod_Kategorija">
+            <End Role="Kategorija" EntitySet="Kategorija" />
+            <End Role="Proizvod" EntitySet="Proizvod" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Recenzija_Korisnik" Association="Self.FK_Recenzija_Korisnik">
+            <End Role="Korisnik" EntitySet="Korisnik" />
+            <End Role="Recenzija" EntitySet="Recenzija" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reklamacija_Korisnik" Association="Self.FK_Reklamacija_Korisnik">
+            <End Role="Korisnik" EntitySet="Korisnik" />
+            <End Role="Reklamacija" EntitySet="Reklamacija" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Obracun_Kvartal" Association="Self.FK_Obracun_Kvartal">
+            <End Role="Kvartal" EntitySet="Kvartal" />
+            <End Role="Obracun" EntitySet="Obracun" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Odgovor_Reklamacija" Association="Self.FK_Odgovor_Reklamacija">
+            <End Role="Reklamacija" EntitySet="Reklamacija" />
+            <End Role="Odgovor" EntitySet="Odgovor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Recenzija_Proizvod" Association="Self.FK_Recenzija_Proizvod">
+            <End Role="Proizvod" EntitySet="Proizvod" />
+            <End Role="Recenzija" EntitySet="Recenzija" />
+          </AssociationSet>
+          <AssociationSet Name="Podnesak" Association="Self.Podnesak">
+            <End Role="Proizvod" EntitySet="Proizvod" />
+            <End Role="Reklamacija" EntitySet="Reklamacija" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
-          <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="Model.Users">
-              <MappingFragment StoreEntitySet="Users">
-                <ScalarProperty Name="IDUser" ColumnName="IDUser" />
-                <ScalarProperty Name="Ime" ColumnName="Ime" />
-                <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entiteti">
+          <EntitySetMapping Name="Admin">
+            <EntityTypeMapping TypeName="Model.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="KorisnickoIme" ColumnName="KorisnickoIme" />
                 <ScalarProperty Name="Lozinka" ColumnName="Lozinka" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Dobavljac">
+            <EntityTypeMapping TypeName="Model.Dobavljac">
+              <MappingFragment StoreEntitySet="Dobavljac">
+                <ScalarProperty Name="Dobavljac1" ColumnName="Dobavljac" />
+                <ScalarProperty Name="Grad" ColumnName="Grad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kategorija">
+            <EntityTypeMapping TypeName="Model.Kategorija">
+              <MappingFragment StoreEntitySet="Kategorija">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Korisnik">
+            <EntityTypeMapping TypeName="Model.Korisnik">
+              <MappingFragment StoreEntitySet="Korisnik">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Ime" ColumnName="Ime" />
+                <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+                <ScalarProperty Name="KorisnickoIme" ColumnName="KorisnickoIme" />
+                <ScalarProperty Name="Lozinka" ColumnName="Lozinka" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kvartal">
+            <EntityTypeMapping TypeName="Model.Kvartal">
+              <MappingFragment StoreEntitySet="Kvartal">
+                <ScalarProperty Name="Mjesec" ColumnName="Mjesec" />
+                <ScalarProperty Name="Kvartal1" ColumnName="Kvartal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Obracun">
+            <EntityTypeMapping TypeName="Model.Obracun">
+              <MappingFragment StoreEntitySet="Obracun">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Prihod" ColumnName="Prihod" />
+                <ScalarProperty Name="Rashod" ColumnName="Rashod" />
+                <ScalarProperty Name="Godina" ColumnName="Godina" />
+                <ScalarProperty Name="Mjesec" ColumnName="Mjesec" />
+                <ScalarProperty Name="Prodano" ColumnName="Prodano" />
+                <ScalarProperty Name="Nabavljeno" ColumnName="Nabavljeno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Odgovor">
+            <EntityTypeMapping TypeName="Model.Odgovor">
+              <MappingFragment StoreEntitySet="Odgovor">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDAdmin" ColumnName="IDAdmin" />
+                <ScalarProperty Name="IDReklamacija" ColumnName="IDReklamacija" />
+                <ScalarProperty Name="Datum" ColumnName="Datum" />
+                <ScalarProperty Name="Odgovor1" ColumnName="Odgovor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Proizvod">
+            <EntityTypeMapping TypeName="Model.Proizvod">
+              <MappingFragment StoreEntitySet="Proizvod">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDKategorija" ColumnName="IDKategorija" />
+                <ScalarProperty Name="Dobavljac" ColumnName="Dobavljac" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="Cijena" ColumnName="Cijena" />
+                <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Recenzija">
+            <EntityTypeMapping TypeName="Model.Recenzija">
+              <MappingFragment StoreEntitySet="Recenzija">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDKorisnik" ColumnName="IDKorisnik" />
+                <ScalarProperty Name="IDProizvod" ColumnName="IDProizvod" />
+                <ScalarProperty Name="Ocjena" ColumnName="Ocjena" />
+                <ScalarProperty Name="Datum" ColumnName="Datum" />
+                <ScalarProperty Name="Komentar" ColumnName="Komentar" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reklamacija">
+            <EntityTypeMapping TypeName="Model.Reklamacija">
+              <MappingFragment StoreEntitySet="Reklamacija">
+                <ScalarProperty Name="IDReklamacija" ColumnName="IDReklamacija" />
+                <ScalarProperty Name="IDKorisnik" ColumnName="IDKorisnik" />
+                <ScalarProperty Name="Datum" ColumnName="Datum" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Podnesak" TypeName="Model.Podnesak" StoreEntitySet="Podnesak">
+            <EndProperty Name="Proizvod">
+              <ScalarProperty Name="ID" ColumnName="IDProizvod" />
+            </EndProperty>
+            <EndProperty Name="Reklamacija">
+              <ScalarProperty Name="IDReklamacija" ColumnName="IDReklamacija" />
+            </EndProperty>
+          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -60,11 +60,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.cs">
+      <DependentUpon>TrgovinaItronic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dobavljac.cs">
+      <DependentUpon>TrgovinaItronic.tt</DependentUpon>
+    </Compile>
     <Compile Include="DolazneReklamacije.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DolazneReklamacije.Designer.cs">
       <DependentUpon>DolazneReklamacije.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kategorija.cs">
+      <DependentUpon>TrgovinaItronic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Korisnik.cs">
+      <DependentUpon>TrgovinaItronic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Kvartal.cs">
+      <DependentUpon>TrgovinaItronic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Obracun.cs">
+      <DependentUpon>TrgovinaItronic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Odgovor.cs">
+      <DependentUpon>TrgovinaItronic.tt</DependentUpon>
     </Compile>
     <Compile Include="PovratnaInformacija.cs">
       <SubType>Form</SubType>
@@ -102,11 +123,20 @@
     <Compile Include="KorisnickaRecenzija.Designer.cs">
       <DependentUpon>KorisnickaRecenzija.cs</DependentUpon>
     </Compile>
+    <Compile Include="Proizvod.cs">
+      <DependentUpon>TrgovinaItronic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Recenzija.cs">
+      <DependentUpon>TrgovinaItronic.tt</DependentUpon>
+    </Compile>
     <Compile Include="RegistracijaKorisnika.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RegistracijaKorisnika.designer.cs">
       <DependentUpon>RegistracijaKorisnika.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reklamacija.cs">
+      <DependentUpon>TrgovinaItronic.tt</DependentUpon>
     </Compile>
     <Compile Include="ReklamacijaWF.cs">
       <SubType>Form</SubType>
@@ -130,9 +160,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TrgovinaItronic.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Users.cs">
-      <DependentUpon>TrgovinaItronic.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="DolazneReklamacije.resx">
       <DependentUpon>DolazneReklamacije.cs</DependentUpon>
