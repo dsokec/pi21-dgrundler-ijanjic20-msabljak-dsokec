@@ -78,6 +78,12 @@
     <Compile Include="DolazneReklamacije.Designer.cs">
       <DependentUpon>DolazneReklamacije.cs</DependentUpon>
     </Compile>
+    <Compile Include="Izbornik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Izbornik.Designer.cs">
+      <DependentUpon>Izbornik.cs</DependentUpon>
+    </Compile>
     <Compile Include="Kategorija.cs">
       <DependentUpon>TrgovinaItronic.tt</DependentUpon>
     </Compile>
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DolazneReklamacije.resx">
       <DependentUpon>DolazneReklamacije.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Izbornik.resx">
+      <DependentUpon>Izbornik.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PovratnaInformacija.resx">
       <DependentUpon>PovratnaInformacija.cs</DependentUpon>
