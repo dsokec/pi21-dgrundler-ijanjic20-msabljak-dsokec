@@ -29,60 +29,41 @@ namespace ItronicStore
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtKorisnickoIme = new System.Windows.Forms.TextBox();
-            this.txtLozinka = new System.Windows.Forms.TextBox();
             this.btnPrijaviSe = new System.Windows.Forms.Button();
-            this.btnNastaviKaoGost = new System.Windows.Forms.Button();
             this.lblKorisnickoIme = new System.Windows.Forms.Label();
             this.lblLozinka = new System.Windows.Forms.Label();
             this.lblNaslov = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnRegistrirajSe = new System.Windows.Forms.Button();
             this.btnIzlaz = new System.Windows.Forms.Button();
             this.chkPrikaziLozinku = new System.Windows.Forms.CheckBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.cmbKorisnickoIme = new System.Windows.Forms.ComboBox();
+            this.cmbLozinka = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // txtKorisnickoIme
-            // 
-            this.txtKorisnickoIme.Location = new System.Drawing.Point(457, 167);
-            this.txtKorisnickoIme.Name = "txtKorisnickoIme";
-            this.txtKorisnickoIme.Size = new System.Drawing.Size(183, 26);
-            this.txtKorisnickoIme.TabIndex = 0;
-            // 
-            // txtLozinka
-            // 
-            this.txtLozinka.Location = new System.Drawing.Point(457, 219);
-            this.txtLozinka.Name = "txtLozinka";
-            this.txtLozinka.Size = new System.Drawing.Size(183, 26);
-            this.txtLozinka.TabIndex = 1;
-            this.txtLozinka.UseSystemPasswordChar = true;
             // 
             // btnPrijaviSe
             // 
-            this.btnPrijaviSe.Location = new System.Drawing.Point(387, 311);
+            this.btnPrijaviSe.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrijaviSe.ForeColor = System.Drawing.Color.Firebrick;
+            this.btnPrijaviSe.Location = new System.Drawing.Point(146, 161);
             this.btnPrijaviSe.Name = "btnPrijaviSe";
-            this.btnPrijaviSe.Size = new System.Drawing.Size(96, 32);
+            this.btnPrijaviSe.Size = new System.Drawing.Size(165, 32);
             this.btnPrijaviSe.TabIndex = 2;
             this.btnPrijaviSe.Text = "Prijavi se";
             this.btnPrijaviSe.UseVisualStyleBackColor = true;
             this.btnPrijaviSe.Click += new System.EventHandler(this.btnPrijaviSe_Click);
             // 
-            // btnNastaviKaoGost
-            // 
-            this.btnNastaviKaoGost.Location = new System.Drawing.Point(474, 378);
-            this.btnNastaviKaoGost.Name = "btnNastaviKaoGost";
-            this.btnNastaviKaoGost.Size = new System.Drawing.Size(146, 35);
-            this.btnNastaviKaoGost.TabIndex = 4;
-            this.btnNastaviKaoGost.Text = "Nastavi kao gost";
-            this.btnNastaviKaoGost.UseVisualStyleBackColor = true;
-            // 
             // lblKorisnickoIme
             // 
             this.lblKorisnickoIme.AutoSize = true;
-            this.lblKorisnickoIme.Location = new System.Drawing.Point(337, 170);
+            this.lblKorisnickoIme.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblKorisnickoIme.Location = new System.Drawing.Point(346, 142);
             this.lblKorisnickoIme.Name = "lblKorisnickoIme";
             this.lblKorisnickoIme.Size = new System.Drawing.Size(114, 20);
             this.lblKorisnickoIme.TabIndex = 2;
@@ -91,7 +72,8 @@ namespace ItronicStore
             // lblLozinka
             // 
             this.lblLozinka.AutoSize = true;
-            this.lblLozinka.Location = new System.Drawing.Point(383, 219);
+            this.lblLozinka.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblLozinka.Location = new System.Drawing.Point(392, 191);
             this.lblLozinka.Name = "lblLozinka";
             this.lblLozinka.Size = new System.Drawing.Size(68, 20);
             this.lblLozinka.TabIndex = 2;
@@ -100,34 +82,17 @@ namespace ItronicStore
             // lblNaslov
             // 
             this.lblNaslov.AutoSize = true;
-            this.lblNaslov.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNaslov.Location = new System.Drawing.Point(469, 115);
+            this.lblNaslov.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNaslov.Location = new System.Drawing.Point(478, 37);
             this.lblNaslov.Name = "lblNaslov";
-            this.lblNaslov.Size = new System.Drawing.Size(170, 26);
+            this.lblNaslov.Size = new System.Drawing.Size(185, 29);
             this.lblNaslov.TabIndex = 2;
             this.lblNaslov.Text = "Itronic trgovina";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(497, 37);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnRegistrirajSe
-            // 
-            this.btnRegistrirajSe.Location = new System.Drawing.Point(594, 311);
-            this.btnRegistrirajSe.Name = "btnRegistrirajSe";
-            this.btnRegistrirajSe.Size = new System.Drawing.Size(115, 32);
-            this.btnRegistrirajSe.TabIndex = 3;
-            this.btnRegistrirajSe.Text = "Registriraj se";
-            this.btnRegistrirajSe.UseVisualStyleBackColor = true;
-            this.btnRegistrirajSe.Click += new System.EventHandler(this.btnRegistrirajSe_Click);
-            // 
             // btnIzlaz
             // 
-            this.btnIzlaz.Location = new System.Drawing.Point(714, 433);
+            this.btnIzlaz.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIzlaz.Location = new System.Drawing.Point(714, 416);
             this.btnIzlaz.Name = "btnIzlaz";
             this.btnIzlaz.Size = new System.Drawing.Size(66, 40);
             this.btnIzlaz.TabIndex = 5;
@@ -138,7 +103,8 @@ namespace ItronicStore
             // chkPrikaziLozinku
             // 
             this.chkPrikaziLozinku.AutoSize = true;
-            this.chkPrikaziLozinku.Location = new System.Drawing.Point(647, 220);
+            this.chkPrikaziLozinku.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.chkPrikaziLozinku.Location = new System.Drawing.Point(656, 192);
             this.chkPrikaziLozinku.Name = "chkPrikaziLozinku";
             this.chkPrikaziLozinku.Size = new System.Drawing.Size(134, 24);
             this.chkPrikaziLozinku.TabIndex = 6;
@@ -155,50 +121,118 @@ namespace ItronicStore
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
             // 
+            // cmbKorisnickoIme
+            // 
+            this.cmbKorisnickoIme.FormattingEnabled = true;
+            this.cmbKorisnickoIme.Location = new System.Drawing.Point(483, 142);
+            this.cmbKorisnickoIme.Name = "cmbKorisnickoIme";
+            this.cmbKorisnickoIme.Size = new System.Drawing.Size(165, 28);
+            this.cmbKorisnickoIme.TabIndex = 8;
+            // 
+            // cmbLozinka
+            // 
+            this.cmbLozinka.FormattingEnabled = true;
+            this.cmbLozinka.Location = new System.Drawing.Point(483, 183);
+            this.cmbLozinka.Name = "cmbLozinka";
+            this.cmbLozinka.Size = new System.Drawing.Size(165, 28);
+            this.cmbLozinka.TabIndex = 8;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnPrijaviSe);
+            this.groupBox1.Location = new System.Drawing.Point(337, 69);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(453, 213);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkRed;
+            this.label1.Location = new System.Drawing.Point(456, 83);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(221, 25);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Prijavi se kao korisnik";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Blue;
+            this.label2.Location = new System.Drawing.Point(456, 339);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(205, 25);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Prijavi se kao admin";
+            // 
+            // button1
+            // 
+            this.button1.ForeColor = System.Drawing.Color.Blue;
+            this.button1.Location = new System.Drawing.Point(483, 379);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(165, 32);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Nastavi";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnPrijaviSe_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Location = new System.Drawing.Point(447, 320);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(230, 111);
+            this.groupBox2.TabIndex = 11;
+            this.groupBox2.TabStop = false;
+            // 
             // wfLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(802, 480);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cmbLozinka);
+            this.Controls.Add(this.cmbKorisnickoIme);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.chkPrikaziLozinku);
             this.Controls.Add(this.btnIzlaz);
-            this.Controls.Add(this.btnRegistrirajSe);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblLozinka);
             this.Controls.Add(this.lblNaslov);
             this.Controls.Add(this.lblKorisnickoIme);
-            this.Controls.Add(this.btnNastaviKaoGost);
-            this.Controls.Add(this.btnPrijaviSe);
-            this.Controls.Add(this.txtLozinka);
-            this.Controls.Add(this.txtKorisnickoIme);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "wfLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.wfLogin_Load);
             this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.wfLogin_HelpRequested);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtKorisnickoIme;
-        private System.Windows.Forms.TextBox txtLozinka;
         private System.Windows.Forms.Button btnPrijaviSe;
-        private System.Windows.Forms.Button btnNastaviKaoGost;
         private System.Windows.Forms.Label lblKorisnickoIme;
         private System.Windows.Forms.Label lblLozinka;
         private System.Windows.Forms.Label lblNaslov;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnRegistrirajSe;
         private System.Windows.Forms.Button btnIzlaz;
         private System.Windows.Forms.CheckBox chkPrikaziLozinku;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ComboBox cmbKorisnickoIme;
+        private System.Windows.Forms.ComboBox cmbLozinka;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
 

@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItronicStore", "ItronicStore\ItronicStore.csproj", "{8160094D-8D3E-4B8E-9256-C4E3E15A0B82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KlasaUpravljanja", "KlasaUpravljanja\KlasaUpravljanja.csproj", "{45B451C3-3631-4A66-8FE9-7D553C4E345B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KlasaUpravljanja", "KlasaUpravljanja\KlasaUpravljanja.csproj", "{45B451C3-3631-4A66-8FE9-7D553C4E345B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,9 +1,11 @@
-﻿using ItronicStore;
+﻿using KlasaUpravljanja;
 using System;
 using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
-using KlasaUpravljanja;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
 
 namespace ItronicStore
 {
@@ -16,53 +18,7 @@ namespace ItronicStore
 
         private void btnPrijaviSe_Click(object sender, EventArgs e)
         {
-            string korisnickoIme = txtKorisnickoIme.Text;
-            string lozinka = txtLozinka.Text;
-
-            // Poruke upozorenja
-            string podatciPoruka = "Unesite podatke za prijavu";
-            string uspjehPoruka = "Uspjesno ste prijavljeni";
-            string neispravnoPoruka = "Neispravno korisnicko ime ili lozinka";
-
-            string g = "Greska";
-            string u = "Uspjeh";
-
-            if (string.IsNullOrEmpty(korisnickoIme) || string.IsNullOrEmpty(lozinka))
-            {
-                MessageBox.Show(podatciPoruka, g, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            else if (ProvjeriPodatkeNaServeru(korisnickoIme, lozinka))
-            {
-                MessageBox.Show(uspjehPoruka, u, MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show(neispravnoPoruka, g, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-        }
-
-        private bool ProvjeriPodatkeNaServeru(string korisnik, string pass)
-        {
-            using(var db = new connection())
-            {
-            }
-            return true;
-        }
-
-        private void btnRegistrirajSe_Click(object sender, EventArgs e)
-        {
-            OtvoriWindowsFormuRegistracija();
-        }
-
-        private void OtvoriWindowsFormuRegistracija()
-        {
-            this.Hide();
-            RegistrationWF registration = new RegistrationWF();
-            registration.ShowDialog();
-
-            this.Show();
+            
         }
 
         private void btnIzlaz_Click(object sender, EventArgs e)
@@ -84,16 +40,6 @@ namespace ItronicStore
             {
                 return;
             }
-        }
-
-        private void wfLogin_Load(object sender, EventArgs e)
-        {
-            ZapocniUnositiPodatke();
-        }
-
-        private void ZapocniUnositiPodatke()
-        {
-            txtKorisnickoIme.Focus();
         }
 
         private void wfLogin_HelpRequested(object sender, HelpEventArgs hlpevent)
@@ -127,13 +73,24 @@ namespace ItronicStore
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if(chkPrikaziLozinku.Checked == true)
+ 
+        }
+
+        private void wfLogin_Load(object sender, EventArgs e)
+        {
+            NapuniCombobox();
+        }
+
+        private void NapuniCombobox()
+        {
+
+            using (var db = new Entiteti())
             {
-                txtLozinka.UseSystemPasswordChar = false;
-            }
-            else
-            {
-                txtLozinka.UseSystemPasswordChar = true;
+                var upit = from x in db.Korisnik
+                           select x.KorisnickoIme;
+
+                cmbKorisnickoIme.DataSource = upit.ToList();
+                cmbKorisnickoIme.SelectedIndex = 0;
             }
         }
     }

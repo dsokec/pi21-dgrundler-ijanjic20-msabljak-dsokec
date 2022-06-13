@@ -391,7 +391,7 @@ namespace ItronicStore
             this.Name = "NovaReklamacija";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nova reklamacija";
-            this.Load += new System.EventHandler(this.NoviZapisWF_Load);
+            //this.Load += new System.EventHandler(this.NoviZapisWF_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProizvodi)).EndInit();

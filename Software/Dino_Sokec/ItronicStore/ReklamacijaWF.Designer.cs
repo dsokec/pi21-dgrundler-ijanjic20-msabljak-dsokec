@@ -81,7 +81,7 @@ namespace ItronicStore
             this.dgvReklamacija.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvReklamacija.Size = new System.Drawing.Size(504, 562);
             this.dgvReklamacija.TabIndex = 33;
-            this.dgvReklamacija.SelectionChanged += new System.EventHandler(this.dgvReklamacija_SelectionChanged);
+            //this.dgvReklamacija.SelectionChanged += new System.EventHandler(this.dgvReklamacija_SelectionChanged);
             // 
             // textBoxOpis
             // 

@@ -111,12 +111,6 @@
     <Compile Include="NovaReklamacija.Designer.cs">
       <DependentUpon>NovaReklamacija.cs</DependentUpon>
     </Compile>
-    <Compile Include="PocetnaWindowsForma.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PocetnaWindowsForma.designer.cs">
-      <DependentUpon>PocetnaWindowsForma.cs</DependentUpon>
-    </Compile>
     <Compile Include="KorisnickaRecenzija.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,9 +123,7 @@
     <Compile Include="Recenzija.cs">
       <DependentUpon>TrgovinaItronic.tt</DependentUpon>
     </Compile>
-    <Compile Include="RegistracijaKorisnika.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="RegistracijaKorisnika.cs" />
     <Compile Include="RegistracijaKorisnika.designer.cs">
       <DependentUpon>RegistracijaKorisnika.cs</DependentUpon>
     </Compile>
@@ -163,9 +155,6 @@
     </Compile>
     <EmbeddedResource Include="DolazneReklamacije.resx">
       <DependentUpon>DolazneReklamacije.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PocetnaWindowsForma.resx">
-      <DependentUpon>PocetnaWindowsForma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PovratnaInformacija.resx">
       <DependentUpon>PovratnaInformacija.cs</DependentUpon>

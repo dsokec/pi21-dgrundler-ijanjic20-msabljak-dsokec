@@ -6,20 +6,20 @@ namespace Projekt2022
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        //private System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+        //protected override void Dispose(bool disposing)
+        //{
+        //    if (disposing && (components != null))
+        //    {
+        //        components.Dispose();
+        //    }
+        //    base.Dispose(disposing);
+        //}
 
         #region Windows Form Designer generated code
 
@@ -38,7 +38,7 @@ namespace Projekt2022
             this.btnRegistrirajSe = new System.Windows.Forms.Button();
             this.btnPrijaviSe = new System.Windows.Forms.Button();
             this.btnOdustani = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            //this.SuspendLayout();
             // 
             // label1
             // 
@@ -96,7 +96,7 @@ namespace Projekt2022
             this.btnRegistrirajSe.TabIndex = 4;
             this.btnRegistrirajSe.Text = "Registriraj se";
             this.btnRegistrirajSe.UseVisualStyleBackColor = true;
-            this.btnRegistrirajSe.Click += new System.EventHandler(this.btnRegistrirajSe_Click);
+            //this.btnRegistrirajSe.Click += new System.EventHandler(this.btnRegistrirajSe_Click);
             // 
             // btnPrijaviSe
             // 
@@ -106,7 +106,7 @@ namespace Projekt2022
             this.btnPrijaviSe.TabIndex = 5;
             this.btnPrijaviSe.Text = "Prijavi se";
             this.btnPrijaviSe.UseVisualStyleBackColor = true;
-            this.btnPrijaviSe.Click += new System.EventHandler(this.btnPrijaviSe_Click);
+            //this.btnPrijaviSe.Click += new System.EventHandler(this.btnPrijaviSe_Click);
             // 
             // btnOdustani
             // 
@@ -116,29 +116,29 @@ namespace Projekt2022
             this.btnOdustani.TabIndex = 6;
             this.btnOdustani.Text = "Odustani";
             this.btnOdustani.UseVisualStyleBackColor = true;
-            this.btnOdustani.Click += new System.EventHandler(this.btnOdustani_Click);
+            //this.btnOdustani.Click += new System.EventHandler(this.btnOdustani_Click);
             // 
             // RegistrationWF
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(471, 373);
-            this.Controls.Add(this.btnOdustani);
-            this.Controls.Add(this.btnPrijaviSe);
-            this.Controls.Add(this.btnRegistrirajSe);
-            this.Controls.Add(this.txtUnosPotvrdaLozinke);
-            this.Controls.Add(this.txtUnosLozinka);
-            this.Controls.Add(this.txtUnosKorisnickoIme);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "RegistrationWF";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Registracija";
-            this.Load += new System.EventHandler(this.RegistrationWF_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            //this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            //this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            //this.ClientSize = new System.Drawing.Size(471, 373);
+            //this.Controls.Add(this.btnOdustani);
+            //this.Controls.Add(this.btnPrijaviSe);
+            //this.Controls.Add(this.btnRegistrirajSe);
+            //this.Controls.Add(this.txtUnosPotvrdaLozinke);
+            //this.Controls.Add(this.txtUnosLozinka);
+            //this.Controls.Add(this.txtUnosKorisnickoIme);
+            //this.Controls.Add(this.label3);
+            //this.Controls.Add(this.label2);
+            //this.Controls.Add(this.label1);
+            //this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            //this.Name = "RegistrationWF";
+            //this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            //this.Text = "Registracija";
+            //this.Load += new System.EventHandler(this.RegistrationWF_Load);
+            //this.ResumeLayout(false);
+            //this.PerformLayout();
 
         }
 

@@ -16,7 +16,7 @@ namespace ItronicStore
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ReklamacijaWF());
+            Application.Run(new wfLogin());
         }
     }
 }

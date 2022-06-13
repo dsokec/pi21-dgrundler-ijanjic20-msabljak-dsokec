@@ -41,12 +41,12 @@ namespace ItronicStore
             func(Controls);
         }
 
-        private void NoviZapisWF_Load(object sender, EventArgs e)
-        {
-            int zadnjiID = UpravljanjeReklamacijama.DohvatiZadnjuVrijednostIDja();
-            textBoxID.Text = (zadnjiID + 1).ToString();
-            textBoxID.ReadOnly = true;
-        }
+        //private void NoviZapisWF_Load(object sender, EventArgs e)
+        //{
+        //    int zadnjiID = UpravljanjeReklamacijama.DohvatiZadnjuVrijednostIDja();
+        //    textBoxID.Text = (zadnjiID + 1).ToString();
+        //    textBoxID.ReadOnly = true;
+        //}
 
         private void label4_Click(object sender, EventArgs e)
         {
