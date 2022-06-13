@@ -34,7 +34,6 @@ namespace ItronicStore
             this.lblLozinka = new System.Windows.Forms.Label();
             this.lblNaslov = new System.Windows.Forms.Label();
             this.btnIzlaz = new System.Windows.Forms.Button();
-            this.chkPrikaziLozinku = new System.Windows.Forms.CheckBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.cmbKorisnickoIme = new System.Windows.Forms.ComboBox();
             this.cmbLozinka = new System.Windows.Forms.ComboBox();
@@ -100,18 +99,6 @@ namespace ItronicStore
             this.btnIzlaz.UseVisualStyleBackColor = true;
             this.btnIzlaz.Click += new System.EventHandler(this.btnIzlaz_Click);
             // 
-            // chkPrikaziLozinku
-            // 
-            this.chkPrikaziLozinku.AutoSize = true;
-            this.chkPrikaziLozinku.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.chkPrikaziLozinku.Location = new System.Drawing.Point(656, 192);
-            this.chkPrikaziLozinku.Name = "chkPrikaziLozinku";
-            this.chkPrikaziLozinku.Size = new System.Drawing.Size(134, 24);
-            this.chkPrikaziLozinku.TabIndex = 6;
-            this.chkPrikaziLozinku.Text = "Prikaži lozinku";
-            this.chkPrikaziLozinku.UseVisualStyleBackColor = true;
-            this.chkPrikaziLozinku.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.GreenYellow;
@@ -128,6 +115,7 @@ namespace ItronicStore
             this.cmbKorisnickoIme.Name = "cmbKorisnickoIme";
             this.cmbKorisnickoIme.Size = new System.Drawing.Size(165, 28);
             this.cmbKorisnickoIme.TabIndex = 8;
+            this.cmbKorisnickoIme.SelectedIndexChanged += new System.EventHandler(this.cmbKorisnickoIme_SelectedIndexChanged);
             // 
             // cmbLozinka
             // 
@@ -198,7 +186,6 @@ namespace ItronicStore
             this.Controls.Add(this.cmbLozinka);
             this.Controls.Add(this.cmbKorisnickoIme);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.chkPrikaziLozinku);
             this.Controls.Add(this.btnIzlaz);
             this.Controls.Add(this.lblLozinka);
             this.Controls.Add(this.lblNaslov);
@@ -224,7 +211,6 @@ namespace ItronicStore
         private System.Windows.Forms.Label lblLozinka;
         private System.Windows.Forms.Label lblNaslov;
         private System.Windows.Forms.Button btnIzlaz;
-        private System.Windows.Forms.CheckBox chkPrikaziLozinku;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ComboBox cmbKorisnickoIme;
         private System.Windows.Forms.ComboBox cmbLozinka;

@@ -71,10 +71,6 @@ namespace ItronicStore
             return putanja;
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
- 
-        }
 
         private void wfLogin_Load(object sender, EventArgs e)
         {
@@ -91,6 +87,18 @@ namespace ItronicStore
 
                 cmbKorisnickoIme.DataSource = upit.ToList();
                 cmbKorisnickoIme.SelectedIndex = 0;
+            }
+        }
+
+        private void cmbKorisnickoIme_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string odabir = cmbKorisnickoIme.SelectedItem.ToString();
+            using (var db = new Entiteti())
+            {
+                var upit = from x in db.Korisnik
+                           where x.KorisnickoIme.ToString() == odabir
+                           select x.Lozinka;
+                cmbLozinka.DataSource = upit.ToList();
             }
         }
     }
