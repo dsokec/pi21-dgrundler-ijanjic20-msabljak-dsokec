@@ -40,20 +40,21 @@ namespace ItronicStore
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnPrijavaAdmin = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnPrijaviSe
             // 
             this.btnPrijaviSe.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrijaviSe.ForeColor = System.Drawing.Color.Firebrick;
-            this.btnPrijaviSe.Location = new System.Drawing.Point(146, 161);
+            this.btnPrijaviSe.Location = new System.Drawing.Point(146, 158);
             this.btnPrijaviSe.Name = "btnPrijaviSe";
             this.btnPrijaviSe.Size = new System.Drawing.Size(165, 32);
-            this.btnPrijaviSe.TabIndex = 2;
+            this.btnPrijaviSe.TabIndex = 0;
             this.btnPrijaviSe.Text = "Prijavi se";
             this.btnPrijaviSe.UseVisualStyleBackColor = true;
             this.btnPrijaviSe.Click += new System.EventHandler(this.btnPrijaviSe_Click);
@@ -65,7 +66,7 @@ namespace ItronicStore
             this.lblKorisnickoIme.Location = new System.Drawing.Point(346, 142);
             this.lblKorisnickoIme.Name = "lblKorisnickoIme";
             this.lblKorisnickoIme.Size = new System.Drawing.Size(114, 20);
-            this.lblKorisnickoIme.TabIndex = 2;
+            this.lblKorisnickoIme.TabIndex = 10;
             this.lblKorisnickoIme.Text = "Korisničko ime:";
             // 
             // lblLozinka
@@ -75,7 +76,7 @@ namespace ItronicStore
             this.lblLozinka.Location = new System.Drawing.Point(392, 191);
             this.lblLozinka.Name = "lblLozinka";
             this.lblLozinka.Size = new System.Drawing.Size(68, 20);
-            this.lblLozinka.TabIndex = 2;
+            this.lblLozinka.TabIndex = 9;
             this.lblLozinka.Text = "Lozinka:";
             // 
             // lblNaslov
@@ -85,7 +86,7 @@ namespace ItronicStore
             this.lblNaslov.Location = new System.Drawing.Point(478, 37);
             this.lblNaslov.Name = "lblNaslov";
             this.lblNaslov.Size = new System.Drawing.Size(185, 29);
-            this.lblNaslov.TabIndex = 2;
+            this.lblNaslov.TabIndex = 1;
             this.lblNaslov.Text = "Itronic trgovina";
             // 
             // btnIzlaz
@@ -94,7 +95,7 @@ namespace ItronicStore
             this.btnIzlaz.Location = new System.Drawing.Point(714, 416);
             this.btnIzlaz.Name = "btnIzlaz";
             this.btnIzlaz.Size = new System.Drawing.Size(66, 40);
-            this.btnIzlaz.TabIndex = 5;
+            this.btnIzlaz.TabIndex = 2;
             this.btnIzlaz.Text = "Izlaz";
             this.btnIzlaz.UseVisualStyleBackColor = true;
             this.btnIzlaz.Click += new System.EventHandler(this.btnIzlaz_Click);
@@ -114,7 +115,7 @@ namespace ItronicStore
             this.cmbKorisnickoIme.Location = new System.Drawing.Point(483, 142);
             this.cmbKorisnickoIme.Name = "cmbKorisnickoIme";
             this.cmbKorisnickoIme.Size = new System.Drawing.Size(165, 28);
-            this.cmbKorisnickoIme.TabIndex = 8;
+            this.cmbKorisnickoIme.TabIndex = 3;
             this.cmbKorisnickoIme.SelectedIndexChanged += new System.EventHandler(this.cmbKorisnickoIme_SelectedIndexChanged);
             // 
             // cmbLozinka
@@ -123,7 +124,7 @@ namespace ItronicStore
             this.cmbLozinka.Location = new System.Drawing.Point(483, 183);
             this.cmbLozinka.Name = "cmbLozinka";
             this.cmbLozinka.Size = new System.Drawing.Size(165, 28);
-            this.cmbLozinka.TabIndex = 8;
+            this.cmbLozinka.TabIndex = 4;
             // 
             // groupBox1
             // 
@@ -131,7 +132,7 @@ namespace ItronicStore
             this.groupBox1.Location = new System.Drawing.Point(337, 69);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(453, 213);
-            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // label1
@@ -142,7 +143,7 @@ namespace ItronicStore
             this.label1.Location = new System.Drawing.Point(456, 83);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(221, 25);
-            this.label1.TabIndex = 10;
+            this.label1.TabIndex = 7;
             this.label1.Text = "Prijavi se kao korisnik";
             // 
             // label2
@@ -153,34 +154,33 @@ namespace ItronicStore
             this.label2.Location = new System.Drawing.Point(456, 339);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(205, 25);
-            this.label2.TabIndex = 10;
+            this.label2.TabIndex = 6;
             this.label2.Text = "Prijavi se kao admin";
-            // 
-            // button1
-            // 
-            this.button1.ForeColor = System.Drawing.Color.Blue;
-            this.button1.Location = new System.Drawing.Point(483, 379);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 32);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Nastavi";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btnPrijaviSe_Click);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnPrijavaAdmin);
             this.groupBox2.Location = new System.Drawing.Point(447, 320);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(230, 111);
-            this.groupBox2.TabIndex = 11;
+            this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
+            // 
+            // btnPrijavaAdmin
+            // 
+            this.btnPrijavaAdmin.Location = new System.Drawing.Point(36, 61);
+            this.btnPrijavaAdmin.Name = "btnPrijavaAdmin";
+            this.btnPrijavaAdmin.Size = new System.Drawing.Size(165, 35);
+            this.btnPrijavaAdmin.TabIndex = 0;
+            this.btnPrijavaAdmin.Text = "Nastavi";
+            this.btnPrijavaAdmin.UseVisualStyleBackColor = true;
+            this.btnPrijavaAdmin.Click += new System.EventHandler(this.button1_Click);
             // 
             // wfLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(802, 480);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbLozinka);
@@ -200,6 +200,7 @@ namespace ItronicStore
             this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.wfLogin_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,8 +218,8 @@ namespace ItronicStore
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnPrijavaAdmin;
     }
 }
 
