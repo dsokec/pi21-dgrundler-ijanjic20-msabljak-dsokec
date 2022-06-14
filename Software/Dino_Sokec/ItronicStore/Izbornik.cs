@@ -39,5 +39,12 @@ namespace ItronicStore
 
 
         }
+
+        private void btnReklamacija_Click(object sender, EventArgs e)
+        {
+            NovaReklamacija nova = new NovaReklamacija();
+            nova.Show();
+            this.Hide();
+        }
     }
 }

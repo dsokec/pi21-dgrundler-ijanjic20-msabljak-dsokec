@@ -30,7 +30,6 @@ namespace ItronicStore
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.cmbLozinkaAdmin = new System.Windows.Forms.ComboBox();
             this.cmbImeAdmina = new System.Windows.Forms.ComboBox();
             this.lblLozinka = new System.Windows.Forms.Label();
             this.lblNaslov = new System.Windows.Forms.Label();
@@ -38,6 +37,7 @@ namespace ItronicStore
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnPrijaviSeAdmin = new System.Windows.Forms.Button();
             this.btnNatrag = new System.Windows.Forms.Button();
+            this.txtLozinkaAdmin = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,15 +51,6 @@ namespace ItronicStore
             this.label1.Size = new System.Drawing.Size(73, 25);
             this.label1.TabIndex = 17;
             this.label1.Text = "Admin";
-            // 
-            // cmbLozinkaAdmin
-            // 
-            this.cmbLozinkaAdmin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbLozinkaAdmin.FormattingEnabled = true;
-            this.cmbLozinkaAdmin.Location = new System.Drawing.Point(158, 168);
-            this.cmbLozinkaAdmin.Name = "cmbLozinkaAdmin";
-            this.cmbLozinkaAdmin.Size = new System.Drawing.Size(165, 28);
-            this.cmbLozinkaAdmin.TabIndex = 14;
             // 
             // cmbImeAdmina
             // 
@@ -103,6 +94,7 @@ namespace ItronicStore
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtLozinkaAdmin);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnPrijaviSeAdmin);
             this.groupBox1.Controls.Add(this.lblKorisnickoIme);
@@ -122,6 +114,7 @@ namespace ItronicStore
             this.btnPrijaviSeAdmin.TabIndex = 2;
             this.btnPrijaviSeAdmin.Text = "Prijavi se";
             this.btnPrijaviSeAdmin.UseVisualStyleBackColor = true;
+            this.btnPrijaviSeAdmin.Click += new System.EventHandler(this.btnPrijaviSeAdmin_Click);
             // 
             // btnNatrag
             // 
@@ -134,13 +127,19 @@ namespace ItronicStore
             this.btnNatrag.UseVisualStyleBackColor = true;
             this.btnNatrag.Click += new System.EventHandler(this.btnNatrag_Click);
             // 
+            // txtLozinkaAdmin
+            // 
+            this.txtLozinkaAdmin.Location = new System.Drawing.Point(146, 115);
+            this.txtLozinkaAdmin.Name = "txtLozinkaAdmin";
+            this.txtLozinkaAdmin.Size = new System.Drawing.Size(165, 26);
+            this.txtLozinkaAdmin.TabIndex = 18;
+            // 
             // AdminPrijava
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(509, 336);
             this.Controls.Add(this.btnNatrag);
-            this.Controls.Add(this.cmbLozinkaAdmin);
             this.Controls.Add(this.cmbImeAdmina);
             this.Controls.Add(this.lblLozinka);
             this.Controls.Add(this.lblNaslov);
@@ -160,7 +159,6 @@ namespace ItronicStore
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbLozinkaAdmin;
         private System.Windows.Forms.ComboBox cmbImeAdmina;
         private System.Windows.Forms.Label lblLozinka;
         private System.Windows.Forms.Label lblNaslov;
@@ -168,5 +166,6 @@ namespace ItronicStore
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnPrijaviSeAdmin;
         private System.Windows.Forms.Button btnNatrag;
+        private System.Windows.Forms.TextBox txtLozinkaAdmin;
     }
 }

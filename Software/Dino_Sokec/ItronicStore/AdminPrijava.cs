@@ -20,6 +20,7 @@ namespace ItronicStore
         private void AdminPrijava_Load(object sender, EventArgs e)
         {
             NapuniComboBoxKorisnickoIme();
+            txtLozinkaAdmin.ReadOnly = true;
         }
 
         private void NapuniComboBoxKorisnickoIme()
@@ -41,7 +42,8 @@ namespace ItronicStore
                 var upit = from x in db.Admin
                            where x.KorisnickoIme.ToString() == odabir
                            select x.Lozinka;
-                cmbLozinkaAdmin.DataSource = upit.ToList();
+                txtLozinkaAdmin.Text = upit.FirstOrDefault();
+                txtLozinkaAdmin.PasswordChar = '*';
             }
         }
 
@@ -50,6 +52,13 @@ namespace ItronicStore
             this.Hide();
             wfLogin form = new wfLogin();
             form.Show();
+        }
+
+        private void btnPrijaviSeAdmin_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Izbornik izbornik = new Izbornik();
+            izbornik.Show();
         }
     }
 }

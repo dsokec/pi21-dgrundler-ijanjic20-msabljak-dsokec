@@ -83,6 +83,7 @@ namespace ItronicStore
         private void wfLogin_Load(object sender, EventArgs e)
         {
             NapuniCombobox();
+            txtLozinkaLogin.ReadOnly = true;
         }
 
         private void NapuniCombobox()
@@ -106,7 +107,9 @@ namespace ItronicStore
                 var upit = from x in db.Korisnik
                            where x.KorisnickoIme.ToString() == odabir
                            select x.Lozinka;
-                cmbLozinka.DataSource = upit.ToList();
+                txtLozinkaLogin.Text = upit.First();
+                txtLozinkaLogin.PasswordChar = '*';
+                
             }
         }
 

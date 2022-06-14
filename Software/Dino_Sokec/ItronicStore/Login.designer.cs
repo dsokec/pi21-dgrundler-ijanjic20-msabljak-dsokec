@@ -36,12 +36,12 @@ namespace ItronicStore
             this.btnIzlaz = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.cmbKorisnickoIme = new System.Windows.Forms.ComboBox();
-            this.cmbLozinka = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnPrijavaAdmin = new System.Windows.Forms.Button();
+            this.txtLozinkaLogin = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -119,17 +119,9 @@ namespace ItronicStore
             this.cmbKorisnickoIme.TabIndex = 3;
             this.cmbKorisnickoIme.SelectedIndexChanged += new System.EventHandler(this.cmbKorisnickoIme_SelectedIndexChanged);
             // 
-            // cmbLozinka
-            // 
-            this.cmbLozinka.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbLozinka.FormattingEnabled = true;
-            this.cmbLozinka.Location = new System.Drawing.Point(483, 183);
-            this.cmbLozinka.Name = "cmbLozinka";
-            this.cmbLozinka.Size = new System.Drawing.Size(165, 28);
-            this.cmbLozinka.TabIndex = 4;
-            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtLozinkaLogin);
             this.groupBox1.Controls.Add(this.btnPrijaviSe);
             this.groupBox1.Location = new System.Drawing.Point(337, 69);
             this.groupBox1.Name = "groupBox1";
@@ -178,6 +170,13 @@ namespace ItronicStore
             this.btnPrijavaAdmin.UseVisualStyleBackColor = true;
             this.btnPrijavaAdmin.Click += new System.EventHandler(this.button1_Click);
             // 
+            // txtLozinkaLogin
+            // 
+            this.txtLozinkaLogin.Location = new System.Drawing.Point(146, 122);
+            this.txtLozinkaLogin.Name = "txtLozinkaLogin";
+            this.txtLozinkaLogin.Size = new System.Drawing.Size(165, 26);
+            this.txtLozinkaLogin.TabIndex = 1;
+            // 
             // wfLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -185,7 +184,6 @@ namespace ItronicStore
             this.ClientSize = new System.Drawing.Size(802, 480);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.cmbLozinka);
             this.Controls.Add(this.cmbKorisnickoIme);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnIzlaz);
@@ -202,6 +200,7 @@ namespace ItronicStore
             this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.wfLogin_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -216,12 +215,12 @@ namespace ItronicStore
         private System.Windows.Forms.Button btnIzlaz;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ComboBox cmbKorisnickoIme;
-        private System.Windows.Forms.ComboBox cmbLozinka;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnPrijavaAdmin;
+        private System.Windows.Forms.TextBox txtLozinkaLogin;
     }
 }
 

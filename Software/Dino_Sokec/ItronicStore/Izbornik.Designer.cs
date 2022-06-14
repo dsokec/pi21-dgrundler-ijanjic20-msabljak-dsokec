@@ -101,9 +101,9 @@ namespace ItronicStore
             // 
             this.btnRecenzija.Location = new System.Drawing.Point(134, 300);
             this.btnRecenzija.Name = "btnRecenzija";
-            this.btnRecenzija.Size = new System.Drawing.Size(110, 41);
+            this.btnRecenzija.Size = new System.Drawing.Size(110, 82);
             this.btnRecenzija.TabIndex = 1;
-            this.btnRecenzija.Text = "Recenzija";
+            this.btnRecenzija.Text = "Nova recenzija";
             this.btnRecenzija.UseVisualStyleBackColor = true;
             this.btnRecenzija.Click += new System.EventHandler(this.btnRecenzija_Click);
             // 
@@ -111,18 +111,19 @@ namespace ItronicStore
             // 
             this.btnReklamacija.Location = new System.Drawing.Point(319, 300);
             this.btnReklamacija.Name = "btnReklamacija";
-            this.btnReklamacija.Size = new System.Drawing.Size(113, 41);
+            this.btnReklamacija.Size = new System.Drawing.Size(113, 82);
             this.btnReklamacija.TabIndex = 1;
-            this.btnReklamacija.Text = "Reklamacija";
+            this.btnReklamacija.Text = "Nova reklamacija";
             this.btnReklamacija.UseVisualStyleBackColor = true;
+            this.btnReklamacija.Click += new System.EventHandler(this.btnReklamacija_Click);
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(524, 300);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 41);
+            this.button1.Size = new System.Drawing.Size(118, 82);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Reklamacija";
+            this.button1.Text = "Inbox";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // label7
