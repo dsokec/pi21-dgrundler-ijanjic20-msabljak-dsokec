@@ -30,12 +30,12 @@ namespace ItronicStore
         private void InitializeComponent()
         {
             this.dgvPopisProizvoda = new System.Windows.Forms.DataGridView();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtboxKomentar = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnOdustani = new System.Windows.Forms.Button();
+            this.btnSpremi = new System.Windows.Forms.Button();
             this.radioB1 = new System.Windows.Forms.RadioButton();
             this.radioB2 = new System.Windows.Forms.RadioButton();
             this.radioB3 = new System.Windows.Forms.RadioButton();
@@ -46,16 +46,17 @@ namespace ItronicStore
             this.label5 = new System.Windows.Forms.Label();
             this.txtTrazilicaProizvoda = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtPrezime = new System.Windows.Forms.TextBox();
+            this.txtIme = new System.Windows.Forms.TextBox();
+            this.txtKorisnickoIme = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dgvPovijestRecenzija = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtKorisnickoIme = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtIme = new System.Windows.Forms.TextBox();
-            this.txtPrezime = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPopisProizvoda)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPovijestRecenzija)).BeginInit();
@@ -73,14 +74,14 @@ namespace ItronicStore
             this.dgvPopisProizvoda.TabIndex = 45;
             this.dgvPopisProizvoda.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPopisProizvoda_CellClick);
             // 
-            // textBox4
+            // txtboxKomentar
             // 
-            this.textBox4.Location = new System.Drawing.Point(117, 206);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(280, 97);
-            this.textBox4.TabIndex = 44;
-            this.textBox4.Text = "Aplikacija je odlicna.";
+            this.txtboxKomentar.Location = new System.Drawing.Point(117, 206);
+            this.txtboxKomentar.Multiline = true;
+            this.txtboxKomentar.Name = "txtboxKomentar";
+            this.txtboxKomentar.Size = new System.Drawing.Size(280, 97);
+            this.txtboxKomentar.TabIndex = 44;
+            this.txtboxKomentar.Text = "Aplikacija je odlicna.";
             // 
             // label3
             // 
@@ -112,24 +113,25 @@ namespace ItronicStore
             this.label1.TabIndex = 36;
             this.label1.Text = "Recenzija proizvoda";
             // 
-            // button4
+            // btnOdustani
             // 
-            this.button4.Location = new System.Drawing.Point(298, 333);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(99, 38);
-            this.button4.TabIndex = 51;
-            this.button4.Text = "Odustani";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnOdustani.Location = new System.Drawing.Point(298, 333);
+            this.btnOdustani.Name = "btnOdustani";
+            this.btnOdustani.Size = new System.Drawing.Size(99, 38);
+            this.btnOdustani.TabIndex = 51;
+            this.btnOdustani.Text = "Odustani";
+            this.btnOdustani.UseVisualStyleBackColor = true;
+            this.btnOdustani.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button1
+            // btnSpremi
             // 
-            this.button1.Location = new System.Drawing.Point(117, 332);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 38);
-            this.button1.TabIndex = 48;
-            this.button1.Text = "Spremi";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSpremi.Location = new System.Drawing.Point(117, 332);
+            this.btnSpremi.Name = "btnSpremi";
+            this.btnSpremi.Size = new System.Drawing.Size(75, 38);
+            this.btnSpremi.TabIndex = 48;
+            this.btnSpremi.Text = "Spremi";
+            this.btnSpremi.UseVisualStyleBackColor = true;
+            this.btnSpremi.Click += new System.EventHandler(this.btnSpremi_Click);
             // 
             // radioB1
             // 
@@ -138,6 +140,7 @@ namespace ItronicStore
             this.radioB1.Name = "radioB1";
             this.radioB1.Size = new System.Drawing.Size(43, 24);
             this.radioB1.TabIndex = 52;
+            this.radioB1.Tag = "1";
             this.radioB1.Text = "1";
             this.radioB1.UseVisualStyleBackColor = true;
             // 
@@ -148,6 +151,7 @@ namespace ItronicStore
             this.radioB2.Name = "radioB2";
             this.radioB2.Size = new System.Drawing.Size(43, 24);
             this.radioB2.TabIndex = 52;
+            this.radioB2.Tag = "2";
             this.radioB2.Text = "2";
             this.radioB2.UseVisualStyleBackColor = true;
             // 
@@ -158,6 +162,7 @@ namespace ItronicStore
             this.radioB3.Name = "radioB3";
             this.radioB3.Size = new System.Drawing.Size(43, 24);
             this.radioB3.TabIndex = 52;
+            this.radioB3.Tag = "3";
             this.radioB3.Text = "3";
             this.radioB3.UseVisualStyleBackColor = true;
             // 
@@ -168,6 +173,7 @@ namespace ItronicStore
             this.radioB4.Name = "radioB4";
             this.radioB4.Size = new System.Drawing.Size(43, 24);
             this.radioB4.TabIndex = 52;
+            this.radioB4.Tag = "4";
             this.radioB4.Text = "4";
             this.radioB4.UseVisualStyleBackColor = true;
             // 
@@ -180,6 +186,7 @@ namespace ItronicStore
             this.radioB5.Size = new System.Drawing.Size(43, 24);
             this.radioB5.TabIndex = 52;
             this.radioB5.TabStop = true;
+            this.radioB5.Tag = "5";
             this.radioB5.Text = "5";
             this.radioB5.UseVisualStyleBackColor = true;
             // 
@@ -221,9 +228,9 @@ namespace ItronicStore
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.btnOdustani);
+            this.groupBox1.Controls.Add(this.btnSpremi);
+            this.groupBox1.Controls.Add(this.txtboxKomentar);
             this.groupBox1.Controls.Add(this.txtPrezime);
             this.groupBox1.Controls.Add(this.txtIme);
             this.groupBox1.Controls.Add(this.txtKorisnickoIme);
@@ -243,6 +250,58 @@ namespace ItronicStore
             this.groupBox1.Size = new System.Drawing.Size(423, 402);
             this.groupBox1.TabIndex = 55;
             this.groupBox1.TabStop = false;
+            // 
+            // txtPrezime
+            // 
+            this.txtPrezime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrezime.ForeColor = System.Drawing.Color.Red;
+            this.txtPrezime.Location = new System.Drawing.Point(239, 33);
+            this.txtPrezime.Name = "txtPrezime";
+            this.txtPrezime.ReadOnly = true;
+            this.txtPrezime.Size = new System.Drawing.Size(128, 26);
+            this.txtPrezime.TabIndex = 53;
+            // 
+            // txtIme
+            // 
+            this.txtIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIme.ForeColor = System.Drawing.Color.Red;
+            this.txtIme.Location = new System.Drawing.Point(117, 33);
+            this.txtIme.Name = "txtIme";
+            this.txtIme.ReadOnly = true;
+            this.txtIme.Size = new System.Drawing.Size(116, 26);
+            this.txtIme.TabIndex = 53;
+            // 
+            // txtKorisnickoIme
+            // 
+            this.txtKorisnickoIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKorisnickoIme.ForeColor = System.Drawing.Color.Red;
+            this.txtKorisnickoIme.Location = new System.Drawing.Point(174, 77);
+            this.txtKorisnickoIme.Name = "txtKorisnickoIme";
+            this.txtKorisnickoIme.ReadOnly = true;
+            this.txtKorisnickoIme.Size = new System.Drawing.Size(193, 26);
+            this.txtKorisnickoIme.TabIndex = 53;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label10.Location = new System.Drawing.Point(13, 32);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(82, 25);
+            this.label10.TabIndex = 38;
+            this.label10.Text = "Korisnik";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label9.Location = new System.Drawing.Point(13, 78);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(139, 25);
+            this.label9.TabIndex = 38;
+            this.label9.Text = "Korisničko ime";
             // 
             // label6
             // 
@@ -300,57 +359,14 @@ namespace ItronicStore
             this.label8.TabIndex = 38;
             this.label8.Text = "Filtiraj";
             // 
-            // txtKorisnickoIme
+            // label11
             // 
-            this.txtKorisnickoIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKorisnickoIme.ForeColor = System.Drawing.Color.Red;
-            this.txtKorisnickoIme.Location = new System.Drawing.Point(174, 77);
-            this.txtKorisnickoIme.Name = "txtKorisnickoIme";
-            this.txtKorisnickoIme.ReadOnly = true;
-            this.txtKorisnickoIme.Size = new System.Drawing.Size(193, 26);
-            this.txtKorisnickoIme.TabIndex = 53;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label9.Location = new System.Drawing.Point(13, 78);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(139, 25);
-            this.label9.TabIndex = 38;
-            this.label9.Text = "Korisničko ime";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label10.Location = new System.Drawing.Point(13, 32);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(82, 25);
-            this.label10.TabIndex = 38;
-            this.label10.Text = "Korisnik";
-            // 
-            // txtIme
-            // 
-            this.txtIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIme.ForeColor = System.Drawing.Color.Red;
-            this.txtIme.Location = new System.Drawing.Point(117, 33);
-            this.txtIme.Name = "txtIme";
-            this.txtIme.ReadOnly = true;
-            this.txtIme.Size = new System.Drawing.Size(116, 26);
-            this.txtIme.TabIndex = 53;
-            // 
-            // txtPrezime
-            // 
-            this.txtPrezime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrezime.ForeColor = System.Drawing.Color.Red;
-            this.txtPrezime.Location = new System.Drawing.Point(239, 33);
-            this.txtPrezime.Name = "txtPrezime";
-            this.txtPrezime.ReadOnly = true;
-            this.txtPrezime.Size = new System.Drawing.Size(128, 26);
-            this.txtPrezime.TabIndex = 53;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(395, 60);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(60, 20);
+            this.label11.TabIndex = 58;
+            this.label11.Text = "label11";
             // 
             // KorisnickaRecenzija
             // 
@@ -358,6 +374,7 @@ namespace ItronicStore
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1125, 829);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtTrazilicaProizvoda);
@@ -384,12 +401,12 @@ namespace ItronicStore
 
         #endregion
         private System.Windows.Forms.DataGridView dgvPopisProizvoda;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtboxKomentar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnOdustani;
+        private System.Windows.Forms.Button btnSpremi;
         private System.Windows.Forms.RadioButton radioB1;
         private System.Windows.Forms.RadioButton radioB2;
         private System.Windows.Forms.RadioButton radioB3;
@@ -410,5 +427,6 @@ namespace ItronicStore
         private System.Windows.Forms.TextBox txtKorisnickoIme;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label11;
     }
 }

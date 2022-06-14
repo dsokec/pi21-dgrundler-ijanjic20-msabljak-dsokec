@@ -39,6 +39,7 @@ namespace ItronicStore
             comboBox1.SelectedIndex = 0;
             NapuniPovijestRecenzijaKorisnika(korisnik);
             NapuniTekstualniOkvirKorisnika(korisnik);
+            radioB5.Checked = true;
         }
 
         private void NapuniTekstualniOkvirKorisnika(string korisnik)
@@ -74,20 +75,27 @@ namespace ItronicStore
 
         private void NapuniPovijestRecenzijaKorisnika(string korisnik)
         {
-            using (var db = new Entiteti())
-            {
-                var upit = from x in db.Proizvod
-                           join y in db.Recenzija
-                           on x.ID equals y.IDProizvod
-                           //where y.Korisnik.Equals(korisnik)
-                           select new { y.Korisnik.KorisnickoIme, x.Naziv, y.Ocjena };
+            //using (var db = new Entiteti())
+            //{
+
+            //    var upit = from x in db.Proizvod
+            //               from y in db.Recenzija
+            //               from z in db.Korisnik
+            //               where (x.ID.Equals(y.IDProizvod).Equals(y.))
+
+
+            //    //var upit = from x in db.Proizvod
+            //    //           join y in db.Recenzija on x.ID equals y.IDProizvod
+
+            //    //           //where y.Korisnik.Equals(korisnik)
+            //    //           select new { y.Korisnik.KorisnickoIme, x.Naziv, y.Ocjena };
                 
-                dgvPovijestRecenzija.DataSource = null;
-                dgvPovijestRecenzija.DataSource = upit.ToList();
+            //    //dgvPovijestRecenzija.DataSource = null;
+            //    //dgvPovijestRecenzija.DataSource = upit.ToList();
 
-                dgvPopisProizvoda.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            //    //dgvPopisProizvoda.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
 
-            }
+            //}
         }
 
         private void NapuniDGVProizvodima()
@@ -210,6 +218,40 @@ namespace ItronicStore
                 dgvPopisProizvoda.DataSource = upit.ToList();
                 dgvPopisProizvoda.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             }
+        }
+
+        // spremi recenziju
+        private void btnSpremi_Click(object sender, EventArgs e)
+        {
+            int broj = DohvatiOcjenuProizvoda();
+            string komentar = DohvatiKomentarKorisnika();
+            Proizvod dohvaceniRedak = DohvatiRedak();
+            string krajnjiKorisnik = korisnik;
+
+            //SpremanjePodatakaUTablicu();
+
+            //MessageBox.Show("Ocjena broj " + broj.ToString());
+        }
+
+        private Proizvod DohvatiRedak()
+        {
+            Proizvod proizvod = dgvPopisProizvoda.CurrentRow.DataBoundItem as Proizvod;
+            return proizvod;
+        }
+
+        private string DohvatiKomentarKorisnika()
+        {
+            string unos = txtboxKomentar.Text;
+            return unos;
+        }
+
+        private int DohvatiOcjenuProizvoda()
+        {
+            if (radioB1.Checked) return 1;
+            else if (radioB2.Checked) return 2;
+            else if (radioB3.Checked) return 3;
+            else if (radioB4.Checked) return 4;
+            else return 5;
         }
     }
 }

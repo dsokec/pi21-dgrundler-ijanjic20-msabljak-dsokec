@@ -13,6 +13,12 @@ namespace ItronicStore
     public partial class Izbornik : Form
     {
         private string korisnickoImeLogina;
+        wfLogin wfLogin;
+
+        internal void PostaviPrethodnuFormu(wfLogin x)
+        {
+            wfLogin = x;
+        }
 
         public Izbornik()
         {
@@ -45,6 +51,13 @@ namespace ItronicStore
             NovaReklamacija nova = new NovaReklamacija();
             nova.Show();
             this.Hide();
+        }
+
+        // Natrag
+        private void button2_Click(object sender, EventArgs e)
+        {
+            wfLogin.Show();
+            this.Dispose();
         }
     }
 }
