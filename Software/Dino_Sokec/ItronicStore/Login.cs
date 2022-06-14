@@ -18,7 +18,15 @@ namespace ItronicStore
 
         private void btnPrijaviSe_Click(object sender, EventArgs e)
         {
-            
+            OtvoriIzbornik();
+        }
+
+        private void OtvoriIzbornik()
+        {
+            string korisnickoIme = cmbKorisnickoIme.Text;
+            this.Hide();
+            Izbornik form = new Izbornik(korisnickoIme);
+            form.ShowDialog();
         }
 
         private void btnIzlaz_Click(object sender, EventArgs e)

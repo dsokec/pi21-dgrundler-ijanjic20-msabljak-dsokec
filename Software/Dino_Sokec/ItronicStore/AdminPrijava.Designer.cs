@@ -54,6 +54,7 @@ namespace ItronicStore
             // 
             // cmbLozinkaAdmin
             // 
+            this.cmbLozinkaAdmin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLozinkaAdmin.FormattingEnabled = true;
             this.cmbLozinkaAdmin.Location = new System.Drawing.Point(158, 168);
             this.cmbLozinkaAdmin.Name = "cmbLozinkaAdmin";
@@ -62,6 +63,7 @@ namespace ItronicStore
             // 
             // cmbImeAdmina
             // 
+            this.cmbImeAdmina.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbImeAdmina.FormattingEnabled = true;
             this.cmbImeAdmina.Location = new System.Drawing.Point(158, 127);
             this.cmbImeAdmina.Name = "cmbImeAdmina";

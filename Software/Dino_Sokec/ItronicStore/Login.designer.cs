@@ -111,6 +111,7 @@ namespace ItronicStore
             // 
             // cmbKorisnickoIme
             // 
+            this.cmbKorisnickoIme.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbKorisnickoIme.FormattingEnabled = true;
             this.cmbKorisnickoIme.Location = new System.Drawing.Point(483, 142);
             this.cmbKorisnickoIme.Name = "cmbKorisnickoIme";
@@ -120,6 +121,7 @@ namespace ItronicStore
             // 
             // cmbLozinka
             // 
+            this.cmbLozinka.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLozinka.FormattingEnabled = true;
             this.cmbLozinka.Location = new System.Drawing.Point(483, 183);
             this.cmbLozinka.Name = "cmbLozinka";
