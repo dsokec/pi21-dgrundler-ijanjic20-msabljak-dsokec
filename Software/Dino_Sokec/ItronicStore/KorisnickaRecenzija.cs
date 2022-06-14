@@ -37,6 +37,57 @@ namespace ItronicStore
             //NapuniDGVPremaLoginKorisnika();
             NapuniDGVProizvodima();
             comboBox1.SelectedIndex = 0;
+            NapuniPovijestRecenzijaKorisnika(korisnik);
+            NapuniTekstualniOkvirKorisnika(korisnik);
+        }
+
+        private void NapuniTekstualniOkvirKorisnika(string korisnik)
+        {
+            txtKorisnickoIme.Text = korisnik;
+            ImeiPrezimeKorisnika(korisnik);
+        }
+
+        private void ImeiPrezimeKorisnika(string korisnik)
+        {
+            
+            // ime
+            using (var db = new Entiteti())
+            {
+                var upit = from x in db.Korisnik
+                           where x.KorisnickoIme.Contains(korisnik)
+                           select x.Ime;
+                txtIme.Text = upit.FirstOrDefault();
+            }
+
+            // prezime
+            using (var db = new Entiteti())
+            {
+                var upit = from x in db.Korisnik
+                           where x.KorisnickoIme.Contains(korisnik)
+                           select x.Prezime;
+                txtPrezime.Text = upit.FirstOrDefault();
+            }
+            {
+
+            }
+        }
+
+        private void NapuniPovijestRecenzijaKorisnika(string korisnik)
+        {
+            using (var db = new Entiteti())
+            {
+                var upit = from x in db.Proizvod
+                           join y in db.Recenzija
+                           on x.ID equals y.IDProizvod
+                           //where y.Korisnik.Equals(korisnik)
+                           select new { y.Korisnik.KorisnickoIme, x.Naziv, y.Ocjena };
+                
+                dgvPovijestRecenzija.DataSource = null;
+                dgvPovijestRecenzija.DataSource = upit.ToList();
+
+                dgvPopisProizvoda.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+
+            }
         }
 
         private void NapuniDGVProizvodima()
