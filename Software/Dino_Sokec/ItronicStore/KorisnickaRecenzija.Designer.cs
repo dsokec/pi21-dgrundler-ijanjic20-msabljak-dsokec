@@ -56,7 +56,14 @@ namespace ItronicStore
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.lblBrojRedaka = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblBrojRedakaPovijest = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPopisProizvoda)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPovijestRecenzija)).BeginInit();
@@ -65,7 +72,7 @@ namespace ItronicStore
             // dgvPopisProizvoda
             // 
             this.dgvPopisProizvoda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPopisProizvoda.Location = new System.Drawing.Point(468, 105);
+            this.dgvPopisProizvoda.Location = new System.Drawing.Point(468, 93);
             this.dgvPopisProizvoda.Name = "dgvPopisProizvoda";
             this.dgvPopisProizvoda.RowHeadersWidth = 62;
             this.dgvPopisProizvoda.RowTemplate.Height = 28;
@@ -76,10 +83,10 @@ namespace ItronicStore
             // 
             // txtboxKomentar
             // 
-            this.txtboxKomentar.Location = new System.Drawing.Point(117, 206);
+            this.txtboxKomentar.Location = new System.Drawing.Point(117, 385);
             this.txtboxKomentar.Multiline = true;
             this.txtboxKomentar.Name = "txtboxKomentar";
-            this.txtboxKomentar.Size = new System.Drawing.Size(280, 97);
+            this.txtboxKomentar.Size = new System.Drawing.Size(250, 97);
             this.txtboxKomentar.TabIndex = 44;
             this.txtboxKomentar.Text = "Aplikacija je odlicna.";
             // 
@@ -87,7 +94,8 @@ namespace ItronicStore
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(26, 162);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label3.Location = new System.Drawing.Point(26, 341);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 25);
             this.label3.TabIndex = 38;
@@ -97,7 +105,8 @@ namespace ItronicStore
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(4, 205);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label2.Location = new System.Drawing.Point(4, 384);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 25);
             this.label2.TabIndex = 37;
@@ -106,16 +115,16 @@ namespace ItronicStore
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(107, 53);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(59, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(272, 32);
+            this.label1.Size = new System.Drawing.Size(291, 32);
             this.label1.TabIndex = 36;
             this.label1.Text = "Recenzija proizvoda";
             // 
             // btnOdustani
             // 
-            this.btnOdustani.Location = new System.Drawing.Point(298, 333);
+            this.btnOdustani.Location = new System.Drawing.Point(268, 502);
             this.btnOdustani.Name = "btnOdustani";
             this.btnOdustani.Size = new System.Drawing.Size(99, 38);
             this.btnOdustani.TabIndex = 51;
@@ -125,7 +134,7 @@ namespace ItronicStore
             // 
             // btnSpremi
             // 
-            this.btnSpremi.Location = new System.Drawing.Point(117, 332);
+            this.btnSpremi.Location = new System.Drawing.Point(117, 502);
             this.btnSpremi.Name = "btnSpremi";
             this.btnSpremi.Size = new System.Drawing.Size(75, 38);
             this.btnSpremi.TabIndex = 48;
@@ -136,7 +145,7 @@ namespace ItronicStore
             // radioB1
             // 
             this.radioB1.AutoSize = true;
-            this.radioB1.Location = new System.Drawing.Point(125, 164);
+            this.radioB1.Location = new System.Drawing.Point(125, 343);
             this.radioB1.Name = "radioB1";
             this.radioB1.Size = new System.Drawing.Size(43, 24);
             this.radioB1.TabIndex = 52;
@@ -147,7 +156,7 @@ namespace ItronicStore
             // radioB2
             // 
             this.radioB2.AutoSize = true;
-            this.radioB2.Location = new System.Drawing.Point(174, 164);
+            this.radioB2.Location = new System.Drawing.Point(174, 343);
             this.radioB2.Name = "radioB2";
             this.radioB2.Size = new System.Drawing.Size(43, 24);
             this.radioB2.TabIndex = 52;
@@ -158,7 +167,7 @@ namespace ItronicStore
             // radioB3
             // 
             this.radioB3.AutoSize = true;
-            this.radioB3.Location = new System.Drawing.Point(223, 165);
+            this.radioB3.Location = new System.Drawing.Point(223, 344);
             this.radioB3.Name = "radioB3";
             this.radioB3.Size = new System.Drawing.Size(43, 24);
             this.radioB3.TabIndex = 52;
@@ -169,7 +178,7 @@ namespace ItronicStore
             // radioB4
             // 
             this.radioB4.AutoSize = true;
-            this.radioB4.Location = new System.Drawing.Point(272, 165);
+            this.radioB4.Location = new System.Drawing.Point(272, 344);
             this.radioB4.Name = "radioB4";
             this.radioB4.Size = new System.Drawing.Size(43, 24);
             this.radioB4.TabIndex = 52;
@@ -181,7 +190,7 @@ namespace ItronicStore
             // 
             this.radioB5.AutoSize = true;
             this.radioB5.Checked = true;
-            this.radioB5.Location = new System.Drawing.Point(321, 165);
+            this.radioB5.Location = new System.Drawing.Point(321, 344);
             this.radioB5.Name = "radioB5";
             this.radioB5.Size = new System.Drawing.Size(43, 24);
             this.radioB5.TabIndex = 52;
@@ -192,7 +201,7 @@ namespace ItronicStore
             // 
             // txtPronadjeniProizvod
             // 
-            this.txtPronadjeniProizvod.Location = new System.Drawing.Point(117, 121);
+            this.txtPronadjeniProizvod.Location = new System.Drawing.Point(117, 260);
             this.txtPronadjeniProizvod.Name = "txtPronadjeniProizvod";
             this.txtPronadjeniProizvod.ReadOnly = true;
             this.txtPronadjeniProizvod.Size = new System.Drawing.Size(250, 26);
@@ -202,7 +211,8 @@ namespace ItronicStore
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(13, 120);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label4.Location = new System.Drawing.Point(13, 259);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(88, 25);
             this.label4.TabIndex = 38;
@@ -211,10 +221,10 @@ namespace ItronicStore
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(662, 23);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(175, 25);
+            this.label5.Size = new System.Drawing.Size(215, 29);
             this.label5.TabIndex = 38;
             this.label5.Text = "Tražilica proizvoda";
             // 
@@ -228,6 +238,7 @@ namespace ItronicStore
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.btnOdustani);
             this.groupBox1.Controls.Add(this.btnSpremi);
             this.groupBox1.Controls.Add(this.txtboxKomentar);
@@ -238,16 +249,19 @@ namespace ItronicStore
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.radioB5);
             this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.radioB4);
             this.groupBox1.Controls.Add(this.radioB2);
             this.groupBox1.Controls.Add(this.radioB3);
             this.groupBox1.Controls.Add(this.radioB1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 105);
+            this.groupBox1.Location = new System.Drawing.Point(13, 69);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(423, 402);
+            this.groupBox1.Size = new System.Drawing.Size(387, 560);
             this.groupBox1.TabIndex = 55;
             this.groupBox1.TabStop = false;
             // 
@@ -255,7 +269,7 @@ namespace ItronicStore
             // 
             this.txtPrezime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrezime.ForeColor = System.Drawing.Color.Red;
-            this.txtPrezime.Location = new System.Drawing.Point(239, 33);
+            this.txtPrezime.Location = new System.Drawing.Point(239, 80);
             this.txtPrezime.Name = "txtPrezime";
             this.txtPrezime.ReadOnly = true;
             this.txtPrezime.Size = new System.Drawing.Size(128, 26);
@@ -265,7 +279,7 @@ namespace ItronicStore
             // 
             this.txtIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIme.ForeColor = System.Drawing.Color.Red;
-            this.txtIme.Location = new System.Drawing.Point(117, 33);
+            this.txtIme.Location = new System.Drawing.Point(117, 80);
             this.txtIme.Name = "txtIme";
             this.txtIme.ReadOnly = true;
             this.txtIme.Size = new System.Drawing.Size(116, 26);
@@ -275,7 +289,7 @@ namespace ItronicStore
             // 
             this.txtKorisnickoIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtKorisnickoIme.ForeColor = System.Drawing.Color.Red;
-            this.txtKorisnickoIme.Location = new System.Drawing.Point(174, 77);
+            this.txtKorisnickoIme.Location = new System.Drawing.Point(174, 124);
             this.txtKorisnickoIme.Name = "txtKorisnickoIme";
             this.txtKorisnickoIme.ReadOnly = true;
             this.txtKorisnickoIme.Size = new System.Drawing.Size(193, 26);
@@ -286,7 +300,7 @@ namespace ItronicStore
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label10.Location = new System.Drawing.Point(13, 32);
+            this.label10.Location = new System.Drawing.Point(13, 79);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(82, 25);
             this.label10.TabIndex = 38;
@@ -297,7 +311,7 @@ namespace ItronicStore
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label9.Location = new System.Drawing.Point(13, 78);
+            this.label9.Location = new System.Drawing.Point(13, 125);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(139, 25);
             this.label9.TabIndex = 38;
@@ -306,22 +320,22 @@ namespace ItronicStore
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(714, 437);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(714, 443);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(123, 32);
+            this.label6.Size = new System.Drawing.Size(181, 25);
             this.label6.TabIndex = 36;
-            this.label6.Text = "Povijest ";
+            this.label6.Text = "Povijest recenzija";
             // 
             // dgvPovijestRecenzija
             // 
             this.dgvPovijestRecenzija.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPovijestRecenzija.Location = new System.Drawing.Point(468, 472);
+            this.dgvPovijestRecenzija.Location = new System.Drawing.Point(468, 478);
             this.dgvPovijestRecenzija.Name = "dgvPovijestRecenzija";
             this.dgvPovijestRecenzija.RowHeadersWidth = 62;
             this.dgvPovijestRecenzija.RowTemplate.Height = 28;
             this.dgvPovijestRecenzija.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPovijestRecenzija.Size = new System.Drawing.Size(645, 303);
+            this.dgvPovijestRecenzija.Size = new System.Drawing.Size(645, 185);
             this.dgvPovijestRecenzija.TabIndex = 45;
             // 
             // label7
@@ -352,30 +366,103 @@ namespace ItronicStore
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(984, 23);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(992, 33);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(62, 25);
+            this.label8.Size = new System.Drawing.Size(50, 20);
             this.label8.TabIndex = 38;
             this.label8.Text = "Filtiraj";
+            // 
+            // lblBrojRedaka
+            // 
+            this.lblBrojRedaka.AutoSize = true;
+            this.lblBrojRedaka.Location = new System.Drawing.Point(589, 417);
+            this.lblBrojRedaka.Name = "lblBrojRedaka";
+            this.lblBrojRedaka.Size = new System.Drawing.Size(60, 20);
+            this.lblBrojRedaka.TabIndex = 58;
+            this.lblBrojRedaka.Text = "label11";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(395, 60);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(464, 415);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(60, 20);
-            this.label11.TabIndex = 58;
-            this.label11.Text = "label11";
+            this.label11.Size = new System.Drawing.Size(119, 22);
+            this.label11.TabIndex = 56;
+            this.label11.Text = "Broj redaka:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(464, 682);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(119, 22);
+            this.label12.TabIndex = 56;
+            this.label12.Text = "Broj redaka:";
+            // 
+            // lblBrojRedakaPovijest
+            // 
+            this.lblBrojRedakaPovijest.AutoSize = true;
+            this.lblBrojRedakaPovijest.Location = new System.Drawing.Point(589, 684);
+            this.lblBrojRedakaPovijest.Name = "lblBrojRedakaPovijest";
+            this.lblBrojRedakaPovijest.Size = new System.Drawing.Size(60, 20);
+            this.lblBrojRedakaPovijest.TabIndex = 58;
+            this.lblBrojRedakaPovijest.Text = "label11";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(164, 301);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 26);
+            this.dateTimePicker1.TabIndex = 54;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label13.Location = new System.Drawing.Point(32, 302);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(69, 25);
+            this.label13.TabIndex = 38;
+            this.label13.Text = "Datum";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label14.Location = new System.Drawing.Point(90, 35);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(225, 25);
+            this.label14.TabIndex = 38;
+            this.label14.Text = "Osobni podatci korisnika";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label15.Location = new System.Drawing.Point(65, 218);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(272, 25);
+            this.label15.TabIndex = 38;
+            this.label15.Text = "Povratna informacija kupca";
             // 
             // KorisnickaRecenzija
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1125, 829);
-            this.Controls.Add(this.label11);
+            this.ClientSize = new System.Drawing.Size(1125, 720);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.lblBrojRedakaPovijest);
+            this.Controls.Add(this.lblBrojRedaka);
             this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtTrazilicaProizvoda);
             this.Controls.Add(this.dgvPovijestRecenzija);
@@ -384,7 +471,6 @@ namespace ItronicStore
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "KorisnickaRecenzija";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -427,6 +513,13 @@ namespace ItronicStore
         private System.Windows.Forms.TextBox txtKorisnickoIme;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblBrojRedaka;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblBrojRedakaPovijest;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
     }
 }

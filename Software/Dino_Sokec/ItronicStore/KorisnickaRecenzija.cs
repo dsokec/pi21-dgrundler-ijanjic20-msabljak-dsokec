@@ -75,6 +75,23 @@ namespace ItronicStore
 
         private void NapuniPovijestRecenzijaKorisnika(string korisnik)
         {
+            // radi :)
+            using(var db = new Entiteti())
+            {
+                var upit = from x in db.Recenzija
+                           join y in db.Proizvod on x.IDProizvod equals y.ID
+                           join z in db.Korisnik on x.IDKorisnik equals z.ID
+                           where z.KorisnickoIme == korisnik
+                           select new { z.Ime, z.Prezime, y.Naziv, x.Ocjena, x.Datum };
+
+                dgvPovijestRecenzija.DataSource = null;
+                dgvPovijestRecenzija.DataSource = upit.ToList();
+
+                dgvPovijestRecenzija.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                dgvPovijestRecenzija.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                lblBrojRedakaPovijest.Text = dgvPovijestRecenzija.Rows.Count.ToString();
+            }
             //using (var db = new Entiteti())
             //{
 
@@ -103,14 +120,33 @@ namespace ItronicStore
             using(var db = new Entiteti())
             {
                 var upit = from x in db.Proizvod
+                           //join y in db.Recenzija on x.ID equals y.IDProizvod
+                           //join z in db.Korisnik on y.IDKorisnik equals z.ID
+                           //where z.KorisnickoIme != korisnik
                            select new { x.Naziv, x.Cijena, x.Kolicina };
 
                 dgvPopisProizvoda.DataSource = null;
                 dgvPopisProizvoda.DataSource = upit.ToList();
                 // radi
                 dgvPopisProizvoda.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                dgvPopisProizvoda.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+
+                // broj redaka u DGV-u
+                dgvPopisProizvoda.RowsAdded += RowsAdded;
+                dgvPopisProizvoda.RowsRemoved += RowsRemoved;
             }
 
+        }
+
+        private void RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            lblBrojRedaka.Text = dgvPopisProizvoda.Rows.Count.ToString();
+        }
+
+        private void RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            lblBrojRedaka.Text = dgvPopisProizvoda.Rows.Count.ToString();
         }
 
         //private void NapuniDGVPremaLoginKorisnika()
