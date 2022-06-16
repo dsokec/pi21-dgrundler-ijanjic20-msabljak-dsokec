@@ -4,7 +4,19 @@ using System.Text;
 
 namespace KlasaUpravljanja
 {
-    class GrafickiPrikaz
+    public static class GrafickiPrikaz
     {
+        public static void PrikaziCijenuPoMjesecima()
+        {
+
+        }
+        public static void PrikaziBrojProdanihProizvoda()
+        {
+
+        }
+        public static void PrikaziPoMjesecu(string mjesec)
+        {
+
+        }
     }
 }

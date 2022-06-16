@@ -7,33 +7,33 @@ namespace KlasaUpravljanja
     class UpravljanjeReklamacijama
     {
         //public static List<Reklamacija> DohvatiSveReklamacije(Feedback povratnaInformacija)
-        //public static List<Reklamacija> DohvatiSveReklamacije()
-        //{
-        //    List<Reklamacija> SveReklamacije = null;
-        //    using (var db = new entities())
-        //    {
+        public static List<Reklamacija> DohvatiSveReklamacije()
+        {
+            List<Reklamacija> SveReklamacije = null;
+            using (var db = new entities())
+            {
 
-        //        var dohvacenaReklamacija = from n in db.Reklamacija
-        //                                       //where n.IDKorisnik == korisnik.ID
-        //                                       // where n.IDReklamacija == povratnaInformacija.IDReklamacija
-        //                                   select n;
-        //        SveReklamacije = dohvacenaReklamacija.ToList();
-        //    }
-        //    return SveReklamacije;
-        //}
+                var dohvacenaReklamacija = from n in db.Reklamacija
+                                               //where n.IDKorisnik == korisnik.ID
+                                               // where n.IDReklamacija == povratnaInformacija.IDReklamacija
+                                           select n;
+                SveReklamacije = dohvacenaReklamacija.ToList();
+            }
+            return SveReklamacije;
+        }
 
-        //public static List<Reklamacija> DohvatiSveReklamacijePoEmail(string emailOsobe)
-        //{
-        //    List<Reklamacija> SveReklamacije = null;
-        //    using (var db = new entities())
-        //    {
-        //        var dohvacenaReklamacija = from n in db.Reklamacija
-        //                                   where n.Email.Contains(emailOsobe)
-        //                                   select n;
-        //        SveReklamacije = dohvacenaReklamacija.ToList();
-        //    }
-        //    return SveReklamacije;
-        //}
+        public static List<Reklamacija> DohvatiSveReklamacijePoEmail(string emailOsobe)
+        {
+            List<Reklamacija> SveReklamacije = null;
+            using (var db = new entities())
+            {
+                var dohvacenaReklamacija = from n in db.Reklamacija
+                                           where n.Email.Contains(emailOsobe)
+                                           select n;
+                SveReklamacije = dohvacenaReklamacija.ToList();
+            }
+            return SveReklamacije;
+        }
 
         //public static List<Reklamacija> DohvatiSveReklamacijePoImeIPrezime(string imeOsobe, string prezimeOsobe)
         //{
@@ -126,27 +126,27 @@ namespace KlasaUpravljanja
         //    return SveReklamacije;
         //}
 
-        //public static void StvoriReklamaciju(Reklamacija reklamacija)
-        //{
-        //    using (var db = new entities())
-        //    {
-        //        db.Reklamacija.Add(reklamacija);
-        //        db.SaveChanges();
-        //    }
-        //}
+        public static void StvoriReklamaciju(Reklamacija reklamacija)
+        {
+            using (var db = new entities())
+            {
+                db.Reklamacija.Add(reklamacija);
+                db.SaveChanges();
+            }
+        }
 
-        //public static void ObrisiReklamaciju(Reklamacija reklamacija)
-        //{
-        //    using (var db = new entities())
-        //    {
-        //        var odabranaReklamacija = db.Reklamacija.Where(n => n.IDReklamacija == reklamacija.IDReklamacija).FirstOrDefault();
-        //        var odabranaPovratnaInformacija = db.Feedback.Where(n => n.IDReklamacija == reklamacija.IDReklamacija).FirstOrDefault();
+        public static void ObrisiReklamaciju(Reklamacija reklamacija)
+        {
+            using (var db = new entities())
+            {
+                var odabranaReklamacija = db.Reklamacija.Where(n => n.IDReklamacija == reklamacija.IDReklamacija).FirstOrDefault();
+                var odabranaPovratnaInformacija = db.Feedback.Where(n => n.IDReklamacija == reklamacija.IDReklamacija).FirstOrDefault();
 
-        //        db.Feedback.Remove(odabranaPovratnaInformacija);
-        //        db.Reklamacija.Remove(odabranaReklamacija);
-        //        db.SaveChanges();
-        //    }
-        //}
+                db.Feedback.Remove(odabranaPovratnaInformacija);
+                db.Reklamacija.Remove(odabranaReklamacija);
+                db.SaveChanges();
+            }
+        }
 
         //public static void AzurirajReklamaciju(Reklamacija reklamacija)
         //{
@@ -170,20 +170,20 @@ namespace KlasaUpravljanja
         //    }
         //}
 
-        //public static Reklamacija DohvatiZadnjuReklamaciju(Reklamacija reklamacija)
-        //{
-        //    using (var db = new entities())
-        //    {
-        //        foreach (var item in db.Reklamacija)
-        //        {
-        //            if (reklamacija.IDReklamacija == item.IDReklamacija)
-        //            {
-        //                return item as Reklamacija;
-        //            }
-        //        }
-        //        return null;
-        //    }
-        //}
+        public static Reklamacija DohvatiZadnjuReklamaciju(Reklamacija reklamacija)
+        {
+            using (var db = new entities())
+            {
+                foreach (var item in db.Reklamacija)
+                {
+                    if (reklamacija.IDReklamacija == item.IDReklamacija)
+                    {
+                        return item as Reklamacija;
+                    }
+                }
+                return null;
+            }
+        }
 
         //public static bool ProvjeriEmailKorisnika(Korisnik korisnik)
         //{
