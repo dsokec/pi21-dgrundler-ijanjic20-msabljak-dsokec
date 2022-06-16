@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ItronicStore;
+using KlasaUpravljanja;
 
 namespace ItronicStore
 {
@@ -69,6 +69,7 @@ namespace ItronicStore
 
                 lblBrojRedakaPovijest.Text = dgvPovijestRecenzija.Rows.Count.ToString();
             }
+            
         }
 
         private void NapuniDGVProizvodima(string korisnik)
@@ -137,6 +138,8 @@ namespace ItronicStore
         //}
 
         // Button odustani
+       
+        // Natrag
         private void button4_Click(object sender, EventArgs e)
         {
             izbornik.Show();
@@ -202,6 +205,8 @@ namespace ItronicStore
                 dgvPopisProizvoda.DataSource = upit.ToList();
                 dgvPopisProizvoda.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             }
+
+            u
         }
 
         private void FiltirajPoNazivu()
