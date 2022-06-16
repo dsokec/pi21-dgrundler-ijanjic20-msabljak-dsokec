@@ -4,7 +4,7 @@ using System.Text;
 
 namespace KlasaUpravljanja
 {
-    class UpravljanjeReklamacije
+    class UpravljanjeReklamacijama
     {
         //public static List<Reklamacija> DohvatiSveReklamacije(Feedback povratnaInformacija)
         //public static List<Reklamacija> DohvatiSveReklamacije()

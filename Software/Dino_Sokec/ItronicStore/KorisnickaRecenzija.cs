@@ -48,30 +48,7 @@ namespace ItronicStore
             ImeiPrezimeKorisnika(korisnik);
         }
 
-        private void ImeiPrezimeKorisnika(string korisnik)
-        {
-            
-            // ime
-            using (var db = new Entiteti())
-            {
-                var upit = from x in db.Korisnik
-                           where x.KorisnickoIme.Contains(korisnik)
-                           select x.Ime;
-                txtIme.Text = upit.FirstOrDefault();
-            }
-
-            // prezime
-            using (var db = new Entiteti())
-            {
-                var upit = from x in db.Korisnik
-                           where x.KorisnickoIme.Contains(korisnik)
-                           select x.Prezime;
-                txtPrezime.Text = upit.FirstOrDefault();
-            }
-            {
-
-            }
-        }
+        
 
         private void NapuniPovijestRecenzijaKorisnika(string korisnik)
         {

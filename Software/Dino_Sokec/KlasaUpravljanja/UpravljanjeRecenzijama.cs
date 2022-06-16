@@ -1,11 +1,78 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
+using System.Data;
 
 namespace KlasaUpravljanja
 {
-    class UpravljanjeRecenzije
+    public static class UpravljanjeRecenzijama
     {
+
+        public static void ImeiPrezimeKorisnika(string korisnik)
+        {
+
+            // ime
+            using (var db = new Entiteti())
+            {
+                var upit = from x in db.Korisnik
+                           where x.KorisnickoIme.Contains(korisnik)
+                           select x.Ime;
+                txtIme.Text = upit.FirstOrDefault();
+            }
+
+            // prezime
+            using (var db = new Entiteti())
+            {
+                var upit = from x in db.Korisnik
+                           where x.KorisnickoIme.Contains(korisnik)
+                           select x.Prezime;
+                txtPrezime.Text = upit.FirstOrDefault();
+            }
+        }
+
+        public static void NapuniPovijestRecenzijaKorisnika(string korisnik)
+        {
+            // radi :)
+            using (var db = new Entiteti())
+            {
+                var upit = from x in db.Recenzija
+                           join y in db.Proizvod on x.IDProizvod equals y.ID
+                           join z in db.Korisnik on x.IDKorisnik equals z.ID
+                           where z.KorisnickoIme == korisnik
+                           select new { z.Ime, z.Prezime, y.Naziv, x.Ocjena, x.Datum };
+                return upit.ToList();
+            }
+        }
+
+        public static void TrazilicaProizvoda(string uneseniTekst)
+        {
+            using (var db = new Entiteti())
+            {
+                var upit = from xy in db.Proizvod
+                           where xy.Naziv.Contains(uneseniTekst)
+                           select new { Naziv = xy.Naziv, Cijena = xy.Cijena, Kolicina = xy.Kolicina };
+                
+                dgvPopisProizvoda.DataSource = null;
+                dgvPopisProizvoda.DataSource = upit.ToList();
+                dgvPopisProizvoda.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            }
+        }
+
+        public static void FiltirajPoCijeniSilazno() {
+            using (var db = new Entiteti())
+            {
+                var upit = from x in db.Proizvod
+                           orderby x.Cijena descending
+                           select new { x.Naziv, x.Cijena, x.Kolicina };
+
+                dgvPopisProizvoda.DataSource = null;
+                dgvPopisProizvoda.DataSource = upit.ToList();
+                dgvPopisProizvoda.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            }
+        }
+             
+
         //public static List<Recenzija> DohvatiSveRecenzije()
         //{
         //    List<Recenzija> sveRecenzije = null;

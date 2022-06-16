@@ -2,7 +2,7 @@
 
 namespace KlasaUpravljanja
 {
-    public class UpravljanjeFinancije
+    public class UpravljanjeFinancijama
     {
         //public static List<Financije> DohvatiFinancije()
         //{
