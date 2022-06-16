@@ -35,7 +35,7 @@ namespace ItronicStore
         private void KorisnickaRecenzija_Load(object sender, EventArgs e)
         {
             //NapuniDGVPremaLoginKorisnika();
-            NapuniDGVProizvodima();
+            NapuniDGVProizvodima(korisnik);
             comboBox1.SelectedIndex = 0;
             NapuniPovijestRecenzijaKorisnika(korisnik);
             NapuniTekstualniOkvirKorisnika(korisnik);
@@ -92,37 +92,36 @@ namespace ItronicStore
 
                 lblBrojRedakaPovijest.Text = dgvPovijestRecenzija.Rows.Count.ToString();
             }
-            //using (var db = new Entiteti())
-            //{
-
-            //    var upit = from x in db.Proizvod
-            //               from y in db.Recenzija
-            //               from z in db.Korisnik
-            //               where (x.ID.Equals(y.IDProizvod).Equals(y.))
-
-
-            //    //var upit = from x in db.Proizvod
-            //    //           join y in db.Recenzija on x.ID equals y.IDProizvod
-
-            //    //           //where y.Korisnik.Equals(korisnik)
-            //    //           select new { y.Korisnik.KorisnickoIme, x.Naziv, y.Ocjena };
-                
-            //    //dgvPovijestRecenzija.DataSource = null;
-            //    //dgvPovijestRecenzija.DataSource = upit.ToList();
-
-            //    //dgvPopisProizvoda.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-
-            //}
         }
 
-        private void NapuniDGVProizvodima()
+        private void NapuniDGVProizvodima(string korisnik)
         {
             using(var db = new Entiteti())
             {
+                //var upit = from x in db.Proizvod
+                //           join y in db.Recenzija on x.ID equals y.IDProizvod into proizvodGrupa
+                //           from m in proizvodGrupa.DefaultIfEmpty()
+                //           join z in db.Korisnik on m.IDKorisnik equals z.ID into korisnikGrupa
+                //           from kj in korisnikGrupa.DefaultIfEmpty()
+                //           where kj.KorisnickoIme != korisnik
+
+                //           select new
+                //           {
+                //               x.Naziv,
+                //               x.Cijena,
+                //               x.Kolicina
+                //           };
+
+
+                //var upit = from x in db.Proizvod
+                //           where !db.Recenzija.Any(f => f.)
+
+
+                // treba se ispraviti
                 var upit = from x in db.Proizvod
                            //join y in db.Recenzija on x.ID equals y.IDProizvod
                            //join z in db.Korisnik on y.IDKorisnik equals z.ID
-                           //where z.KorisnickoIme != korisnik
+
                            select new { x.Naziv, x.Cijena, x.Kolicina };
 
                 dgvPopisProizvoda.DataSource = null;
@@ -198,7 +197,7 @@ namespace ItronicStore
 
             if(comboBox1.SelectedIndex == 0)
             {
-                NapuniDGVProizvodima();
+                NapuniDGVProizvodima(korisnik);
             }
             else if(comboBox1.SelectedIndex == 1)
             {
@@ -259,14 +258,97 @@ namespace ItronicStore
         // spremi recenziju
         private void btnSpremi_Click(object sender, EventArgs e)
         {
-            int broj = DohvatiOcjenuProizvoda();
+            int ocjena = DohvatiOcjenuProizvoda();
             string komentar = DohvatiKomentarKorisnika();
             Proizvod dohvaceniRedak = DohvatiRedak();
-            string krajnjiKorisnik = korisnik;
+            bool postojiProizvod = ProvjeriJeLiImaDuplikata(dohvaceniRedak);
+            int dohvaceniIDKorisnika = DohvatiIDKorisnika(korisnik);
+            string datum = dateTimePicker1.Text;
 
-            //SpremanjePodatakaUTablicu();
+            SpremanjePodatakaUTablicu(dohvaceniRedak, postojiProizvod, dohvaceniIDKorisnika, ocjena, datum, komentar);
+            
+        }
 
-            //MessageBox.Show("Ocjena broj " + broj.ToString());
+        private bool ProvjeriJeLiImaDuplikata(Proizvod dohvaceniRedak)
+        {
+            using (var db = new Entiteti())
+            {
+                foreach (var item in db.Proizvod)
+                {
+                    if(item.ID == dohvaceniRedak.ID)
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+        }
+
+        private int DohvatiIDKorisnika(string korisnik)
+        {
+            using (var db = new Entiteti())
+            {
+                var upit = from x in db.Korisnik
+                           where x.KorisnickoIme == korisnik
+                           select x.ID;
+                return upit.FirstOrDefault();
+            }
+        }
+
+        // Spremanje ili azuriranje podataka u tablicu
+        private void SpremanjePodatakaUTablicu(Proizvod dohvaceniRedak, bool postojiProizvod, int idKorisnika, int ocjena, string datum, string komentar)
+        {
+            using (var db = new Entiteti())
+            {
+                // Provjera postojanja duplikata
+                //bool postojiProizvod = db.Proizvod.Any(proizv => proizv.ID == dohvaceniRedak.ID);
+
+                //bool postojiProizvod = db.Proizvod.Any(x => x.ID.Equals(dohvaceniRedak.ID));
+
+                //var postojiProizvod = (from x in db.Proizvod
+                //                       where x.ID == dohvaceniRedak.ID
+                //                       select x).FirstOrDefault() != null;
+
+                //var postojiProizvod = (from x in db.Proizvod
+                //                       where x.ID == dohvaceniRedak.ID
+                //                       select x).Any();
+
+                //var postojiProizvod = from x in db.Proizvod
+                //                      where x.ID.ToString().Contains(dohvaceniRedak.ID.ToString())
+                //                      select x;
+
+                
+                if (postojiProizvod == false)
+                {
+                    Recenzija recenzija = new Recenzija();
+                    recenzija.Komentar = komentar;
+                    recenzija.Datum = Convert.ToDateTime(datum);
+                    recenzija.Ocjena = ocjena;
+                    recenzija.IDProizvod = dohvaceniRedak.ID;
+                    recenzija.IDKorisnik = idKorisnika;
+
+                    db.Recenzija.Add(recenzija);
+                    db.SaveChanges();
+
+                    MessageBox.Show("Spremljene su promjene");
+                    NapuniPovijestRecenzijaKorisnika(korisnik);
+                }
+                else
+                {
+                    Recenzija recenzija = new Recenzija();
+                    recenzija.Komentar = komentar;
+                    recenzija.Datum = Convert.ToDateTime(datum);
+                    recenzija.Ocjena = ocjena;
+                    recenzija.IDProizvod = dohvaceniRedak.ID;
+                    recenzija.IDKorisnik = idKorisnika;
+
+                    db.SaveChanges();
+
+                    MessageBox.Show("Azurirane su promjene");
+                    NapuniPovijestRecenzijaKorisnika(korisnik);
+
+                }
+            }
         }
 
         private Proizvod DohvatiRedak()
