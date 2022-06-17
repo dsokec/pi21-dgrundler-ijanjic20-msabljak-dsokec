@@ -46,11 +46,15 @@ namespace ItronicStore
             this.label5 = new System.Windows.Forms.Label();
             this.txtTrazilicaProizvoda = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.txtPrezime = new System.Windows.Forms.TextBox();
             this.txtIme = new System.Windows.Forms.TextBox();
             this.txtKorisnickoIme = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dgvPovijestRecenzija = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
@@ -60,10 +64,6 @@ namespace ItronicStore
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.lblBrojRedakaPovijest = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPopisProizvoda)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPovijestRecenzija)).BeginInit();
@@ -265,6 +265,13 @@ namespace ItronicStore
             this.groupBox1.TabIndex = 55;
             this.groupBox1.TabStop = false;
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(164, 301);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 26);
+            this.dateTimePicker1.TabIndex = 54;
+            // 
             // txtPrezime
             // 
             this.txtPrezime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -295,6 +302,28 @@ namespace ItronicStore
             this.txtKorisnickoIme.Size = new System.Drawing.Size(193, 26);
             this.txtKorisnickoIme.TabIndex = 53;
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label14.Location = new System.Drawing.Point(90, 35);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(225, 25);
+            this.label14.TabIndex = 38;
+            this.label14.Text = "Osobni podatci korisnika";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label15.Location = new System.Drawing.Point(65, 218);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(272, 25);
+            this.label15.TabIndex = 38;
+            this.label15.Text = "Povratna informacija kupca";
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -316,6 +345,17 @@ namespace ItronicStore
             this.label9.Size = new System.Drawing.Size(139, 25);
             this.label9.TabIndex = 38;
             this.label9.Text = "Korisničko ime";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label13.Location = new System.Drawing.Point(32, 302);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(69, 25);
+            this.label13.TabIndex = 38;
+            this.label13.Text = "Datum";
             // 
             // label6
             // 
@@ -410,46 +450,6 @@ namespace ItronicStore
             this.lblBrojRedakaPovijest.Size = new System.Drawing.Size(60, 20);
             this.lblBrojRedakaPovijest.TabIndex = 58;
             this.lblBrojRedakaPovijest.Text = "label11";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(164, 301);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 26);
-            this.dateTimePicker1.TabIndex = 54;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label13.Location = new System.Drawing.Point(32, 302);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(69, 25);
-            this.label13.TabIndex = 38;
-            this.label13.Text = "Datum";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label14.Location = new System.Drawing.Point(90, 35);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(225, 25);
-            this.label14.TabIndex = 38;
-            this.label14.Text = "Osobni podatci korisnika";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label15.Location = new System.Drawing.Point(65, 218);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(272, 25);
-            this.label15.TabIndex = 38;
-            this.label15.Text = "Povratna informacija kupca";
             // 
             // KorisnickaRecenzija
             // 
