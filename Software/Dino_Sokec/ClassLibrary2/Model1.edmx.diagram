@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="69451b3887c249088541f8834ad11394" Name="Diagram1" ZoomLevel="83">
+        <EntityTypeShape EntityType="Model.Admin" Width="1.5" PointX="3" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Dobavljac" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Kategorija" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Korisnik" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Kvartal" Width="1.5" PointX="5.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Obracun" Width="1.5" PointX="8" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Odgovor" Width="1.5" PointX="5.25" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Podnesak" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Proizvod" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Recenzija" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Reklamacija" Width="1.5" PointX="3" PointY="11.875" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_Odgovor_Admin" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Proizvod_Dobavljac" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Proizvod_Kategorija" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Recenzija_Korisnik" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Reklamacija_Korisnik" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Obracun_Kvartal" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Podnesak_Proizvod" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Podnesak_Reklamacija" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Recenzija_Proizvod" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Model.Relacija" Width="1.5" PointX="7.5" PointY="12.125" />
+        <AssociationConnector Association="Model.FK_Relacija_Odgovor" />
+        <AssociationConnector Association="Model.FK_Relacija_Reklamacija" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

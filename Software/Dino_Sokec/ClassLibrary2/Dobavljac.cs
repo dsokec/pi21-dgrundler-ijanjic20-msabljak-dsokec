@@ -7,21 +7,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ItronicStore
+namespace ClassLibrary2
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Kategorija
+    public partial class Dobavljac
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Kategorija()
+        public Dobavljac()
         {
             this.Proizvod = new HashSet<Proizvod>();
         }
     
-        public int ID { get; set; }
-        public string Naziv { get; set; }
+        public string Dobavljac1 { get; set; }
+        public string Grad { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Proizvod> Proizvod { get; set; }

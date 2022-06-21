@@ -7,33 +7,29 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ItronicStore
+namespace ClassLibrary2
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Proizvod
+    public partial class Reklamacija
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Proizvod()
+        public Reklamacija()
         {
-            this.Recenzija = new HashSet<Recenzija>();
-            this.Reklamacija = new HashSet<Reklamacija>();
+            this.Podnesak = new HashSet<Podnesak>();
+            this.Relacija = new HashSet<Relacija>();
         }
     
-        public int ID { get; set; }
-        public int IDKategorija { get; set; }
-        public string Dobavljac { get; set; }
-        public string Naziv { get; set; }
-        public double Cijena { get; set; }
-        public int Kolicina { get; set; }
+        public int IDReklamacija { get; set; }
+        public int IDKorisnik { get; set; }
+        public System.DateTime Datum { get; set; }
         public string Opis { get; set; }
     
-        public virtual Dobavljac Dobavljac1 { get; set; }
-        public virtual Kategorija Kategorija { get; set; }
+        public virtual Korisnik Korisnik { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Recenzija> Recenzija { get; set; }
+        public virtual ICollection<Podnesak> Podnesak { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reklamacija> Reklamacija { get; set; }
+        public virtual ICollection<Relacija> Relacija { get; set; }
     }
 }

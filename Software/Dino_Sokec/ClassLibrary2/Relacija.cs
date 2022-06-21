@@ -7,21 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ItronicStore
+namespace ClassLibrary2
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Obracun
+    public partial class Relacija
     {
         public int ID { get; set; }
-        public double Prihod { get; set; }
-        public double Rashod { get; set; }
-        public int Godina { get; set; }
-        public int Mjesec { get; set; }
-        public int Prodano { get; set; }
-        public int Nabavljeno { get; set; }
+        public int IDReklamacija { get; set; }
+        public int IDOdgovor { get; set; }
     
-        public virtual Kvartal Kvartal { get; set; }
+        public virtual Odgovor Odgovor { get; set; }
+        public virtual Reklamacija Reklamacija { get; set; }
     }
 }

@@ -13,19 +13,23 @@ namespace ItronicStore
 {
     public partial class KorisnickaRecenzija : Form
     {
+        // OK 
         private string korisnik;
         Izbornik izbornik;
 
+        // OK
         internal void PostaviPrethodnuFormu(Izbornik x)
         {
             izbornik = x;
         }
 
+        // OK
         public KorisnickaRecenzija()
         {
             InitializeComponent(); 
         }
 
+        // OK
         public KorisnickaRecenzija(string korisnickoImeLogina)
         {
             InitializeComponent();
@@ -35,21 +39,36 @@ namespace ItronicStore
         private void KorisnickaRecenzija_Load(object sender, EventArgs e)
         {
             //NapuniDGVPremaLoginKorisnika();
+
+            // x
             NapuniDGVProizvodima(korisnik);
+
+            // Filtiranje
+            // OK
             comboBox1.SelectedIndex = 0;
+
+            // OK
             NapuniPovijestRecenzijaKorisnika(korisnik);
+
+            // OK
             NapuniTekstualniOkvirKorisnika(korisnik);
+
+            // OK
             radioB5.Checked = true;
         }
 
         private void NapuniTekstualniOkvirKorisnika(string korisnik)
         {
+            // OK
             txtKorisnickoIme.Text = korisnik;
-            ImeiPrezimeKorisnika(korisnik);
+
+            // x
+            //ImeiPrezimeKorisnika(korisnik);
         }
 
-        
 
+
+        // OK
         private void NapuniPovijestRecenzijaKorisnika(string korisnik)
         {
             // radi :)
@@ -72,43 +91,23 @@ namespace ItronicStore
             
         }
 
+        // x
         private void NapuniDGVProizvodima(string korisnik)
         {
             using(var db = new Entiteti())
             {
-                //var upit = from x in db.Proizvod
-                //           join y in db.Recenzija on x.ID equals y.IDProizvod into proizvodGrupa
-                //           from m in proizvodGrupa.DefaultIfEmpty()
-                //           join z in db.Korisnik on m.IDKorisnik equals z.ID into korisnikGrupa
-                //           from kj in korisnikGrupa.DefaultIfEmpty()
-                //           where kj.KorisnickoIme != korisnik
 
-                //           select new
-                //           {
-                //               x.Naziv,
-                //               x.Cijena,
-                //               x.Kolicina
-                //           };
-
-
-                //var upit = from x in db.Proizvod
-                //           where !db.Recenzija.Any(f => f.)
-
-
-                // treba se ispraviti
-                var upit = from x in db.Proizvod
-                           //join y in db.Recenzija on x.ID equals y.IDProizvod
-                           //join z in db.Korisnik on y.IDKorisnik equals z.ID
-
-                           select new { x.Naziv, x.Cijena, x.Kolicina };
-
+                // @
                 dgvPopisProizvoda.DataSource = null;
-                dgvPopisProizvoda.DataSource = upit.ToList();
+                //dgvPopisProizvoda.DataSource = upit.ToList();
+                
+                // OK
                 // radi
                 dgvPopisProizvoda.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
                 dgvPopisProizvoda.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
 
+                // OK
                 // broj redaka u DGV-u
                 dgvPopisProizvoda.RowsAdded += RowsAdded;
                 dgvPopisProizvoda.RowsRemoved += RowsRemoved;
@@ -116,45 +115,39 @@ namespace ItronicStore
 
         }
 
+        // OK
         private void RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
             lblBrojRedaka.Text = dgvPopisProizvoda.Rows.Count.ToString();
         }
 
+        // OK
         private void RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             lblBrojRedaka.Text = dgvPopisProizvoda.Rows.Count.ToString();
         }
 
-        //private void NapuniDGVPremaLoginKorisnika()
-        //{
-        //    using (var db = new Entiteti())
-        //    {
-        //        var upit = from x in db.Korisnik
-        //                   where x.KorisnickoIme == korisnik
-        //                   select new { Ime = x.Ime, Prezime = x.Prezime, Email = x.Email };
-        //        dgvPopisProizvoda.DataSource = upit.ToList();
-        //    }
-        //}
+        
 
-        // Button odustani
        
+        // OK
         // Natrag
         private void button4_Click(object sender, EventArgs e)
         {
+            // OK
             izbornik.Show();
             this.Dispose();
-            //this.Hide();
-            //Izbornik forma = new Izbornik();
-            //forma.Show();
+            
         }
 
+        // OK
         private void dgvPopisProizvoda_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int redak = dgvPopisProizvoda.CurrentCell.RowIndex;
             txtPronadjeniProizvod.Text = dgvPopisProizvoda.Rows[redak].Cells["Naziv"].Value.ToString();
         }
 
+        // OK
         private void txtTrazilicaProizvoda_TextChanged(object sender, EventArgs e)
         {
             var uneseniTekst = (sender as TextBox).Text;
@@ -171,6 +164,7 @@ namespace ItronicStore
             }
         }
 
+        // OK
         //comboBox odabir
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -193,6 +187,7 @@ namespace ItronicStore
             }
         }
 
+        // OK
         private void FiltirajPoCijeniSilazno()
         {
             using (var db = new Entiteti())
@@ -205,10 +200,9 @@ namespace ItronicStore
                 dgvPopisProizvoda.DataSource = upit.ToList();
                 dgvPopisProizvoda.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             }
-
-            u
         }
 
+        // OK
         private void FiltirajPoNazivu()
         {
             using (var db = new Entiteti())
@@ -223,6 +217,7 @@ namespace ItronicStore
             }
         }
 
+        // OK
         private void FiltirajPoCijeniUzlazno()
         {
             using (var db = new Entiteti())
@@ -237,6 +232,7 @@ namespace ItronicStore
             }
         }
 
+        // OK
         // spremi recenziju
         private void btnSpremi_Click(object sender, EventArgs e)
         {
@@ -251,6 +247,7 @@ namespace ItronicStore
             
         }
 
+        // x
         private bool ProvjeriJeLiImaDuplikata(Proizvod dohvaceniRedak)
         {
             using (var db = new Entiteti())
@@ -266,6 +263,7 @@ namespace ItronicStore
             }
         }
 
+        // OK
         private int DohvatiIDKorisnika(string korisnik)
         {
             using (var db = new Entiteti())
@@ -277,29 +275,12 @@ namespace ItronicStore
             }
         }
 
+        // @
         // Spremanje ili azuriranje podataka u tablicu
         private void SpremanjePodatakaUTablicu(Proizvod dohvaceniRedak, bool postojiProizvod, int idKorisnika, int ocjena, string datum, string komentar)
         {
             using (var db = new Entiteti())
             {
-                // Provjera postojanja duplikata
-                //bool postojiProizvod = db.Proizvod.Any(proizv => proizv.ID == dohvaceniRedak.ID);
-
-                //bool postojiProizvod = db.Proizvod.Any(x => x.ID.Equals(dohvaceniRedak.ID));
-
-                //var postojiProizvod = (from x in db.Proizvod
-                //                       where x.ID == dohvaceniRedak.ID
-                //                       select x).FirstOrDefault() != null;
-
-                //var postojiProizvod = (from x in db.Proizvod
-                //                       where x.ID == dohvaceniRedak.ID
-                //                       select x).Any();
-
-                //var postojiProizvod = from x in db.Proizvod
-                //                      where x.ID.ToString().Contains(dohvaceniRedak.ID.ToString())
-                //                      select x;
-
-                
                 if (postojiProizvod == false)
                 {
                     Recenzija recenzija = new Recenzija();

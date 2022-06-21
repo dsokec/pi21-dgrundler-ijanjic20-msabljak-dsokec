@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ItronicStore
+namespace ClassLibrary2
 {
     using System;
     using System.Collections.Generic;

@@ -7,24 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ItronicStore
+namespace ClassLibrary2
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Admin
+    public partial class Kategorija
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Admin()
+        public Kategorija()
         {
-            this.Odgovor = new HashSet<Odgovor>();
+            this.Proizvod = new HashSet<Proizvod>();
         }
     
         public int ID { get; set; }
-        public string KorisnickoIme { get; set; }
-        public string Lozinka { get; set; }
+        public string Naziv { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Odgovor> Odgovor { get; set; }
+        public virtual ICollection<Proizvod> Proizvod { get; set; }
     }
 }

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Admin">
           <Key>
             <PropertyRef Name="ID" />
@@ -69,9 +69,11 @@
         </EntityType>
         <EntityType Name="Podnesak">
           <Key>
+            <PropertyRef Name="ID" />
             <PropertyRef Name="IDReklamacija" />
             <PropertyRef Name="IDProizvod" />
           </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IDReklamacija" Type="int" Nullable="false" />
           <Property Name="IDProizvod" Type="int" Nullable="false" />
         </EntityType>
@@ -107,6 +109,16 @@
           <Property Name="Datum" Type="date" Nullable="false" />
           <Property Name="Opis" Type="nchar" MaxLength="80" Nullable="false" />
         </EntityType>
+        <EntityType Name="Relacija">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="IDReklamacija" />
+            <PropertyRef Name="IDOdgovor" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDReklamacija" Type="int" Nullable="false" />
+          <Property Name="IDOdgovor" Type="int" Nullable="false" />
+        </EntityType>
         <Association Name="FK_Obracun_Kvartal">
           <End Role="Kvartal" Type="Self.Kvartal" Multiplicity="1" />
           <End Role="Obracun" Type="Self.Obracun" Multiplicity="*" />
@@ -128,18 +140,6 @@
             </Principal>
             <Dependent Role="Odgovor">
               <PropertyRef Name="IDAdmin" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Odgovor_Reklamacija">
-          <End Role="Reklamacija" Type="Self.Reklamacija" Multiplicity="1" />
-          <End Role="Odgovor" Type="Self.Odgovor" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Reklamacija">
-              <PropertyRef Name="IDReklamacija" />
-            </Principal>
-            <Dependent Role="Odgovor">
-              <PropertyRef Name="IDReklamacija" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -227,6 +227,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Relacija_Odgovor">
+          <End Role="Odgovor" Type="Self.Odgovor" Multiplicity="1" />
+          <End Role="Relacija" Type="Self.Relacija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Odgovor">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Relacija">
+              <PropertyRef Name="IDOdgovor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Relacija_Reklamacija">
+          <End Role="Reklamacija" Type="Self.Reklamacija" Multiplicity="1" />
+          <End Role="Relacija" Type="Self.Relacija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reklamacija">
+              <PropertyRef Name="IDReklamacija" />
+            </Principal>
+            <Dependent Role="Relacija">
+              <PropertyRef Name="IDReklamacija" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="ModelStoreContainer">
           <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Dobavljac" EntityType="Self.Dobavljac" Schema="dbo" store:Type="Tables" />
@@ -239,16 +263,13 @@
           <EntitySet Name="Proizvod" EntityType="Self.Proizvod" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Recenzija" EntityType="Self.Recenzija" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reklamacija" EntityType="Self.Reklamacija" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Relacija" EntityType="Self.Relacija" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Obracun_Kvartal" Association="Self.FK_Obracun_Kvartal">
             <End Role="Kvartal" EntitySet="Kvartal" />
             <End Role="Obracun" EntitySet="Obracun" />
           </AssociationSet>
           <AssociationSet Name="FK_Odgovor_Admin" Association="Self.FK_Odgovor_Admin">
             <End Role="Admin" EntitySet="Admin" />
-            <End Role="Odgovor" EntitySet="Odgovor" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Odgovor_Reklamacija" Association="Self.FK_Odgovor_Reklamacija">
-            <End Role="Reklamacija" EntitySet="Reklamacija" />
             <End Role="Odgovor" EntitySet="Odgovor" />
           </AssociationSet>
           <AssociationSet Name="FK_Podnesak_Proizvod" Association="Self.FK_Podnesak_Proizvod">
@@ -279,9 +300,16 @@
             <End Role="Korisnik" EntitySet="Korisnik" />
             <End Role="Reklamacija" EntitySet="Reklamacija" />
           </AssociationSet>
+          <AssociationSet Name="FK_Relacija_Odgovor" Association="Self.FK_Relacija_Odgovor">
+            <End Role="Odgovor" EntitySet="Odgovor" />
+            <End Role="Relacija" EntitySet="Relacija" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Relacija_Reklamacija" Association="Self.FK_Relacija_Reklamacija">
+            <End Role="Reklamacija" EntitySet="Reklamacija" />
+            <End Role="Relacija" EntitySet="Relacija" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -354,7 +382,19 @@
           <Property Name="Datum" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Odgovor1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Admin" Relationship="Self.FK_Odgovor_Admin" FromRole="Odgovor" ToRole="Admin" />
-          <NavigationProperty Name="Reklamacija" Relationship="Self.FK_Odgovor_Reklamacija" FromRole="Odgovor" ToRole="Reklamacija" />
+          <NavigationProperty Name="Relacija" Relationship="Model.FK_Relacija_Odgovor" FromRole="Odgovor" ToRole="Relacija" />
+        </EntityType>
+        <EntityType Name="Podnesak">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="IDReklamacija" />
+            <PropertyRef Name="IDProizvod" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDReklamacija" Type="Int32" Nullable="false" />
+          <Property Name="IDProizvod" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Proizvod" Relationship="Self.FK_Podnesak_Proizvod" FromRole="Podnesak" ToRole="Proizvod" />
+          <NavigationProperty Name="Reklamacija" Relationship="Self.FK_Podnesak_Reklamacija" FromRole="Podnesak" ToRole="Reklamacija" />
         </EntityType>
         <EntityType Name="Proizvod">
           <Key>
@@ -369,8 +409,8 @@
           <Property Name="Opis" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Dobavljac1" Relationship="Self.FK_Proizvod_Dobavljac" FromRole="Proizvod" ToRole="Dobavljac" />
           <NavigationProperty Name="Kategorija" Relationship="Self.FK_Proizvod_Kategorija" FromRole="Proizvod" ToRole="Kategorija" />
+          <NavigationProperty Name="Podnesak" Relationship="Self.FK_Podnesak_Proizvod" FromRole="Proizvod" ToRole="Podnesak" />
           <NavigationProperty Name="Recenzija" Relationship="Self.FK_Recenzija_Proizvod" FromRole="Proizvod" ToRole="Recenzija" />
-          <NavigationProperty Name="Reklamacija" Relationship="Self.Podnesak" FromRole="Proizvod" ToRole="Reklamacija" />
         </EntityType>
         <EntityType Name="Recenzija">
           <Key>
@@ -394,8 +434,8 @@
           <Property Name="Datum" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Opis" Type="String" MaxLength="80" FixedLength="true" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Korisnik" Relationship="Self.FK_Reklamacija_Korisnik" FromRole="Reklamacija" ToRole="Korisnik" />
-          <NavigationProperty Name="Odgovor" Relationship="Self.FK_Odgovor_Reklamacija" FromRole="Reklamacija" ToRole="Odgovor" />
-          <NavigationProperty Name="Proizvod" Relationship="Self.Podnesak" FromRole="Reklamacija" ToRole="Proizvod" />
+          <NavigationProperty Name="Podnesak" Relationship="Self.FK_Podnesak_Reklamacija" FromRole="Reklamacija" ToRole="Podnesak" />
+          <NavigationProperty Name="Relacija" Relationship="Model.FK_Relacija_Reklamacija" FromRole="Reklamacija" ToRole="Relacija" />
         </EntityType>
         <Association Name="FK_Odgovor_Admin">
           <End Role="Admin" Type="Self.Admin" Multiplicity="1" />
@@ -469,14 +509,26 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Odgovor_Reklamacija">
+        <Association Name="FK_Podnesak_Proizvod">
+          <End Role="Proizvod" Type="Self.Proizvod" Multiplicity="1" />
+          <End Role="Podnesak" Type="Self.Podnesak" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proizvod">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Podnesak">
+              <PropertyRef Name="IDProizvod" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Podnesak_Reklamacija">
           <End Role="Reklamacija" Type="Self.Reklamacija" Multiplicity="1" />
-          <End Role="Odgovor" Type="Self.Odgovor" Multiplicity="*" />
+          <End Role="Podnesak" Type="Self.Podnesak" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Reklamacija">
               <PropertyRef Name="IDReklamacija" />
             </Principal>
-            <Dependent Role="Odgovor">
+            <Dependent Role="Podnesak">
               <PropertyRef Name="IDReklamacija" />
             </Dependent>
           </ReferentialConstraint>
@@ -493,10 +545,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="Podnesak">
-          <End Role="Proizvod" Type="Self.Proizvod" Multiplicity="*" />
-          <End Role="Reklamacija" Type="Self.Reklamacija" Multiplicity="*" />
-        </Association>
         <EntityContainer Name="Entiteti" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Admin" EntityType="Self.Admin" />
           <EntitySet Name="Dobavljac" EntityType="Self.Dobavljac" />
@@ -505,6 +553,7 @@
           <EntitySet Name="Kvartal" EntityType="Self.Kvartal" />
           <EntitySet Name="Obracun" EntityType="Self.Obracun" />
           <EntitySet Name="Odgovor" EntityType="Self.Odgovor" />
+          <EntitySet Name="Podnesak" EntityType="Self.Podnesak" />
           <EntitySet Name="Proizvod" EntityType="Self.Proizvod" />
           <EntitySet Name="Recenzija" EntityType="Self.Recenzija" />
           <EntitySet Name="Reklamacija" EntityType="Self.Reklamacija" />
@@ -532,19 +581,64 @@
             <End Role="Kvartal" EntitySet="Kvartal" />
             <End Role="Obracun" EntitySet="Obracun" />
           </AssociationSet>
-          <AssociationSet Name="FK_Odgovor_Reklamacija" Association="Self.FK_Odgovor_Reklamacija">
+          <AssociationSet Name="FK_Podnesak_Proizvod" Association="Self.FK_Podnesak_Proizvod">
+            <End Role="Proizvod" EntitySet="Proizvod" />
+            <End Role="Podnesak" EntitySet="Podnesak" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Podnesak_Reklamacija" Association="Self.FK_Podnesak_Reklamacija">
             <End Role="Reklamacija" EntitySet="Reklamacija" />
-            <End Role="Odgovor" EntitySet="Odgovor" />
+            <End Role="Podnesak" EntitySet="Podnesak" />
           </AssociationSet>
           <AssociationSet Name="FK_Recenzija_Proizvod" Association="Self.FK_Recenzija_Proizvod">
             <End Role="Proizvod" EntitySet="Proizvod" />
             <End Role="Recenzija" EntitySet="Recenzija" />
           </AssociationSet>
-          <AssociationSet Name="Podnesak" Association="Self.Podnesak">
-            <End Role="Proizvod" EntitySet="Proizvod" />
+          <EntitySet Name="Relacija" EntityType="Model.Relacija" />
+          <AssociationSet Name="FK_Relacija_Odgovor" Association="Model.FK_Relacija_Odgovor">
+            <End Role="Odgovor" EntitySet="Odgovor" />
+            <End Role="Relacija" EntitySet="Relacija" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Relacija_Reklamacija" Association="Model.FK_Relacija_Reklamacija">
             <End Role="Reklamacija" EntitySet="Reklamacija" />
+            <End Role="Relacija" EntitySet="Relacija" />
           </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Relacija">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="IDReklamacija" />
+            <PropertyRef Name="IDOdgovor" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDReklamacija" Type="Int32" Nullable="false" />
+          <Property Name="IDOdgovor" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Odgovor" Relationship="Model.FK_Relacija_Odgovor" FromRole="Relacija" ToRole="Odgovor" />
+          <NavigationProperty Name="Reklamacija" Relationship="Model.FK_Relacija_Reklamacija" FromRole="Relacija" ToRole="Reklamacija" />
+        </EntityType>
+        <Association Name="FK_Relacija_Odgovor">
+          <End Type="Model.Odgovor" Role="Odgovor" Multiplicity="1" />
+          <End Type="Model.Relacija" Role="Relacija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Odgovor">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Relacija">
+              <PropertyRef Name="IDOdgovor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Relacija_Reklamacija">
+          <End Type="Model.Reklamacija" Role="Reklamacija" Multiplicity="1" />
+          <End Type="Model.Relacija" Role="Relacija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reklamacija">
+              <PropertyRef Name="IDReklamacija" />
+            </Principal>
+            <Dependent Role="Relacija">
+              <PropertyRef Name="IDReklamacija" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -620,6 +714,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Podnesak">
+            <EntityTypeMapping TypeName="Model.Podnesak">
+              <MappingFragment StoreEntitySet="Podnesak">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDReklamacija" ColumnName="IDReklamacija" />
+                <ScalarProperty Name="IDProizvod" ColumnName="IDProizvod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Proizvod">
             <EntityTypeMapping TypeName="Model.Proizvod">
               <MappingFragment StoreEntitySet="Proizvod">
@@ -655,14 +758,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="Podnesak" TypeName="Model.Podnesak" StoreEntitySet="Podnesak">
-            <EndProperty Name="Proizvod">
-              <ScalarProperty Name="ID" ColumnName="IDProizvod" />
-            </EndProperty>
-            <EndProperty Name="Reklamacija">
-              <ScalarProperty Name="IDReklamacija" ColumnName="IDReklamacija" />
-            </EndProperty>
-          </AssociationSetMapping>
+          <EntitySetMapping Name="Relacija">
+            <EntityTypeMapping TypeName="Model.Relacija">
+              <MappingFragment StoreEntitySet="Relacija">
+                <ScalarProperty Name="IDOdgovor" ColumnName="IDOdgovor" />
+                <ScalarProperty Name="IDReklamacija" ColumnName="IDReklamacija" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
