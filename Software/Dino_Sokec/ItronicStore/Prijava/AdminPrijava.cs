@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibrary2;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,26 +26,13 @@ namespace ItronicStore
 
         private void NapuniComboBoxKorisnickoIme()
         {
-            using (var db = new Entiteti())
-            {
-                var upit = from x in db.Admin
-                           select x.KorisnickoIme;
-                cmbImeAdmina.DataSource = upit.ToList();
-                cmbImeAdmina.SelectedIndex = 0;
-            }
+            
         }
 
         private void cmbImeAdmina_SelectedIndexChanged(object sender, EventArgs e)
         {
             string odabir = cmbImeAdmina.SelectedItem.ToString();
-            using (var db = new Entiteti())
-            {
-                var upit = from x in db.Admin
-                           where x.KorisnickoIme.ToString() == odabir
-                           select x.Lozinka;
-                txtLozinkaAdmin.Text = upit.FirstOrDefault();
-                txtLozinkaAdmin.PasswordChar = '*';
-            }
+            
         }
 
         private void btnNatrag_Click(object sender, EventArgs e)

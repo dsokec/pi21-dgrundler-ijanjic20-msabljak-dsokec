@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using KlasaUpravljanja;
+using ClassLibrary2;
 
 namespace ItronicStore
 {
@@ -71,24 +66,15 @@ namespace ItronicStore
         // OK
         private void NapuniPovijestRecenzijaKorisnika(string korisnik)
         {
-            // radi :)
-            using(var db = new Entiteti())
-            {
-                var upit = from x in db.Recenzija
-                           join y in db.Proizvod on x.IDProizvod equals y.ID
-                           join z in db.Korisnik on x.IDKorisnik equals z.ID
-                           where z.KorisnickoIme == korisnik
-                           select new { z.Ime, z.Prezime, y.Naziv, x.Ocjena, x.Datum };
-
-                dgvPovijestRecenzija.DataSource = null;
-                dgvPovijestRecenzija.DataSource = upit.ToList();
-
-                dgvPovijestRecenzija.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-                dgvPovijestRecenzija.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-                lblBrojRedakaPovijest.Text = dgvPovijestRecenzija.Rows.Count.ToString();
-            }
             
+            dgvPovijestRecenzija.DataSource = null;
+            //dgvPovijestRecenzija.DataSource = upit.ToList();
+
+            dgvPovijestRecenzija.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgvPovijestRecenzija.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            lblBrojRedakaPovijest.Text = dgvPovijestRecenzija.Rows.Count.ToString();
+
         }
 
         // x
@@ -151,17 +137,10 @@ namespace ItronicStore
         private void txtTrazilicaProizvoda_TextChanged(object sender, EventArgs e)
         {
             var uneseniTekst = (sender as TextBox).Text;
-            using(var db = new Entiteti())
-            {
-                var upit = from xy in db.Proizvod
-                           where xy.Naziv.Contains(uneseniTekst)
-                           select new { Naziv = xy.Naziv, Cijena = xy.Cijena, Kolicina = xy.Kolicina };
-                
-                dgvPopisProizvoda.DataSource = null;
-                dgvPopisProizvoda.DataSource = upit.ToList();
-                dgvPopisProizvoda.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-
-            }
+            
+            dgvPopisProizvoda.DataSource = null;
+            //dgvPopisProizvoda.DataSource = upit.ToList();
+            dgvPopisProizvoda.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
 
         // OK
@@ -190,16 +169,10 @@ namespace ItronicStore
         // OK
         private void FiltirajPoCijeniSilazno()
         {
-            using (var db = new Entiteti())
-            {
-                var upit = from x in db.Proizvod
-                           orderby x.Cijena descending
-                           select new { x.Naziv, x.Cijena, x.Kolicina };
-
-                dgvPopisProizvoda.DataSource = null;
-                dgvPopisProizvoda.DataSource = upit.ToList();
-                dgvPopisProizvoda.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-            }
+            
+            dgvPopisProizvoda.DataSource = null;
+            //dgvPopisProizvoda.DataSource = upit.ToList();
+            dgvPopisProizvoda.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
 
         // OK

@@ -1,11 +1,9 @@
-﻿using KlasaUpravljanja;
-using System;
+﻿using System;
 using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
-using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
+using ClassLibrary2;
 
 namespace ItronicStore
 {
@@ -89,28 +87,12 @@ namespace ItronicStore
         private void NapuniCombobox()
         {
 
-            using (var db = new Entiteti())
-            {
-                var upit = from x in db.Korisnik
-                           select x.KorisnickoIme;
-
-                cmbKorisnickoIme.DataSource = upit.ToList();
-                cmbKorisnickoIme.SelectedIndex = 0;
-            }
         }
 
         private void cmbKorisnickoIme_SelectedIndexChanged(object sender, EventArgs e)
         {
             string odabir = cmbKorisnickoIme.SelectedItem.ToString();
-            using (var db = new Entiteti())
-            {
-                var upit = from x in db.Korisnik
-                           where x.KorisnickoIme.ToString() == odabir
-                           select x.Lozinka;
-                txtLozinkaLogin.Text = upit.First();
-                txtLozinkaLogin.PasswordChar = '*';
-                
-            }
+            txtLozinkaLogin.PasswordChar = '*';
         }
 
         private void button1_Click(object sender, EventArgs e)
