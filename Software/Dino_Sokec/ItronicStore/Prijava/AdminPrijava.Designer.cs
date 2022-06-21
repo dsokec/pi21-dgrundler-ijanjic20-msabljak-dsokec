@@ -35,9 +35,9 @@ namespace ItronicStore
             this.lblNaslov = new System.Windows.Forms.Label();
             this.lblKorisnickoIme = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtLozinkaAdmin = new System.Windows.Forms.TextBox();
             this.btnPrijaviSeAdmin = new System.Windows.Forms.Button();
             this.btnNatrag = new System.Windows.Forms.Button();
-            this.txtLozinkaAdmin = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,6 +104,13 @@ namespace ItronicStore
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             // 
+            // txtLozinkaAdmin
+            // 
+            this.txtLozinkaAdmin.Location = new System.Drawing.Point(146, 115);
+            this.txtLozinkaAdmin.Name = "txtLozinkaAdmin";
+            this.txtLozinkaAdmin.Size = new System.Drawing.Size(165, 26);
+            this.txtLozinkaAdmin.TabIndex = 18;
+            // 
             // btnPrijaviSeAdmin
             // 
             this.btnPrijaviSeAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -119,7 +126,7 @@ namespace ItronicStore
             // btnNatrag
             // 
             this.btnNatrag.DialogResult = System.Windows.Forms.DialogResult.No;
-            this.btnNatrag.Location = new System.Drawing.Point(401, 284);
+            this.btnNatrag.Location = new System.Drawing.Point(390, 273);
             this.btnNatrag.Name = "btnNatrag";
             this.btnNatrag.Size = new System.Drawing.Size(75, 40);
             this.btnNatrag.TabIndex = 17;
@@ -127,18 +134,11 @@ namespace ItronicStore
             this.btnNatrag.UseVisualStyleBackColor = true;
             this.btnNatrag.Click += new System.EventHandler(this.btnNatrag_Click);
             // 
-            // txtLozinkaAdmin
-            // 
-            this.txtLozinkaAdmin.Location = new System.Drawing.Point(146, 115);
-            this.txtLozinkaAdmin.Name = "txtLozinkaAdmin";
-            this.txtLozinkaAdmin.Size = new System.Drawing.Size(165, 26);
-            this.txtLozinkaAdmin.TabIndex = 18;
-            // 
             // AdminPrijava
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(509, 336);
+            this.ClientSize = new System.Drawing.Size(482, 333);
             this.Controls.Add(this.btnNatrag);
             this.Controls.Add(this.cmbImeAdmina);
             this.Controls.Add(this.lblLozinka);

@@ -34,15 +34,13 @@ namespace ItronicStore
             this.lblLozinka = new System.Windows.Forms.Label();
             this.lblNaslov = new System.Windows.Forms.Label();
             this.btnIzlaz = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.cmbKorisnickoIme = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtLozinkaLogin = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnPrijavaAdmin = new System.Windows.Forms.Button();
-            this.txtLozinkaLogin = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +61,7 @@ namespace ItronicStore
             // 
             this.lblKorisnickoIme.AutoSize = true;
             this.lblKorisnickoIme.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblKorisnickoIme.Location = new System.Drawing.Point(346, 142);
+            this.lblKorisnickoIme.Location = new System.Drawing.Point(19, 131);
             this.lblKorisnickoIme.Name = "lblKorisnickoIme";
             this.lblKorisnickoIme.Size = new System.Drawing.Size(114, 20);
             this.lblKorisnickoIme.TabIndex = 10;
@@ -73,7 +71,7 @@ namespace ItronicStore
             // 
             this.lblLozinka.AutoSize = true;
             this.lblLozinka.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblLozinka.Location = new System.Drawing.Point(392, 191);
+            this.lblLozinka.Location = new System.Drawing.Point(65, 180);
             this.lblLozinka.Name = "lblLozinka";
             this.lblLozinka.Size = new System.Drawing.Size(68, 20);
             this.lblLozinka.TabIndex = 9;
@@ -83,7 +81,7 @@ namespace ItronicStore
             // 
             this.lblNaslov.AutoSize = true;
             this.lblNaslov.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNaslov.Location = new System.Drawing.Point(478, 37);
+            this.lblNaslov.Location = new System.Drawing.Point(151, 26);
             this.lblNaslov.Name = "lblNaslov";
             this.lblNaslov.Size = new System.Drawing.Size(185, 29);
             this.lblNaslov.TabIndex = 1;
@@ -92,7 +90,7 @@ namespace ItronicStore
             // btnIzlaz
             // 
             this.btnIzlaz.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIzlaz.Location = new System.Drawing.Point(714, 416);
+            this.btnIzlaz.Location = new System.Drawing.Point(387, 405);
             this.btnIzlaz.Name = "btnIzlaz";
             this.btnIzlaz.Size = new System.Drawing.Size(66, 40);
             this.btnIzlaz.TabIndex = 2;
@@ -100,20 +98,11 @@ namespace ItronicStore
             this.btnIzlaz.UseVisualStyleBackColor = true;
             this.btnIzlaz.Click += new System.EventHandler(this.btnIzlaz_Click);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.GreenYellow;
-            this.pictureBox2.Location = new System.Drawing.Point(1, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(330, 481);
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
-            // 
             // cmbKorisnickoIme
             // 
             this.cmbKorisnickoIme.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbKorisnickoIme.FormattingEnabled = true;
-            this.cmbKorisnickoIme.Location = new System.Drawing.Point(483, 142);
+            this.cmbKorisnickoIme.Location = new System.Drawing.Point(156, 131);
             this.cmbKorisnickoIme.Name = "cmbKorisnickoIme";
             this.cmbKorisnickoIme.Size = new System.Drawing.Size(165, 28);
             this.cmbKorisnickoIme.TabIndex = 3;
@@ -123,18 +112,25 @@ namespace ItronicStore
             // 
             this.groupBox1.Controls.Add(this.txtLozinkaLogin);
             this.groupBox1.Controls.Add(this.btnPrijaviSe);
-            this.groupBox1.Location = new System.Drawing.Point(337, 69);
+            this.groupBox1.Location = new System.Drawing.Point(10, 58);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(453, 213);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // txtLozinkaLogin
+            // 
+            this.txtLozinkaLogin.Location = new System.Drawing.Point(146, 122);
+            this.txtLozinkaLogin.Name = "txtLozinkaLogin";
+            this.txtLozinkaLogin.Size = new System.Drawing.Size(165, 26);
+            this.txtLozinkaLogin.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkRed;
-            this.label1.Location = new System.Drawing.Point(456, 83);
+            this.label1.Location = new System.Drawing.Point(129, 72);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(221, 25);
             this.label1.TabIndex = 7;
@@ -145,7 +141,7 @@ namespace ItronicStore
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Blue;
-            this.label2.Location = new System.Drawing.Point(456, 339);
+            this.label2.Location = new System.Drawing.Point(129, 328);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(205, 25);
             this.label2.TabIndex = 6;
@@ -154,7 +150,7 @@ namespace ItronicStore
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnPrijavaAdmin);
-            this.groupBox2.Location = new System.Drawing.Point(447, 320);
+            this.groupBox2.Location = new System.Drawing.Point(120, 309);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(230, 111);
             this.groupBox2.TabIndex = 7;
@@ -162,7 +158,7 @@ namespace ItronicStore
             // 
             // btnPrijavaAdmin
             // 
-            this.btnPrijavaAdmin.Location = new System.Drawing.Point(36, 61);
+            this.btnPrijavaAdmin.Location = new System.Drawing.Point(36, 57);
             this.btnPrijavaAdmin.Name = "btnPrijavaAdmin";
             this.btnPrijavaAdmin.Size = new System.Drawing.Size(165, 35);
             this.btnPrijavaAdmin.TabIndex = 0;
@@ -170,22 +166,14 @@ namespace ItronicStore
             this.btnPrijavaAdmin.UseVisualStyleBackColor = true;
             this.btnPrijavaAdmin.Click += new System.EventHandler(this.button1_Click);
             // 
-            // txtLozinkaLogin
-            // 
-            this.txtLozinkaLogin.Location = new System.Drawing.Point(146, 122);
-            this.txtLozinkaLogin.Name = "txtLozinkaLogin";
-            this.txtLozinkaLogin.Size = new System.Drawing.Size(165, 26);
-            this.txtLozinkaLogin.TabIndex = 1;
-            // 
             // wfLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 480);
+            this.ClientSize = new System.Drawing.Size(477, 466);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbKorisnickoIme);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnIzlaz);
             this.Controls.Add(this.lblLozinka);
             this.Controls.Add(this.lblNaslov);
@@ -198,7 +186,6 @@ namespace ItronicStore
             this.Text = "Login";
             this.Load += new System.EventHandler(this.wfLogin_Load);
             this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.wfLogin_HelpRequested);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -213,7 +200,6 @@ namespace ItronicStore
         private System.Windows.Forms.Label lblLozinka;
         private System.Windows.Forms.Label lblNaslov;
         private System.Windows.Forms.Button btnIzlaz;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ComboBox cmbKorisnickoIme;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
