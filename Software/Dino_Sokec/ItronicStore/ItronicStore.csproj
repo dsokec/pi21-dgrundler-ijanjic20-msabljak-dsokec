@@ -63,34 +63,34 @@
     <Compile Include="AdminPrijava.Designer.cs">
       <DependentUpon>AdminPrijava.cs</DependentUpon>
     </Compile>
-    <Compile Include="DolazneReklamacije.cs">
+    <Compile Include="Reklamacija\DolazneReklamacije.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DolazneReklamacije.Designer.cs">
+    <Compile Include="Reklamacija\DolazneReklamacije.Designer.cs">
       <DependentUpon>DolazneReklamacije.cs</DependentUpon>
     </Compile>
-    <Compile Include="Izbornik.cs">
+    <Compile Include="Izbornik\Izbornik.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Izbornik.Designer.cs">
+    <Compile Include="Izbornik\Izbornik.Designer.cs">
       <DependentUpon>Izbornik.cs</DependentUpon>
     </Compile>
-    <Compile Include="IzbornikAdmin.cs">
+    <Compile Include="Izbornik\IzbornikAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IzbornikAdmin.Designer.cs">
+    <Compile Include="Izbornik\IzbornikAdmin.Designer.cs">
       <DependentUpon>IzbornikAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="PovratnaInformacija.cs">
+    <Compile Include="Reklamacija\PovratnaInformacija.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PovratnaInformacija.Designer.cs">
+    <Compile Include="Reklamacija\PovratnaInformacija.Designer.cs">
       <DependentUpon>PovratnaInformacija.cs</DependentUpon>
     </Compile>
-    <Compile Include="GrafickiPrikaz.cs">
+    <Compile Include="Grafikon\GrafickiPrikaz.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GrafickiPrikaz.Designer.cs">
+    <Compile Include="Grafikon\GrafickiPrikaz.Designer.cs">
       <DependentUpon>GrafickiPrikaz.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
@@ -99,52 +99,42 @@
     <Compile Include="Login.designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="NovaReklamacija.cs">
+    <Compile Include="Reklamacija\NovaReklamacija.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NovaReklamacija.Designer.cs">
+    <Compile Include="Reklamacija\NovaReklamacija.Designer.cs">
       <DependentUpon>NovaReklamacija.cs</DependentUpon>
     </Compile>
-    <Compile Include="KorisnickaRecenzija.cs">
+    <Compile Include="Recenzija\KorisnickaRecenzija.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KorisnickaRecenzija.Designer.cs">
+    <Compile Include="Recenzija\KorisnickaRecenzija.Designer.cs">
       <DependentUpon>KorisnickaRecenzija.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RegistracijaKorisnika.cs" />
-    <Compile Include="RegistracijaKorisnika.designer.cs">
-      <DependentUpon>RegistracijaKorisnika.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ReklamacijaWF.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReklamacijaWF.Designer.cs">
-      <DependentUpon>ReklamacijaWF.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AdminPrijava.resx">
       <DependentUpon>AdminPrijava.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DolazneReklamacije.resx">
+    <EmbeddedResource Include="Reklamacija\DolazneReklamacije.resx">
       <DependentUpon>DolazneReklamacije.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Izbornik.resx">
+    <EmbeddedResource Include="Izbornik\Izbornik.resx">
       <DependentUpon>Izbornik.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IzbornikAdmin.resx">
+    <EmbeddedResource Include="Izbornik\IzbornikAdmin.resx">
       <DependentUpon>IzbornikAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PovratnaInformacija.resx">
+    <EmbeddedResource Include="Reklamacija\PovratnaInformacija.resx">
       <DependentUpon>PovratnaInformacija.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GrafickiPrikaz.resx">
+    <EmbeddedResource Include="Grafikon\GrafickiPrikaz.resx">
       <DependentUpon>GrafickiPrikaz.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NovaReklamacija.resx">
+    <EmbeddedResource Include="Reklamacija\NovaReklamacija.resx">
       <DependentUpon>NovaReklamacija.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -156,14 +146,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="KorisnickaRecenzija.resx">
+    <EmbeddedResource Include="Recenzija\KorisnickaRecenzija.resx">
       <DependentUpon>KorisnickaRecenzija.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RegistracijaKorisnika.resx">
-      <DependentUpon>RegistracijaKorisnika.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ReklamacijaWF.resx">
-      <DependentUpon>ReklamacijaWF.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -191,6 +175,7 @@
       <Name>ClassLibrary2</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

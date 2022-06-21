@@ -39,9 +39,10 @@ namespace ItronicStore
             // 
             // btnInbox
             // 
-            this.btnInbox.Location = new System.Drawing.Point(100, 232);
+            this.btnInbox.ForeColor = System.Drawing.Color.Red;
+            this.btnInbox.Location = new System.Drawing.Point(49, 98);
             this.btnInbox.Name = "btnInbox";
-            this.btnInbox.Size = new System.Drawing.Size(118, 82);
+            this.btnInbox.Size = new System.Drawing.Size(89, 42);
             this.btnInbox.TabIndex = 2;
             this.btnInbox.Text = "Inbox";
             this.btnInbox.UseVisualStyleBackColor = true;
@@ -49,9 +50,10 @@ namespace ItronicStore
             // 
             // btnGrafickiPrikaz
             // 
-            this.btnGrafickiPrikaz.Location = new System.Drawing.Point(293, 232);
+            this.btnGrafickiPrikaz.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnGrafickiPrikaz.Location = new System.Drawing.Point(260, 100);
             this.btnGrafickiPrikaz.Name = "btnGrafickiPrikaz";
-            this.btnGrafickiPrikaz.Size = new System.Drawing.Size(118, 82);
+            this.btnGrafickiPrikaz.Size = new System.Drawing.Size(95, 40);
             this.btnGrafickiPrikaz.TabIndex = 2;
             this.btnGrafickiPrikaz.Text = "Grafikon";
             this.btnGrafickiPrikaz.UseVisualStyleBackColor = true;
@@ -60,25 +62,29 @@ namespace ItronicStore
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(96, 180);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(12, 66);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(147, 20);
+            this.label5.Size = new System.Drawing.Size(183, 25);
             this.label5.TabIndex = 3;
             this.label5.Text = "Pristigle reklamacije";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(302, 180);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(239, 66);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 20);
+            this.label1.Size = new System.Drawing.Size(134, 25);
             this.label1.TabIndex = 3;
             this.label1.Text = "Grafički prikaz";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(302, 107);
+            this.label2.Location = new System.Drawing.Point(13, 201);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(150, 20);
             this.label2.TabIndex = 3;
@@ -87,9 +93,10 @@ namespace ItronicStore
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(302, 26);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(106, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 20);
+            this.label3.Size = new System.Drawing.Size(177, 29);
             this.label3.TabIndex = 3;
             this.label3.Text = "Administracija";
             // 
@@ -97,7 +104,7 @@ namespace ItronicStore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(419, 265);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

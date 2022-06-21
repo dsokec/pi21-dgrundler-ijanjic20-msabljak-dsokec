@@ -59,5 +59,10 @@ namespace ItronicStore
             wfLogin.Show();
             this.Dispose();
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
