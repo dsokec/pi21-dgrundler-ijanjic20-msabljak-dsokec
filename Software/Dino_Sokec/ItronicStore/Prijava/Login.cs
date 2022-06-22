@@ -3,7 +3,7 @@ using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
 using System.Linq;
-using ClassLibrary2;
+using ClassLibrary2.ToolBox;
 
 namespace ItronicStore
 {
@@ -21,10 +21,16 @@ namespace ItronicStore
 
         private void OtvoriIzbornik()
         {
-            string korisnickoIme = cmbKorisnickoIme.Text;
+            string korisnickoIme = DohvatiKorisnickoImeIzPadajuceListe();
             this.Hide();
             Izbornik form = new Izbornik(korisnickoIme);
             form.ShowDialog();
+        }
+
+        private string DohvatiKorisnickoImeIzPadajuceListe()
+        {
+            string korisnickoIme = cmbKorisnickoIme.Text;
+            return korisnickoIme;
         }
 
         private void btnIzlaz_Click(object sender, EventArgs e)
@@ -81,17 +87,21 @@ namespace ItronicStore
         private void wfLogin_Load(object sender, EventArgs e)
         {
             NapuniCombobox();
-            txtLozinkaLogin.ReadOnly = true;
         }
 
         private void NapuniCombobox()
         {
+            cmbKorisnickoIme.DataSource = null;
+            cmbKorisnickoIme.DataSource = Korisnik.DohvatiSveKorisnike();
+            cmbKorisnickoIme.SelectedIndex = 0;
 
+            txtLozinkaLogin.ReadOnly = true;
         }
 
         private void cmbKorisnickoIme_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string odabir = cmbKorisnickoIme.SelectedItem.ToString();
+            string korisnickoIme = cmbKorisnickoIme.SelectedItem.ToString();
+            txtLozinkaLogin.Text = Korisnik.DohvatiLozinkuZaOdabranogKorisnika(korisnickoIme);
             txtLozinkaLogin.PasswordChar = '*';
         }
 

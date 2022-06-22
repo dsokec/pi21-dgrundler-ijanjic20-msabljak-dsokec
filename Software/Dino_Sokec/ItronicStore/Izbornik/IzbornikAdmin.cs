@@ -12,9 +12,15 @@ namespace ItronicStore
 {
     public partial class IzbornikAdmin : Form
     {
+        private string korisnickoImeAdmina;
         public IzbornikAdmin()
         {
             InitializeComponent();
+        }
+        public IzbornikAdmin(string admin)
+        {
+            InitializeComponent();
+            this.korisnickoImeAdmina = admin;
         }
 
         private void btnInbox_Click(object sender, EventArgs e)
@@ -29,6 +35,16 @@ namespace ItronicStore
             GrafickiPrikaz grafickiPrikaz = new GrafickiPrikaz();
             grafickiPrikaz.Show();
             this.Hide();
+        }
+
+        private void IzbornikAdmin_Load(object sender, EventArgs e)
+        {
+            Napisi_Naziv_Prijavljenog_Admina();
+        }
+
+        private void Napisi_Naziv_Prijavljenog_Admina()
+        {
+            lblPrijavljeniKao.Text = string.Format($"Vi ste prijavljeni kao {korisnickoImeAdmina}");
         }
     }
 }

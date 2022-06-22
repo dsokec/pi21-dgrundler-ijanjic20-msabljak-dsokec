@@ -1,4 +1,4 @@
-﻿using ClassLibrary2;
+﻿using ClassLibrary2.ToolBox;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,18 +21,22 @@ namespace ItronicStore
         private void AdminPrijava_Load(object sender, EventArgs e)
         {
             NapuniComboBoxKorisnickoIme();
-            txtLozinkaAdmin.ReadOnly = true;
+            
         }
 
         private void NapuniComboBoxKorisnickoIme()
         {
-            
+            cmbImeAdmina.DataSource = null;
+            cmbImeAdmina.DataSource = Administrator.DohvatiSveAdministratore();
+            cmbImeAdmina.SelectedIndex = 0;
+
+            txtLozinkaAdmin.ReadOnly = true;
         }
 
         private void cmbImeAdmina_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string odabir = cmbImeAdmina.SelectedItem.ToString();
-            
+            string imeAdmina = cmbImeAdmina.SelectedItem.ToString();
+            txtLozinkaAdmin.Text = Administrator.DohvatiLozinkuZaOdabranogAdministratora(imeAdmina);
         }
 
         private void btnNatrag_Click(object sender, EventArgs e)

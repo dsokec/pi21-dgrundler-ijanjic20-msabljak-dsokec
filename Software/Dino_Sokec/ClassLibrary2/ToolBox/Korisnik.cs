@@ -52,5 +52,15 @@ namespace ClassLibrary2.ToolBox
                 return prezimeKorisnika.FirstOrDefault();
             }
         }
+        public static string DohvatiLozinkuZaOdabranogKorisnika(string korisnickoIme)
+        {
+            using (var db = new Entiteti())
+            {
+                var lozinka = from x in db.Korisnik
+                              where x.KorisnickoIme == korisnickoIme
+                              select x.Lozinka;
+                return lozinka.FirstOrDefault();
+            }
+        }
     }
 }

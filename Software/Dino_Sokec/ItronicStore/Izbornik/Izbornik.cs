@@ -60,9 +60,14 @@ namespace ItronicStore
             this.Dispose();
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void Izbornik_Load(object sender, EventArgs e)
         {
+            Napisi_Naziv_Prijavljenog_Korisnika();
+        }
 
+        private void Napisi_Naziv_Prijavljenog_Korisnika()
+        {
+            lblViStePrijavljeniKao.Text = korisnickoImeLogina;
         }
     }
 }

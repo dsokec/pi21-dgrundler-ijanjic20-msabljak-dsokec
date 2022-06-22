@@ -33,7 +33,7 @@ namespace ItronicStore
             this.btnGrafickiPrikaz = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblPrijavljeniKao = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -81,14 +81,14 @@ namespace ItronicStore
             this.label1.TabIndex = 3;
             this.label1.Text = "Grafički prikaz";
             // 
-            // label2
+            // lblPrijavljeniKao
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 201);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(150, 20);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Vi ste prijavljeni kao ";
+            this.lblPrijavljeniKao.AutoSize = true;
+            this.lblPrijavljeniKao.Location = new System.Drawing.Point(13, 201);
+            this.lblPrijavljeniKao.Name = "lblPrijavljeniKao";
+            this.lblPrijavljeniKao.Size = new System.Drawing.Size(150, 20);
+            this.lblPrijavljeniKao.TabIndex = 3;
+            this.lblPrijavljeniKao.Text = "Vi ste prijavljeni kao ";
             // 
             // label3
             // 
@@ -106,7 +106,7 @@ namespace ItronicStore
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(419, 265);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblPrijavljeniKao);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnGrafickiPrikaz);
@@ -115,6 +115,7 @@ namespace ItronicStore
             this.Name = "IzbornikAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IzbornikAdmin";
+            this.Load += new System.EventHandler(this.IzbornikAdmin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,7 +127,7 @@ namespace ItronicStore
         private System.Windows.Forms.Button btnGrafickiPrikaz;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblPrijavljeniKao;
         private System.Windows.Forms.Label label3;
     }
 }

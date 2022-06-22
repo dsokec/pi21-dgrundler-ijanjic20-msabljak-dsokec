@@ -108,6 +108,8 @@ namespace ItronicStore
             // 
             this.txtLozinkaAdmin.Location = new System.Drawing.Point(146, 115);
             this.txtLozinkaAdmin.Name = "txtLozinkaAdmin";
+            this.txtLozinkaAdmin.PasswordChar = '*';
+            this.txtLozinkaAdmin.ReadOnly = true;
             this.txtLozinkaAdmin.Size = new System.Drawing.Size(165, 26);
             this.txtLozinkaAdmin.TabIndex = 18;
             // 

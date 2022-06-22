@@ -17,6 +17,16 @@ namespace ClassLibrary2.ToolBox
                 return admini.ToList();
             }
         }
+        public static string DohvatiLozinkuZaOdabranogAdministratora(string korisnickoImeAdministratora)
+        {
+            using (var db = new Entiteti())
+            {
+                var lozinka = from x in db.Admin
+                              where x.KorisnickoIme == korisnickoImeAdministratora
+                              select x.Lozinka;
+                return lozinka.FirstOrDefault();
+            }
+        }
         public static List<string> DohvatiSveAdministratore_AdoZ()
         {
             using (var db = new Entiteti())

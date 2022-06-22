@@ -37,7 +37,7 @@ namespace ItronicStore
             this.label8 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblViStePrijavljeniKao = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -60,7 +60,6 @@ namespace ItronicStore
             this.label5.Size = new System.Drawing.Size(156, 26);
             this.label5.TabIndex = 0;
             this.label5.Text = "Nova recenzija";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // btnRecenzija
             // 
@@ -126,15 +125,15 @@ namespace ItronicStore
             this.label9.TabIndex = 0;
             this.label9.Text = "Povratne informacije na reklamaciju";
             // 
-            // label10
+            // lblViStePrijavljeniKao
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(10, 272);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(168, 20);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Vi ste prijavljeni kao";
+            this.lblViStePrijavljeniKao.AutoSize = true;
+            this.lblViStePrijavljeniKao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblViStePrijavljeniKao.Location = new System.Drawing.Point(10, 272);
+            this.lblViStePrijavljeniKao.Name = "lblViStePrijavljeniKao";
+            this.lblViStePrijavljeniKao.Size = new System.Drawing.Size(168, 20);
+            this.lblViStePrijavljeniKao.TabIndex = 0;
+            this.lblViStePrijavljeniKao.Text = "Vi ste prijavljeni kao";
             // 
             // Izbornik
             // 
@@ -148,12 +147,13 @@ namespace ItronicStore
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.lblViStePrijavljeniKao);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Izbornik";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Izbornik";
+            this.Load += new System.EventHandler(this.Izbornik_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,6 +169,6 @@ namespace ItronicStore
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblViStePrijavljeniKao;
     }
 }
