@@ -14,12 +14,6 @@ namespace ClassLibrary2
     
     public partial class Odgovor
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Odgovor()
-        {
-            this.Relacija = new HashSet<Relacija>();
-        }
-    
         public int ID { get; set; }
         public int IDAdmin { get; set; }
         public int IDReklamacija { get; set; }
@@ -27,7 +21,6 @@ namespace ClassLibrary2
         public string Odgovor1 { get; set; }
     
         public virtual Admin Admin { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Relacija> Relacija { get; set; }
+        public virtual Reklamacija Reklamacija { get; set; }
     }
 }

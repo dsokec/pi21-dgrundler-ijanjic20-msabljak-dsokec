@@ -32,10 +32,8 @@ namespace ClassLibrary2
         public virtual DbSet<Kvartal> Kvartal { get; set; }
         public virtual DbSet<Obracun> Obracun { get; set; }
         public virtual DbSet<Odgovor> Odgovor { get; set; }
-        public virtual DbSet<Podnesak> Podnesak { get; set; }
         public virtual DbSet<Proizvod> Proizvod { get; set; }
         public virtual DbSet<Recenzija> Recenzija { get; set; }
         public virtual DbSet<Reklamacija> Reklamacija { get; set; }
-        public virtual DbSet<Relacija> Relacija { get; set; }
     }
 }

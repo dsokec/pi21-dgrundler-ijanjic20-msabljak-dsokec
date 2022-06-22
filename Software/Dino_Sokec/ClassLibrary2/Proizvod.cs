@@ -17,8 +17,8 @@ namespace ClassLibrary2
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Proizvod()
         {
-            this.Podnesak = new HashSet<Podnesak>();
             this.Recenzija = new HashSet<Recenzija>();
+            this.Reklamacija = new HashSet<Reklamacija>();
         }
     
         public int ID { get; set; }
@@ -32,8 +32,8 @@ namespace ClassLibrary2
         public virtual Dobavljac Dobavljac1 { get; set; }
         public virtual Kategorija Kategorija { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Podnesak> Podnesak { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Recenzija> Recenzija { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Reklamacija> Reklamacija { get; set; }
     }
 }

@@ -81,10 +81,8 @@ namespace ClassLibrary2
             {
                 var odgovori = from x in db.Odgovor
                                join a in db.Admin on x.IDAdmin equals a.ID
-                               join r in db.Relacija on x.ID equals r.IDOdgovor
-                               join rkl in db.Reklamacija on r.IDReklamacija equals rkl.IDReklamacija
-                               join p in db.Podnesak on rkl.IDReklamacija equals p.IDReklamacija
-                               join pro in db.Proizvod on p.IDProizvod equals pro.ID
+                               join rkl in db.Reklamacija on x.IDReklamacija equals rkl.IDReklamacija
+                               join pro in db.Proizvod on rkl.IDProizvod equals pro.ID
                                join k in db.Korisnik on rkl.IDKorisnik equals k.ID
                                select new IspisOdgovora
                                {
@@ -103,10 +101,8 @@ namespace ClassLibrary2
             {
                 var odgovori = from x in db.Odgovor
                                join a in db.Admin on x.IDAdmin equals a.ID
-                               join r in db.Relacija on x.ID equals r.IDOdgovor
-                               join rkl in db.Reklamacija on r.IDReklamacija equals rkl.IDReklamacija
-                               join p in db.Podnesak on rkl.IDReklamacija equals p.IDReklamacija
-                               join pro in db.Proizvod on p.IDProizvod equals pro.ID
+                               join rkl in db.Reklamacija on x.IDReklamacija equals rkl.IDReklamacija
+                               join pro in db.Proizvod on rkl.IDProizvod equals pro.ID
                                join k in db.Korisnik on rkl.IDKorisnik equals k.ID
                                where odabranaReklamacija.IDReklamacija == rkl.IDReklamacija && odabraniAdmin.KorisnickoIme == a.KorisnickoIme
                                select new IspisOdgovora
@@ -120,5 +116,6 @@ namespace ClassLibrary2
                 return odgovori.ToList();
             }
         }
+        
     }
 }

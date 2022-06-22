@@ -67,8 +67,7 @@ namespace ClassLibrary2
             {
                 var upit = from x in db.Reklamacija
                            join y in db.Korisnik on x.IDKorisnik equals y.ID
-                           join z in db.Podnesak on x.IDReklamacija equals z.IDReklamacija
-                           join p in db.Proizvod on z.IDProizvod equals p.ID
+                           join p in db.Proizvod on x.IDProizvod equals p.ID
                            select new IspisReklamacija
                            {
                                KorisnickoIme = y.KorisnickoIme,
@@ -79,6 +78,37 @@ namespace ClassLibrary2
                                Opis = x.Opis
                            };
                 return upit.ToList();
+            }
+        }
+        public static List<IspisReklamacija> DohvatiSveDostupneReklamacijeZaAdmina()
+        {
+            int[] idObradjeneReklamacije = DohvatiSveObradjeneReklamacijeIzTablice();
+            using (var db = new Entiteti())
+            {
+                var dostupne = from r in db.Reklamacija
+                               join k in db.Korisnik on r.IDKorisnik equals k.ID
+                               join p in db.Proizvod on r.IDProizvod equals p.ID
+                               where !idObradjeneReklamacije.Contains(r.IDReklamacija)
+                               select new IspisReklamacija
+                               {
+                                   KorisnickoIme = k.KorisnickoIme,
+                                   Ime = k.Ime,
+                                   Prezime = k.Prezime,
+                                   Datum = r.Datum,
+                                   Proizvod = p.Naziv,
+                                   Opis = r.Opis
+                               };
+                return dostupne.ToList();
+            }
+        }
+
+        private static int[] DohvatiSveObradjeneReklamacijeIzTablice()
+        {
+            using (var db = new Entiteti())
+            {
+                var upit = from x in db.Odgovor
+                           select x.IDReklamacija;
+                return upit.ToArray();
             }
         }
     }
