@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary2.ToolBox
 {
-    public static class Grafikon
+    public static class TOOL_Grafikon
     {
         public static List<PrihodTrgovine> DohvatiPrihodKrozGodine()
         {

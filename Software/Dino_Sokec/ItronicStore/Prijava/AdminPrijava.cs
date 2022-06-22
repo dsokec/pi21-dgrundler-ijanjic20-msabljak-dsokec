@@ -27,7 +27,7 @@ namespace ItronicStore
         private void NapuniComboBoxKorisnickoIme()
         {
             cmbImeAdmina.DataSource = null;
-            cmbImeAdmina.DataSource = Administrator.DohvatiSveAdministratore();
+            cmbImeAdmina.DataSource = TOOL_Administrator.DohvatiSveAdministratore();
             cmbImeAdmina.SelectedIndex = 0;
 
             txtLozinkaAdmin.ReadOnly = true;
@@ -36,7 +36,7 @@ namespace ItronicStore
         private void cmbImeAdmina_SelectedIndexChanged(object sender, EventArgs e)
         {
             string imeAdmina = cmbImeAdmina.SelectedItem.ToString();
-            txtLozinkaAdmin.Text = Administrator.DohvatiLozinkuZaOdabranogAdministratora(imeAdmina);
+            txtLozinkaAdmin.Text = TOOL_Administrator.DohvatiLozinkuZaOdabranogAdministratora(imeAdmina);
         }
 
         private void btnNatrag_Click(object sender, EventArgs e)

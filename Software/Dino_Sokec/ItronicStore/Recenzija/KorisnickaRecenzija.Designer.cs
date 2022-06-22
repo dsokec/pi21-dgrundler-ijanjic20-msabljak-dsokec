@@ -64,6 +64,8 @@ namespace ItronicStore
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.lblBrojRedakaPovijest = new System.Windows.Forms.Label();
+            this.btnAzuriraj = new System.Windows.Forms.Button();
+            this.btnObrisi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPopisProizvoda)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPovijestRecenzija)).BeginInit();
@@ -124,7 +126,7 @@ namespace ItronicStore
             // 
             // btnOdustani
             // 
-            this.btnOdustani.Location = new System.Drawing.Point(268, 502);
+            this.btnOdustani.Location = new System.Drawing.Point(301, 675);
             this.btnOdustani.Name = "btnOdustani";
             this.btnOdustani.Size = new System.Drawing.Size(99, 38);
             this.btnOdustani.TabIndex = 51;
@@ -134,7 +136,7 @@ namespace ItronicStore
             // 
             // btnSpremi
             // 
-            this.btnSpremi.Location = new System.Drawing.Point(117, 502);
+            this.btnSpremi.Location = new System.Drawing.Point(77, 502);
             this.btnSpremi.Name = "btnSpremi";
             this.btnSpremi.Size = new System.Drawing.Size(75, 38);
             this.btnSpremi.TabIndex = 48;
@@ -238,8 +240,9 @@ namespace ItronicStore
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnObrisi);
+            this.groupBox1.Controls.Add(this.btnAzuriraj);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.btnOdustani);
             this.groupBox1.Controls.Add(this.btnSpremi);
             this.groupBox1.Controls.Add(this.txtboxKomentar);
             this.groupBox1.Controls.Add(this.txtPrezime);
@@ -451,6 +454,26 @@ namespace ItronicStore
             this.lblBrojRedakaPovijest.TabIndex = 58;
             this.lblBrojRedakaPovijest.Text = "label11";
             // 
+            // btnAzuriraj
+            // 
+            this.btnAzuriraj.Location = new System.Drawing.Point(174, 502);
+            this.btnAzuriraj.Name = "btnAzuriraj";
+            this.btnAzuriraj.Size = new System.Drawing.Size(80, 38);
+            this.btnAzuriraj.TabIndex = 59;
+            this.btnAzuriraj.Text = "Ažuriraj";
+            this.btnAzuriraj.UseVisualStyleBackColor = true;
+            this.btnAzuriraj.Click += new System.EventHandler(this.btnAzuriraj_Click);
+            // 
+            // btnObrisi
+            // 
+            this.btnObrisi.Location = new System.Drawing.Point(285, 502);
+            this.btnObrisi.Name = "btnObrisi";
+            this.btnObrisi.Size = new System.Drawing.Size(79, 38);
+            this.btnObrisi.TabIndex = 60;
+            this.btnObrisi.Text = "Obriši";
+            this.btnObrisi.UseVisualStyleBackColor = true;
+            this.btnObrisi.Click += new System.EventHandler(this.btnObrisi_Click);
+            // 
             // KorisnickaRecenzija
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -459,6 +482,7 @@ namespace ItronicStore
             this.ClientSize = new System.Drawing.Size(1125, 720);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblBrojRedakaPovijest);
+            this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.lblBrojRedaka);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label12);
@@ -521,5 +545,7 @@ namespace ItronicStore
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button btnAzuriraj;
+        private System.Windows.Forms.Button btnObrisi;
     }
 }

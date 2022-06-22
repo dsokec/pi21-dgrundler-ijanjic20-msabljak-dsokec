@@ -92,7 +92,7 @@ namespace ItronicStore
         private void NapuniCombobox()
         {
             cmbKorisnickoIme.DataSource = null;
-            cmbKorisnickoIme.DataSource = Korisnik.DohvatiSveKorisnike();
+            cmbKorisnickoIme.DataSource = TOOL_Korisnik.DohvatiSveKorisnike();
             cmbKorisnickoIme.SelectedIndex = 0;
 
             txtLozinkaLogin.ReadOnly = true;
@@ -101,7 +101,7 @@ namespace ItronicStore
         private void cmbKorisnickoIme_SelectedIndexChanged(object sender, EventArgs e)
         {
             string korisnickoIme = cmbKorisnickoIme.SelectedItem.ToString();
-            txtLozinkaLogin.Text = Korisnik.DohvatiLozinkuZaOdabranogKorisnika(korisnickoIme);
+            txtLozinkaLogin.Text = TOOL_Korisnik.DohvatiLozinkuZaOdabranogKorisnika(korisnickoIme);
             txtLozinkaLogin.PasswordChar = '*';
         }
 

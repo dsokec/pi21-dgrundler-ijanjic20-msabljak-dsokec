@@ -21,7 +21,7 @@ namespace ItronicStore
         {
             chartPrihod.Series["Godina"].XValueMember = "Godina";
             chartPrihod.Series["Prihod"].YValueMembers = "Prihod";
-            chartPrihod.DataSource = ClassLibrary2.ToolBox.Grafikon.DohvatiPrihodKrozGodine();
+            chartPrihod.DataSource = ClassLibrary2.ToolBox.TOOL_Grafikon.DohvatiPrihodKrozGodine();
         }
 
         // Rashodi kroz godine
@@ -29,7 +29,7 @@ namespace ItronicStore
         {
             chartRashod.Series["Godina"].XValueMember = "Godina";
             chartRashod.Series["Prihod"].YValueMembers = "Rashod";
-            chartRashod.DataSource = ClassLibrary2.ToolBox.Grafikon.DohvatiRashodKrozGodine();
+            chartRashod.DataSource = ClassLibrary2.ToolBox.TOOL_Grafikon.DohvatiRashodKrozGodine();
         }
     }
 }

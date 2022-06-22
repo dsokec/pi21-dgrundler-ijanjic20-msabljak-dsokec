@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary2.ToolBox
 {
-    public static class Korisnik
+    public static class TOOL_Korisnik
     {
         public static List<string> DohvatiSveKorisnike()
         {
@@ -60,6 +60,16 @@ namespace ClassLibrary2.ToolBox
                               where x.KorisnickoIme == korisnickoIme
                               select x.Lozinka;
                 return lozinka.FirstOrDefault();
+            }
+        }
+        public static int DohvatiIDKorisnika(string korisnickoIme)
+        {
+            using (var db = new Entiteti())
+            {
+                var id = from x in db.Korisnik
+                         where x.KorisnickoIme == korisnickoIme
+                         select x.ID;
+                return id.FirstOrDefault();
             }
         }
     }

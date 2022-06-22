@@ -24,23 +24,32 @@ namespace ClassLibrary2
                 db.SaveChanges();
             }
         }
-        public static void AzurirajOdabranuRecenziju(IspisRecenzija odabranaRecenzija) {
-            var odabraniKorisnik = DohvatiKorisnika(odabranaRecenzija.KorisnickoIme);
-            var odabraniProizvod = DohvatiProizvod(odabranaRecenzija.Proizvod);
-            var azuriranaRecenzija = DohvatiRecenziju(odabraniKorisnik, odabraniProizvod);
-
-            using(var db = new Entiteti())
+        public static void AzurirajOdabranuRecenziju(Recenzija azuriranaRecenzija)
+        {
+            using (var db = new Entiteti())
             {
-                azuriranaRecenzija.IDKorisnik = odabraniKorisnik.ID;
-                azuriranaRecenzija.IDProizvod = odabraniProizvod.ID;
-                azuriranaRecenzija.Ocjena = odabranaRecenzija.Ocjena;
-                azuriranaRecenzija.Datum = odabranaRecenzija.Datum;
-                azuriranaRecenzija.Komentar = odabranaRecenzija.Komentar;
+                Recenzija odabrana = DohvatiRecenziju(azuriranaRecenzija);
+                odabrana.IDKorisnik = azuriranaRecenzija.IDKorisnik;
+                odabrana.IDProizvod = azuriranaRecenzija.IDProizvod;
+                odabrana.Komentar = azuriranaRecenzija.Komentar;
+                odabrana.Ocjena = azuriranaRecenzija.Ocjena;
+                odabrana.Datum = azuriranaRecenzija.Datum;
 
                 db.SaveChanges();
             }
-
         }
+
+        private static Recenzija DohvatiRecenziju(Recenzija azuriranaRecenzija)
+        {
+            using (var db = new Entiteti())
+            {
+                var upit = from x in db.Recenzija
+                           where x.IDKorisnik == azuriranaRecenzija.IDKorisnik && x.IDProizvod == azuriranaRecenzija.IDProizvod
+                           select x;
+                return upit.FirstOrDefault();
+            }
+        }
+
 
         private static Recenzija DohvatiRecenziju(Korisnik odabraniKorisnik, Proizvod odabraniProizvod)
         {

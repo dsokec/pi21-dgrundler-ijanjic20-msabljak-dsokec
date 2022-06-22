@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary2.ToolBox
 {
-    public static class Administrator
+    public static class TOOL_Administrator
     {
         public static List<string> DohvatiSveAdministratore()
         {

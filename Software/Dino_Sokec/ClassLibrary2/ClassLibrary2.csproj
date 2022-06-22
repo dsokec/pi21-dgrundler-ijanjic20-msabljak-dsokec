@@ -113,12 +113,13 @@
     <Compile Include="REPO\REPO_Odgovor.cs" />
     <Compile Include="REPO\REPO_Recenzija.cs" />
     <Compile Include="REPO\REPO_Reklamacija.cs" />
-    <Compile Include="ToolBox\Administrator.cs" />
-    <Compile Include="ToolBox\Grafikon.cs" />
-    <Compile Include="ToolBox\Korisnik.cs" />
+    <Compile Include="ToolBox\TOOL_Administrator.cs" />
+    <Compile Include="ToolBox\TOOL_Grafikon.cs" />
+    <Compile Include="ToolBox\TOOL_Korisnik.cs" />
     <Compile Include="Klase\PrihodTrgovine.cs" />
-    <Compile Include="ToolBox\Proizvod.cs" />
+    <Compile Include="ToolBox\TOOL_Proizvod.cs" />
     <Compile Include="Klase\RashodTrgovine.cs" />
+    <Compile Include="ToolBox\TOOL_Recenzija.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
