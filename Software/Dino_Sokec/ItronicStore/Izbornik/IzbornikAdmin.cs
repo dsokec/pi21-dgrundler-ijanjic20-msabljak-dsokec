@@ -39,10 +39,10 @@ namespace ItronicStore
 
         private void IzbornikAdmin_Load(object sender, EventArgs e)
         {
-            Napisi_Naziv_Prijavljenog_Admina();
+            NapisiNazivPrijavljenogAdmina();
         }
 
-        private void Napisi_Naziv_Prijavljenog_Admina()
+        private void NapisiNazivPrijavljenogAdmina()
         {
             lblPrijavljeniKao.Text = string.Format($"Vi ste prijavljeni kao {korisnickoImeAdmina}");
         }

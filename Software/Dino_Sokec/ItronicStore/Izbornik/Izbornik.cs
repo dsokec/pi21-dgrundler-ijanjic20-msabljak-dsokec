@@ -12,6 +12,12 @@ namespace ItronicStore
 {
     public partial class Izbornik : Form
     {
+        private wfLogin Login;
+        private NovaReklamacija Reklamacija;
+        private KorisnickaRecenzija Recenzija;
+        private PovratnaInformacija PovratnaInformacija;
+        
+        
         private string korisnickoImeLogina;
         wfLogin wfLogin;
 

@@ -104,7 +104,7 @@ namespace ItronicStore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(419, 265);
+            this.ClientSize = new System.Drawing.Size(392, 265);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblPrijavljeniKao);
             this.Controls.Add(this.label1);

@@ -9,14 +9,34 @@ namespace ItronicStore
 {
     public partial class wfLogin : Form
     {
+        private Izbornik Izbornik;
         public wfLogin()
         {
             InitializeComponent();
         }
 
+        public wfLogin(Izbornik izbornik)
+        {
+            this.Izbornik = izbornik;
+            Izbornik.Hide();
+        }
+
+        // Gumb prijavi se - ulazak u Izbornik
         private void btnPrijaviSe_Click(object sender, EventArgs e)
         {
-            OtvoriIzbornik();
+            if(Izbornik == null)
+            {
+                Izbornik = new Izbornik(this);
+                Izbornik.FormClosed += Izbornik_FormClosed;
+            }
+            Izbornik.Show(this);
+            Hide();
+        }
+
+        private void Izbornik_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Izbornik = null;
+            Show();
         }
 
         private void OtvoriIzbornik()
@@ -105,6 +125,7 @@ namespace ItronicStore
             txtLozinkaLogin.PasswordChar = '*';
         }
 
+        // Gumb Prijava admina
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();

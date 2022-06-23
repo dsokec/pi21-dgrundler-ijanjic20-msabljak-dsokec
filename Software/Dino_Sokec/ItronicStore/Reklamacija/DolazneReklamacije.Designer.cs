@@ -84,6 +84,7 @@ namespace ItronicStore
             this.btnNaprijed.TabIndex = 3;
             this.btnNaprijed.Text = "Odaberi";
             this.btnNaprijed.UseVisualStyleBackColor = true;
+            this.btnNaprijed.Click += new System.EventHandler(this.btnNaprijed_Click);
             // 
             // label2
             // 
@@ -121,6 +122,7 @@ namespace ItronicStore
             this.Name = "DolazneReklamacije";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DolazneReklamacije";
+            this.Load += new System.EventHandler(this.DolazneReklamacije_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPopisReklamacija)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
