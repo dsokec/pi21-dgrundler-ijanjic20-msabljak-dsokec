@@ -13,15 +13,18 @@ namespace ItronicStore
 {
     public partial class AdminPrijava : Form
     {
-        public AdminPrijava()
+        private wfLogin login;
+        private IzbornikAdmin IzbornikAdmin;
+        public AdminPrijava(wfLogin login)
         {
             InitializeComponent();
+            this.login = login;
+            login.Hide();
         }
 
         private void AdminPrijava_Load(object sender, EventArgs e)
         {
             NapuniComboBoxKorisnickoIme();
-            
         }
 
         private void NapuniComboBoxKorisnickoIme()
@@ -41,16 +44,23 @@ namespace ItronicStore
 
         private void btnNatrag_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            wfLogin form = new wfLogin();
-            form.Show();
+            Owner.Show();
+            Hide();
         }
 
         private void btnPrijaviSeAdmin_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Izbornik izbornik = new Izbornik();
-            izbornik.Show();
+            if(IzbornikAdmin == null)
+            {
+                IzbornikAdmin = new IzbornikAdmin(this);
+                IzbornikAdmin.FormClosed += IzbornikAdmin_FormClosed;
+            }
+        }
+
+        private void IzbornikAdmin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            IzbornikAdmin = null;
+            Show();
         }
     }
 }

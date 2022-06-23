@@ -13,9 +13,13 @@ namespace ItronicStore
     public partial class IzbornikAdmin : Form
     {
         private string korisnickoImeAdmina;
-        public IzbornikAdmin()
+        private DolazneReklamacije dolazneReklamacije;
+        private AdminPrijava adminPrijava;
+        public IzbornikAdmin(AdminPrijava admin)
         {
             InitializeComponent();
+            this.adminPrijava = admin;
+            adminPrijava.Hide();
         }
         public IzbornikAdmin(string admin)
         {
@@ -25,9 +29,23 @@ namespace ItronicStore
 
         private void btnInbox_Click(object sender, EventArgs e)
         {
-            DolazneReklamacije dolazne = new DolazneReklamacije();
-            dolazne.Show();
-            this.Hide();
+            //DolazneReklamacije dolazne = new DolazneReklamacije();
+            //dolazne.Show();
+            //this.Hide();
+
+            if(dolazneReklamacije == null)
+            {
+                dolazneReklamacije = new DolazneReklamacije();
+                dolazneReklamacije.FormClosed += DolazneReklamacije_FormClosed;
+            }
+            dolazneReklamacije.Show(this);
+            Hide();
+        }
+
+        private void DolazneReklamacije_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            dolazneReklamacije = null;
+            Show();
         }
 
         private void btnGrafickiPrikaz_Click(object sender, EventArgs e)
@@ -45,6 +63,12 @@ namespace ItronicStore
         private void NapisiNazivPrijavljenogAdmina()
         {
             lblPrijavljeniKao.Text = string.Format($"Vi ste prijavljeni kao {korisnickoImeAdmina}");
+        }
+
+        private void btnNatrag_Click(object sender, EventArgs e)
+        {
+            Owner.Show();
+            Hide();
         }
     }
 }

@@ -10,6 +10,7 @@ namespace ItronicStore
     public partial class wfLogin : Form
     {
         private Izbornik Izbornik;
+        private AdminPrijava adminPrijava;
         public wfLogin()
         {
             InitializeComponent();
@@ -125,13 +126,21 @@ namespace ItronicStore
             txtLozinkaLogin.PasswordChar = '*';
         }
 
-        // Gumb Prijava admina
-        private void button1_Click(object sender, EventArgs e)
+        private void btnPrijavaAdmin_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            var form2 = new AdminPrijava();
-            form2.Closed += (s, args) => this.Close();
-            form2.Show();
+            if(adminPrijava == null)
+            {
+                adminPrijava = new AdminPrijava(this);
+                adminPrijava.FormClosed += AdminPrijava_FormClosed;
+            }
+            adminPrijava.Show(this);
+            Hide();
+        }
+
+        private void AdminPrijava_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            adminPrijava = null;
+            Show();
         }
     }
 }

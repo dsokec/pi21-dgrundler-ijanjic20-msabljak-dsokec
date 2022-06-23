@@ -17,5 +17,11 @@ namespace ItronicStore
             InitializeComponent();
             
         }
+
+        private void btnOdustani_Click(object sender, EventArgs e)
+        {
+            Owner.Show();
+            Hide();
+        }
     }
 }

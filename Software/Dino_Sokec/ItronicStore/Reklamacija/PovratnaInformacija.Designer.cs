@@ -31,8 +31,8 @@ namespace ItronicStore
         {
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnOdustani = new System.Windows.Forms.Button();
+            this.btnSpremi = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -63,26 +63,27 @@ namespace ItronicStore
             this.label2.TabIndex = 13;
             this.label2.Text = "Odgovor";
             // 
-            // button4
+            // btnOdustani
             // 
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button4.Location = new System.Drawing.Point(242, 529);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(99, 38);
-            this.button4.TabIndex = 27;
-            this.button4.Text = "Odustani";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnOdustani.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnOdustani.Location = new System.Drawing.Point(242, 529);
+            this.btnOdustani.Name = "btnOdustani";
+            this.btnOdustani.Size = new System.Drawing.Size(99, 38);
+            this.btnOdustani.TabIndex = 27;
+            this.btnOdustani.Text = "Odustani";
+            this.btnOdustani.UseVisualStyleBackColor = true;
+            this.btnOdustani.Click += new System.EventHandler(this.btnOdustani_Click);
             // 
-            // button1
+            // btnSpremi
             // 
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button1.Location = new System.Drawing.Point(57, 529);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 38);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "Spremi";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSpremi.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnSpremi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnSpremi.Location = new System.Drawing.Point(57, 529);
+            this.btnSpremi.Name = "btnSpremi";
+            this.btnSpremi.Size = new System.Drawing.Size(75, 38);
+            this.btnSpremi.TabIndex = 24;
+            this.btnSpremi.Text = "Spremi";
+            this.btnSpremi.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -164,8 +165,8 @@ namespace ItronicStore
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(379, 599);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnOdustani);
+            this.Controls.Add(this.btnSpremi);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox4);
@@ -187,8 +188,8 @@ namespace ItronicStore
         #endregion
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnOdustani;
+        private System.Windows.Forms.Button btnSpremi;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox1;

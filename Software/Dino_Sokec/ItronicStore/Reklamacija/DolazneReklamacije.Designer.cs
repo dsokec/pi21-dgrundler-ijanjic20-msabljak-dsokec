@@ -75,6 +75,7 @@ namespace ItronicStore
             this.btnNatrag.TabIndex = 3;
             this.btnNatrag.Text = "Natrag";
             this.btnNatrag.UseVisualStyleBackColor = true;
+            this.btnNatrag.Click += new System.EventHandler(this.btnNatrag_Click);
             // 
             // btnNaprijed
             // 

@@ -35,6 +35,7 @@ namespace ItronicStore
             this.label1 = new System.Windows.Forms.Label();
             this.lblPrijavljeniKao = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnNatrag = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnInbox
@@ -100,11 +101,22 @@ namespace ItronicStore
             this.label3.TabIndex = 3;
             this.label3.Text = "Administracija";
             // 
+            // btnNatrag
+            // 
+            this.btnNatrag.Location = new System.Drawing.Point(297, 214);
+            this.btnNatrag.Name = "btnNatrag";
+            this.btnNatrag.Size = new System.Drawing.Size(76, 39);
+            this.btnNatrag.TabIndex = 4;
+            this.btnNatrag.Text = "Natrag";
+            this.btnNatrag.UseVisualStyleBackColor = true;
+            this.btnNatrag.Click += new System.EventHandler(this.btnNatrag_Click);
+            // 
             // IzbornikAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(392, 265);
+            this.Controls.Add(this.btnNatrag);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblPrijavljeniKao);
             this.Controls.Add(this.label1);
@@ -129,5 +141,6 @@ namespace ItronicStore
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblPrijavljeniKao;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnNatrag;
     }
 }

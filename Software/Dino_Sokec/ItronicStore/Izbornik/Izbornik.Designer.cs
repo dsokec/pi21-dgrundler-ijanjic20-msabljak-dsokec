@@ -33,9 +33,9 @@ namespace ItronicStore
             this.label5 = new System.Windows.Forms.Label();
             this.btnRecenzija = new System.Windows.Forms.Button();
             this.btnReklamacija = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnInbox = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnNatrag = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.lblViStePrijavljeniKao = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -83,15 +83,16 @@ namespace ItronicStore
             this.btnReklamacija.UseVisualStyleBackColor = true;
             this.btnReklamacija.Click += new System.EventHandler(this.btnReklamacija_Click);
             // 
-            // button1
+            // btnInbox
             // 
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.button1.Location = new System.Drawing.Point(249, 204);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 31);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Inbox";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnInbox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnInbox.Location = new System.Drawing.Point(249, 204);
+            this.btnInbox.Name = "btnInbox";
+            this.btnInbox.Size = new System.Drawing.Size(99, 31);
+            this.btnInbox.TabIndex = 1;
+            this.btnInbox.Text = "Inbox";
+            this.btnInbox.UseVisualStyleBackColor = true;
+            this.btnInbox.Click += new System.EventHandler(this.btnInbox_Click);
             // 
             // label8
             // 
@@ -104,15 +105,15 @@ namespace ItronicStore
             this.label8.TabIndex = 0;
             this.label8.Text = "Nova reklamacija";
             // 
-            // button2
+            // btnNatrag
             // 
-            this.button2.Location = new System.Drawing.Point(482, 251);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(78, 41);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Natrag";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnNatrag.Location = new System.Drawing.Point(482, 251);
+            this.btnNatrag.Name = "btnNatrag";
+            this.btnNatrag.Size = new System.Drawing.Size(78, 41);
+            this.btnNatrag.TabIndex = 1;
+            this.btnNatrag.Text = "Natrag";
+            this.btnNatrag.UseVisualStyleBackColor = true;
+            this.btnNatrag.Click += new System.EventHandler(this.btnNatrag_Click);
             // 
             // label9
             // 
@@ -140,8 +141,8 @@ namespace ItronicStore
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(589, 316);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnInbox);
+            this.Controls.Add(this.btnNatrag);
             this.Controls.Add(this.btnReklamacija);
             this.Controls.Add(this.btnRecenzija);
             this.Controls.Add(this.label9);
@@ -165,9 +166,9 @@ namespace ItronicStore
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnRecenzija;
         private System.Windows.Forms.Button btnReklamacija;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnInbox;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnNatrag;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblViStePrijavljeniKao;
     }

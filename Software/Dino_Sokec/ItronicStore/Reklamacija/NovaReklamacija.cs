@@ -21,8 +21,8 @@ namespace ItronicStore
         // Odustani
         private void button2_Click(object sender, EventArgs e)
         {
-            ObrisiSveTekstualneOkvire();
-            this.Close();
+            Owner.Show();
+            Hide();
         }
 
         private void ObrisiSveTekstualneOkvire()

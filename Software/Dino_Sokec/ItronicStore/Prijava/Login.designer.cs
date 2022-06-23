@@ -164,7 +164,7 @@ namespace ItronicStore
             this.btnPrijavaAdmin.TabIndex = 0;
             this.btnPrijavaAdmin.Text = "Nastavi";
             this.btnPrijavaAdmin.UseVisualStyleBackColor = true;
-            this.btnPrijavaAdmin.Click += new System.EventHandler(this.button1_Click);
+            this.btnPrijavaAdmin.Click += new System.EventHandler(this.btnPrijavaAdmin_Click);
             // 
             // wfLogin
             // 

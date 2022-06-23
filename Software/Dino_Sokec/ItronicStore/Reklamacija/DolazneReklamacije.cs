@@ -45,5 +45,11 @@ namespace ItronicStore
         {
             
         }
+
+        private void btnNatrag_Click(object sender, EventArgs e)
+        {
+            Owner.Show();
+            Hide();
+        }
     }
 }
