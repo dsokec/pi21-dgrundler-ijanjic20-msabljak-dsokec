@@ -13,23 +13,20 @@ namespace ItronicStore
 {
     public partial class KorisnickaRecenzija : Form
     {
-        // OK 
         private string korisnickoIme;
         Izbornik izbornik;
-
-        // OK
+        
+        // Prethodna WinForma + 2 konstruktora
         internal void PostaviPrethodnuFormu(Izbornik x)
         {
             izbornik = x;
         }
 
-        // OK
         public KorisnickaRecenzija()
         {
             InitializeComponent(); 
         }
 
-        // OK
         public KorisnickaRecenzija(string korisnickoImeLogina)
         {
             InitializeComponent();
@@ -37,6 +34,11 @@ namespace ItronicStore
         }
 
         private void KorisnickaRecenzija_Load(object sender, EventArgs e)
+        {
+            UcitajWindowsFormuKorisnickaRecenzija();
+        }
+
+        private void UcitajWindowsFormuKorisnickaRecenzija()
         {
             NapuniDGVProizvodima(korisnickoIme);
 
@@ -47,9 +49,9 @@ namespace ItronicStore
             NapuniTekstualniOkvirKorisnika(korisnickoIme);
 
             Namjesti_RadioButton();
-
         }
 
+        // Namjestanje toolboxa
         private void Namjesti_RadioButton()
         {
             radioB5.Checked = true;
@@ -60,6 +62,7 @@ namespace ItronicStore
             comboBox1.SelectedIndex = 0;
         }
 
+        // Punjenje DGV-a (x2) i textBoxova
         private void NapuniTekstualniOkvirKorisnika(string korisnickoIme)
         {
             txtKorisnickoIme.Text = korisnickoIme;
@@ -93,6 +96,7 @@ namespace ItronicStore
 
         }
 
+        // Rows Removed and Added
         private void RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
             lblBrojRedaka.Text = dgvPopisProizvoda.Rows.Count.ToString();
@@ -103,7 +107,7 @@ namespace ItronicStore
             lblBrojRedaka.Text = dgvPopisProizvoda.Rows.Count.ToString();
         }
 
-        // Natrag
+        // Button Natrag
         private void button4_Click(object sender, EventArgs e)
         {
             // OK
@@ -112,6 +116,7 @@ namespace ItronicStore
             
         }
 
+        // Cell click i dohvacanje retka
         private void dgvPopisProizvoda_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int brojRetka = DohvatiBrojOdabranogRetkaDGV();
@@ -125,6 +130,7 @@ namespace ItronicStore
             return redak;
         }
 
+        // Trazilica proizvoda
         private void txtTrazilicaProizvoda_TextChanged(object sender, EventArgs e)
         {
             var uneseniTekst = (sender as TextBox).Text;
@@ -158,6 +164,7 @@ namespace ItronicStore
             }
         }
 
+        // Metode filtriranja - Cijena i Naziv
         private void FiltirajPoCijeniSilazno()
         {
             
@@ -186,14 +193,14 @@ namespace ItronicStore
             dgvPopisProizvoda.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
-        // spremi recenziju
+        // Button Spremi
         private void btnSpremi_Click(object sender, EventArgs e)
         {
             int ocjena = DohvatiOcjenuProizvoda();
             string komentar = DohvatiKomentarKorisnika();
             string datum = DohvatiDatum();
 
-            IspisProizvoda dohvaceniRedak = DohvatiRedak();
+            IspisProizvoda dohvaceniRedak = DohvatiRedakProizvoda();
             double cijena = dohvaceniRedak.Cijena;
             string nazivProizvoda = dohvaceniRedak.Naziv;
 
@@ -204,12 +211,17 @@ namespace ItronicStore
 
             CRUD_Recenzija.KreirajNovuRecenziju(novaRecenzija);
 
-            NapuniDGVProizvodima(korisnickoIme);
-            NapuniPovijestRecenzijaKorisnika(korisnickoIme);
-            NapuniTekstualniOkvirKorisnika(korisnickoIme);
+            UcitajWindowsFormuKorisnickaRecenzija();
 
         }
 
+        private IspisProizvoda DohvatiRedakProizvoda()
+        {
+            IspisProizvoda redak = dgvPopisProizvoda.CurrentRow.DataBoundItem as IspisProizvoda;
+            return redak;
+        }
+
+        // Stvori novi objekt + metoda Dohvati datum
         private Recenzija StvoriNoviObjektZaBazuPodataka(int idKorisnik, int idProizvod, int ocjena, string datum, string komentar)
         {
             Recenzija nova = new Recenzija();
@@ -266,10 +278,11 @@ namespace ItronicStore
         //    }
         //}
 
-        private IspisProizvoda DohvatiRedak()
+        // Dohvacanje retka, komentara i ocjene
+        private PovijestRecenzija DohvatiRedak()
         {
-            IspisProizvoda proizvod = dgvPopisProizvoda.CurrentRow.DataBoundItem as IspisProizvoda;
-            return proizvod;
+            PovijestRecenzija recenzija = dgvPovijestRecenzija.CurrentRow.DataBoundItem as PovijestRecenzija;
+            return recenzija;
         }
 
         private string DohvatiKomentarKorisnika()
@@ -287,37 +300,78 @@ namespace ItronicStore
             else return 5;
         }
 
+        // Button Azuriraj
         private void btnAzuriraj_Click(object sender, EventArgs e)
         {
             string datum = DohvatiDatum();
             string komentar = DohvatiKomentarKorisnika();
             int ocjena = DohvatiOcjenuProizvoda();
-            IspisProizvoda redak = DohvatiRedak();
-            int idProizvod = TOOL_Proizvod.DohvatiIDProizvoda(redak.Cijena, redak.Naziv);
-            int idKorisnik = TOOL_Korisnik.DohvatiIDKorisnika(korisnickoIme);
+
+            PovijestRecenzija redak = DohvatiRedakPovijestRecenzija();
+
+            int idProizvod = TOOL_Recenzija.DohvatiIDProizvod(redak.ID);
+            int idKorisnik = TOOL_Recenzija.DohvatiIDKorisnik(redak.ID);
 
             Recenzija azurirana = StvoriNoviObjektZaBazuPodataka(idKorisnik, idProizvod, ocjena, datum, komentar);
             
             CRUD_Recenzija.AzurirajOdabranuRecenziju(azurirana);
-            
-            NapuniDGVProizvodima(korisnickoIme);
-            NapuniPovijestRecenzijaKorisnika(korisnickoIme);
-            NapuniTekstualniOkvirKorisnika(korisnickoIme);
+
+            UcitajWindowsFormuKorisnickaRecenzija();
         }
 
+        // Button Obrisi
         private void btnObrisi_Click(object sender, EventArgs e)
         {
-            IspisRecenzija odabranaRecenzija = DohvatiRedakPovijestRecenzija();
-            DohvatiIDKorisnika();
-            DohvatiIDProizvoda();
+            PovijestRecenzija odabranaRecenzija = DohvatiRedakPovijestRecenzija();
 
-            CRUD_Recenzija.ObrisiOdabranuRecenziju();
+            Recenzija recenzija = TOOL_Recenzija.DohvatiRecenziju(odabranaRecenzija);
+
+            CRUD_Recenzija.ObrisiOdabranuRecenziju(recenzija);
+
+            UcitajWindowsFormuKorisnickaRecenzija();
         }
 
-        private IspisRecenzija DohvatiRedakPovijestRecenzija()
+        // Dohvacanje retka iz DGV Povijest recenzija
+        private PovijestRecenzija DohvatiRedakPovijestRecenzija()
         {
-            IspisRecenzija redak = dgvPovijestRecenzija.CurrentRow.DataBoundItem as IspisRecenzija;
+            PovijestRecenzija redak = dgvPovijestRecenzija.CurrentRow.DataBoundItem as PovijestRecenzija;
             return redak;
+        }
+
+        private void dgvPovijestRecenzija_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            PovijestRecenzija recenzija = DohvatiRedakPovijestRecenzija();
+
+            PrikaziOdabranePodatke(recenzija);
+        }
+
+        private void PrikaziOdabranePodatke(PovijestRecenzija recenzija)
+        {
+            txtPronadjeniProizvod.Text = recenzija.Proizvod;
+            dateTimePicker1.Value = Convert.ToDateTime(recenzija.Datum.ToString());
+            
+            // Namjestanje radio buttona
+            int ocjena = recenzija.Ocjena;
+            switch (ocjena)
+            {
+                case 1:
+                    radioB1.Enabled = true;
+                    break;
+                case 2:
+                    radioB2.Enabled = true;
+                    break;
+                case 3:
+                    radioB3.Enabled = true;
+                    break;
+                case 4:
+                    radioB4.Enabled = true;
+                    break;
+                case 5:
+                    radioB5.Enabled = true;
+                    break;
+            }
+
+            txtboxKomentar.Text = recenzija.Komentar;
         }
     }
 }

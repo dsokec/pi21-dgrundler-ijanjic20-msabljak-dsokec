@@ -46,6 +46,8 @@ namespace ItronicStore
             this.label5 = new System.Windows.Forms.Label();
             this.txtTrazilicaProizvoda = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnObrisi = new System.Windows.Forms.Button();
+            this.btnAzuriraj = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.txtPrezime = new System.Windows.Forms.TextBox();
             this.txtIme = new System.Windows.Forms.TextBox();
@@ -64,8 +66,6 @@ namespace ItronicStore
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.lblBrojRedakaPovijest = new System.Windows.Forms.Label();
-            this.btnAzuriraj = new System.Windows.Forms.Button();
-            this.btnObrisi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPopisProizvoda)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPovijestRecenzija)).BeginInit();
@@ -268,6 +268,26 @@ namespace ItronicStore
             this.groupBox1.TabIndex = 55;
             this.groupBox1.TabStop = false;
             // 
+            // btnObrisi
+            // 
+            this.btnObrisi.Location = new System.Drawing.Point(285, 502);
+            this.btnObrisi.Name = "btnObrisi";
+            this.btnObrisi.Size = new System.Drawing.Size(79, 38);
+            this.btnObrisi.TabIndex = 60;
+            this.btnObrisi.Text = "Obriši";
+            this.btnObrisi.UseVisualStyleBackColor = true;
+            this.btnObrisi.Click += new System.EventHandler(this.btnObrisi_Click);
+            // 
+            // btnAzuriraj
+            // 
+            this.btnAzuriraj.Location = new System.Drawing.Point(174, 502);
+            this.btnAzuriraj.Name = "btnAzuriraj";
+            this.btnAzuriraj.Size = new System.Drawing.Size(80, 38);
+            this.btnAzuriraj.TabIndex = 59;
+            this.btnAzuriraj.Text = "Ažuriraj";
+            this.btnAzuriraj.UseVisualStyleBackColor = true;
+            this.btnAzuriraj.Click += new System.EventHandler(this.btnAzuriraj_Click);
+            // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(164, 301);
@@ -380,6 +400,7 @@ namespace ItronicStore
             this.dgvPovijestRecenzija.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPovijestRecenzija.Size = new System.Drawing.Size(645, 185);
             this.dgvPovijestRecenzija.TabIndex = 45;
+            this.dgvPovijestRecenzija.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPovijestRecenzija_CellContentClick);
             // 
             // label7
             // 
@@ -453,26 +474,6 @@ namespace ItronicStore
             this.lblBrojRedakaPovijest.Size = new System.Drawing.Size(60, 20);
             this.lblBrojRedakaPovijest.TabIndex = 58;
             this.lblBrojRedakaPovijest.Text = "label11";
-            // 
-            // btnAzuriraj
-            // 
-            this.btnAzuriraj.Location = new System.Drawing.Point(174, 502);
-            this.btnAzuriraj.Name = "btnAzuriraj";
-            this.btnAzuriraj.Size = new System.Drawing.Size(80, 38);
-            this.btnAzuriraj.TabIndex = 59;
-            this.btnAzuriraj.Text = "Ažuriraj";
-            this.btnAzuriraj.UseVisualStyleBackColor = true;
-            this.btnAzuriraj.Click += new System.EventHandler(this.btnAzuriraj_Click);
-            // 
-            // btnObrisi
-            // 
-            this.btnObrisi.Location = new System.Drawing.Point(285, 502);
-            this.btnObrisi.Name = "btnObrisi";
-            this.btnObrisi.Size = new System.Drawing.Size(79, 38);
-            this.btnObrisi.TabIndex = 60;
-            this.btnObrisi.Text = "Obriši";
-            this.btnObrisi.UseVisualStyleBackColor = true;
-            this.btnObrisi.Click += new System.EventHandler(this.btnObrisi_Click);
             // 
             // KorisnickaRecenzija
             // 
