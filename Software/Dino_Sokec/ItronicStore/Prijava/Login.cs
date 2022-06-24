@@ -4,6 +4,7 @@ using System.Reflection;
 using System.Windows.Forms;
 using System.Linq;
 using ClassLibrary2.ToolBox;
+using System.Data.Entity;
 
 namespace ItronicStore
 {
