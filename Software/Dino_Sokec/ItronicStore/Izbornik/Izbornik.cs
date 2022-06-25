@@ -26,10 +26,11 @@ namespace ItronicStore
             wfLogin = x;
         }
 
-        public Izbornik(wfLogin login)
+        public Izbornik(wfLogin login, string korisnickoIme)
         {
             InitializeComponent();
             this.Login = login;
+            this.korisnickoImeLogina = korisnickoIme;
             Login.Hide();
         }
 
@@ -43,23 +44,12 @@ namespace ItronicStore
         {
             if (Recenzija == null)
             {
-                Recenzija = new KorisnickaRecenzija();
+                Recenzija = new KorisnickaRecenzija(korisnickoImeLogina);
                 Recenzija.FormClosed += Recenzija_FormClosed;
             }
 
             Recenzija.Show(this);
             Hide();
-            //var forma2 = new KorisnickaRecenzija(korisnickoImeLogina);
-            //forma2.PostaviPrethodnuFormu(this);
-            //forma2.Show();
-            //this.Hide();
-
-            //this.Hide();
-            //var form2 = new KorisnickaRecenzija(korisnickoImeLogina);
-            //form2.Closed += (s, args) => this.Close();
-            //form2.Show();
-
-
         }
 
         private void Recenzija_FormClosed(object sender, FormClosedEventArgs e)

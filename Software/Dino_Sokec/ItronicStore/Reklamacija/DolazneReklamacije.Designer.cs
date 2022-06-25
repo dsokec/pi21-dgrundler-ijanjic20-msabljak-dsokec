@@ -44,8 +44,10 @@ namespace ItronicStore
             this.dgvPopisReklamacija.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPopisReklamacija.Location = new System.Drawing.Point(12, 89);
             this.dgvPopisReklamacija.Name = "dgvPopisReklamacija";
+            this.dgvPopisReklamacija.ReadOnly = true;
             this.dgvPopisReklamacija.RowHeadersWidth = 62;
             this.dgvPopisReklamacija.RowTemplate.Height = 28;
+            this.dgvPopisReklamacija.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPopisReklamacija.Size = new System.Drawing.Size(658, 426);
             this.dgvPopisReklamacija.TabIndex = 0;
             // 

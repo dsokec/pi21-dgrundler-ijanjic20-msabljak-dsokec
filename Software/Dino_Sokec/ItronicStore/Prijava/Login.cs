@@ -12,6 +12,7 @@ namespace ItronicStore
     {
         private Izbornik Izbornik;
         private AdminPrijava adminPrijava;
+        
         public wfLogin()
         {
             InitializeComponent();
@@ -26,9 +27,11 @@ namespace ItronicStore
         // Gumb prijavi se - ulazak u Izbornik
         private void btnPrijaviSe_Click(object sender, EventArgs e)
         {
-            if(Izbornik == null)
+            string korisnickoIme = TOOL_Korisnik.DohvatiKorisnickoImeKorisnika(cmbKorisnickoIme.Text);
+
+            if (Izbornik == null)
             {
-                Izbornik = new Izbornik(this);
+                Izbornik = new Izbornik(this, korisnickoIme);
                 Izbornik.FormClosed += Izbornik_FormClosed;
             }
             Izbornik.Show(this);
@@ -41,13 +44,13 @@ namespace ItronicStore
             Show();
         }
 
-        private void OtvoriIzbornik()
-        {
-            string korisnickoIme = DohvatiKorisnickoImeIzPadajuceListe();
-            this.Hide();
-            Izbornik form = new Izbornik(korisnickoIme);
-            form.ShowDialog();
-        }
+        //private void OtvoriIzbornik()
+        //{
+        //    string korisnickoIme = DohvatiKorisnickoImeIzPadajuceListe();
+        //    this.Hide();
+        //    Izbornik form = new Izbornik(korisnickoIme);
+        //    form.ShowDialog();
+        //}
 
         private string DohvatiKorisnickoImeIzPadajuceListe()
         {
@@ -117,6 +120,8 @@ namespace ItronicStore
             cmbKorisnickoIme.DataSource = TOOL_Korisnik.DohvatiSveKorisnike();
             cmbKorisnickoIme.SelectedIndex = 0;
 
+            
+
             txtLozinkaLogin.ReadOnly = true;
         }
 
@@ -129,7 +134,9 @@ namespace ItronicStore
 
         private void btnPrijavaAdmin_Click(object sender, EventArgs e)
         {
-            if(adminPrijava == null)
+            
+
+            if (adminPrijava == null)
             {
                 adminPrijava = new AdminPrijava(this);
                 adminPrijava.FormClosed += AdminPrijava_FormClosed;

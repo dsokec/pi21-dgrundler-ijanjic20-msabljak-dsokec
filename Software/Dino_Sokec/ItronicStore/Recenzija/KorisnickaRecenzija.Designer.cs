@@ -76,6 +76,7 @@ namespace ItronicStore
             this.dgvPopisProizvoda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPopisProizvoda.Location = new System.Drawing.Point(468, 93);
             this.dgvPopisProizvoda.Name = "dgvPopisProizvoda";
+            this.dgvPopisProizvoda.ReadOnly = true;
             this.dgvPopisProizvoda.RowHeadersWidth = 62;
             this.dgvPopisProizvoda.RowTemplate.Height = 28;
             this.dgvPopisProizvoda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -392,9 +393,11 @@ namespace ItronicStore
             // 
             // dgvPovijestRecenzija
             // 
+            this.dgvPovijestRecenzija.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvPovijestRecenzija.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPovijestRecenzija.Location = new System.Drawing.Point(468, 478);
             this.dgvPovijestRecenzija.Name = "dgvPovijestRecenzija";
+            this.dgvPovijestRecenzija.ReadOnly = true;
             this.dgvPovijestRecenzija.RowHeadersWidth = 62;
             this.dgvPovijestRecenzija.RowTemplate.Height = 28;
             this.dgvPovijestRecenzija.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

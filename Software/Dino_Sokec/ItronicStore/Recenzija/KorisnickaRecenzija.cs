@@ -107,7 +107,7 @@ namespace ItronicStore
             lblBrojRedaka.Text = dgvPopisProizvoda.Rows.Count.ToString();
         }
 
-        // Button Natrag
+        // Button Odustani
         private void button4_Click(object sender, EventArgs e)
         {
             // OK

@@ -52,10 +52,11 @@ namespace ItronicStore
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(93, 22);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.label1.Location = new System.Drawing.Point(104, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(452, 32);
+            this.label1.Size = new System.Drawing.Size(489, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Grafički prikaz rada trgovine Itronic";
             // 
@@ -116,9 +117,11 @@ namespace ItronicStore
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(106, 99);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label3.Location = new System.Drawing.Point(85, 97);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 20);
+            this.label3.Size = new System.Drawing.Size(145, 22);
             this.label3.TabIndex = 18;
             this.label3.Text = "Odaberi stavku";
             // 
