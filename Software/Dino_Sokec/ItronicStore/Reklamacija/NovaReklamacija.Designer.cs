@@ -33,7 +33,7 @@ namespace ItronicStore
             this.label8 = new System.Windows.Forms.Label();
             this.txtIme = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtOpis = new System.Windows.Forms.TextBox();
+            this.txtRazlog = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSpremi = new System.Windows.Forms.Button();
             this.btnOdustani = new System.Windows.Forms.Button();
@@ -44,17 +44,17 @@ namespace ItronicStore
             this.txtProizvod = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtProizvodjac = new System.Windows.Forms.TextBox();
+            this.txtKategorija = new System.Windows.Forms.TextBox();
             this.dgvPovijestReklamacija = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtOpis = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.dgvPopisProizvoda = new System.Windows.Forms.DataGridView();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnAzuriraj = new System.Windows.Forms.Button();
+            this.btnObrisi = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
@@ -100,14 +100,14 @@ namespace ItronicStore
             this.label7.TabIndex = 51;
             this.label7.Text = "Ime";
             // 
-            // txtOpis
+            // txtRazlog
             // 
-            this.txtOpis.Location = new System.Drawing.Point(129, 485);
-            this.txtOpis.Multiline = true;
-            this.txtOpis.Name = "txtOpis";
-            this.txtOpis.Size = new System.Drawing.Size(252, 97);
-            this.txtOpis.TabIndex = 48;
-            this.txtOpis.Text = "Nisam zadovoljan s kupljenim proizvodom.";
+            this.txtRazlog.Location = new System.Drawing.Point(129, 485);
+            this.txtRazlog.Multiline = true;
+            this.txtRazlog.Name = "txtRazlog";
+            this.txtRazlog.Size = new System.Drawing.Size(252, 97);
+            this.txtRazlog.TabIndex = 48;
+            this.txtRazlog.Text = "Nisam zadovoljan s kupljenim proizvodom.";
             // 
             // label2
             // 
@@ -214,16 +214,15 @@ namespace ItronicStore
             this.label4.Size = new System.Drawing.Size(100, 25);
             this.label4.TabIndex = 51;
             this.label4.Text = "Kategorija";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // txtProizvodjac
+            // txtKategorija
             // 
-            this.txtProizvodjac.Location = new System.Drawing.Point(130, 293);
-            this.txtProizvodjac.Name = "txtProizvodjac";
-            this.txtProizvodjac.ReadOnly = true;
-            this.txtProizvodjac.Size = new System.Drawing.Size(251, 26);
-            this.txtProizvodjac.TabIndex = 52;
-            this.txtProizvodjac.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.txtKategorija.Location = new System.Drawing.Point(130, 293);
+            this.txtKategorija.Name = "txtKategorija";
+            this.txtKategorija.ReadOnly = true;
+            this.txtKategorija.Size = new System.Drawing.Size(251, 26);
+            this.txtKategorija.TabIndex = 52;
+            //this.txtKategorija.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // dgvPovijestReklamacija
             // 
@@ -241,7 +240,7 @@ namespace ItronicStore
             // 
             this.groupBox2.Controls.Add(this.txtProizvod);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.txtOpis);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.ForeColor = System.Drawing.Color.DarkGreen;
@@ -252,15 +251,15 @@ namespace ItronicStore
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Odabrani proizvod";
             // 
-            // textBox1
+            // txtOpis
             // 
-            this.textBox1.Location = new System.Drawing.Point(113, 102);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(252, 65);
-            this.textBox1.TabIndex = 52;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.txtOpis.Location = new System.Drawing.Point(113, 102);
+            this.txtOpis.Multiline = true;
+            this.txtOpis.Name = "txtOpis";
+            this.txtOpis.ReadOnly = true;
+            this.txtOpis.Size = new System.Drawing.Size(252, 65);
+            this.txtOpis.TabIndex = 52;
+            //this.txtOpis.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label1
             // 
@@ -271,7 +270,7 @@ namespace ItronicStore
             this.label1.Size = new System.Drawing.Size(53, 25);
             this.label1.TabIndex = 51;
             this.label1.Text = "Opis";
-            this.label1.Click += new System.EventHandler(this.label4_Click);
+            //this.label1.Click += new System.EventHandler(this.label4_Click);
             // 
             // label9
             // 
@@ -313,29 +312,29 @@ namespace ItronicStore
             this.label6.Size = new System.Drawing.Size(69, 25);
             this.label6.TabIndex = 51;
             this.label6.Text = "Datum";
-            this.label6.Click += new System.EventHandler(this.label4_Click);
+            //this.label6.Click += new System.EventHandler(this.label4_Click);
             // 
-            // button1
+            // btnAzuriraj
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.button1.Location = new System.Drawing.Point(170, 190);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 38);
-            this.button1.TabIndex = 77;
-            this.button1.Text = "Ažuriraj";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAzuriraj.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAzuriraj.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnAzuriraj.Location = new System.Drawing.Point(170, 190);
+            this.btnAzuriraj.Name = "btnAzuriraj";
+            this.btnAzuriraj.Size = new System.Drawing.Size(92, 38);
+            this.btnAzuriraj.TabIndex = 77;
+            this.btnAzuriraj.Text = "Ažuriraj";
+            this.btnAzuriraj.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnObrisi
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Crimson;
-            this.button2.Location = new System.Drawing.Point(277, 190);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(92, 38);
-            this.button2.TabIndex = 77;
-            this.button2.Text = "Obriši";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnObrisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnObrisi.ForeColor = System.Drawing.Color.Crimson;
+            this.btnObrisi.Location = new System.Drawing.Point(277, 190);
+            this.btnObrisi.Name = "btnObrisi";
+            this.btnObrisi.Size = new System.Drawing.Size(92, 38);
+            this.btnObrisi.TabIndex = 77;
+            this.btnObrisi.Text = "Obriši";
+            this.btnObrisi.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
@@ -350,9 +349,9 @@ namespace ItronicStore
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button2);
+            this.groupBox3.Controls.Add(this.btnObrisi);
             this.groupBox3.Controls.Add(this.btnSpremi);
-            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.btnAzuriraj);
             this.groupBox3.ForeColor = System.Drawing.Color.DodgerBlue;
             this.groupBox3.Location = new System.Drawing.Point(12, 402);
             this.groupBox3.Name = "groupBox3";
@@ -369,13 +368,13 @@ namespace ItronicStore
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.dgvPopisProizvoda);
             this.Controls.Add(this.dgvPovijestReklamacija);
-            this.Controls.Add(this.txtProizvodjac);
+            this.Controls.Add(this.txtKategorija);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.lblProizvodiSRacuna);
             this.Controls.Add(this.btnOdustani);
-            this.Controls.Add(this.txtOpis);
+            this.Controls.Add(this.txtRazlog);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
@@ -401,7 +400,7 @@ namespace ItronicStore
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtIme;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtOpis;
+        private System.Windows.Forms.TextBox txtRazlog;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnSpremi;
         private System.Windows.Forms.Button btnOdustani;
@@ -410,19 +409,19 @@ namespace ItronicStore
         private System.Windows.Forms.TextBox txtProizvod;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtProizvodjac;
+        private System.Windows.Forms.TextBox txtKategorija;
         private System.Windows.Forms.DataGridView dgvPovijestReklamacija;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtOpis;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvPopisProizvoda;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnAzuriraj;
+        private System.Windows.Forms.Button btnObrisi;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBox3;
     }

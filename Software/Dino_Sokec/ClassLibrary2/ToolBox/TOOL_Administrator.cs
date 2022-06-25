@@ -37,5 +37,15 @@ namespace ClassLibrary2.ToolBox
                 return admini.ToList();
             }
         }
+        public static string DohvatiKorisnickoImeAdministratora(string userName)
+        {
+            using (var db = new Entiteti())
+            {
+                var ime = from x in db.Admin
+                          where userName == x.KorisnickoIme
+                          select x.KorisnickoIme;
+                return ime.FirstOrDefault();
+            }
+        }
     }
 }

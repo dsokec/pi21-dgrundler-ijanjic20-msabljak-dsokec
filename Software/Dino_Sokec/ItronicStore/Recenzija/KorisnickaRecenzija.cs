@@ -14,7 +14,8 @@ namespace ItronicStore
     public partial class KorisnickaRecenzija : Form
     {
         private string korisnickoIme;
-        Izbornik izbornik;
+        //Izbornik izbornik;
+        private Izbornik izbornik;
         
         // Prethodna WinForma + 2 konstruktora
         internal void PostaviPrethodnuFormu(Izbornik x)
@@ -27,10 +28,12 @@ namespace ItronicStore
             InitializeComponent(); 
         }
 
-        public KorisnickaRecenzija(string korisnickoImeLogina)
+        public KorisnickaRecenzija(Izbornik izbornik, string korisnickoImeLogina)
         {
             InitializeComponent();
+            this.izbornik = izbornik;
             this.korisnickoIme = korisnickoImeLogina;
+            izbornik.Hide();
         }
 
         private void KorisnickaRecenzija_Load(object sender, EventArgs e)
@@ -110,9 +113,8 @@ namespace ItronicStore
         // Button Odustani
         private void button4_Click(object sender, EventArgs e)
         {
-            // OK
-            izbornik.Show();
-            this.Dispose();
+            Owner.Show();
+            Hide();
             
         }
 

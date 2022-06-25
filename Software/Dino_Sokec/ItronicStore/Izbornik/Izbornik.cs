@@ -44,7 +44,7 @@ namespace ItronicStore
         {
             if (Recenzija == null)
             {
-                Recenzija = new KorisnickaRecenzija(korisnickoImeLogina);
+                Recenzija = new KorisnickaRecenzija(this, korisnickoImeLogina);
                 Recenzija.FormClosed += Recenzija_FormClosed;
             }
 
@@ -62,7 +62,7 @@ namespace ItronicStore
         {
             if (Reklamacija == null)
             {
-                Reklamacija = new NovaReklamacija();
+                Reklamacija = new NovaReklamacija(korisnickoImeLogina);
                 Reklamacija.FormClosed += Reklamacija_FormClosed;
             }
 

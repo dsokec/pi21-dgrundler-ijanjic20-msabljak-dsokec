@@ -57,5 +57,11 @@ namespace ItronicStore
             chartRashod.Series["Prihod"].YValueMembers = "Rashod";
             chartRashod.DataSource = ClassLibrary2.ToolBox.TOOL_Grafikon.DohvatiRashodKrozGodine();
         }
+
+        private void btnNatrag_Click(object sender, EventArgs e)
+        {
+            Owner.Show();
+            Hide();
+        }
     }
 }

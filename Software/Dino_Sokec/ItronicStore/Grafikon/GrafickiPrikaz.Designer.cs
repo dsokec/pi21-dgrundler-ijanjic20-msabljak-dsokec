@@ -29,13 +29,13 @@ namespace ItronicStore
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.btnUcitajA = new System.Windows.Forms.Button();
             this.cmbRashod = new System.Windows.Forms.ComboBox();
@@ -45,6 +45,7 @@ namespace ItronicStore
             this.label3 = new System.Windows.Forms.Label();
             this.btnUcitajB = new System.Windows.Forms.Button();
             this.chartPrihod = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.btnNatrag = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chartRashod)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartPrihod)).BeginInit();
             this.SuspendLayout();
@@ -62,7 +63,7 @@ namespace ItronicStore
             // 
             // btnUcitajA
             // 
-            this.btnUcitajA.Location = new System.Drawing.Point(526, 529);
+            this.btnUcitajA.Location = new System.Drawing.Point(38, 495);
             this.btnUcitajA.Name = "btnUcitajA";
             this.btnUcitajA.Size = new System.Drawing.Size(99, 38);
             this.btnUcitajA.TabIndex = 15;
@@ -89,22 +90,22 @@ namespace ItronicStore
             // 
             // chartRashod
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartRashod.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartRashod.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.chartRashod.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartRashod.Legends.Add(legend3);
             this.chartRashod.Location = new System.Drawing.Point(645, 166);
             this.chartRashod.Name = "chartRashod";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Rashod";
-            this.chartRashod.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Rashod";
+            this.chartRashod.Series.Add(series3);
             this.chartRashod.Size = new System.Drawing.Size(613, 341);
             this.chartRashod.TabIndex = 16;
             this.chartRashod.Text = "chart1";
-            title1.Name = "Title1";
-            title1.Text = "Rashod";
-            this.chartRashod.Titles.Add(title1);
+            title2.Name = "Title1";
+            title2.Text = "Rashod";
+            this.chartRashod.Titles.Add(title2);
             // 
             // cmbPrihod
             // 
@@ -119,7 +120,7 @@ namespace ItronicStore
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label3.Location = new System.Drawing.Point(85, 97);
+            this.label3.Location = new System.Drawing.Point(54, 96);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(145, 22);
             this.label3.TabIndex = 18;
@@ -137,25 +138,36 @@ namespace ItronicStore
             // 
             // chartPrihod
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartPrihod.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartPrihod.Legends.Add(legend2);
+            chartArea4.Name = "ChartArea1";
+            this.chartPrihod.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chartPrihod.Legends.Add(legend4);
             this.chartPrihod.Location = new System.Drawing.Point(38, 166);
             this.chartPrihod.Name = "chartPrihod";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartPrihod.Series.Add(series2);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chartPrihod.Series.Add(series4);
             this.chartPrihod.Size = new System.Drawing.Size(561, 300);
             this.chartPrihod.TabIndex = 19;
             this.chartPrihod.Text = "chart1";
+            // 
+            // btnNatrag
+            // 
+            this.btnNatrag.Location = new System.Drawing.Point(510, 509);
+            this.btnNatrag.Name = "btnNatrag";
+            this.btnNatrag.Size = new System.Drawing.Size(97, 44);
+            this.btnNatrag.TabIndex = 20;
+            this.btnNatrag.Text = "Natrag";
+            this.btnNatrag.UseVisualStyleBackColor = true;
+            this.btnNatrag.Click += new System.EventHandler(this.btnNatrag_Click);
             // 
             // GrafickiPrikaz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1270, 579);
+            this.Controls.Add(this.btnNatrag);
             this.Controls.Add(this.chartPrihod);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -187,5 +199,6 @@ namespace ItronicStore
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnUcitajB;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartPrihod;
+        private System.Windows.Forms.Button btnNatrag;
     }
 }

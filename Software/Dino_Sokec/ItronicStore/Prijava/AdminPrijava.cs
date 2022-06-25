@@ -51,13 +51,22 @@ namespace ItronicStore
 
         private void btnPrijaviSeAdmin_Click(object sender, EventArgs e)
         {
+            string odabraniAdmin = DohvatiOdabranogAdmina();
+            
+            korisnickoImeAdmina = TOOL_Administrator.DohvatiKorisnickoImeAdministratora(odabraniAdmin);
             if(IzbornikAdmin == null)
             {
-                IzbornikAdmin = new IzbornikAdmin(this);
+                IzbornikAdmin = new IzbornikAdmin(this,korisnickoImeAdmina);
                 IzbornikAdmin.FormClosed += IzbornikAdmin_FormClosed;
             }
             IzbornikAdmin.Show(this);
             Hide();
+        }
+
+        private string DohvatiOdabranogAdmina()
+        {
+            string odabraniAdmin = cmbImeAdmina.SelectedItem.ToString();
+            return odabraniAdmin;
         }
 
         private void IzbornikAdmin_FormClosed(object sender, FormClosedEventArgs e)

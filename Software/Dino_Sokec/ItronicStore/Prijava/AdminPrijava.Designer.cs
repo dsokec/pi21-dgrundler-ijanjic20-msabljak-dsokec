@@ -45,7 +45,7 @@ namespace ItronicStore
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkRed;
+            this.label1.ForeColor = System.Drawing.Color.Blue;
             this.label1.Location = new System.Drawing.Point(184, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 25);
@@ -65,7 +65,7 @@ namespace ItronicStore
             // lblLozinka
             // 
             this.lblLozinka.AutoSize = true;
-            this.lblLozinka.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblLozinka.ForeColor = System.Drawing.Color.Blue;
             this.lblLozinka.Location = new System.Drawing.Point(67, 176);
             this.lblLozinka.Name = "lblLozinka";
             this.lblLozinka.Size = new System.Drawing.Size(68, 20);
@@ -75,17 +75,18 @@ namespace ItronicStore
             // lblNaslov
             // 
             this.lblNaslov.AutoSize = true;
-            this.lblNaslov.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNaslov.Location = new System.Drawing.Point(153, 22);
+            this.lblNaslov.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNaslov.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblNaslov.Location = new System.Drawing.Point(131, 19);
             this.lblNaslov.Name = "lblNaslov";
-            this.lblNaslov.Size = new System.Drawing.Size(177, 29);
+            this.lblNaslov.Size = new System.Drawing.Size(208, 32);
             this.lblNaslov.TabIndex = 12;
             this.lblNaslov.Text = "Administracija";
             // 
             // lblKorisnickoIme
             // 
             this.lblKorisnickoIme.AutoSize = true;
-            this.lblKorisnickoIme.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblKorisnickoIme.ForeColor = System.Drawing.Color.Blue;
             this.lblKorisnickoIme.Location = new System.Drawing.Point(55, 73);
             this.lblKorisnickoIme.Name = "lblKorisnickoIme";
             this.lblKorisnickoIme.Size = new System.Drawing.Size(54, 20);
@@ -116,7 +117,7 @@ namespace ItronicStore
             // btnPrijaviSeAdmin
             // 
             this.btnPrijaviSeAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrijaviSeAdmin.ForeColor = System.Drawing.Color.Firebrick;
+            this.btnPrijaviSeAdmin.ForeColor = System.Drawing.Color.Blue;
             this.btnPrijaviSeAdmin.Location = new System.Drawing.Point(146, 161);
             this.btnPrijaviSeAdmin.Name = "btnPrijaviSeAdmin";
             this.btnPrijaviSeAdmin.Size = new System.Drawing.Size(165, 32);
@@ -128,6 +129,7 @@ namespace ItronicStore
             // btnNatrag
             // 
             this.btnNatrag.DialogResult = System.Windows.Forms.DialogResult.No;
+            this.btnNatrag.ForeColor = System.Drawing.Color.Maroon;
             this.btnNatrag.Location = new System.Drawing.Point(390, 273);
             this.btnNatrag.Name = "btnNatrag";
             this.btnNatrag.Size = new System.Drawing.Size(75, 40);

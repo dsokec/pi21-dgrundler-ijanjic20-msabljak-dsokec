@@ -103,10 +103,10 @@ namespace ItronicStore
             // 
             // btnNatrag
             // 
-            this.btnNatrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNatrag.Location = new System.Drawing.Point(297, 214);
+            this.btnNatrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNatrag.Location = new System.Drawing.Point(284, 214);
             this.btnNatrag.Name = "btnNatrag";
-            this.btnNatrag.Size = new System.Drawing.Size(76, 39);
+            this.btnNatrag.Size = new System.Drawing.Size(89, 39);
             this.btnNatrag.TabIndex = 4;
             this.btnNatrag.Text = "Natrag";
             this.btnNatrag.UseVisualStyleBackColor = true;

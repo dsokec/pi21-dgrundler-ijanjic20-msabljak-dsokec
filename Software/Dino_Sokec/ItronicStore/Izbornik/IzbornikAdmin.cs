@@ -12,19 +12,16 @@ namespace ItronicStore
 {
     public partial class IzbornikAdmin : Form
     {
-        private string korisnickoImeAdmina;
         private DolazneReklamacije dolazneReklamacije;
         private AdminPrijava adminPrijava;
-        public IzbornikAdmin(AdminPrijava admin)
+        private GrafickiPrikaz grafickiPrikaz;
+        private string korisnickoImeAdmina;
+        public IzbornikAdmin(AdminPrijava admin, string korisnickoImeAdmina)
         {
             InitializeComponent();
             this.adminPrijava = admin;
+            this.korisnickoImeAdmina = korisnickoImeAdmina;
             adminPrijava.Hide();
-        }
-        public IzbornikAdmin(string admin)
-        {
-            InitializeComponent();
-            this.korisnickoImeAdmina = admin;
         }
 
         private void btnInbox_Click(object sender, EventArgs e)
@@ -50,9 +47,19 @@ namespace ItronicStore
 
         private void btnGrafickiPrikaz_Click(object sender, EventArgs e)
         {
-            GrafickiPrikaz grafickiPrikaz = new GrafickiPrikaz();
-            grafickiPrikaz.Show();
-            this.Hide();
+            if(grafickiPrikaz == null)
+            {
+                grafickiPrikaz = new GrafickiPrikaz();
+                grafickiPrikaz.FormClosed += GrafickiPrikaz_FormClosed;
+            }
+            grafickiPrikaz.Show(this);
+            Hide();
+        }
+
+        private void GrafickiPrikaz_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            grafickiPrikaz = null;
+            Show();
         }
 
         private void IzbornikAdmin_Load(object sender, EventArgs e)
@@ -62,7 +69,8 @@ namespace ItronicStore
 
         private void NapisiNazivPrijavljenogAdmina()
         {
-            //lblPrijavljeniKao.Text = string.Format($"Vi ste prijavljeni kao {}");
+            lblPrijavljeniKao.Text = string.Empty;
+            lblPrijavljeniKao.Text = string.Format($"Vi ste prijavljeni kao {korisnickoImeAdmina}");
         }
 
         private void btnNatrag_Click(object sender, EventArgs e)
