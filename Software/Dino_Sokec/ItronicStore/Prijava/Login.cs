@@ -44,14 +44,6 @@ namespace ItronicStore
             Show();
         }
 
-        //private void OtvoriIzbornik()
-        //{
-        //    string korisnickoIme = DohvatiKorisnickoImeIzPadajuceListe();
-        //    this.Hide();
-        //    Izbornik form = new Izbornik(korisnickoIme);
-        //    form.ShowDialog();
-        //}
-
         private string DohvatiKorisnickoImeIzPadajuceListe()
         {
             string korisnickoIme = cmbKorisnickoIme.Text;
@@ -119,9 +111,6 @@ namespace ItronicStore
             cmbKorisnickoIme.DataSource = null;
             cmbKorisnickoIme.DataSource = TOOL_Korisnik.DohvatiSveKorisnike();
             cmbKorisnickoIme.SelectedIndex = 0;
-
-            
-
             txtLozinkaLogin.ReadOnly = true;
         }
 

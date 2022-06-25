@@ -20,11 +20,11 @@ namespace ClassLibrary2.ToolBox
                            select new PovijestRecenzija
                            {
                                ID = x.ID,
-                               Ime = z.Ime,
-                               Prezime = z.Prezime,
-                               Datum = x.Datum,
+                               //Ime = z.Ime,
+                               //Prezime = z.Prezime,
                                Proizvod = y.Naziv,
                                Ocjena = x.Ocjena,
+                               Datum = x.Datum,
                                Komentar = x.Komentar
                            };
                 return upit.ToList();

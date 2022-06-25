@@ -162,52 +162,67 @@ namespace ClassLibrary2.ToolBox
                 return upit.ToList();
             }
         }
-        public static List<IspisProizvoda> FiltirajPoCijeniSilazno()
+        public static List<IspisProizvoda> FiltirajPoCijeniSilazno(string korisnickoImeKorisnika)
         {
+            int idKorisnika = DohvatiIDKorisnika(korisnickoImeKorisnika);
+
+            int[] idRecenziranihProizvodaKorisnika = DohvatiIDjeveRecenziranihProizvoda(idKorisnika);
+
             using (var db = new Entiteti())
             {
-                var upit = from x in db.Proizvod
-                           join k in db.Kategorija on x.IDKategorija equals k.ID
-                           orderby x.Cijena descending
-                           select new IspisProizvoda 
-                           { 
+                var popis = from x in db.Proizvod
+                            join k in db.Kategorija on x.IDKategorija equals k.ID
+                            where !idRecenziranihProizvodaKorisnika.Contains(x.ID)
+                            orderby x.Cijena descending
+                            select new IspisProizvoda
+                            {
                                 Naziv = x.Naziv,
                                 Kategorija = k.Naziv,
                                 Cijena = x.Cijena
-                           };
-                return upit.ToList();
+                            };
+                return popis.ToList();
             }
         }
-        public static List<IspisProizvoda> FiltirajPoCijeniUzlazno()
+        public static List<IspisProizvoda> FiltirajPoCijeniUzlazno(string korisnickoImeKorisnika)
         {
+            int idKorisnika = DohvatiIDKorisnika(korisnickoImeKorisnika);
+
+            int[] idRecenziranihProizvodaKorisnika = DohvatiIDjeveRecenziranihProizvoda(idKorisnika);
+
             using (var db = new Entiteti())
             {
-                var upit = from x in db.Proizvod
-                           join k in db.Kategorija on x.IDKategorija equals k.ID
-                           orderby x.Cijena ascending
-                           select new IspisProizvoda
-                           {
-                               Naziv = x.Naziv,
-                               Kategorija = k.Naziv,
-                               Cijena = x.Cijena
-                           };
-                return upit.ToList();
+                var popis = from x in db.Proizvod
+                            join k in db.Kategorija on x.IDKategorija equals k.ID
+                            where !idRecenziranihProizvodaKorisnika.Contains(x.ID)
+                            orderby x.Cijena ascending
+                            select new IspisProizvoda
+                            {
+                                Naziv = x.Naziv,
+                                Kategorija = k.Naziv,
+                                Cijena = x.Cijena
+                            };
+                return popis.ToList();
             }
         }
-        public static List<IspisProizvoda> FiltirajPoNazivuUzlazno()
+        public static List<IspisProizvoda> FiltirajPoNazivuUzlazno(string korisnickoImeKorisnika)
         {
+            int idKorisnika = DohvatiIDKorisnika(korisnickoImeKorisnika);
+
+            int[] idRecenziranihProizvodaKorisnika = DohvatiIDjeveRecenziranihProizvoda(idKorisnika);
+
             using (var db = new Entiteti())
             {
-                var upit = from x in db.Proizvod
-                           join k in db.Kategorija on x.IDKategorija equals k.ID
-                           orderby x.Naziv ascending
-                           select new IspisProizvoda
-                           {
-                               Naziv = x.Naziv,
-                               Kategorija = k.Naziv,
-                               Cijena = x.Cijena
-                           };
-                return upit.ToList();
+                var popis = from x in db.Proizvod
+                            join k in db.Kategorija on x.IDKategorija equals k.ID
+                            where !idRecenziranihProizvodaKorisnika.Contains(x.ID)
+                            orderby x.Naziv ascending
+                            select new IspisProizvoda
+                            {
+                                Naziv = x.Naziv,
+                                Kategorija = k.Naziv,
+                                Cijena = x.Cijena
+                            };
+                return popis.ToList();
             }
         }
     }

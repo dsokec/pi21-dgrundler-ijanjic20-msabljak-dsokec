@@ -9,8 +9,8 @@ namespace ClassLibrary2.Klase
     public class PovijestRecenzija
     {
         public int ID { get; set; }
-        public string Ime { get; set; }
-        public string Prezime { get; set; }
+        //public string Ime { get; set; }
+        //public string Prezime { get; set; }
         public string Proizvod { get; set; }
         public int Ocjena { get; set; }
         public DateTime Datum { get; set; }

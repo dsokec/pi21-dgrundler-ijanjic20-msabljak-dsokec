@@ -8,6 +8,7 @@ using ClassLibrary2;
 using TOOL_Korisnik = ClassLibrary2.ToolBox.TOOL_Korisnik;
 using TOOL_Recenzija = ClassLibrary2.ToolBox.TOOL_Recenzija;
 using TOOL_Proizvod = ClassLibrary2.ToolBox.TOOL_Proizvod;
+using ClassLibrary2.Iznimke;
 
 namespace ItronicStore
 {
@@ -51,7 +52,16 @@ namespace ItronicStore
 
             NapuniTekstualniOkvirKorisnika(korisnickoIme);
 
+            NapuniTekstualniOkvirProizvod();
+
             Namjesti_RadioButton();
+
+            OnemoguciButtonAzuriraj();
+        }
+
+        private void NapuniTekstualniOkvirProizvod()
+        {
+            txtPronadjeniProizvod.Text = dgvPopisProizvoda.Rows[0].Cells[0].Value.ToString();
         }
 
         // Namjestanje toolboxa
@@ -121,9 +131,17 @@ namespace ItronicStore
         // Cell click i dohvacanje retka
         private void dgvPopisProizvoda_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            OnemoguciButtonAzuriraj();
+
             int brojRetka = DohvatiBrojOdabranogRetkaDGV();
             
             txtPronadjeniProizvod.Text = dgvPopisProizvoda.Rows[brojRetka].Cells["Naziv"].Value.ToString();
+        }
+
+        private void OnemoguciButtonAzuriraj()
+        {
+            btnAzuriraj.Enabled = false;
+            btnSpremi.Enabled = true;
         }
 
         private int DohvatiBrojOdabranogRetkaDGV()
@@ -135,6 +153,7 @@ namespace ItronicStore
         // Trazilica proizvoda
         private void txtTrazilicaProizvoda_TextChanged(object sender, EventArgs e)
         {
+            Namjesti_CMB_Filtar();
             var uneseniTekst = (sender as TextBox).Text;
             
             dgvPopisProizvoda.DataSource = null;
@@ -154,42 +173,42 @@ namespace ItronicStore
             }
             else if(comboBox1.SelectedIndex == 1)
             {
-                FiltirajPoCijeniUzlazno();
+                FiltirajPoCijeniUzlazno(korisnickoIme);
             }
             else if(comboBox1.SelectedIndex == 2)
             {
-                FiltirajPoCijeniSilazno();
+                FiltirajPoCijeniSilazno(korisnickoIme);
             }
             else
             {
-                FiltirajPoNazivu();
+                FiltirajPoNazivu(korisnickoIme);
             }
         }
 
         // Metode filtriranja - Cijena i Naziv
-        private void FiltirajPoCijeniSilazno()
+        private void FiltirajPoCijeniSilazno(string korisnickoIme)
         {
             
             dgvPopisProizvoda.DataSource = null;
-            dgvPopisProizvoda.DataSource = TOOL_Proizvod.FiltirajPoCijeniSilazno();
+            dgvPopisProizvoda.DataSource = TOOL_Proizvod.FiltirajPoCijeniSilazno(korisnickoIme);
 
             dgvPopisProizvoda.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgvPopisProizvoda.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
-        private void FiltirajPoNazivu()
+        private void FiltirajPoNazivu(string korisnickoIme)
         {
             dgvPopisProizvoda.DataSource = null;
-            dgvPopisProizvoda.DataSource = TOOL_Proizvod.FiltirajPoNazivuUzlazno();
+            dgvPopisProizvoda.DataSource = TOOL_Proizvod.FiltirajPoNazivuUzlazno(korisnickoIme);
 
             dgvPopisProizvoda.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgvPopisProizvoda.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
-        private void FiltirajPoCijeniUzlazno()
+        private void FiltirajPoCijeniUzlazno(string korisnickoIme)
         {
             dgvPopisProizvoda.DataSource = null;
-            dgvPopisProizvoda.DataSource = TOOL_Proizvod.FiltirajPoCijeniUzlazno();
+            dgvPopisProizvoda.DataSource = TOOL_Proizvod.FiltirajPoCijeniUzlazno(korisnickoIme);
 
             dgvPopisProizvoda.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgvPopisProizvoda.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -211,8 +230,14 @@ namespace ItronicStore
 
             Recenzija novaRecenzija = StvoriNoviObjektZaBazuPodataka(idKorisnik, idProizvod, ocjena, datum, komentar);
 
-            CRUD_Recenzija.KreirajNovuRecenziju(novaRecenzija);
-
+            if (novaRecenzija == null)
+            {
+                throw (new NepotpunaPoljaPriUnosu("Molimo Vas da odaberete proizvod i unosete sve potrebne vrijednosti"));
+            }
+            else
+            {
+                CRUD_Recenzija.KreirajNovuRecenziju(novaRecenzija);
+            }
             UcitajWindowsFormuKorisnickaRecenzija();
 
         }
@@ -343,9 +368,17 @@ namespace ItronicStore
 
         private void dgvPovijestRecenzija_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            OnemoguciButtonSpremi();
+            
             PovijestRecenzija recenzija = DohvatiRedakPovijestRecenzija();
 
             PrikaziOdabranePodatke(recenzija);
+        }
+
+        private void OnemoguciButtonSpremi()
+        {
+            btnSpremi.Enabled = false;
+            btnAzuriraj.Enabled = true;
         }
 
         private void PrikaziOdabranePodatke(PovijestRecenzija recenzija)
