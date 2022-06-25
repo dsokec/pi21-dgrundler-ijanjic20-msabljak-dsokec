@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibrary2.Klase;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,20 +25,21 @@ namespace ClassLibrary2
                 db.SaveChanges();
             }
         }
-        public static void AzurirajOdabranuRecenziju(Recenzija azuriranaRecenzija)
-        {
-            using (var db = new Entiteti())
-            {
-                Recenzija odabrana = DohvatiRecenziju(azuriranaRecenzija);
-                odabrana.IDKorisnik = azuriranaRecenzija.IDKorisnik;
-                odabrana.IDProizvod = azuriranaRecenzija.IDProizvod;
-                odabrana.Komentar = azuriranaRecenzija.Komentar;
-                odabrana.Ocjena = azuriranaRecenzija.Ocjena;
-                odabrana.Datum = azuriranaRecenzija.Datum;
 
-                db.SaveChanges();
-            }
-        }
+        //public static void AzurirajOdabranuRecenziju(Recenzija azuriranaRecenzija)
+        //{
+        //    using (var db = new Entiteti())
+        //    {
+        //        Recenzija odabrana = DohvatiRecenziju(azuriranaRecenzija);
+        //        odabrana.IDKorisnik = azuriranaRecenzija.IDKorisnik;
+        //        odabrana.IDProizvod = azuriranaRecenzija.IDProizvod;
+        //        odabrana.Komentar = azuriranaRecenzija.Komentar;
+        //        odabrana.Ocjena = azuriranaRecenzija.Ocjena;
+        //        odabrana.Datum = azuriranaRecenzija.Datum;
+
+        //        db.SaveChanges();
+        //    }
+        //}
 
         private static Recenzija DohvatiRecenziju(Recenzija azuriranaRecenzija)
         {
@@ -99,6 +101,22 @@ namespace ClassLibrary2
                                Komentar = x.Komentar
                            };
                 return upit.ToList();
+            }
+        }
+
+        public static void AzurirajOdabranuRecenziju(Recenzija odabrana, int id, int idProizvod, int idKorisnik, string datum, int ocjena, string komentar)
+        {
+            using (var db = new Entiteti())
+            {
+                odabrana.ID = id;
+                odabrana.IDProizvod = idProizvod;
+                odabrana.IDKorisnik = idKorisnik;
+                odabrana.Komentar = komentar;
+                odabrana.Ocjena = ocjena;
+                odabrana.Datum = Convert.ToDateTime(datum);
+
+                db.Entry(odabrana).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
             }
         }
     }

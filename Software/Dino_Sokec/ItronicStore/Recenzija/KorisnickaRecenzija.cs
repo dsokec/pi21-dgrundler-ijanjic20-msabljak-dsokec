@@ -313,10 +313,11 @@ namespace ItronicStore
 
             int idProizvod = TOOL_Recenzija.DohvatiIDProizvod(redak.ID);
             int idKorisnik = TOOL_Recenzija.DohvatiIDKorisnik(redak.ID);
+            int id = redak.ID;
 
-            Recenzija azurirana = StvoriNoviObjektZaBazuPodataka(idKorisnik, idProizvod, ocjena, datum, komentar);
-            
-            CRUD_Recenzija.AzurirajOdabranuRecenziju(azurirana);
+            Recenzija dohvacenaRecenzija = TOOL_Recenzija.DohvatiRecenziju(redak);
+
+            CRUD_Recenzija.AzurirajOdabranuRecenziju(dohvacenaRecenzija, id, idProizvod, idKorisnik, datum, ocjena, komentar);
 
             UcitajWindowsFormuKorisnickaRecenzija();
         }
