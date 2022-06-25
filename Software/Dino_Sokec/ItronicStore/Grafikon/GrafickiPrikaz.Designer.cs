@@ -36,18 +36,17 @@ namespace ItronicStore
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.label1 = new System.Windows.Forms.Label();
             this.btnUcitajA = new System.Windows.Forms.Button();
-            this.chartPrihod = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.cmbRashod = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.chartRashod = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.cmbPrihod = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnUcitajB = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.chartPrihod)).BeginInit();
+            this.chartPrihod = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.chartRashod)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartPrihod)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -70,25 +69,6 @@ namespace ItronicStore
             this.btnUcitajA.UseVisualStyleBackColor = true;
             this.btnUcitajA.Click += new System.EventHandler(this.btnUcitajA_Click);
             // 
-            // chartPrihod
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chartPrihod.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartPrihod.Legends.Add(legend1);
-            this.chartPrihod.Location = new System.Drawing.Point(12, 166);
-            this.chartPrihod.Name = "chartPrihod";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Prihod";
-            this.chartPrihod.Series.Add(series1);
-            this.chartPrihod.Size = new System.Drawing.Size(613, 341);
-            this.chartPrihod.TabIndex = 16;
-            this.chartPrihod.Text = "chart1";
-            title1.Name = "Title1";
-            title1.Text = "Prihod";
-            this.chartPrihod.Titles.Add(title1);
-            // 
             // cmbRashod
             // 
             this.cmbRashod.FormattingEnabled = true;
@@ -108,22 +88,22 @@ namespace ItronicStore
             // 
             // chartRashod
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartRashod.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartRashod.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chartRashod.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartRashod.Legends.Add(legend1);
             this.chartRashod.Location = new System.Drawing.Point(645, 166);
             this.chartRashod.Name = "chartRashod";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Rashod";
-            this.chartRashod.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Rashod";
+            this.chartRashod.Series.Add(series1);
             this.chartRashod.Size = new System.Drawing.Size(613, 341);
             this.chartRashod.TabIndex = 16;
             this.chartRashod.Text = "chart1";
-            title2.Name = "Title1";
-            title2.Text = "Rashod";
-            this.chartRashod.Titles.Add(title2);
+            title1.Name = "Title1";
+            title1.Text = "Rashod";
+            this.chartRashod.Titles.Add(title1);
             // 
             // cmbPrihod
             // 
@@ -152,17 +132,33 @@ namespace ItronicStore
             this.btnUcitajB.UseVisualStyleBackColor = true;
             this.btnUcitajB.Click += new System.EventHandler(this.btnUcitajB_Click);
             // 
+            // chartPrihod
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chartPrihod.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartPrihod.Legends.Add(legend2);
+            this.chartPrihod.Location = new System.Drawing.Point(38, 166);
+            this.chartPrihod.Name = "chartPrihod";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartPrihod.Series.Add(series2);
+            this.chartPrihod.Size = new System.Drawing.Size(561, 300);
+            this.chartPrihod.TabIndex = 19;
+            this.chartPrihod.Text = "chart1";
+            // 
             // GrafickiPrikaz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1270, 579);
+            this.Controls.Add(this.chartPrihod);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbPrihod);
             this.Controls.Add(this.cmbRashod);
             this.Controls.Add(this.chartRashod);
-            this.Controls.Add(this.chartPrihod);
             this.Controls.Add(this.btnUcitajB);
             this.Controls.Add(this.btnUcitajA);
             this.Controls.Add(this.label1);
@@ -170,8 +166,8 @@ namespace ItronicStore
             this.Name = "GrafickiPrikaz";
             this.Text = "Obračun";
             this.Load += new System.EventHandler(this.FinancijeWF_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.chartPrihod)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartRashod)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartPrihod)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,12 +177,12 @@ namespace ItronicStore
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnUcitajA;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartPrihod;
         private System.Windows.Forms.ComboBox cmbRashod;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartRashod;
         private System.Windows.Forms.ComboBox cmbPrihod;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnUcitajB;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartPrihod;
     }
 }

@@ -65,6 +65,8 @@
     <Compile Include="Dobavljac.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Iznimke\NepotpunaPoljaPriUnosu.cs" />
+    <Compile Include="Iznimke\SpremanjeKorisnickaRecenzija.cs" />
     <Compile Include="Kategorija.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

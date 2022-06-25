@@ -15,6 +15,7 @@ namespace ItronicStore
     {
         private wfLogin login;
         private IzbornikAdmin IzbornikAdmin;
+        private string korisnickoImeAdmina;
         public AdminPrijava(wfLogin login)
         {
             InitializeComponent();
@@ -55,6 +56,8 @@ namespace ItronicStore
                 IzbornikAdmin = new IzbornikAdmin(this);
                 IzbornikAdmin.FormClosed += IzbornikAdmin_FormClosed;
             }
+            IzbornikAdmin.Show(this);
+            Hide();
         }
 
         private void IzbornikAdmin_FormClosed(object sender, FormClosedEventArgs e)

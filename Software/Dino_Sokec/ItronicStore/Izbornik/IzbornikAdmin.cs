@@ -62,7 +62,7 @@ namespace ItronicStore
 
         private void NapisiNazivPrijavljenogAdmina()
         {
-            lblPrijavljeniKao.Text = string.Format($"Vi ste prijavljeni kao {korisnickoImeAdmina}");
+            //lblPrijavljeniKao.Text = string.Format($"Vi ste prijavljeni kao {}");
         }
 
         private void btnNatrag_Click(object sender, EventArgs e)
