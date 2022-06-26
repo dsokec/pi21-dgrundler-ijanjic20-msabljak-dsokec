@@ -79,5 +79,57 @@ namespace ItronicStore
             Owner.Show();
             Hide();
         }
+
+        private void cmbFiltar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int odabir = cmbFiltar.SelectedIndex;
+            if(odabir == 0)
+            {
+                DohvatiNajnovijeReklamacije();
+                
+            }
+            else if (odabir == 1){
+                DohvatiNajstarijeReklamacije();
+                
+            }
+            else 
+            {
+                DohvatiReklamacijeOsobeAdoZ();
+                
+            }
+        }
+
+        private void DohvatiReklamacijeOsobeAdoZ()
+        {
+            dgvPopisReklamacija.DataSource = null;
+            dgvPopisReklamacija.DataSource = TOOL_Reklamacija.DohvatiReklamacijeOsobeAdoZ();
+
+            SakrijNepotrebneStupce();
+
+            dgvPopisReklamacija.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgvPopisReklamacija.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
+
+        private void DohvatiNajstarijeReklamacije()
+        {
+            dgvPopisReklamacija.DataSource = null;
+            dgvPopisReklamacija.DataSource = TOOL_Reklamacija.DohvatiSveNajstarijeReklamacije();
+
+            SakrijNepotrebneStupce();
+
+            dgvPopisReklamacija.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgvPopisReklamacija.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
+
+        private void DohvatiNajnovijeReklamacije()
+        {
+            dgvPopisReklamacija.DataSource = null;
+            dgvPopisReklamacija.DataSource = TOOL_Reklamacija.DohvatiSveNajnovijeReklamacije();
+
+            SakrijNepotrebneStupce();
+
+            dgvPopisReklamacija.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgvPopisReklamacija.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
     }
 }

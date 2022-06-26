@@ -48,7 +48,7 @@ namespace ItronicStore
             this.dgvPopisReklamacija.RowHeadersWidth = 62;
             this.dgvPopisReklamacija.RowTemplate.Height = 28;
             this.dgvPopisReklamacija.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPopisReklamacija.Size = new System.Drawing.Size(1167, 333);
+            this.dgvPopisReklamacija.Size = new System.Drawing.Size(1113, 248);
             this.dgvPopisReklamacija.TabIndex = 0;
             // 
             // cmbFiltar
@@ -62,6 +62,7 @@ namespace ItronicStore
             this.cmbFiltar.Name = "cmbFiltar";
             this.cmbFiltar.Size = new System.Drawing.Size(212, 28);
             this.cmbFiltar.TabIndex = 1;
+            this.cmbFiltar.SelectedIndexChanged += new System.EventHandler(this.cmbFiltar_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -75,7 +76,7 @@ namespace ItronicStore
             // 
             // btnNatrag
             // 
-            this.btnNatrag.Location = new System.Drawing.Point(1110, 494);
+            this.btnNatrag.Location = new System.Drawing.Point(977, 418);
             this.btnNatrag.Name = "btnNatrag";
             this.btnNatrag.Size = new System.Drawing.Size(75, 35);
             this.btnNatrag.TabIndex = 3;
@@ -85,7 +86,7 @@ namespace ItronicStore
             // 
             // btnNaprijed
             // 
-            this.btnNaprijed.Location = new System.Drawing.Point(979, 494);
+            this.btnNaprijed.Location = new System.Drawing.Point(846, 418);
             this.btnNaprijed.Name = "btnNaprijed";
             this.btnNaprijed.Size = new System.Drawing.Size(86, 35);
             this.btnNaprijed.TabIndex = 3;
@@ -107,7 +108,7 @@ namespace ItronicStore
             // 
             this.lblPrijavljenKao.AutoSize = true;
             this.lblPrijavljenKao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrijavljenKao.Location = new System.Drawing.Point(872, 104);
+            this.lblPrijavljenKao.Location = new System.Drawing.Point(742, 104);
             this.lblPrijavljenKao.Name = "lblPrijavljenKao";
             this.lblPrijavljenKao.Size = new System.Drawing.Size(313, 25);
             this.lblPrijavljenKao.TabIndex = 5;
@@ -117,7 +118,7 @@ namespace ItronicStore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1197, 541);
+            this.ClientSize = new System.Drawing.Size(1143, 472);
             this.Controls.Add(this.lblPrijavljenKao);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnNaprijed);

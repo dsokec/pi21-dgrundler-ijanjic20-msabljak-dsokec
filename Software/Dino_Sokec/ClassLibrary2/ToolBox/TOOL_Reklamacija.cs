@@ -95,6 +95,72 @@ namespace ClassLibrary2.ToolBox
             }
         }
 
+        public static object DohvatiSveNajstarijeReklamacije()
+        {
+            using (var db = new Entiteti())
+            {
+                var upit = from x in db.Reklamacija
+                           join k in db.Korisnik on x.IDKorisnik equals k.ID
+                           join p in db.Proizvod on x.IDProizvod equals p.ID
+                           orderby x.Datum ascending
+                           select new PopisDolaznihReklamacija
+                           {
+                               ID = x.IDReklamacija,
+                               Datum = x.Datum,
+                               KorisnickoIme = k.KorisnickoIme,
+                               IDProizvod = p.ID,
+                               Proizvod = p.Naziv,
+                               Cijena = p.Cijena,
+                               Prigovor = x.Opis
+                           };
+                return upit.ToList();
+            }
+        }
+
+        public static object DohvatiReklamacijeOsobeAdoZ()
+        {
+            using (var db = new Entiteti())
+            {
+                var upit = from x in db.Reklamacija
+                           join k in db.Korisnik on x.IDKorisnik equals k.ID
+                           join p in db.Proizvod on x.IDProizvod equals p.ID
+                           orderby k.KorisnickoIme ascending
+                           select new PopisDolaznihReklamacija
+                           {
+                               ID = x.IDReklamacija,
+                               Datum = x.Datum,
+                               KorisnickoIme = k.KorisnickoIme,
+                               IDProizvod = p.ID,
+                               Proizvod = p.Naziv,
+                               Cijena = p.Cijena,
+                               Prigovor = x.Opis
+                           };
+                return upit.ToList();
+            }
+        }
+
+        public static object DohvatiSveNajnovijeReklamacije()
+        {
+            using (var db = new Entiteti())
+            {
+                var upit = from x in db.Reklamacija
+                           join k in db.Korisnik on x.IDKorisnik equals k.ID
+                           join p in db.Proizvod on x.IDProizvod equals p.ID
+                           orderby x.Datum descending
+                           select new PopisDolaznihReklamacija
+                           {
+                               ID = x.IDReklamacija,
+                               Datum = x.Datum,
+                               KorisnickoIme = k.KorisnickoIme,
+                               IDProizvod = p.ID,
+                               Proizvod = p.Naziv,
+                               Cijena = p.Cijena,
+                               Prigovor = x.Opis
+                           };
+                return upit.ToList();
+            }
+        }
+
         public static string DohvatiKategorijuProizvoda(PovijestReklamacija reklamacija)
         {
             using (var db = new Entiteti())
