@@ -130,6 +130,8 @@ namespace ItronicStore
 
             dgvPopisReklamacija.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgvPopisReklamacija.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            this.dgvPopisReklamacija.Columns["Prigovor"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
         }
     }
 }
