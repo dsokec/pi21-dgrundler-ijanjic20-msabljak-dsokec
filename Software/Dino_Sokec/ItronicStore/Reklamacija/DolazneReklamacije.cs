@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClassLibrary2;
+using ClassLibrary2.ToolBox;
 
 namespace ItronicStore
 {
@@ -15,9 +16,10 @@ namespace ItronicStore
     {
         private string korisnickoImeAdmin;
 
-        public DolazneReklamacije()
+        public DolazneReklamacije(string korisnickoIme)
         {
             InitializeComponent();
+            this.korisnickoImeAdmin = korisnickoIme;
         }
 
         public DolazneReklamacije(Admin odabraniAdmin)
@@ -30,11 +32,31 @@ namespace ItronicStore
         {
             NapisiTkoJePrijavljen(korisnickoImeAdmin);
             PrikaziSveDolazneReklamacije();
+            PostaviComboBoxBroj();
+        }
+
+        private void PostaviComboBoxBroj()
+        {
+            cmbFiltar.SelectedIndex = 0;
         }
 
         private void PrikaziSveDolazneReklamacije()
         {
-            throw new NotImplementedException();
+            dgvPopisReklamacija.DataSource = null;
+            dgvPopisReklamacija.DataSource = TOOL_Reklamacija.DohvatiSveReklamacije();
+
+            SakrijNepotrebneStupce();
+
+            dgvPopisReklamacija.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgvPopisReklamacija.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
+
+        private void SakrijNepotrebneStupce()
+        {
+            dgvPopisReklamacija.Columns["ID"].Visible = false;
+            dgvPopisReklamacija.Columns["IDProizvod"].Visible = false;
+
+
         }
 
         private void NapisiTkoJePrijavljen(string korisnickoIme)

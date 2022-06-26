@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ClassLibrary2.Klase;
 
 namespace ClassLibrary2.ToolBox
 {
@@ -28,6 +29,27 @@ namespace ClassLibrary2.ToolBox
                                 
                             };
                 return popis.ToList();
+            }
+        }
+
+        public static List<PopisDolaznihReklamacija> DohvatiSveReklamacije()
+        {
+            using (var db = new Entiteti())
+            {
+                var upit = from x in db.Reklamacija
+                           join k in db.Korisnik on x.IDKorisnik equals k.ID
+                           join p in db.Proizvod on x.IDProizvod equals p.ID
+                           select new PopisDolaznihReklamacija
+                           {
+                               ID = x.IDReklamacija,
+                               Datum = x.Datum,
+                               KorisnickoIme = k.KorisnickoIme,
+                               IDProizvod = p.ID,
+                               Proizvod = p.Naziv,
+                               Cijena = p.Cijena,
+                               Prigovor = x.Opis
+                           };
+                return upit.ToList();
             }
         }
 

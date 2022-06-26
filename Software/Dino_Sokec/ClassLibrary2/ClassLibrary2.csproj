@@ -121,6 +121,7 @@
     <Compile Include="REPO\REPO_Reklamacija.cs" />
     <Compile Include="Klase\PopisProizvodaReklamacija.cs" />
     <Compile Include="Klase\PovijestReklamacija.cs" />
+    <Compile Include="Klase\PopisDolaznihReklamacija.cs" />
     <Compile Include="ToolBox\TOOL_Administrator.cs" />
     <Compile Include="ToolBox\TOOL_Grafikon.cs" />
     <Compile Include="ToolBox\TOOL_Korisnik.cs" />

@@ -15,7 +15,7 @@ namespace ItronicStore
         private DolazneReklamacije dolazneReklamacije;
         private AdminPrijava adminPrijava;
         private GrafickiPrikaz grafickiPrikaz;
-        private string korisnickoImeAdmina = null;
+        private string korisnickoImeAdmina;
         public IzbornikAdmin(AdminPrijava admin, string korisnickoImeAdmina)
         {
             InitializeComponent();
@@ -29,7 +29,7 @@ namespace ItronicStore
 
             if(dolazneReklamacije == null)
             {
-                dolazneReklamacije = new DolazneReklamacije();
+                dolazneReklamacije = new DolazneReklamacije(korisnickoImeAdmina);
                 dolazneReklamacije.FormClosed += DolazneReklamacije_FormClosed;
             }
             dolazneReklamacije.Show(this);
