@@ -26,5 +26,36 @@ namespace ItronicStore
             Owner.Show();
             Hide();
         }
+
+        private void NovaReklamacija_Load(object sender, EventArgs e)
+        {
+            DohvatiInformacijeOKorisniku();
+            DohvatiInformacijeOdabranogProizvodaDGV();
+        }
+
+        private void DohvatiInformacijeOdabranogProizvodaDGV()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void DohvatiInformacijeOKorisniku()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void btnSpremi_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAzuriraj_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnObrisi_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

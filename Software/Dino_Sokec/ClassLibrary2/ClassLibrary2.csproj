@@ -74,6 +74,7 @@
     <Compile Include="Klase\IspisProizvoda.cs" />
     <Compile Include="Klase\IspisRecenzija.cs" />
     <Compile Include="Klase\IspisReklamacija.cs" />
+    <Compile Include="Klase\KorisnickoImeKorisnika.cs" />
     <Compile Include="Klase\OpisProizvoda.cs" />
     <Compile Include="Klase\PorijekloDobavljaca.cs" />
     <Compile Include="Klase\PovijestRecenzija.cs" />

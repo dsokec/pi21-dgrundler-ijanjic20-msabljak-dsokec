@@ -130,6 +130,7 @@ namespace ItronicStore
             this.btnSpremi.TabIndex = 77;
             this.btnSpremi.Text = "Spremi";
             this.btnSpremi.UseVisualStyleBackColor = true;
+            this.btnSpremi.Click += new System.EventHandler(this.btnSpremi_Click);
             // 
             // btnOdustani
             // 
@@ -222,7 +223,6 @@ namespace ItronicStore
             this.txtKategorija.ReadOnly = true;
             this.txtKategorija.Size = new System.Drawing.Size(251, 26);
             this.txtKategorija.TabIndex = 52;
-            //this.txtKategorija.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // dgvPovijestReklamacija
             // 
@@ -259,7 +259,6 @@ namespace ItronicStore
             this.txtOpis.ReadOnly = true;
             this.txtOpis.Size = new System.Drawing.Size(252, 65);
             this.txtOpis.TabIndex = 52;
-            //this.txtOpis.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label1
             // 
@@ -270,7 +269,6 @@ namespace ItronicStore
             this.label1.Size = new System.Drawing.Size(53, 25);
             this.label1.TabIndex = 51;
             this.label1.Text = "Opis";
-            //this.label1.Click += new System.EventHandler(this.label4_Click);
             // 
             // label9
             // 
@@ -312,7 +310,6 @@ namespace ItronicStore
             this.label6.Size = new System.Drawing.Size(69, 25);
             this.label6.TabIndex = 51;
             this.label6.Text = "Datum";
-            //this.label6.Click += new System.EventHandler(this.label4_Click);
             // 
             // btnAzuriraj
             // 
@@ -324,6 +321,7 @@ namespace ItronicStore
             this.btnAzuriraj.TabIndex = 77;
             this.btnAzuriraj.Text = "Ažuriraj";
             this.btnAzuriraj.UseVisualStyleBackColor = true;
+            this.btnAzuriraj.Click += new System.EventHandler(this.btnAzuriraj_Click);
             // 
             // btnObrisi
             // 
@@ -335,6 +333,7 @@ namespace ItronicStore
             this.btnObrisi.TabIndex = 77;
             this.btnObrisi.Text = "Obriši";
             this.btnObrisi.UseVisualStyleBackColor = true;
+            this.btnObrisi.Click += new System.EventHandler(this.btnObrisi_Click);
             // 
             // label10
             // 
@@ -383,6 +382,7 @@ namespace ItronicStore
             this.Name = "NovaReklamacija";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nova reklamacija";
+            this.Load += new System.EventHandler(this.NovaReklamacija_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPovijestReklamacija)).EndInit();

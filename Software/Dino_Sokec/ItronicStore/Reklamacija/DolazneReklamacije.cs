@@ -29,6 +29,12 @@ namespace ItronicStore
         private void DolazneReklamacije_Load(object sender, EventArgs e)
         {
             NapisiTkoJePrijavljen(korisnickoImeAdmin);
+            PrikaziSveDolazneReklamacije();
+        }
+
+        private void PrikaziSveDolazneReklamacije()
+        {
+            throw new NotImplementedException();
         }
 
         private void NapisiTkoJePrijavljen(string korisnickoIme)

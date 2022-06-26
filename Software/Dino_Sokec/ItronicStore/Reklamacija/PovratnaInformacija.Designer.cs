@@ -84,6 +84,7 @@ namespace ItronicStore
             this.btnSpremi.TabIndex = 24;
             this.btnSpremi.Text = "Spremi";
             this.btnSpremi.UseVisualStyleBackColor = true;
+            this.btnSpremi.Click += new System.EventHandler(this.btnSpremi_Click);
             // 
             // label4
             // 
@@ -183,6 +184,7 @@ namespace ItronicStore
             this.Name = "PovratnaInformacija";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Povratna informacija";
+            this.Load += new System.EventHandler(this.PovratnaInformacija_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -23,5 +23,26 @@ namespace ItronicStore
             Owner.Show();
             Hide();
         }
+
+        private void btnSpremi_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PovratnaInformacija_Load(object sender, EventArgs e)
+        {
+            IspuniInformacijeOKorisniku();
+            IspuniInformacijeOProizvodu();
+        }
+
+        private void IspuniInformacijeOProizvodu()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void IspuniInformacijeOKorisniku()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

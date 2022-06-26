@@ -5,12 +5,13 @@ using System.Windows.Forms;
 using System.Linq;
 using ClassLibrary2.ToolBox;
 using System.Data.Entity;
+using ClassLibrary2.Klase;
 
 namespace ItronicStore
 {
     public partial class wfLogin : Form
     {
-        private Izbornik Izbornik;
+        private Izbornik Izbornik = null;
         private AdminPrijava adminPrijava;
         
         public wfLogin()
@@ -20,6 +21,7 @@ namespace ItronicStore
 
         public wfLogin(Izbornik izbornik)
         {
+            //this.Izbornik = null;
             this.Izbornik = izbornik;
             Izbornik.Hide();
         }
@@ -27,6 +29,9 @@ namespace ItronicStore
         // Gumb prijavi se - ulazak u Izbornik
         private void btnPrijaviSe_Click(object sender, EventArgs e)
         {
+            //cmbKorisnickoIme.Refresh();
+            //string korisnickoIme = null;
+            //KorisnickoImeKorisnika.KorisnickoIme = TOOL_Korisnik.DohvatiKorisnickoImeKorisnika(cmbKorisnickoIme.Text);
             string korisnickoIme = TOOL_Korisnik.DohvatiKorisnickoImeKorisnika(cmbKorisnickoIme.Text);
 
             if (Izbornik == null)
@@ -34,6 +39,8 @@ namespace ItronicStore
                 Izbornik = new Izbornik(this, korisnickoIme);
                 Izbornik.FormClosed += Izbornik_FormClosed;
             }
+
+            //this.Refresh();
             Izbornik.Show(this);
             Hide();
         }
@@ -103,6 +110,8 @@ namespace ItronicStore
 
         private void wfLogin_Load(object sender, EventArgs e)
         {
+            //this.Invalidate();
+            //this.Refresh();
             NapuniCombobox();
         }
 
@@ -123,8 +132,6 @@ namespace ItronicStore
 
         private void btnPrijavaAdmin_Click(object sender, EventArgs e)
         {
-            
-
             if (adminPrijava == null)
             {
                 adminPrijava = new AdminPrijava(this);

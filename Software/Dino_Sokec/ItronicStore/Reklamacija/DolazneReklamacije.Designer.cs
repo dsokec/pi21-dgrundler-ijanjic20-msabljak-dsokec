@@ -42,28 +42,28 @@ namespace ItronicStore
             // dgvPopisReklamacija
             // 
             this.dgvPopisReklamacija.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPopisReklamacija.Location = new System.Drawing.Point(12, 89);
+            this.dgvPopisReklamacija.Location = new System.Drawing.Point(18, 145);
             this.dgvPopisReklamacija.Name = "dgvPopisReklamacija";
             this.dgvPopisReklamacija.ReadOnly = true;
             this.dgvPopisReklamacija.RowHeadersWidth = 62;
             this.dgvPopisReklamacija.RowTemplate.Height = 28;
             this.dgvPopisReklamacija.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPopisReklamacija.Size = new System.Drawing.Size(658, 426);
+            this.dgvPopisReklamacija.Size = new System.Drawing.Size(817, 276);
             this.dgvPopisReklamacija.TabIndex = 0;
             // 
             // cmbFiltar
             // 
             this.cmbFiltar.FormattingEnabled = true;
-            this.cmbFiltar.Location = new System.Drawing.Point(12, 562);
+            this.cmbFiltar.Location = new System.Drawing.Point(18, 101);
             this.cmbFiltar.Name = "cmbFiltar";
-            this.cmbFiltar.Size = new System.Drawing.Size(154, 28);
+            this.cmbFiltar.Size = new System.Drawing.Size(212, 28);
             this.cmbFiltar.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 537);
+            this.label1.Location = new System.Drawing.Point(14, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(154, 22);
             this.label1.TabIndex = 2;
@@ -71,7 +71,7 @@ namespace ItronicStore
             // 
             // btnNatrag
             // 
-            this.btnNatrag.Location = new System.Drawing.Point(595, 543);
+            this.btnNatrag.Location = new System.Drawing.Point(760, 438);
             this.btnNatrag.Name = "btnNatrag";
             this.btnNatrag.Size = new System.Drawing.Size(75, 35);
             this.btnNatrag.TabIndex = 3;
@@ -81,7 +81,7 @@ namespace ItronicStore
             // 
             // btnNaprijed
             // 
-            this.btnNaprijed.Location = new System.Drawing.Point(474, 543);
+            this.btnNaprijed.Location = new System.Drawing.Point(652, 438);
             this.btnNaprijed.Name = "btnNaprijed";
             this.btnNaprijed.Size = new System.Drawing.Size(86, 35);
             this.btnNaprijed.TabIndex = 3;
@@ -93,7 +93,7 @@ namespace ItronicStore
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(15, 39);
+            this.label2.Location = new System.Drawing.Point(276, 31);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(291, 32);
             this.label2.TabIndex = 4;
@@ -103,7 +103,7 @@ namespace ItronicStore
             // 
             this.lblPrijavljenKao.AutoSize = true;
             this.lblPrijavljenKao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrijavljenKao.Location = new System.Drawing.Point(393, 45);
+            this.lblPrijavljenKao.Location = new System.Drawing.Point(552, 100);
             this.lblPrijavljenKao.Name = "lblPrijavljenKao";
             this.lblPrijavljenKao.Size = new System.Drawing.Size(283, 25);
             this.lblPrijavljenKao.TabIndex = 5;
@@ -113,7 +113,7 @@ namespace ItronicStore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(682, 605);
+            this.ClientSize = new System.Drawing.Size(847, 497);
             this.Controls.Add(this.lblPrijavljenKao);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnNaprijed);

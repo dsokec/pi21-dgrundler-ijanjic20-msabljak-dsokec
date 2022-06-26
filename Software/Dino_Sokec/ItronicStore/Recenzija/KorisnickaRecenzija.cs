@@ -14,7 +14,7 @@ namespace ItronicStore
 {
     public partial class KorisnickaRecenzija : Form
     {
-        private string korisnickoIme;
+        private string korisnickoIme = null;
         //Izbornik izbornik;
         private Izbornik izbornik;
         

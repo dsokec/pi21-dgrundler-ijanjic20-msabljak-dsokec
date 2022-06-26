@@ -16,9 +16,10 @@ namespace ItronicStore
         private NovaReklamacija Reklamacija;
         private KorisnickaRecenzija Recenzija;
         private PovratnaInformacija PovratnaInformacija;
-        
-        
-        private string korisnickoImeLogina;
+        //private Izbornik izbornik;
+
+
+        private string korisnickoImeLogina = null;
         wfLogin wfLogin;
 
         internal void PostaviPrethodnuFormu(wfLogin x)
@@ -30,6 +31,7 @@ namespace ItronicStore
         {
             InitializeComponent();
             this.Login = login;
+            //this.korisnickoImeLogina = null;
             this.korisnickoImeLogina = korisnickoIme;
             Login.Hide();
         }
@@ -47,7 +49,7 @@ namespace ItronicStore
                 Recenzija = new KorisnickaRecenzija(this, korisnickoImeLogina);
                 Recenzija.FormClosed += Recenzija_FormClosed;
             }
-
+            //this.Invalidate();
             Recenzija.Show(this);
             Hide();
         }
@@ -80,11 +82,16 @@ namespace ItronicStore
         private void button2_Click(object sender, EventArgs e)
         {
             Owner.Show();
+            //korisnickoImeLogina = null;
+            //izbornik = null;
+            //korisnickoImeLogina = null;
             Hide();
         }
 
         private void Izbornik_Load(object sender, EventArgs e)
         {
+            this.Invalidate();
+            //this.Refresh();
             Napisi_Naziv_Prijavljenog_Korisnika();
         }
 

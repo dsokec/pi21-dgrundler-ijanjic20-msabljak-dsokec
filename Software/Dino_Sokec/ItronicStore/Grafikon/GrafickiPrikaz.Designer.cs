@@ -54,10 +54,16 @@ namespace ItronicStore
             // cmbPrihod
             // 
             this.cmbPrihod.FormattingEnabled = true;
+            this.cmbPrihod.Items.AddRange(new object[] {
+            "Prihodi",
+            "Rashodi",
+            "Prihodi vs. Rashodi",
+            "Prodano vs. Nabavljeno"});
             this.cmbPrihod.Location = new System.Drawing.Point(386, 87);
             this.cmbPrihod.Name = "cmbPrihod";
             this.cmbPrihod.Size = new System.Drawing.Size(242, 28);
             this.cmbPrihod.TabIndex = 17;
+            this.cmbPrihod.SelectedIndexChanged += new System.EventHandler(this.cmbPrihod_SelectedIndexChanged);
             // 
             // label3
             // 

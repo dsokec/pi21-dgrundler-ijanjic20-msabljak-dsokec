@@ -15,10 +15,22 @@ namespace ItronicStore
 
         private void FinancijeWF_Load(object sender, EventArgs e)
         {
-            UcitajGrafikon();
+            UcitajPrihode();
+            PostaviReadOnlyComboBox();
+            PrikaziPrvuStavkuComboBoxa();
         }
 
-        private void UcitajGrafikon()
+        private void PrikaziPrvuStavkuComboBoxa()
+        {
+            cmbPrihod.SelectedIndex = 0;
+        }
+
+        private void PostaviReadOnlyComboBox()
+        {
+            cmbPrihod.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void UcitajPrihode()
         {
             chartPrihod.Series.Clear();
             var series1 = new System.Windows.Forms.DataVisualization.Charting.Series
@@ -86,6 +98,42 @@ namespace ItronicStore
         {
             Owner.Show();
             Hide();
+        }
+
+        private void cmbPrihod_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int odabir = cmbPrihod.SelectedIndex;
+            if(odabir == 1)
+            {
+                UcitajPrihode();
+            }
+            else if(odabir == 2)
+            {
+                UcitajRashode();
+            }
+            else if(odabir == 3)
+            {
+                UcitajPrihodevsRashode();
+            }
+            else
+            {
+                UcitajProdanovsNabavljeno();
+            }
+        }
+
+        private void UcitajRashode()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void UcitajPrihodevsRashode()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void UcitajProdanovsNabavljeno()
+        {
+            throw new NotImplementedException();
         }
     }
 }

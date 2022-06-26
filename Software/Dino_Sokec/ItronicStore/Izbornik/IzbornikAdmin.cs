@@ -15,7 +15,7 @@ namespace ItronicStore
         private DolazneReklamacije dolazneReklamacije;
         private AdminPrijava adminPrijava;
         private GrafickiPrikaz grafickiPrikaz;
-        private string korisnickoImeAdmina;
+        private string korisnickoImeAdmina = null;
         public IzbornikAdmin(AdminPrijava admin, string korisnickoImeAdmina)
         {
             InitializeComponent();
@@ -26,9 +26,6 @@ namespace ItronicStore
 
         private void btnInbox_Click(object sender, EventArgs e)
         {
-            //DolazneReklamacije dolazne = new DolazneReklamacije();
-            //dolazne.Show();
-            //this.Hide();
 
             if(dolazneReklamacije == null)
             {
@@ -64,6 +61,7 @@ namespace ItronicStore
 
         private void IzbornikAdmin_Load(object sender, EventArgs e)
         {
+            this.Refresh();
             NapisiNazivPrijavljenogAdmina();
         }
 
@@ -76,6 +74,7 @@ namespace ItronicStore
         private void btnNatrag_Click(object sender, EventArgs e)
         {
             Owner.Show();
+            this.Refresh();
             Hide();
         }
     }
