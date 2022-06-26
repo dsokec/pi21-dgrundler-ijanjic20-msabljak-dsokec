@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClassLibrary2.Klase;
 
 namespace ItronicStore
 {
@@ -16,30 +17,23 @@ namespace ItronicStore
         private NovaReklamacija Reklamacija;
         private KorisnickaRecenzija Recenzija;
         private PovratnaInformacija PovratnaInformacija;
-        //private Izbornik izbornik;
-
-
-        private string korisnickoImeLogina = null;
         wfLogin wfLogin;
+
+        private string korisnickoImeLogina;
 
         internal void PostaviPrethodnuFormu(wfLogin x)
         {
             wfLogin = x;
         }
 
+        //public Izbornik(wfLogin login, string korisnickoIme)
         public Izbornik(wfLogin login, string korisnickoIme)
         {
             InitializeComponent();
             this.Login = login;
-            //this.korisnickoImeLogina = null;
             this.korisnickoImeLogina = korisnickoIme;
-            Login.Hide();
-        }
 
-        public Izbornik(string korisnickoIme)
-        {
-            InitializeComponent();
-            this.korisnickoImeLogina = korisnickoIme;
+            Login.Hide();
         }
 
         private void btnRecenzija_Click(object sender, EventArgs e)
@@ -49,7 +43,6 @@ namespace ItronicStore
                 Recenzija = new KorisnickaRecenzija(this, korisnickoImeLogina);
                 Recenzija.FormClosed += Recenzija_FormClosed;
             }
-            //this.Invalidate();
             Recenzija.Show(this);
             Hide();
         }
@@ -90,14 +83,8 @@ namespace ItronicStore
 
         private void Izbornik_Load(object sender, EventArgs e)
         {
-            this.Invalidate();
-            //this.Refresh();
-            Napisi_Naziv_Prijavljenog_Korisnika();
-        }
-
-        private void Napisi_Naziv_Prijavljenog_Korisnika()
-        {
             lblViStePrijavljeniKao.Text = korisnickoImeLogina;
+
         }
 
         private void btnInbox_Click(object sender, EventArgs e)

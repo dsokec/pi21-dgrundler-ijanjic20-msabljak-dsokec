@@ -49,7 +49,7 @@ namespace ItronicStore
             this.label1.Location = new System.Drawing.Point(184, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 25);
-            this.label1.TabIndex = 17;
+            this.label1.TabIndex = 2;
             this.label1.Text = "Admin";
             // 
             // cmbImeAdmina
@@ -59,7 +59,7 @@ namespace ItronicStore
             this.cmbImeAdmina.Location = new System.Drawing.Point(158, 127);
             this.cmbImeAdmina.Name = "cmbImeAdmina";
             this.cmbImeAdmina.Size = new System.Drawing.Size(165, 28);
-            this.cmbImeAdmina.TabIndex = 15;
+            this.cmbImeAdmina.TabIndex = 0;
             this.cmbImeAdmina.SelectedIndexChanged += new System.EventHandler(this.cmbImeAdmina_SelectedIndexChanged);
             // 
             // lblLozinka
@@ -69,7 +69,7 @@ namespace ItronicStore
             this.lblLozinka.Location = new System.Drawing.Point(67, 176);
             this.lblLozinka.Name = "lblLozinka";
             this.lblLozinka.Size = new System.Drawing.Size(68, 20);
-            this.lblLozinka.TabIndex = 11;
+            this.lblLozinka.TabIndex = 4;
             this.lblLozinka.Text = "Lozinka:";
             // 
             // lblNaslov
@@ -90,7 +90,7 @@ namespace ItronicStore
             this.lblKorisnickoIme.Location = new System.Drawing.Point(55, 73);
             this.lblKorisnickoIme.Name = "lblKorisnickoIme";
             this.lblKorisnickoIme.Size = new System.Drawing.Size(54, 20);
-            this.lblKorisnickoIme.TabIndex = 13;
+            this.lblKorisnickoIme.TabIndex = 3;
             this.lblKorisnickoIme.Text = "Admin";
             // 
             // groupBox1
@@ -102,7 +102,7 @@ namespace ItronicStore
             this.groupBox1.Location = new System.Drawing.Point(12, 54);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(453, 213);
-            this.groupBox1.TabIndex = 16;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // txtLozinkaAdmin
@@ -112,7 +112,7 @@ namespace ItronicStore
             this.txtLozinkaAdmin.PasswordChar = '*';
             this.txtLozinkaAdmin.ReadOnly = true;
             this.txtLozinkaAdmin.Size = new System.Drawing.Size(165, 26);
-            this.txtLozinkaAdmin.TabIndex = 18;
+            this.txtLozinkaAdmin.TabIndex = 1;
             // 
             // btnPrijaviSeAdmin
             // 
@@ -133,7 +133,7 @@ namespace ItronicStore
             this.btnNatrag.Location = new System.Drawing.Point(390, 273);
             this.btnNatrag.Name = "btnNatrag";
             this.btnNatrag.Size = new System.Drawing.Size(75, 40);
-            this.btnNatrag.TabIndex = 17;
+            this.btnNatrag.TabIndex = 1;
             this.btnNatrag.Text = "Natrag";
             this.btnNatrag.UseVisualStyleBackColor = true;
             this.btnNatrag.Click += new System.EventHandler(this.btnNatrag_Click);

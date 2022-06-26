@@ -67,7 +67,7 @@ namespace ItronicStore
             this.btnRecenzija.Location = new System.Drawing.Point(451, 89);
             this.btnRecenzija.Name = "btnRecenzija";
             this.btnRecenzija.Size = new System.Drawing.Size(99, 36);
-            this.btnRecenzija.TabIndex = 1;
+            this.btnRecenzija.TabIndex = 2;
             this.btnRecenzija.Text = "Naprijed";
             this.btnRecenzija.UseVisualStyleBackColor = true;
             this.btnRecenzija.Click += new System.EventHandler(this.btnRecenzija_Click);
@@ -89,7 +89,7 @@ namespace ItronicStore
             this.btnInbox.Location = new System.Drawing.Point(249, 204);
             this.btnInbox.Name = "btnInbox";
             this.btnInbox.Size = new System.Drawing.Size(99, 31);
-            this.btnInbox.TabIndex = 1;
+            this.btnInbox.TabIndex = 3;
             this.btnInbox.Text = "Inbox";
             this.btnInbox.UseVisualStyleBackColor = true;
             this.btnInbox.Click += new System.EventHandler(this.btnInbox_Click);
@@ -110,7 +110,7 @@ namespace ItronicStore
             this.btnNatrag.Location = new System.Drawing.Point(482, 251);
             this.btnNatrag.Name = "btnNatrag";
             this.btnNatrag.Size = new System.Drawing.Size(78, 41);
-            this.btnNatrag.TabIndex = 1;
+            this.btnNatrag.TabIndex = 4;
             this.btnNatrag.Text = "Natrag";
             this.btnNatrag.UseVisualStyleBackColor = true;
             this.btnNatrag.Click += new System.EventHandler(this.btnNatrag_Click);

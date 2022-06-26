@@ -52,6 +52,18 @@ namespace ClassLibrary2.ToolBox
                 return userName.FirstOrDefault();
             }
         }
+
+        public static string DohvatiEmailKorisnika(string korisnickoIme)
+        {
+            using (var db = new Entiteti())
+            {
+                var email = from x in db.Korisnik
+                               where x.KorisnickoIme == korisnickoIme
+                               select x.Email;
+                return email.FirstOrDefault();
+            }
+        }
+
         public static string DohvatiPrezimeKorisnika(string korisnickoIme)
         {
             using (var db = new Entiteti())

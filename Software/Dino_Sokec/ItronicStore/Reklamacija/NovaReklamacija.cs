@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ItronicStore;
+using ClassLibrary2.ToolBox;
 
 namespace ItronicStore
 {
@@ -29,8 +29,20 @@ namespace ItronicStore
 
         private void NovaReklamacija_Load(object sender, EventArgs e)
         {
-            DohvatiInformacijeOKorisniku();
+            DohvatiInformacijeOKorisniku(korisnickoIme);
             DohvatiInformacijeOdabranogProizvodaDGV();
+            DohvatiKorisnikuDostupneProizvodeZaReklamaciju();
+            DohvatiZaKorisnikaPovijestPodnesenihReklamacija();
+        }
+
+        private void DohvatiZaKorisnikaPovijestPodnesenihReklamacija()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void DohvatiKorisnikuDostupneProizvodeZaReklamaciju()
+        {
+            throw new NotImplementedException();
         }
 
         private void DohvatiInformacijeOdabranogProizvodaDGV()
@@ -38,9 +50,11 @@ namespace ItronicStore
             throw new NotImplementedException();
         }
 
-        private void DohvatiInformacijeOKorisniku()
+        private void DohvatiInformacijeOKorisniku(string korisnickoImeKorisnika)
         {
-            throw new NotImplementedException();
+            txtIme.Text = TOOL_Korisnik.DohvatiImeKorisnika(korisnickoImeKorisnika);
+            txtPrezime.Text = TOOL_Korisnik.DohvatiPrezimeKorisnika(korisnickoImeKorisnika);
+            txtEmail.Text = TOOL_Korisnik.DohvatiEmailKorisnika(korisnickoImeKorisnika);
         }
 
         private void btnSpremi_Click(object sender, EventArgs e)

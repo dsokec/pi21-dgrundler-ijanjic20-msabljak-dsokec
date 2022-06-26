@@ -8,6 +8,15 @@ namespace ClassLibrary2.Klase
 {
     public static class KorisnickoImeKorisnika
     {
-        public static string KorisnickoIme { get; set; }
+        private static string myVar;
+
+        public static string KorisnickoIme
+        {
+            get { return myVar; }
+            set { myVar = value; }
+        }
+
+
+        //public static string KorisnickoIme { get; set; }
     }
 }

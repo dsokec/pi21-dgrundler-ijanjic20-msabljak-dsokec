@@ -11,7 +11,7 @@ namespace ItronicStore
 {
     public partial class wfLogin : Form
     {
-        private Izbornik Izbornik = null;
+        private Izbornik Izbornik;
         private AdminPrijava adminPrijava;
         
         public wfLogin()
@@ -19,28 +19,23 @@ namespace ItronicStore
             InitializeComponent();
         }
 
-        public wfLogin(Izbornik izbornik)
-        {
-            //this.Izbornik = null;
-            this.Izbornik = izbornik;
-            Izbornik.Hide();
-        }
 
         // Gumb prijavi se - ulazak u Izbornik
         private void btnPrijaviSe_Click(object sender, EventArgs e)
         {
-            //cmbKorisnickoIme.Refresh();
-            //string korisnickoIme = null;
-            //KorisnickoImeKorisnika.KorisnickoIme = TOOL_Korisnik.DohvatiKorisnickoImeKorisnika(cmbKorisnickoIme.Text);
-            string korisnickoIme = TOOL_Korisnik.DohvatiKorisnickoImeKorisnika(cmbKorisnickoIme.Text);
+
+            string korisnickoIme = null;
+            korisnickoIme = TOOL_Korisnik.DohvatiKorisnickoImeKorisnika(cmbKorisnickoIme.SelectedItem.ToString());
+
 
             if (Izbornik == null)
             {
                 Izbornik = new Izbornik(this, korisnickoIme);
+                //Izbornik = new Izbornik(this);
+                
                 Izbornik.FormClosed += Izbornik_FormClosed;
             }
 
-            //this.Refresh();
             Izbornik.Show(this);
             Hide();
         }
@@ -49,12 +44,6 @@ namespace ItronicStore
         {
             Izbornik = null;
             Show();
-        }
-
-        private string DohvatiKorisnickoImeIzPadajuceListe()
-        {
-            string korisnickoIme = cmbKorisnickoIme.Text;
-            return korisnickoIme;
         }
 
         private void btnIzlaz_Click(object sender, EventArgs e)
@@ -110,8 +99,6 @@ namespace ItronicStore
 
         private void wfLogin_Load(object sender, EventArgs e)
         {
-            //this.Invalidate();
-            //this.Refresh();
             NapuniCombobox();
         }
 

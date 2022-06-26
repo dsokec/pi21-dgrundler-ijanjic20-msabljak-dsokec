@@ -54,5 +54,35 @@ namespace ClassLibrary2.ToolBox
                 return godine.ToList();
             }
         }
+
+        public static List<double> DohvatiRashodeIzTabliceObracun()
+        {
+            using (var db = new Entiteti())
+            {
+                var rashodi = from x in db.Obracun
+                              select x.Rashod;
+                return rashodi.ToList();
+            }
+        }
+
+        public static List<int> DohvatiNabavljenoIzTabliceObracun()
+        {
+            using (var db = new Entiteti())
+            {
+                var nabavljeno = from x in db.Obracun
+                              select x.Nabavljeno;
+                return nabavljeno.ToList();
+            }
+        }
+
+        public static List<int> DohvatiProdanoIzTabliceObracun()
+        {
+            using (var db = new Entiteti())
+            {
+                var prodano = from x in db.Obracun
+                                 select x.Prodano;
+                return prodano.ToList();
+            }
+        }
     }
 }

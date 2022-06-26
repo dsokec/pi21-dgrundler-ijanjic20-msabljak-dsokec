@@ -15,9 +15,8 @@ namespace ItronicStore
     public partial class KorisnickaRecenzija : Form
     {
         private string korisnickoIme = null;
-        //Izbornik izbornik;
         private Izbornik izbornik;
-        
+
         // Prethodna WinForma + 2 konstruktora
         internal void PostaviPrethodnuFormu(Izbornik x)
         {
@@ -50,6 +49,7 @@ namespace ItronicStore
 
             NapuniPovijestRecenzijaKorisnika(korisnickoIme);
 
+            //NapuniTekstualniOkvirKorisnika(korisnickoIme);
             NapuniTekstualniOkvirKorisnika(korisnickoIme);
 
             NapuniTekstualniOkvirProizvod();
@@ -57,6 +57,13 @@ namespace ItronicStore
             Namjesti_RadioButton();
 
             OnemoguciButtonAzuriraj();
+
+            SakrijDGVSTupacID();
+        }
+
+        private void SakrijDGVSTupacID()
+        {
+            dgvPovijestRecenzija.Columns["ID"].Visible = false;
         }
 
         private void NapuniTekstualniOkvirProizvod()

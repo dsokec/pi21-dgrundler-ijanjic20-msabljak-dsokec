@@ -44,7 +44,7 @@ namespace ItronicStore
             this.btnInbox.Location = new System.Drawing.Point(49, 98);
             this.btnInbox.Name = "btnInbox";
             this.btnInbox.Size = new System.Drawing.Size(89, 42);
-            this.btnInbox.TabIndex = 2;
+            this.btnInbox.TabIndex = 0;
             this.btnInbox.Text = "Inbox";
             this.btnInbox.UseVisualStyleBackColor = true;
             this.btnInbox.Click += new System.EventHandler(this.btnInbox_Click);
@@ -55,7 +55,7 @@ namespace ItronicStore
             this.btnGrafickiPrikaz.Location = new System.Drawing.Point(260, 100);
             this.btnGrafickiPrikaz.Name = "btnGrafickiPrikaz";
             this.btnGrafickiPrikaz.Size = new System.Drawing.Size(95, 40);
-            this.btnGrafickiPrikaz.TabIndex = 2;
+            this.btnGrafickiPrikaz.TabIndex = 1;
             this.btnGrafickiPrikaz.Text = "Grafikon";
             this.btnGrafickiPrikaz.UseVisualStyleBackColor = true;
             this.btnGrafickiPrikaz.Click += new System.EventHandler(this.btnGrafickiPrikaz_Click);
@@ -107,7 +107,7 @@ namespace ItronicStore
             this.btnNatrag.Location = new System.Drawing.Point(284, 214);
             this.btnNatrag.Name = "btnNatrag";
             this.btnNatrag.Size = new System.Drawing.Size(89, 39);
-            this.btnNatrag.TabIndex = 4;
+            this.btnNatrag.TabIndex = 2;
             this.btnNatrag.Text = "Natrag";
             this.btnNatrag.UseVisualStyleBackColor = true;
             this.btnNatrag.Click += new System.EventHandler(this.btnNatrag_Click);

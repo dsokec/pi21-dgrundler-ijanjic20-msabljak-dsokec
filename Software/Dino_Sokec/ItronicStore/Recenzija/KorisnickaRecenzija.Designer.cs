@@ -80,7 +80,7 @@ namespace ItronicStore
             this.dgvPopisProizvoda.RowHeadersWidth = 62;
             this.dgvPopisProizvoda.RowTemplate.Height = 28;
             this.dgvPopisProizvoda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPopisProizvoda.Size = new System.Drawing.Size(645, 303);
+            this.dgvPopisProizvoda.Size = new System.Drawing.Size(752, 303);
             this.dgvPopisProizvoda.TabIndex = 45;
             this.dgvPopisProizvoda.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPopisProizvoda_CellClick);
             // 
@@ -225,7 +225,7 @@ namespace ItronicStore
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(662, 23);
+            this.label5.Location = new System.Drawing.Point(726, 23);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(215, 29);
             this.label5.TabIndex = 38;
@@ -235,7 +235,7 @@ namespace ItronicStore
             // 
             this.txtTrazilicaProizvoda.Location = new System.Drawing.Point(618, 60);
             this.txtTrazilicaProizvoda.Name = "txtTrazilicaProizvoda";
-            this.txtTrazilicaProizvoda.Size = new System.Drawing.Size(290, 26);
+            this.txtTrazilicaProizvoda.Size = new System.Drawing.Size(415, 26);
             this.txtTrazilicaProizvoda.TabIndex = 53;
             this.txtTrazilicaProizvoda.TextChanged += new System.EventHandler(this.txtTrazilicaProizvoda_TextChanged);
             // 
@@ -385,7 +385,7 @@ namespace ItronicStore
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(714, 443);
+            this.label6.Location = new System.Drawing.Point(760, 440);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(181, 25);
             this.label6.TabIndex = 36;
@@ -401,7 +401,7 @@ namespace ItronicStore
             this.dgvPovijestRecenzija.RowHeadersWidth = 62;
             this.dgvPovijestRecenzija.RowTemplate.Height = 28;
             this.dgvPovijestRecenzija.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPovijestRecenzija.Size = new System.Drawing.Size(645, 185);
+            this.dgvPovijestRecenzija.Size = new System.Drawing.Size(752, 185);
             this.dgvPovijestRecenzija.TabIndex = 45;
             this.dgvPovijestRecenzija.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPovijestRecenzija_CellContentClick);
             // 
@@ -424,7 +424,7 @@ namespace ItronicStore
             "Cijena - Uzlazno",
             "Cijena - Silazno",
             "Naziv - Uzlazno"});
-            this.comboBox1.Location = new System.Drawing.Point(944, 57);
+            this.comboBox1.Location = new System.Drawing.Point(1067, 58);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(153, 28);
             this.comboBox1.TabIndex = 57;
@@ -434,7 +434,7 @@ namespace ItronicStore
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(992, 33);
+            this.label8.Location = new System.Drawing.Point(1120, 32);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(50, 20);
             this.label8.TabIndex = 38;
@@ -483,7 +483,7 @@ namespace ItronicStore
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1125, 720);
+            this.ClientSize = new System.Drawing.Size(1232, 720);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblBrojRedakaPovijest);
             this.Controls.Add(this.btnOdustani);
