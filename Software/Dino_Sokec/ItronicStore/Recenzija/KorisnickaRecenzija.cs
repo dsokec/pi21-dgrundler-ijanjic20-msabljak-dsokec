@@ -23,10 +23,10 @@ namespace ItronicStore
             izbornik = x;
         }
 
-        public KorisnickaRecenzija()
-        {
-            InitializeComponent(); 
-        }
+        //public KorisnickaRecenzija()
+        //{
+        //    InitializeComponent(); 
+        //}
 
         public KorisnickaRecenzija(Izbornik izbornik, string korisnickoImeLogina)
         {

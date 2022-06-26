@@ -57,6 +57,10 @@ namespace ItronicStore
             this.btnObrisi = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblDostupnost = new System.Windows.Forms.Label();
+            this.lblPovijest = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPovijestReklamacija)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -233,8 +237,9 @@ namespace ItronicStore
             this.dgvPovijestReklamacija.RowHeadersWidth = 62;
             this.dgvPovijestReklamacija.RowTemplate.Height = 28;
             this.dgvPovijestReklamacija.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPovijestReklamacija.Size = new System.Drawing.Size(740, 218);
+            this.dgvPovijestReklamacija.Size = new System.Drawing.Size(766, 218);
             this.dgvPovijestReklamacija.TabIndex = 81;
+            this.dgvPovijestReklamacija.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPovijestReklamacija_CellContentClick);
             // 
             // groupBox2
             // 
@@ -290,8 +295,9 @@ namespace ItronicStore
             this.dgvPopisProizvoda.RowHeadersWidth = 62;
             this.dgvPopisProizvoda.RowTemplate.Height = 28;
             this.dgvPopisProizvoda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPopisProizvoda.Size = new System.Drawing.Size(740, 242);
+            this.dgvPopisProizvoda.Size = new System.Drawing.Size(778, 242);
             this.dgvPopisProizvoda.TabIndex = 83;
+            this.dgvPopisProizvoda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPopisProizvoda_CellContentClick);
             // 
             // dateTimePicker1
             // 
@@ -359,11 +365,53 @@ namespace ItronicStore
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Obrazac";
             // 
+            // lblDostupnost
+            // 
+            this.lblDostupnost.AutoSize = true;
+            this.lblDostupnost.Location = new System.Drawing.Point(528, 324);
+            this.lblDostupnost.Name = "lblDostupnost";
+            this.lblDostupnost.Size = new System.Drawing.Size(60, 20);
+            this.lblDostupnost.TabIndex = 86;
+            this.lblDostupnost.Text = "label11";
+            // 
+            // lblPovijest
+            // 
+            this.lblPovijest.AutoSize = true;
+            this.lblPovijest.Location = new System.Drawing.Point(528, 635);
+            this.lblPovijest.Name = "lblPovijest";
+            this.lblPovijest.Size = new System.Drawing.Size(60, 20);
+            this.lblPovijest.TabIndex = 87;
+            this.lblPovijest.Text = "label11";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(416, 324);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(106, 20);
+            this.label11.TabIndex = 88;
+            this.label11.Text = "Broj redaka:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(416, 635);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(106, 20);
+            this.label12.TabIndex = 89;
+            this.label12.Text = "Broj redaka:";
+            // 
             // NovaReklamacija
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1180, 739);
+            this.ClientSize = new System.Drawing.Size(1228, 739);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.lblPovijest);
+            this.Controls.Add(this.lblDostupnost);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.dgvPopisProizvoda);
             this.Controls.Add(this.dgvPovijestReklamacija);
@@ -424,5 +472,9 @@ namespace ItronicStore
         private System.Windows.Forms.Button btnObrisi;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label lblDostupnost;
+        private System.Windows.Forms.Label lblPovijest;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
     }
 }

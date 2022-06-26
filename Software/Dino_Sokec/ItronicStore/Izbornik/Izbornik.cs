@@ -57,7 +57,7 @@ namespace ItronicStore
         {
             if (Reklamacija == null)
             {
-                Reklamacija = new NovaReklamacija(korisnickoImeLogina);
+                Reklamacija = new NovaReklamacija(this,korisnickoImeLogina);
                 Reklamacija.FormClosed += Reklamacija_FormClosed;
             }
 
