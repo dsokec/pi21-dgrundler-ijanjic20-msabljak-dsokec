@@ -11,5 +11,17 @@ namespace ClassLibrary2.Klase
         public string Dobavljac { get; set; }
         public string Opis { get; set; }
         public int Kolicina { get; set; }
+
+        public bool BrojJeManjiOdNule(int broj)
+        {
+            if(broj < 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
