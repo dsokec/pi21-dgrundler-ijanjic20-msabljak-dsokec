@@ -111,5 +111,20 @@ namespace ClassLibrary2
                 return upit.ToArray();
             }
         }
+
+        public static void AzurirajOdabranuReklamaciju_v2(Reklamacija dohvacenReklamacija, int id, int idProizvod, int idKorisnik, string datum, string razlog)
+        {
+            using (var db = new Entiteti())
+            {
+                dohvacenReklamacija.IDReklamacija = id;
+                dohvacenReklamacija.IDProizvod = idProizvod;
+                dohvacenReklamacija.IDKorisnik = idKorisnik;
+                dohvacenReklamacija.Opis = razlog;
+                dohvacenReklamacija.Datum = Convert.ToDateTime(datum);
+
+                db.Entry(dohvacenReklamacija).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+            }
+        }
     }
 }

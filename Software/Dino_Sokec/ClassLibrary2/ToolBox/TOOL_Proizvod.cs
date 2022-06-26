@@ -124,6 +124,17 @@ namespace ClassLibrary2.ToolBox
             }
         }
 
+        public static int DohvatiIDProizvodaNaziv(string nazivProizvoda)
+        {
+            using (var db = new Entiteti())
+            {
+                var id = from x in db.Proizvod
+                         where x.Naziv == nazivProizvoda
+                         select x.ID;
+                return id.FirstOrDefault();
+            }
+        }
+
         private static int[] DohvatiIDjeveRecenziranihProizvoda(int idKorisnika)
         {
             using (var db = new Entiteti())

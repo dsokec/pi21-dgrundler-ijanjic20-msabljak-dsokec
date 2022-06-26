@@ -8,5 +8,6 @@ namespace ClassLibrary2.ToolBox
         public DateTime Datum { get; set; }
         public string Proizvod { get; set; }
         public string Prigovor { get; set; }
+        public string KorisnickoIme { get; set; }
     }
 }

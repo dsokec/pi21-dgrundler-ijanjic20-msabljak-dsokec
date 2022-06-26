@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClassLibrary2;
 using ClassLibrary2.ToolBox;
 
 namespace ItronicStore
@@ -43,12 +44,16 @@ namespace ItronicStore
             //DohvatiInformacijeOdabranogProizvodaDGV();
             DohvatiKorisnikuDostupneProizvodeZaReklamaciju(korisnickoIme);
             //DohvatiZaKorisnikaPovijestPodnesenihReklamacija();
-            ResetirajRazlogReklamacije();
+            ResetirajWindowsFormuReklamacija();
         }
 
-        private void ResetirajRazlogReklamacije()
+        private void ResetirajWindowsFormuReklamacija()
         {
             txtRazlog.Text = String.Empty;
+            dateTimePicker1.Value = DateTime.Now;
+            txtProizvod.Text = string.Empty;
+            txtKategorija.Text = string.Empty;
+            txtOpis.Text = string.Empty;
         }
 
         private void NapuniPovijestReklamacijaZaKorisnika(string korisnickoIme)
@@ -56,10 +61,18 @@ namespace ItronicStore
             dgvPovijestReklamacija.DataSource = null;
             dgvPovijestReklamacija.DataSource = TOOL_Reklamacija.NapuniPovijestReklamacijaKorisnika(korisnickoIme);
 
+            SakrijNepotrebneStupce();
+            
             dgvPovijestReklamacija.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgvPovijestReklamacija.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             lblPovijest.Text = dgvPovijestReklamacija.Rows.Count.ToString();
+        }
+
+        private void SakrijNepotrebneStupce()
+        {
+            dgvPovijestReklamacija.Columns["ID"].Visible = false;
+            dgvPovijestReklamacija.Columns["KorisnickoIme"].Visible = false;
         }
 
         private void NapuniTekstualneOkvire()
@@ -114,17 +127,81 @@ namespace ItronicStore
 
         private void btnSpremi_Click(object sender, EventArgs e)
         {
+            string datum = DohvatiDatum();
+            string razlog = DohvatiRazlogNaProizvod();
+            PopisProizvodaReklamacija popis = DohvatiRedakDostupnihProizvoda();
 
+            string nazivProizvoda = popis.Proizvod;
+
+            int idKorisnik = TOOL_Korisnik.DohvatiIDKorisnika(korisnickoIme);
+            int idProizvod = TOOL_Proizvod.DohvatiIDProizvodaNaziv(nazivProizvoda);
+
+            Reklamacija novaReklamacija = StvoriNoviObjektZaTablicuReklamacija(idKorisnik, idProizvod, datum, razlog);
+
+            CRUD_Reklamacija.KreirajNovuReklamaciju(novaReklamacija);
+            UcitajWindowsFormuNovaReklamacija();
+        }
+
+        private Reklamacija StvoriNoviObjektZaTablicuReklamacija(int idKorisnik, int idProizvod, string datum, string razlog)
+        {
+            Reklamacija nova = new Reklamacija();
+            nova.IDKorisnik = idKorisnik;
+            nova.IDProizvod = idProizvod;
+            nova.Datum = Convert.ToDateTime(datum);
+            nova.Opis = razlog;
+
+            return nova;
+        }
+
+        private PopisProizvodaReklamacija DohvatiRedakDostupnihProizvoda()
+        {
+            PopisProizvodaReklamacija redak = dgvPopisProizvoda.CurrentRow.DataBoundItem as PopisProizvodaReklamacija;
+            return redak;
+        }
+
+        private string DohvatiRazlogNaProizvod()
+        {
+            string razlog = txtRazlog.Text;
+            return razlog;
+        }
+
+        private string DohvatiDatum()
+        {
+            string datum = dateTimePicker1.Text;
+            return datum;
         }
 
         private void btnAzuriraj_Click(object sender, EventArgs e)
         {
+            string datum = DohvatiDatum();
+            string razlog = DohvatiRazlogNaProizvod();
 
+            PovijestReklamacija redak = DohvatiRedakPovijestReklamacija();
+
+            //string korisnickoIme = redak.
+            string nazivProizvoda = redak.Proizvod;
+            string korisnickoIme = redak.KorisnickoIme;   
+
+            int idKorisnik = TOOL_Reklamacija.DohvatiIDKorisnik(korisnickoIme);
+            int idProizvod = TOOL_Reklamacija.DohvatiIDProizvod(nazivProizvoda);
+            int id = redak.ID;
+
+            Reklamacija dohvacenReklamacija = TOOL_Reklamacija.DohvatiReklamaciju(redak);
+
+            CRUD_Reklamacija.AzurirajOdabranuReklamaciju_v2(dohvacenReklamacija, id, idProizvod, idKorisnik, datum, razlog);
+
+            UcitajWindowsFormuNovaReklamacija();
         }
 
         private void btnObrisi_Click(object sender, EventArgs e)
         {
+            PovijestReklamacija odabranaReklamacija = DohvatiRedakPovijestReklamacija();
 
+            Reklamacija reklamacija = TOOL_Reklamacija.DohvatiReklamaciju(odabranaReklamacija);
+
+            CRUD_Reklamacija.ObrisiOdabranuReklamaciju(reklamacija);
+
+            UcitajWindowsFormuNovaReklamacija();
         }
 
         private void dgvPopisProizvoda_CellContentClick(object sender, DataGridViewCellEventArgs e)

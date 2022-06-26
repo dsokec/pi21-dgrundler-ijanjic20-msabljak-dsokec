@@ -67,6 +67,7 @@ namespace ClassLibrary2.ToolBox
                                Datum = r.Datum,
                                Proizvod = p.Naziv,
                                Prigovor = r.Opis,
+                               KorisnickoIme = k.KorisnickoIme
                            };
                 return upit.ToList();
             }
@@ -103,6 +104,39 @@ namespace ClassLibrary2.ToolBox
                            where p.Naziv == nazivProizvoda
                            select p.Opis;
                 return upit.FirstOrDefault();
+            }
+        }
+
+        public static Reklamacija DohvatiReklamaciju(PovijestReklamacija odabranaReklamacija)
+        {
+            using (var db = new Entiteti())
+            {
+                var reklamacija = from x in db.Reklamacija
+                                where odabranaReklamacija.ID == x.IDReklamacija
+                                select x;
+                return reklamacija.FirstOrDefault();
+            }
+        }
+
+        public static int DohvatiIDKorisnik(string korisnickoIme)
+        {
+            using (var db = new Entiteti())
+            {
+                var id = from x in db.Korisnik
+                         where korisnickoIme == x.KorisnickoIme
+                         select x.ID;
+                return id.FirstOrDefault();
+            }
+        }
+
+        public static int DohvatiIDProizvod(string nazivProizvoda)
+        {
+            using (var db = new Entiteti())
+            {
+                var id = from x in db.Proizvod
+                         where nazivProizvoda == x.Naziv
+                         select x.ID;
+                return id.FirstOrDefault();
             }
         }
     }
