@@ -51,7 +51,7 @@ namespace ClassLibrary2.ToolBox
                                Cijena = p.Cijena,
                                Prigovor = x.Opis
                            };
-                return upit.Distinct().ToList();
+                return upit.ToList();
             }
         }
 
