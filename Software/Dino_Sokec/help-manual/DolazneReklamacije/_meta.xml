@@ -1,0 +1,24 @@
+<xml>
+  <draft>False</draft>
+  <title>DolazneReklamacije</title>
+  <author>dsokec</author>
+  <description>Dolazne reklamacije korisnika</description>
+  <keywords>dolazne,reklamacije,korisnik,admin</keywords>
+  <robotsnoindex>False</robotsnoindex>
+  <robotsnofollow>False</robotsnofollow>
+  <isdate>True</isdate>
+  <istime>True</istime>
+  <date>6/27/2022 12:00:00 AM</date>
+  <time>6/27/2022 5:50:02 AM</time>
+  <istelephone>False</istelephone>
+  <recognizetelephone>False</recognizetelephone>
+  <isdateexpires>False</isdateexpires>
+  <istimeexpires>False</istimeexpires>
+  <dateexpires>1/1/0001 12:00:00 AM</dateexpires>
+  <timeexpires>1/1/0001 12:00:00 AM</timeexpires>
+  <secondsexpires>-1</secondsexpires>
+  <cachecontrol>0</cachecontrol>
+  <ispragmacachecontrol>False</ispragmacachecontrol>
+  <HelpId>1080</HelpId>
+  <SelectedEditorType>Html</SelectedEditorType>
+</xml>

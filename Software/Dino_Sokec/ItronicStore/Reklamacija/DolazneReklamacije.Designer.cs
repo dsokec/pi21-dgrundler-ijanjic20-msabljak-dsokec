@@ -188,6 +188,7 @@ namespace ItronicStore
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DolazneReklamacije";
             this.Load += new System.EventHandler(this.DolazneReklamacije_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.DolazneReklamacije_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPopisReklamacija)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

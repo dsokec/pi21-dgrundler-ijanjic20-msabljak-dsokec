@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -76,6 +78,34 @@ namespace ItronicStore
             Owner.Show();
             this.Refresh();
             Hide();
+        }
+
+        private void IzbornikAdmin_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            OtvoriHelpFile(1040);
+        }
+        private void OtvoriHelpFile(int id = -1)
+        {
+            string help = PutanjaDoHelpFile();
+            if (id == -1)
+            {
+                //otvara se naslovna stranicu u help file
+                System.Diagnostics.Process.Start(help);
+            }
+            else
+            {
+                //otvora se trazena stranica u help file
+                Help.ShowHelp(this, help, HelpNavigator.TopicId, id.ToString());
+            }
+        }
+
+        private string PutanjaDoHelpFile()
+        {
+            // absolute path
+            string putanja = Path.Combine(new Uri(Path.GetDirectoryName
+            (Assembly.GetExecutingAssembly().CodeBase)).LocalPath, "help.chm");
+
+            return putanja;
         }
     }
 }

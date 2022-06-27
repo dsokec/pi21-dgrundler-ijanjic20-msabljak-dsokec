@@ -504,6 +504,7 @@ namespace ItronicStore
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Recenzija";
             this.Load += new System.EventHandler(this.KorisnickaRecenzija_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.KorisnickaRecenzija_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPopisProizvoda)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

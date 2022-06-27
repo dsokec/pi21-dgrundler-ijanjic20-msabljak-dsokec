@@ -153,6 +153,7 @@ namespace ItronicStore
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminPrijava";
             this.Load += new System.EventHandler(this.AdminPrijava_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.AdminPrijava_HelpRequested);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

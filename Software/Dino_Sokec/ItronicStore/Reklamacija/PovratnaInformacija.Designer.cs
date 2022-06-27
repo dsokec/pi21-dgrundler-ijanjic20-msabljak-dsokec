@@ -185,6 +185,7 @@ namespace ItronicStore
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Povratna informacija";
             this.Load += new System.EventHandler(this.PovratnaInformacija_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.PovratnaInformacija_HelpRequested);
             this.ResumeLayout(false);
             this.PerformLayout();
 

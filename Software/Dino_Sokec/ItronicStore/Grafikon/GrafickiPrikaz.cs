@@ -1,6 +1,8 @@
 ﻿using ClassLibrary2.ToolBox;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
@@ -169,6 +171,34 @@ namespace ItronicStore
             chartPrihod.Series["Prodano trgovina"].Points.DataBindXY(godine, prodano);
             chartPrihod.Series["Nabavljeno trgovina"].Points.DataBindXY(godine, nabavljeno);
             chartPrihod.Invalidate();
+        }
+
+        private void GrafickiPrikaz_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            OtvoriHelpFile(1070);
+        }
+        private void OtvoriHelpFile(int id = -1)
+        {
+            string help = PutanjaDoHelpFile();
+            if (id == -1)
+            {
+                //otvara se naslovna stranicu u help file
+                System.Diagnostics.Process.Start(help);
+            }
+            else
+            {
+                //otvora se trazena stranica u help file
+                Help.ShowHelp(this, help, HelpNavigator.TopicId, id.ToString());
+            }
+        }
+
+        private string PutanjaDoHelpFile()
+        {
+            // absolute path
+            string putanja = Path.Combine(new Uri(Path.GetDirectoryName
+            (Assembly.GetExecutingAssembly().CodeBase)).LocalPath, "help.chm");
+
+            return putanja;
         }
     }
 }

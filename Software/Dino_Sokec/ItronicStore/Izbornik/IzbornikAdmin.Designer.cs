@@ -40,7 +40,7 @@ namespace ItronicStore
             // 
             // btnInbox
             // 
-            this.btnInbox.ForeColor = System.Drawing.Color.Red;
+            this.btnInbox.ForeColor = System.Drawing.Color.Black;
             this.btnInbox.Location = new System.Drawing.Point(49, 98);
             this.btnInbox.Name = "btnInbox";
             this.btnInbox.Size = new System.Drawing.Size(89, 42);
@@ -64,7 +64,7 @@ namespace ItronicStore
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(12, 66);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(183, 25);
@@ -104,6 +104,7 @@ namespace ItronicStore
             // btnNatrag
             // 
             this.btnNatrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNatrag.ForeColor = System.Drawing.Color.DarkRed;
             this.btnNatrag.Location = new System.Drawing.Point(284, 214);
             this.btnNatrag.Name = "btnNatrag";
             this.btnNatrag.Size = new System.Drawing.Size(89, 39);
@@ -129,6 +130,7 @@ namespace ItronicStore
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IzbornikAdmin";
             this.Load += new System.EventHandler(this.IzbornikAdmin_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.IzbornikAdmin_HelpRequested);
             this.ResumeLayout(false);
             this.PerformLayout();
 

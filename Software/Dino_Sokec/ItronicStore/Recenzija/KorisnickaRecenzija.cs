@@ -9,6 +9,8 @@ using TOOL_Korisnik = ClassLibrary2.ToolBox.TOOL_Korisnik;
 using TOOL_Recenzija = ClassLibrary2.ToolBox.TOOL_Recenzija;
 using TOOL_Proizvod = ClassLibrary2.ToolBox.TOOL_Proizvod;
 using ClassLibrary2.Iznimke;
+using System.IO;
+using System.Reflection;
 
 namespace ItronicStore
 {
@@ -415,6 +417,34 @@ namespace ItronicStore
             }
 
             txtboxKomentar.Text = recenzija.Komentar;
+        }
+
+        private void KorisnickaRecenzija_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            OtvoriHelpFile(1050);
+        }
+        private void OtvoriHelpFile(int id = -1)
+        {
+            string help = PutanjaDoHelpFile();
+            if (id == -1)
+            {
+                //otvara se naslovna stranicu u help file
+                System.Diagnostics.Process.Start(help);
+            }
+            else
+            {
+                //otvora se trazena stranica u help file
+                Help.ShowHelp(this, help, HelpNavigator.TopicId, id.ToString());
+            }
+        }
+
+        private string PutanjaDoHelpFile()
+        {
+            // absolute path
+            string putanja = Path.Combine(new Uri(Path.GetDirectoryName
+            (Assembly.GetExecutingAssembly().CodeBase)).LocalPath, "help.chm");
+
+            return putanja;
         }
     }
 }

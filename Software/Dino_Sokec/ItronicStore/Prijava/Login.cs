@@ -69,7 +69,7 @@ namespace ItronicStore
 
         private void wfLogin_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
-            OtvoriHelpFile(6000);
+            OtvoriHelpFile(1010);
         }
 
         private void OtvoriHelpFile(int id = -1)

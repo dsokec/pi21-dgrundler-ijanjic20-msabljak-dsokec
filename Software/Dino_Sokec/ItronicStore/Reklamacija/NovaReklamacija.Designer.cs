@@ -431,6 +431,7 @@ namespace ItronicStore
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nova reklamacija";
             this.Load += new System.EventHandler(this.NovaReklamacija_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.NovaReklamacija_HelpRequested);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPovijestReklamacija)).EndInit();

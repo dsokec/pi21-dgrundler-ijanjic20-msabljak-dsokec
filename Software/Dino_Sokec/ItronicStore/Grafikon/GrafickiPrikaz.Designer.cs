@@ -29,9 +29,9 @@ namespace ItronicStore
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbPrihod = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -78,18 +78,18 @@ namespace ItronicStore
             // 
             // chartPrihod
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chartPrihod.ChartAreas.Add(chartArea4);
-            legend4.Alignment = System.Drawing.StringAlignment.Center;
-            legend4.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend4.Name = "Legend1";
-            this.chartPrihod.Legends.Add(legend4);
+            chartArea1.Name = "ChartArea1";
+            this.chartPrihod.ChartAreas.Add(chartArea1);
+            legend1.Alignment = System.Drawing.StringAlignment.Center;
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend1.Name = "Legend1";
+            this.chartPrihod.Legends.Add(legend1);
             this.chartPrihod.Location = new System.Drawing.Point(38, 145);
             this.chartPrihod.Name = "chartPrihod";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chartPrihod.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartPrihod.Series.Add(series1);
             this.chartPrihod.Size = new System.Drawing.Size(1104, 513);
             this.chartPrihod.TabIndex = 19;
             this.chartPrihod.Text = "chart1";
@@ -119,6 +119,7 @@ namespace ItronicStore
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Obračun";
             this.Load += new System.EventHandler(this.FinancijeWF_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.GrafickiPrikaz_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.chartPrihod)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
