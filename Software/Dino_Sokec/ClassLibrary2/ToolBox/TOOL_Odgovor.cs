@@ -32,6 +32,14 @@ namespace ItronicStore
             }
         }
 
+        public static List<PovratniOdgovori> DohvatiSvePovratneOdgovoreKorisnik(string korisnickoIme)
+        {
+            using (var db = new Entiteti())
+            {
+
+            }
+        }
+
         private static int DohvatiIDAdmina(string korisnickoImeAdmin)
         {
             using (var db = new Entiteti())

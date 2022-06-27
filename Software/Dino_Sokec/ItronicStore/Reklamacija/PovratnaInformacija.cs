@@ -14,37 +14,30 @@ namespace ItronicStore
 {
     public partial class PovratnaInformacija : Form
     {
-        public PovratnaInformacija()
+        private string korisnickoIme;
+        public PovratnaInformacija(string korisnik)
         {
             InitializeComponent();
+            this.korisnickoIme = korisnik;
             
         }
 
+        // button Natrag
         private void btnOdustani_Click(object sender, EventArgs e)
         {
             Owner.Show();
             Hide();
         }
 
-        private void btnSpremi_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void PovratnaInformacija_Load(object sender, EventArgs e)
         {
-            IspuniInformacijeOKorisniku();
-            IspuniInformacijeOProizvodu();
+            UcitajDGV(korisnickoIme);
         }
 
-        private void IspuniInformacijeOProizvodu()
+        private void UcitajDGV(string korisnickoIme)
         {
-            throw new NotImplementedException();
-        }
-
-        private void IspuniInformacijeOKorisniku()
-        {
-            throw new NotImplementedException();
+            dgvPovratneInformacije.DataSource = null;
+            dgvPovratneInformacije.DataSource = TOOL_Odgovor.DohvatiSvePovratneOdgovoreKorisnik(korisnickoIme);
         }
 
         private void PovratnaInformacija_HelpRequested(object sender, HelpEventArgs hlpevent)

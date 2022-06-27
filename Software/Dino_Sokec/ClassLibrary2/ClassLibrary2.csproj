@@ -79,6 +79,7 @@
     <Compile Include="Klase\PorijekloDobavljaca.cs" />
     <Compile Include="Klase\PovijestOdgovoraReklamacija.cs" />
     <Compile Include="Klase\PovijestRecenzija.cs" />
+    <Compile Include="Klase\PovratniOdgovori.cs" />
     <Compile Include="Korisnik.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
