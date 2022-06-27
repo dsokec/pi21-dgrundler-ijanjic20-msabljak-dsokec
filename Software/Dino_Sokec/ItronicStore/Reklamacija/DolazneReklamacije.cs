@@ -199,5 +199,27 @@ namespace ItronicStore
             PopisDolaznihReklamacija redak = dgvPopisReklamacija.CurrentRow.DataBoundItem as PopisDolaznihReklamacija;
             return redak;
         }
+
+        private void dgvPovijestReklamacija_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            PovijestOdgovoraReklamacija dohvacena = DohvatiRedakPovijestOdgovora();
+
+            IspuniTekstualneOkvirePovijest(dohvacena);
+
+        }
+
+        private void IspuniTekstualneOkvirePovijest(PovijestOdgovoraReklamacija dohvacena)
+        {
+            txtPovKorisnickoIme.Text = dohvacena.Korisnik;
+            txtPovPrigovor.Text = dohvacena.Objasnjenje;
+            txtPovProizvod.Text = dohvacena.Proizvod;
+
+        }
+
+        private PovijestOdgovoraReklamacija DohvatiRedakPovijestOdgovora()
+        {
+            PovijestOdgovoraReklamacija redak = dgvPovijestReklamacija.CurrentRow.DataBoundItem as PovijestOdgovoraReklamacija;
+            return redak;
+        }
     }
 }

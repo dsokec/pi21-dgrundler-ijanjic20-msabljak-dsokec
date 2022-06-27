@@ -49,9 +49,9 @@ namespace ItronicStore
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtPovKorisnickoIme = new System.Windows.Forms.TextBox();
+            this.txtPovProizvod = new System.Windows.Forms.TextBox();
+            this.txtPovPrigovor = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPopisReklamacija)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPovijestReklamacija)).BeginInit();
             this.SuspendLayout();
@@ -156,6 +156,7 @@ namespace ItronicStore
             this.dgvPovijestReklamacija.RowTemplate.Height = 28;
             this.dgvPovijestReklamacija.Size = new System.Drawing.Size(1118, 267);
             this.dgvPovijestReklamacija.TabIndex = 8;
+            this.dgvPovijestReklamacija.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPovijestReklamacija_CellContentClick);
             // 
             // label2
             // 
@@ -264,34 +265,33 @@ namespace ItronicStore
             this.label11.TabIndex = 11;
             this.label11.Text = "Prigovor";
             // 
-            // textBox8
+            // txtPovKorisnickoIme
             // 
-            this.textBox8.ForeColor = System.Drawing.Color.Olive;
-            this.textBox8.Location = new System.Drawing.Point(261, 797);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(152, 26);
-            this.textBox8.TabIndex = 12;
+            this.txtPovKorisnickoIme.ForeColor = System.Drawing.Color.Olive;
+            this.txtPovKorisnickoIme.Location = new System.Drawing.Point(261, 797);
+            this.txtPovKorisnickoIme.Name = "txtPovKorisnickoIme";
+            this.txtPovKorisnickoIme.ReadOnly = true;
+            this.txtPovKorisnickoIme.Size = new System.Drawing.Size(152, 26);
+            this.txtPovKorisnickoIme.TabIndex = 12;
             // 
-            // textBox9
+            // txtPovProizvod
             // 
-            this.textBox9.ForeColor = System.Drawing.Color.Olive;
-            this.textBox9.Location = new System.Drawing.Point(443, 797);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(251, 26);
-            this.textBox9.TabIndex = 12;
+            this.txtPovProizvod.ForeColor = System.Drawing.Color.Olive;
+            this.txtPovProizvod.Location = new System.Drawing.Point(443, 797);
+            this.txtPovProizvod.Multiline = true;
+            this.txtPovProizvod.Name = "txtPovProizvod";
+            this.txtPovProizvod.ReadOnly = true;
+            this.txtPovProizvod.Size = new System.Drawing.Size(251, 26);
+            this.txtPovProizvod.TabIndex = 12;
             // 
-            // textBox10
+            // txtPovPrigovor
             // 
-            this.textBox10.ForeColor = System.Drawing.Color.Olive;
-            this.textBox10.Location = new System.Drawing.Point(722, 797);
-            this.textBox10.Multiline = true;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.ReadOnly = true;
-            this.textBox10.Size = new System.Drawing.Size(403, 26);
-            this.textBox10.TabIndex = 12;
+            this.txtPovPrigovor.ForeColor = System.Drawing.Color.Olive;
+            this.txtPovPrigovor.Location = new System.Drawing.Point(722, 797);
+            this.txtPovPrigovor.Multiline = true;
+            this.txtPovPrigovor.Name = "txtPovPrigovor";
+            this.txtPovPrigovor.Size = new System.Drawing.Size(403, 26);
+            this.txtPovPrigovor.TabIndex = 12;
             // 
             // DolazneReklamacije
             // 
@@ -299,10 +299,10 @@ namespace ItronicStore
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1143, 891);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.txtPovPrigovor);
+            this.Controls.Add(this.txtPovProizvod);
             this.Controls.Add(this.txtPrigovor);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.txtPovKorisnickoIme);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtProizvod);
@@ -357,8 +357,8 @@ namespace ItronicStore
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txtPovKorisnickoIme;
+        private System.Windows.Forms.TextBox txtPovProizvod;
+        private System.Windows.Forms.TextBox txtPovPrigovor;
     }
 }
