@@ -32,13 +32,15 @@ namespace ClassLibrary2.ToolBox
             }
         }
 
-        public static List<PopisDolaznihReklamacija> DohvatiSveReklamacije()
+        public static List<PopisDolaznihReklamacija> DohvatiSveNeodgovoreneReklamacije()
         {
+            int[] idReklamacija = DohvatiSveIDReklamacije();
             using (var db = new Entiteti())
             {
                 var upit = from x in db.Reklamacija
-                           join k in db.Korisnik on x.IDKorisnik equals k.ID
-                           join p in db.Proizvod on x.IDProizvod equals p.ID
+                           join k in db.Korisnik on x.IDKorisnik equals k.ID 
+                           join p in db.Proizvod on x.IDProizvod equals p.ID 
+                           where !idReklamacija.Contains(x.IDReklamacija)
                            select new PopisDolaznihReklamacija
                            {
                                ID = x.IDReklamacija,
@@ -50,6 +52,16 @@ namespace ClassLibrary2.ToolBox
                                Prigovor = x.Opis
                            };
                 return upit.ToList();
+            }
+        }
+
+        private static int[] DohvatiSveIDReklamacije()
+        {
+            using (var db = new Entiteti())
+            {
+                var id = from x in db.Odgovor
+                         select x.IDReklamacija;
+                return id.ToArray();
             }
         }
 

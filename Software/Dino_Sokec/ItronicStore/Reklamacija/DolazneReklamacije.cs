@@ -32,9 +32,26 @@ namespace ItronicStore
 
         private void DolazneReklamacije_Load(object sender, EventArgs e)
         {
+            UcitajWindowsFormu();
+            
+        }
+
+        private void UcitajWindowsFormu()
+        {
             NapisiTkoJePrijavljen(korisnickoImeAdmin);
-            PrikaziSveDolazneReklamacije();
+            PrikaziSveNeodgovoreneDolazneReklamacije();
             PostaviComboBoxBroj();
+            DohvatiPovijestOdgovorenihReklamacijaAdmina(korisnickoImeAdmin);
+            //PostaviDefaultVrijednostiTXTOkvira();
+        }
+
+        private void DohvatiPovijestOdgovorenihReklamacijaAdmina(string korisnickoImeAdmin)
+        {
+            dgvPovijestReklamacija.DataSource = null;
+            dgvPovijestReklamacija.DataSource = TOOL_Odgovor.DohvatiSveOdgovoreneReklamacijeAdmina(korisnickoImeAdmin);
+
+            dgvPovijestReklamacija.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgvPovijestReklamacija.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
         private void PostaviComboBoxBroj()
@@ -42,10 +59,10 @@ namespace ItronicStore
             cmbFiltar.SelectedIndex = 0;
         }
 
-        private void PrikaziSveDolazneReklamacije()
+        private void PrikaziSveNeodgovoreneDolazneReklamacije()
         {
             dgvPopisReklamacija.DataSource = null;
-            dgvPopisReklamacija.DataSource = TOOL_Reklamacija.DohvatiSveReklamacije();
+            dgvPopisReklamacija.DataSource = TOOL_Reklamacija.DohvatiSveNeodgovoreneReklamacije();
 
             SakrijNepotrebneStupce();
 
@@ -162,6 +179,25 @@ namespace ItronicStore
             (Assembly.GetExecutingAssembly().CodeBase)).LocalPath, "help.chm");
 
             return putanja;
+        }
+
+        private void dgvPopisReklamacija_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            PopisDolaznihReklamacija dohvaceni =  DohvatiRedakPopisReklamacija();
+            IspuniTekstualneOkvire(dohvaceni);
+        }
+
+        private void IspuniTekstualneOkvire(PopisDolaznihReklamacija dohvaceni)
+        {
+            txtKorisnickoIme.Text = dohvaceni.KorisnickoIme;
+            txtProizvod.Text = dohvaceni.Proizvod;
+            txtPrigovor.Text = dohvaceni.Prigovor;
+        }
+
+        private PopisDolaznihReklamacija DohvatiRedakPopisReklamacija()
+        {
+            PopisDolaznihReklamacija redak = dgvPopisReklamacija.CurrentRow.DataBoundItem as PopisDolaznihReklamacija;
+            return redak;
         }
     }
 }
