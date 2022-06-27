@@ -38,6 +38,8 @@ namespace ItronicStore
         {
             dgvPovratneInformacije.DataSource = null;
             dgvPovratneInformacije.DataSource = TOOL_Odgovor.DohvatiSvePovratneOdgovoreKorisnik(korisnickoIme);
+
+            lblBrojRedaka.Text = dgvPovratneInformacije.Rows.Count.ToString();
         }
 
         private void PovratnaInformacija_HelpRequested(object sender, HelpEventArgs hlpevent)

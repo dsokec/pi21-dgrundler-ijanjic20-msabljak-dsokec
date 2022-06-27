@@ -117,10 +117,6 @@
     <Compile Include="Reklamacija.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="REPO\REPO_ObracunTrgovine.cs" />
-    <Compile Include="REPO\REPO_Odgovor.cs" />
-    <Compile Include="REPO\REPO_Recenzija.cs" />
-    <Compile Include="REPO\REPO_Reklamacija.cs" />
     <Compile Include="Klase\PopisProizvodaReklamacija.cs" />
     <Compile Include="Klase\PovijestReklamacija.cs" />
     <Compile Include="Klase\PopisDolaznihReklamacija.cs" />

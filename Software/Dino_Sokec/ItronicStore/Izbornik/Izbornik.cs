@@ -93,7 +93,7 @@ namespace ItronicStore
         {
             if (PovratnaInformacija == null)
             {
-                PovratnaInformacija = new PovratnaInformacija();
+                PovratnaInformacija = new PovratnaInformacija(korisnickoImeLogina);
                 PovratnaInformacija.FormClosed += PovratnaInformacija_FormClosed;
             }
 
