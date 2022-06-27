@@ -161,7 +161,9 @@
     <EmbeddedResource Include="Recenzija\KorisnickaRecenzija.resx">
       <DependentUpon>KorisnickaRecenzija.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="help.chm" />
+    <Content Include="help.chm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
